@@ -22,6 +22,7 @@ Parsing and rendering of HTML is something that browsers do very well by default
 However, developers may work around browser defaults to suit their application needs. This is certainly the case for websites using the [single page application (SPA) pattern](https://en.wikipedia.org/wiki/Single-page_application), which dynamically creates large parts of the HTML/DOM on the client with JavaScript. Client-side rendering is the name for this design pattern, and it can have effects on your website's [Interaction to Next Paint (INP)](/inp/) if the work involved is excessive.
 
 This guide will help you weigh the difference between using HTML sent by the server to the browser versus creating it on the client with JavaScript, and how the latter can result in high interaction latency at crucial moments.
+
 ## How the browser renders HTML provided by the server
 The navigation pattern used in traditional page loads involves receiving HTML from the server on every navigation. If you enter a URL in the address bar of your browser or click on a link in an MPA, the following series of events occurs:
 
@@ -43,7 +44,7 @@ The takeaway? When you stream HTML from the server, **you get incremental parsin
 
 ## How the browser renders HTML provided by JavaScript
 
-While every navigation request to a page requires some amount of HTML to be provided by the server, some websites will use the SPA pattern. This approach often involves the [application shell model](https://developer.chrome.com/docs/workbox/app-shell-model/), which is when a minimal initial payload of HTML is provided by the server, but then the client will populate the main content area of a page with HTML assembled from data fetched from the server. Subsequent navigations—sometimes referred to as "soft navigations" in this case—are handled entirely by JavaScript to populate the page with new HTML.
+While every navigation request to a page requires some amount of HTML to be provided by the server, some websites will use the SPA pattern. This approach often involves a minimal initial payload of HTML is provided by the server, but then the client will populate the main content area of a page with HTML assembled from data fetched from the server. Subsequent navigations—sometimes referred to as "soft navigations" in this case—are handled entirely by JavaScript to populate the page with new HTML.
 
 Client-side rendering may also occur in non-SPAs in more limited cases where HTML is dynamically added to the DOM through JavaScript.
 
