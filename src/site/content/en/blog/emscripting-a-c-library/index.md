@@ -187,7 +187,7 @@ libwebp that it needs. I'm going to be honest: I just gave it **all** the C
 files I could find and relied on the compiler to strip out everything that was
 unnecessary. It seemed to work brilliantly!
 
-```c
+```bash
     $ emcc -O3 -s WASM=1 -s EXTRA_EXPORTED_RUNTIME_METHODS='["cwrap"]' \
         -I libwebp \
         webp.c \

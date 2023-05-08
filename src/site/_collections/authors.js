@@ -93,6 +93,7 @@ module.exports = (collections) => {
       href,
       image,
       key,
+      bio: `i18n.authors.${key}.bio`,
       title: `i18n.authors.${key}.title`,
       url: href,
     };
