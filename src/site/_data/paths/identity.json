@@ -24,12 +24,12 @@
     {
       "title": "i18n.paths.identity.topics.build_authentication_systems_with_modern_APIs",
       "pathItems": [
-        "web-otp", 
+        "web-otp",
         "change-password-url"
       ]
     },
     {
-      "title": "i18n.paths.identity.topics.strenghten_security_with_two-factor_authentication",
+      "title": "i18n.paths.identity.topics.strengthen_security_with_two-factor_authentication",
       "pathItems": [
         {
           "title": "SMS OTP form for two-step verification",
