@@ -270,5 +270,6 @@ The `box-shadow` property also accepts color as one of the values.
 
 - [A handy demo showing how you can use angles with HSL](https://codepen.io/argyleink/pen/ExjReJa)
 - [A comprehensive guide on color](https://css-tricks.com/nerds-guide-color-web/)
+- [A comprehensive guide on wide gamut color](https://developer.chrome.com/articles/high-definition-css-color-guide/)
 - [[video] An explainer on how to read hex codes](https://www.youtube.com/watch?v=eqZqx6lRPe0)
 - [How hexadecimal codes work](https://medium.com/basecs/hexs-and-other-magical-numbers-9785bc26b7ee)

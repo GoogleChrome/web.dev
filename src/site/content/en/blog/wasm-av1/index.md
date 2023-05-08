@@ -107,7 +107,7 @@ endif()
 
 
 The Emscripten toolchain can generate output in two formats, one is called
-`[asm.js](http://asmjs.org/)` and the other is WebAssembly.
+[`asm.js`](http://asmjs.org/) and the other is WebAssembly.
 We'll be targeting WebAssembly as it produces smaller output and can run
 faster. These existing build rules are meant to compile an
 `asm.js` version of the library for use in an
@@ -229,7 +229,7 @@ that binds raw binary data to our stream I/O functions. This lets the blob be
 
 Our example implementation enables reading the passed in blob  as if it was a
 sequentially read data source. The reference code can be found in the file
-`[blob-api.c](https://github.com/GoogleChromeLabs/wasm-av1/blob/master/blob-api.c)`,
+[`blob-api.c`](https://github.com/GoogleChromeLabs/wasm-av1/blob/master/blob-api.c),
 and the entire implementation is just this:
 
 
@@ -332,7 +332,7 @@ By abstracting the stream interface we can build our WebAssembly module to
 use binary data blobs when in the browser, and interface to real files when
 we build the code to test from the command line. Our test harness code can be
 found in the example source file
-`[test.c](https://github.com/GoogleChromeLabs/wasm-av1/blob/master/test.c)`.
+[`test.c`](https://github.com/GoogleChromeLabs/wasm-av1/blob/master/test.c).
 
 
 ## Implementing a buffering mechanism for multiple video frames
@@ -350,7 +350,7 @@ interface to support streaming input from a server, then we need to have the
 buffering mechanism in place.
 
 The code in
-`[decode-av1.c](https://github.com/GoogleChromeLabs/wasm-av1/blob/master/decode-av1.c)`
+[`decode-av1.c`](https://github.com/GoogleChromeLabs/wasm-av1/blob/master/decode-av1.c)
 for reading frames of video data from the AV1 library and storing in the buffer
 as this:
 
@@ -403,7 +403,7 @@ WebGL for display.
 
 To do so, we implement a function `AVX_YUV_to_RGB()` which you
 can find in the source file
-`[yuv-to-rgb.c](https://github.com/GoogleChromeLabs/wasm-av1/blob/master/yuv-to-rgb.c)`.
+[`yuv-to-rgb.c`](https://github.com/GoogleChromeLabs/wasm-av1/blob/master/yuv-to-rgb.c).
 That function converts the output from the AV1 decoder into something we can
 pass to WebGL. Note, that when we call this function from JavaScript we need
 to make sure that the memory we're writing the converted image into has been
@@ -428,7 +428,7 @@ function show_frame(af) {
 
 The `drawImageToCanvas()` function that implements the WebGL painting can be
 found in the source file
-`[draw-image.js](https://github.com/GoogleChromeLabs/wasm-av1/blob/master/draw-image.js)`
+[`draw-image.js`](https://github.com/GoogleChromeLabs/wasm-av1/blob/master/draw-image.js)
 for reference.
 
 

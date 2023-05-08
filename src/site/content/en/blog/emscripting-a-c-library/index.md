@@ -15,30 +15,27 @@ Traditionally, this is where you give up. Well, not anymore, because now we have
 [Emscripten](http://emscripten.org/) and [WebAssembly](http://webassembly.org/)
 (or Wasm)!
 
-{% Aside %}
-In this article, I will describe my journey of compiling
+{% Aside %} In this article, I will describe my journey of compiling
 [libwebp](https://github.com/webmproject/libwebp) to Wasm. To make use of this
 article as well as Wasm in general, you will need knowledge of C, especially
-pointers, memory management and compiler options.
-{% endAside %}
+pointers, memory management and compiler options. {% endAside %}
 
 ## The toolchain
 
 I set myself the goal of working out how to compile some existing C code to
 Wasm. There's been some noise around [LLVM](http://llvm.org/)'s Wasm backend, so
-I started digging into that. While [you can get simple programs to
-compile](https://twitter.com/dassurma/status/752621241886990337?lang=en) this
-way, the second you want to use C's standard library or even compile multiple
-files, you will probably run into problems. This led me to the major lesson I
-learned:
+I started digging into that. While
+[you can get simple programs to compile](https://twitter.com/dassurma/status/752621241886990337?lang=en)
+this way, the second you want to use C's standard library or even compile
+multiple files, you will probably run into problems. This led me to the major
+lesson I learned:
 
-While Emscripten _used_ to be a C-to-asm.js compiler, it has since
-matured to target Wasm and is [in the
-process](https://github.com/kripken/emscripten/issues/6168) of switching to the
-official LLVM backend internally. Emscripten also provides a Wasm-compatible
-implementation of C's standard library. **Use Emscripten**. It [carries a lot of
-hidden
-work](https://kripken.github.io/emscripten-site/docs/porting/emscripten-runtime-environment.html),
+While Emscripten _used_ to be a C-to-asm.js compiler, it has since matured to
+target Wasm and is
+[in the process](https://github.com/kripken/emscripten/issues/6168) of switching
+to the official LLVM backend internally. Emscripten also provides a
+Wasm-compatible implementation of C's standard library. **Use Emscripten**. It
+[carries a lot of hidden work](https://kripken.github.io/emscripten-site/docs/porting/emscripten-runtime-environment.html),
 emulates a file system, provides memory management, wraps OpenGL with WebGL — a
 lot of things that you really don't need to experience developing for yourself.
 
@@ -51,8 +48,9 @@ them even smaller in the future.
 You can get Emscripten by following the instructions on their
 [website](http://emscripten.org) or using Homebrew. If you are a fan of
 dockerized commands like me and don't want to install things on your system just
-to have a play with WebAssembly, there is a well-maintained [Docker
-image](https://hub.docker.com/r/trzeci/emscripten/) that you can use instead:
+to have a play with WebAssembly, there is a well-maintained
+[Docker image](https://hub.docker.com/r/trzeci/emscripten/) that you can use
+instead:
 
 ```docker
     $ docker pull trzeci/emscripten
@@ -87,8 +85,8 @@ don't know C but know JavaScript, you will hopefully be able to understand
 what's going on here.
 
 `emscripten.h` is a header file provided by Emscripten. We only need it so we
-have access to the `EMSCRIPTEN_KEEPALIVE` macro, but it [provides much more
-functionality](https://kripken.github.io/emscripten-site/docs/api_reference/emscripten.h.html).
+have access to the `EMSCRIPTEN_KEEPALIVE` macro, but it
+[provides much more functionality](https://kripken.github.io/emscripten-site/docs/api_reference/emscripten.h.html).
 This macro tells the compiler to not remove a function even if it appears
 unused. If we omitted that macro, the compiler would optimize the function away
 — nobody is using it after all.
@@ -102,7 +100,8 @@ need to turn to Emscripten's compiler command `emcc`:
 
 Let's dissect this command. `emcc` is Emscripten's compiler. `fib.c` is our C
 file. So far, so good. `-s WASM=1` tells Emscripten to give us a Wasm file
-instead of an [asm.js](http://asmjs.org/) file. `-s EXTRA_EXPORTED_RUNTIME_METHODS='["cwrap"]'` tells the compiler to leave the
+instead of an [asm.js](http://asmjs.org/) file.
+`-s EXTRA_EXPORTED_RUNTIME_METHODS='["cwrap"]'` tells the compiler to leave the
 `cwrap()` function available in the JavaScript file — more on this function
 later. `-O3` tells the compiler to optimize aggressively. You can choose lower
 numbers to decrease build time, but that will also make the resulting bundles
@@ -112,22 +111,21 @@ After running the command, you should end up with a JavaScript file called
 `a.out.js` and a WebAssembly file called `a.out.wasm`. The Wasm file (or
 "module") contains our compiled C code and should be fairly small. The
 JavaScript file takes care of loading and initializing our Wasm module and
-providing a nicer API. If needed, it will also take care of setting up the stack,
-the heap, and other functionality usually expected to be provided by the
+providing a nicer API. If needed, it will also take care of setting up the
+stack, the heap, and other functionality usually expected to be provided by the
 operating system when writing C code. As such, the JavaScript file is a bit
 bigger, weighing in at 19KB (~5KB gzip'd).
 
 ## Running something simple
 
 The easiest way to load and run your module is to use the generated JavaScript
-file. Once you load that file, you will have a [`Module`
-global](https://kripken.github.io/emscripten-site/docs/api_reference/module.html)
+file. Once you load that file, you will have a
+[`Module` global](https://kripken.github.io/emscripten-site/docs/api_reference/module.html)
 at your disposal. Use
 [`cwrap`](https://kripken.github.io/emscripten-site/docs/api_reference/preamble.js.html#cwrap)
 to create a JavaScript native function that takes care of converting parameters
 to something C-friendly and invoking the wrapped function. `cwrap` takes the
-function name, return type and argument types as
-arguments, in that order:
+function name, return type and argument types as arguments, in that order:
 
 ```js
     <script src="a.out.js"></script>
@@ -139,13 +137,12 @@ arguments, in that order:
     </script>
 ```
 
-If you [run this
-code](https://googlechrome.github.io/samples/webassembly/index.html), you should
-see the "144" in the console, which is the 12th Fibonacci number.
+If you
+[run this code](https://googlechrome.github.io/samples/webassembly/index.html),
+you should see the "144" in the console, which is the 12th Fibonacci number.
 
-{% Aside %}
-Emscripten offers a couple of options to handle loading multiple modules.
-More about that in their
+{% Aside %} Emscripten offers a couple of options to handle loading multiple
+modules. More about that in their
 [documentation](https://kripken.github.io/emscripten-site/docs/getting_started/FAQ.html#how-can-i-tell-when-the-page-is-fully-loaded-and-it-is-safe-to-call-compiled-functions).
 {% endAside %}
 
@@ -160,9 +157,8 @@ things. Emscripten provides most of these features, although there are some
 
 Let's go back to my original goal: compiling an encoder for WebP to Wasm. The
 source for the WebP codec is written in C and available on
-[GitHub](https://github.com/webmproject/libwebp) as well as some extensive [API
-documentation](/speed/webp/docs/api). That's a
-pretty good starting point.
+[GitHub](https://github.com/webmproject/libwebp) as well as some extensive
+[API documentation](https://developers.google.com/speed/webp/docs/api). That's a pretty good starting point.
 
 ```bash
     $ git clone https://github.com/webmproject/libwebp
@@ -191,19 +187,18 @@ libwebp that it needs. I'm going to be honest: I just gave it **all** the C
 files I could find and relied on the compiler to strip out everything that was
 unnecessary. It seemed to work brilliantly!
 
-```c
+```bash
     $ emcc -O3 -s WASM=1 -s EXTRA_EXPORTED_RUNTIME_METHODS='["cwrap"]' \
         -I libwebp \
         webp.c \
         libwebp/src/{dec,dsp,demux,enc,mux,utils}/*.c
 ```
 
-{% Aside %}
-This strategy will not work with every C project out there. Many projects
-rely on autoconf/automake to generate system-specific code before compilation.
-Emscripten provides `emconfigure` and `emmake` to wrap these commands and inject
-the appropriate parameters. You can find more in the [Emscripten
-documentation](https://kripken.github.io/emscripten-site/docs/compiling/Building-Projects.html).
+{% Aside %} This strategy will not work with every C project out there. Many
+projects rely on autoconf/automake to generate system-specific code before
+compilation. Emscripten provides `emconfigure` and `emmake` to wrap these
+commands and inject the appropriate parameters. You can find more in the
+[Emscripten documentation](https://kripken.github.io/emscripten-site/docs/compiling/Building-Projects.html).
 {% endAside %}
 
 Now we only need some HTML and JavaScript to load our shiny new module:
@@ -226,10 +221,8 @@ And we will see the correction version number in the
 {% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/CeKJztdJOom78OH2UrXx.png", alt="Screenshot of the DevTools console showing the correct version
 number.", width="800", height="389" %}
 
-{% Aside %}
-libwebp returns the current version a.b.c as a hexadecimal number 0xabc.
-So v0.6.1 is encoded as 0x000601 = 1537.
-{% endAside %}
+{% Aside %} libwebp returns the current version a.b.c as a hexadecimal number
+0xabc. So v0.6.1 is encoded as 0x000601 = 1537. {% endAside %}
 
 ### Get an image from JavaScript into Wasm
 
@@ -237,10 +230,9 @@ Getting the encoder's version number is great and all, but encoding an actual
 image would be more impressive, right? Let's do that, then.
 
 The first question we have to answer is: How do we get the image into Wasm land?
-Looking at the [encoding API of
-libwebp](/speed/webp/docs/api#simple_encoding_api),
-it expects an array of bytes in RGB, RGBA, BGR or BGRA. Luckily, the Canvas API
-has
+Looking at the
+[encoding API of libwebp](https://developers.google.com/speed/webp/docs/api#simple_encoding_api), it expects
+an array of bytes in RGB, RGBA, BGR or BGRA. Luckily, the Canvas API has
 [`getImageData()`](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/getImageData),
 that gives us an
 [Uint8ClampedArray](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray)
@@ -278,12 +270,11 @@ memory for the image inside Wasm land and one that frees it up again:
     }
 ```
 
-`create_buffer` allocates a buffer for the RGBA image — hence 4 bytes per
-pixel. The pointer returned by `malloc()` is the address of the first memory
-cell of that buffer. When the pointer is returned to JavaScript land, it is
-treated as just a number. After exposing the function to JavaScript using
-`cwrap`, we can use that number to find the start of our buffer and copy the
-image data.
+`create_buffer` allocates a buffer for the RGBA image — hence 4 bytes per pixel.
+The pointer returned by `malloc()` is the address of the first memory cell of
+that buffer. When the pointer is returned to JavaScript land, it is treated as
+just a number. After exposing the function to JavaScript using `cwrap`, we can
+use that number to find the start of our buffer and copy the image data.
 
 ```js
 const api = {
@@ -304,12 +295,12 @@ api.destroy_buffer(p);
 ### Grand Finale: Encode the image
 
 The image is now available in Wasm land. It is time to call the WebP encoder to
-do its job! Looking at the [WebP
-documentation](/speed/webp/docs/api#simple_encoding_api),
-`WebPEncodeRGBA` seems like a perfect fit. The function takes a pointer to the
-input image and its dimensions, as well as a quality option between 0 and 100.
-It also allocates an output buffer for us, that we need to free using
-`WebPFree()` once we are done with the WebP image.
+do its job! Looking at the
+[WebP documentation](https://developers.google.com/speed/webp/docs/api#simple_encoding_api), `WebPEncodeRGBA`
+seems like a perfect fit. The function takes a pointer to the input image and
+its dimensions, as well as a quality option between 0 and 100. It also allocates
+an output buffer for us, that we need to free using `WebPFree()` once we are
+done with the WebP image.
 
 The result of the encoding operation is an output buffer and its length. Because
 functions in C can't have arrays as return types (unless we allocate memory
@@ -359,9 +350,8 @@ release all the Wasm-land buffers we have allocated in the process.
     api.free_result(resultPointer);
 ```
 
-{% Aside %}
-`new Uint8Array(someBuffer)` will create a new view onto the same memory
-chunk, while `new Uint8Array(someTypedArray)` will copy the data.
+{% Aside %} `new Uint8Array(someBuffer)` will create a new view onto the same
+memory chunk, while `new Uint8Array(someTypedArray)` will copy the data.
 {% endAside %}
 
 Depending on the size of your image, you might run into an error where Wasm
@@ -377,15 +367,14 @@ WebP. To prove that it worked, we can turn our result buffer into a blob and use
 it on an `<img>` element:
 
 ```js
-const blob = new Blob([result], {type: 'image/webp'});
+const blob = new Blob([result], { type: 'image/webp' });
 const blobURL = URL.createObjectURL(blob);
 const img = document.createElement('img');
 img.src = blobURL;
 document.body.appendChild(img);
 ```
 
-[Behold, the glory of a new WebP
-image](https://googlechrome.github.io/samples/webassembly/image.html)!
+[Behold, the glory of a new WebP image](https://googlechrome.github.io/samples/webassembly/image.html)!
 
 {% Img src="image/C47gYyWYVMMhDmtYSLOWazuyePF2/eqKkzJ4MzO5T14py1wNb.jpeg", alt="DevTools’ network panel and the generated image.", width="800", height="422" %}
 
@@ -412,11 +401,11 @@ do the following:
   (async function () {
     const imports = {
       env: {
-        memory: new WebAssembly.Memory({initial: 1}),
+        memory: new WebAssembly.Memory({ initial: 1 }),
         STACKTOP: 0,
       },
     };
-    const {instance} = await WebAssembly.instantiateStreaming(
+    const { instance } = await WebAssembly.instantiateStreaming(
       fetch('/a.out.wasm'),
       imports,
     );
@@ -425,10 +414,9 @@ do the following:
 </script>
 ```
 
-{% Aside %}
-Make sure that your `.wasm` files have `Content-Type: application/wasm`.
-Otherwise they will be rejected by WebAssembly.
-{% endAside %}
+{% Aside %} Make sure that your `.wasm` files have
+`Content-Type: application/wasm`. Otherwise they will be rejected by
+WebAssembly. {% endAside %}
 
 WebAssembly modules that have been created by Emscripten have no memory to work
 with unless you provide them with memory. The way you provide a Wasm module with
@@ -445,9 +433,11 @@ environment:
   parameters are in "in units of WebAssembly pages", meaning the code above
   allocates 1 page of memory, with each page having a size of 64
   [KiB](https://en.wikipedia.org/wiki/Kibibyte). Without providing a `maximum`
-  option, the memory is theoretically unbounded in growth (Chrome currently has a
-  hard limit of 2GB). Most WebAssembly modules shouldn't need to set a maximum.
+  option, the memory is theoretically unbounded in growth (Chrome currently has
+  a hard limit of 2GB). Most WebAssembly modules shouldn't need to set a
+  maximum.
 - `env.STACKTOP` defines where the stack is supposed to start growing. The stack
   is needed to make function calls and to allocate memory for local variables.
   Since we don't do any dynamic memory management shenanigans in our little
-  Fibonacci program, we can just use the entire memory as a stack, hence `STACKTOP = 0`.
+  Fibonacci program, we can just use the entire memory as a stack, hence
+  `STACKTOP = 0`.

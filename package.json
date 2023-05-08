@@ -38,6 +38,9 @@
     "rollup": "rollup -c",
     "snapshots": "percy exec --config ./tools/percy/.percy.conf.yml -- node tools/percy/snapshots.js",
     "snapshots:firebase": "firebase emulators:exec 'npm run snapshots'",
+    "stage": "ELEVENTY_ENV=prod npm-run-all build stage:up",
+    "stage:up": "firebase hosting:channel:deploy staging",
+    "stage:down": "firebase hosting:channel:delete staging",
     "start": "firebase emulators:start",
     "test:integration": "mocha ./test/integration",
     "test:lib": "npx gulp sass && ELEVENTY_ENV=test npm-run-all rollup karma",
@@ -110,10 +113,10 @@
     "truncate-utf8-bytes": "^1.0.2",
     "unistore": "^3.4.1",
     "web-vitals": "^3.1.1",
-    "webdev-infra": "1.0.52",
+    "webdev-infra": "1.0.54",
     "wicg-inert": "^3.1.2",
     "yaml-front-matter": "^4.0.0",
-    "@mdn/browser-compat-data": "5.2.46"
+    "@mdn/browser-compat-data": "5.2.55"
   },
   "devDependencies": {
     "@actions/core": "^1.9.1",
@@ -142,6 +145,7 @@
     "karma-mocha": "2.0.1",
     "karma-sourcemap-loader": "0.3.8",
     "karma-spec-reporter": "0.0.34",
+    "lint-staged": "13.2.2",
     "mocha": "^6.2.0",
     "proxyquire": "^2.1.3",
     "puppeteer": "^12.0.1",

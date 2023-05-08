@@ -31,22 +31,29 @@ corresponding URLs. For example:
 <script type="importmap">
   {
     "imports": {
-      "lodash": "https://unpkg.com/lodash@4.17.21/lodash.js"
+      "browser-fs-access": "https://unpkg.com/browser-fs-access@0.33.0/dist/index.modern.js"
     }
   }
 </script>
 ```
 
-This code defines a single external module named `"lodash"` and maps it to the URL of the lodash
-library on the unpkg CDN. With this mapping in place, you can now use the `import` keyword to
-include the lodash library in your code. Note that the `import` keyword is only available inside a
-`script` tag with the `type="module"` attribute.
+This code defines a single external module named `"browser-fs-access"` and maps it to the URL of the
+[browser-fs-access](https://github.com/GoogleChromeLabs/browser-fs-access) library, hosted on the unpkg CDN. With this mapping in place, you can now use the `import`
+keyword to include the browser-fs-access library in your code. Note that the `import` keyword is
+only available inside a `script` tag with the `type="module"` attribute.
 
 ```html
+<button>Select a text file</button>
 <script type="module">
-  import _ from 'lodash';
+  import {fileOpen} from 'browser-fs-access';
 
-  console.log(_.map([1, 2, 3], (n) => n * 2));
+  const button = document.querySelector('button');
+  button.addEventListener('click', async () => {
+    const file = await fileOpen({
+      mimeTypes: ['text/plain'],
+    });
+    console.log(await file.text());
+  });
 </script>
 ```
 

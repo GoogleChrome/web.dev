@@ -79,13 +79,13 @@ Imagemin — отличное средство для сжатия изобра�
       </tr>
       <tr>
         <td>SVG</td>
-        <td><a href="https://www.npmjs.com/package/imagemin-svgo">Imagemin-svgo</a></td>
+        <td><a href="https://www.npmjs.com/package/imagemin-svgo">imagemin-svgo</a></td>
         <td></td>
       </tr>
       <tr>
         <td>WebP</td>
         <td><a href="https://www.npmjs.com/package/imagemin-webp">imagemin-webp</a></td>
-        <td></td>
+        <td><a href="https://www.npmjs.com/package/imagemin-webp">imagemin-webp</a></td>
       </tr>
     </tbody>
   </table>

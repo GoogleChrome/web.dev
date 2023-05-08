@@ -8,7 +8,7 @@ description: |
   user experience data on millions of websites. Unlike lab data, CrUX data
   actually comes from opted-in users in the field.
 date: 2020-07-13
-updated: 2022-07-18
+updated: 2023-04-25
 tags:
   - performance
   - chrome-ux-report
@@ -32,15 +32,15 @@ competition and industry.
 ## How to use it
 
 There are four primary ways to extract insights from the Chrome UX Report,
-ranging in complexity. For quick and easy analysis of website performance, the [CrUX Dashboard](http://g.co/chromeuxdash) and
+ranging in complexity. For quick and easy analysis of website performance, the [CrUX Dashboard](https://developer.chrome.com/docs/crux/dashboard/) and
 [PageSpeed Insights](https://pagespeed.web.dev/)
-are the recommended tools. [BigQuery](https://console.cloud.google.com/bigquery?p=chrome-ux-report)
+are the recommended tools. [BigQuery](https://developer.chrome.com/docs/crux/bigquery/)
 trades some of the simplicity of the analysis for the power of customization
-and more granular insights. And the [API](https://developer.chrome.com/docs/crux/api/) enables the integration of high-level data with other applications.
+and more granular insights. And the [API](https://developer.chrome.com/docs/crux/api/) enables the integration of high-level data with other applications, and the [History API](https://developer.chrome.com/docs/crux/history-api/) provides historical data for trend analysis.
 
 ### CrUX Dashboard
 
-The [CrUX Dashboard](http://g.co/chromeuxdash) is a customizable data
+The [CrUX Dashboard](https://developer.chrome.com/docs/crux/dashboard/) is a customizable data
 visualization tool of websites' historical performance built on
 [Looker Studio](https://cloud.google.com/looker-studio).
 The data is sourced from the BigQuery dataset and all of the SQL queries are
@@ -64,7 +64,7 @@ optimize the page. Try the
 
 ### CrUX on BigQuery
 
-The CrUX database on [BigQuery](https://console.cloud.google.com/bigquery?p=chrome-ux-report),
+The CrUX database on [BigQuery](https://developer.chrome.com/docs/crux/bigquery/),
 part of the Google Cloud Platform (GCP) with a web and command line interface,
 hosts the raw data that aggregates key UX performance metrics for top origins
 on the web. New tables are periodically added to the database covering the
@@ -77,7 +77,11 @@ benchmarks, and reports about the state of the web. Try the
 
 ### CrUX API
 
-The CrUX API is a free and RESTful interface for looking up origin or URL-level user experience data. The data is updated daily and aggregates the previous 28 days of data, similar to PageSpeed Insights. You can use this API to build your own applications on top of the real-user experience data in CrUX. Try the [CrUX API](https://developer.chrome.com/blog/chrome-ux-report-api) guide.
+The [CrUX API](https://developer.chrome.com/docs/crux/api/) is a free and RESTful interface for looking up origin or URL-level user experience data. The data is updated daily and aggregates the previous 28 days of data, similar to PageSpeed Insights. You can use this API to build your own applications on top of the real-user experience data in CrUX. Try the [CrUX API guide](https://developer.chrome.com/blog/chrome-ux-report-api).
+
+### CrUX History API
+
+The [CrUX History API](https://developer.chrome.com/docs/crux/history-api/) is a free and RESTful interface, similar to the daily API, for looking up origin or URL-level user experience data. The data is updated weekly and aggregates the previous 28 days of data, over a period of 6 months. You can use this API to build your own applications on top of the real-user experience data in CrUX. Try the [CrUX History API guide](https://developer.chrome.com/blog/chrome-ux-report-history-api/).
 
 ## How to get help
 
@@ -94,10 +98,10 @@ can follow to ask questions and listen for product announcements.
 ## See it in action
 
 To get more acquainted with the available data, walk through
-step-by-step guides for using BigQuery, Looker Studio Dashboard, and PageSpeed
-Insights:
+step-by-step guides for using Looker Studio Dashboard, PageSpeed Insights, Bigquery, and both the daily and history API:
 
 - [CrUX: Looker Studio Dashboard](https://developer.chrome.com/docs/crux/dashboard/)
 - [CrUX: PageSpeed Insights](https://developer.chrome.com/blog/chrome-ux-report-pagespeed-insights)
 - [CrUX: BigQuery](https://developer.chrome.com/blog/chrome-ux-report-bigquery)
 - [CrUX: API](https://developer.chrome.com/blog/chrome-ux-report-api)
+- [CrUX: History API](https://developer.chrome.com/blog/chrome-ux-report-history-api/)

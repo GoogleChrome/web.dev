@@ -56,7 +56,7 @@ The document metadata, including the document title, character set, viewport set
 
 The very first element in the `<head>` should be the `charset` character encoding declaration. It comes before the title to ensure the browser can render the characters in that title and all the characters in the rest of the document.
 
-The [default encoding](https://html.spec.whatwg.org/multipage/parsing.html#documentEncoding) in most browsers is `windows-1252`, depending on the locale. However, you should use [`UTF-8`](https://developer.mozilla.org/docs/Glossary/UTF-8), as it enables the two- to four-byte encoding of all characters, even ones you didn't even know existed. Also, it's the encoding type required by HTML5.
+The [default encoding](https://html.spec.whatwg.org/multipage/parsing.html#documentEncoding) in most browsers is `windows-1252`, depending on the locale. However, you should use [`UTF-8`](https://developer.mozilla.org/docs/Glossary/UTF-8), as it enables the one- to four-byte encoding of all characters, even ones you didn't even know existed. Also, it's the encoding type required by HTML5.
 
 To set the character encoding to UTF-8, include:
 
@@ -214,7 +214,7 @@ The alternate value is for more than just translations. For example, the `type` 
 <link rel="alternate" type="application/x-pdf" href="https://machinelearningworkshop.com/mlw.pdf" />
 ```
 
-If the `rel` value is `alternate style sheet`, it defines an [alternate stylesheet](https://developer.mozilla.org/docs/Web/CSS/Alternative_style_sheets) and the `title` attribute must be set giving that alternate style a name.
+If the `rel` value is `alternate stylesheet`, it defines an [alternate stylesheet](https://developer.mozilla.org/docs/Web/CSS/Alternative_style_sheets) and the `title` attribute must be set giving that alternate style a name.
 
 #### Canonical
 
