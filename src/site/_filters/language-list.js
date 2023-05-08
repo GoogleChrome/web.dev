@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,52 +15,55 @@
  */
 
 const {
-  defaultLanguage,
   languageNames,
+  defaultLanguage,
   languageOrdering,
-} = require('../../../lib/utils/language');
+} = require('../../lib/utils/language');
+
 const {
   getDefaultUrl,
-  getLocaleSpecificUrl,
   getTranslatedUrls,
-} = require('../../_filters/urls');
-const {i18n} = require('../../_filters/i18n');
+  getLocaleSpecificUrl,
+} = require('../_filters/urls');
 
-module.exports = (url, lang) => {
-  const langHrefs = getTranslatedUrls(url).filter(
+/**
+ * Look up all supported languages for a specific post
+ *
+ * @param {String} lang The current lang of a post to look up.
+ * @param {EleventyCollectionItem} post The post to look up.
+ * @return {String[][]} The list of supported languages for a specific post
+ */
+
+const supportedLanguages = (post, lang) => {
+  const url = post.url;
+  const languages = getTranslatedUrls(url).filter(
     (langHref) => langHref[0] !== lang,
   );
 
   // Exit early if there are no translations.
-  if (langHrefs.length === 0) {
-    return '';
-  }
+  if (languages.length === 0) return [];
+
+  languages.map((langHref) => {
+    langHref.push(languageNames[langHref[0]]);
+  });
 
   // Ensure that the default (English) translation is added as well.
   const defaultHref = getLocaleSpecificUrl(defaultLanguage, getDefaultUrl(url));
-  langHrefs.push([defaultLanguage, defaultHref]);
+  languages.push([
+    defaultLanguage,
+    defaultHref,
+    languageNames[defaultLanguage],
+  ]);
 
   // Sort the list of languages with a specific ordering.
   // C.f. https://github.com/GoogleChrome/web.dev/issues/7430
-  langHrefs.sort((a, b) => {
+  languages.sort((a, b) => {
     const indexOfA = languageOrdering.indexOf(a[0]);
     const indexOfB = languageOrdering.indexOf(b[0]);
     return indexOfA > indexOfB ? 1 : -1;
   });
 
-  const languageLinks = langHrefs.map((langHref) => {
-    const href = langHref[1];
-    return `<a class="post-signpost__link"
-      translate="no"
-      lang="${langHref[0]}"
-      href="${href}">${languageNames[langHref[0]]}</a>`;
-  });
-
-  const availableIn = i18n('i18n.post.available_in', lang);
-  const listFormat = new Intl.ListFormat(lang);
-
-  return `<span class="post-signpost__title">
-    ${availableIn}:
-    ${listFormat.format(languageLinks)}
-  </span>`;
+  return languages;
 };
+
+module.exports = {supportedLanguages};
