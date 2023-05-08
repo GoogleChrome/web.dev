@@ -15,6 +15,8 @@ tags:
   - web-vitals
 ---
 
+{% BrowserCompat 'api.PerformanceResourceTiming.responseStart' %}
+
 {% Aside %}
 Time to First Byte (TTFB) is a foundational metric for measuring connection setup time and web server responsiveness in both the lab and the field. It helps identify when a web server is too slow to respond to requests. In the case of navigation requests&mdash;that is, requests for an HTML document&mdash;it precedes every other meaningful loading performance metric.
 {% endAside %}
@@ -82,8 +84,6 @@ TTFB can be measured in [the lab](/user-centric-performance-metrics/#in-the-lab)
 - [WebPageTest](https://www.webpagetest.org/)
 
 ### Measure TTFB in JavaScript
-
-{% BrowserCompat 'api.PerformanceResourceTiming.responseStart' %}
 
 You can measure the TTFB of [navigation requests](https://developer.mozilla.org/docs/Web/API/Request/mode) in the browser with the [Navigation Timing API](https://developer.mozilla.org/docs/Web/API/Navigation_timing_API). The following example shows how to create a [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) that listens for a `navigation` entry and logs it to the console:
 

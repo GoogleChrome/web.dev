@@ -519,7 +519,7 @@ that are not utilizing the bfcache. For example, with an event:
 ```js
 window.addEventListener('pageshow', (event) => {
   // You can measure bfcache hit rate by tracking all bfcache restores and
-  // other back/forward navigations via a seperate event.
+  // other back/forward navigations via a separate event.
   const navigationType = performance.getEntriesByType('navigation')[0].type;
   if (event.persisted || navigationType == 'back_forward' ) {
     gtag('event', 'back_forward_navigation', {

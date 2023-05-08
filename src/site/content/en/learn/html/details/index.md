@@ -31,7 +31,7 @@ answer when the checkmark was checked. The CSS looked something like this:
 }
 ```
 
-Why the history? Disclosure widgets, such asaccordions, without JavaScript or form control hacks, are a relatively recent
+Why the history? Disclosure widgets, such as accordions, without JavaScript or form control hacks, are a relatively recent
 addition; the [`<details>`](https://developer.mozilla.org/docs/Web/HTML/Element/details) and [`<summary>`](https://developer.mozilla.org/docs/Web/HTML/Element/summary)
 elements have only been fully supported in all modern browsers since January 2020. You can now create functioning, albeit less
 than attractive, disclosure widgets using only semantic HTML. The `<details>` and `<summary>` elements are all you need: they are a built-in way to handle

@@ -90,14 +90,13 @@
           </div>
         {% endif %}
 
-        {% set languageListHtml %}{% LanguageList page.url, lang %}{% endset %}
-        {% if languageListHtml %}
         <div class="flow">
-          {{ languageListHtml | safe }}
+          {% include 'partials/language-list.njk' %}
         </div>
-        {% endif %}
 
-        {% SignPosts page.fileSlug %}
+        <div class="flow">
+          {% include 'partials/sign-post.njk' %}
+        </div>
 
         {% if authors %}
           {{ authorsMacro() }}
@@ -127,21 +126,7 @@
         {% endfor %}
       </nav>
 
-      <div class="text-size-0 color-mid-text">
-        <span>
-          {% if updated %}
-          {{ 'i18n.post.last_updated' | i18n(locale) }}: <time>{{ updated | prettyDate }}</time>
-          {% else %}
-          {{ 'i18n.post.last_updated' | i18n(locale) }}: <time>{{ date | prettyDate }}</time>
-          {% endif %}
-        </span>
-        —
-        <a
-          href="{{ page.inputPath | githubLink }}"
-        >
-          {{ 'i18n.post.improve_article' | i18n(locale) }}
-        </a>
-      </div>
+      {% include 'partials/post-credits.njk' %}
 
       {% if codelabs %}
         <div class="flow-space-size-2">

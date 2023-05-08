@@ -213,9 +213,11 @@ And there you go! To test this setup, let's whip up a tiny `my-module.cpp`:
     EMSCRIPTEN_BINDINGS(my_module) {
       function("sayHello", &say_hello);
     }
+```
 
-and an `index.html`:
+And an `index.html`:
 
+```html
     <!doctype html>
     <title>Emscripten + npm example</title>
     Open the console to see the output from the wasm module.

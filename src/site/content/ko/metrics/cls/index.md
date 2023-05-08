@@ -66,7 +66,7 @@ CLS는 페이지의 전체 수명 동안 발생하는 모든 [예기치 않은](
 
 ## 레이아웃 이동 상세 정보
 
-레이아웃 이동은 [Layout Instability API](https://developer.mozilla.org/docs/Web/CSS/writing-mode)가 정의하는 것으로, 뷰포트 내의 가시적 요소가 두 프레임 사이에서 시작 위치가 변경될 때마다(예: 기본 [쓰기 모드](https://github.com/WICG/layout-instability) 의 상단 및 왼쪽 위치) `layout-shift` 항목을 보고합니다. 그리고 이러한 요소는 *불안정 요소*로 간주됩니다.
+레이아웃 이동은 [Layout Instability API](https://github.com/WICG/layout-instability)가 정의하는 것으로, 뷰포트 내의 가시적 요소가 두 프레임 사이에서 시작 위치가 변경될 때마다(예: 기본 [쓰기 모드](https://developer.mozilla.org/docs/Web/CSS/writing-mode) 의 상단 및 왼쪽 위치) `layout-shift` 항목을 보고합니다. 그리고 이러한 요소는 *불안정 요소*로 간주됩니다.
 
 레이아웃 이동은 기존 요소가 시작 위치를 변경할 때만 발생합니다. 새 요소가 DOM에 추가되거나 기존 요소의 크기가 변경되면 변경으로 인해 다른 가시적 요소의 시작 위치가 변경되지 않는 한 레이아웃 이동으로 간주되지 않습니다.
 

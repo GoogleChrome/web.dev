@@ -16,8 +16,7 @@
 
 declare module 'webdev_analytics' {
   export declare const ids: {
-    UA: string;
-    GA4: string;
+    GTM: string;
   };
   export declare const dimensions: {
     SIGNED_IN: string;

@@ -6,7 +6,7 @@ authors:
   - philipwalton
   - tunetheweb
 date: 2020-05-05
-updated: 2022-03-24
+updated: 2023-05-04
 hero: image/admin/qqTKhxUFqdLXnST2OFWN.jpg
 alt: Optimize LCP banner
 description: |
@@ -223,7 +223,7 @@ For example, you can delay your LCP image via HTML if you set [`loading="lazy"`]
 Never lazy-load your LCP image, as that will always lead to unnecessary resource load delay, and will have a negative impact on LCP.
 {% endAside %}
 
-Even without lazy loading, images are not initially loaded with the highest priority by browsers as they are not render-blocking resources. You can hint to the browser as to which resources are most important via the [`fetchpriority`](/priority-hints/) attribute for resources that could benefit from a higher priority:
+Even without lazy loading, images are not initially loaded with the highest priority by browsers as they are not render-blocking resources. You can hint to the browser as to which resources are most important via the [`fetchpriority`](/fetch-priority/) attribute for resources that could benefit from a higher priority:
 
 ```html
 <img fetchpriority="high" src="/path/to/hero-image.webp">
@@ -357,7 +357,7 @@ While image CDNs are a great way to reduce resource load times, using a third-pa
 
 Even if you've reduced the size of your resource and the distance it has to travel, a resource can still take a long time to load if you're loading many other resources at the same time. This problem is known as _network contention_.
 
-If you've given your LCP resource a [high `fetchpriority`](/priority-hints/) and [started loading it as soon as possible](#1-eliminate-resource-load-delay) then the browser will do its best to prevent lower-priority resources from competing with it. However, if you're loading many resources with high `fetchpriority`, or if you're just loading a lot of resources in general, then it could affect how quickly the LCP resource loads.
+If you've given your LCP resource a [high `fetchpriority`](/fetch-priority/) and [started loading it as soon as possible](#1-eliminate-resource-load-delay) then the browser will do its best to prevent lower-priority resources from competing with it. However, if you're loading many resources with high `fetchpriority`, or if you're just loading a lot of resources in general, then it could affect how quickly the LCP resource loads.
 
 #### Eliminate the network time entirely
 
@@ -490,6 +490,13 @@ The [web-vitals library](https://github.com/GoogleChrome/web-vitals) includes th
 For those looking to implement their own solution, the [code for this is open source](https://github.com/GoogleChrome/web-vitals/blob/main/src/attribution/onLCP.ts) and is similar to above but with extra lofic for activation start.
 </p>
 {% endAside %}
+
+## Monitor LCP breakdown via the Web Vitals extension
+
+The [Web Vitals extension](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma) will [log the LCP time, LCP element, and these four sub-parts in the console logging](/debug-cwvs-with-web-vitals-extension/#lcp-debug-information), to easily allow you to see this breakdown.
+
+{% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/FEFEkgKuC6RxVh7MHmkn.png", alt="Screenshot of the console logging of the Web Vitals extension showing the LCP sub-part timings", width="800", height="239" %}
+
 
 ## Summary
 

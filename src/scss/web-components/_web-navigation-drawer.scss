@@ -59,14 +59,10 @@ web-navigation-drawer[open]::before {
 }
 
 web-navigation-drawer[open] [data-drawer-container],
-web-navigation-drawer:focus-within [data-drawer-container] {
+web-navigation-drawer[open]:focus-within [data-drawer-container] {
   transform: none;
 }
 
 web-navigation-drawer[animating] [data-drawer-container] {
-  transition: transform $global-transition-movement;
-}
-
-web-navigation-drawer[open][animating] [data-drawer-container] {
   transition: transform $global-transition-movement;
 }

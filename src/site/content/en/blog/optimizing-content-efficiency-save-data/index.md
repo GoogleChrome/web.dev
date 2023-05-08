@@ -119,7 +119,7 @@ Alternatively, the server can look for the advertised preferences in the
 `Save-Data` request header and return an alternate response &mdash; different
 markup, smaller images and video, and so on.
 
-Tip: If you use [PageSpeed for Apache or Nginx](/speed/pagespeed/module/) to
+Tip: If you use [PageSpeed for Apache or Nginx](https://developers.google.com/speed/pagespeed/module/) to
 optimize your pages, see [this
 discussion](https://github.com/pagespeed/mod_pagespeed/issues/1258) to learn how
 to enable `Save-Data` savings for your users.\_

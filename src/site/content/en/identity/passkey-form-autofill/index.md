@@ -5,7 +5,7 @@ subhead: Create a sign in experience that leverages passkeys while still accommo
 authors:
   - agektmr
 date: 2022-10-12
-updated: 2022-12-08
+updated: 2023-04-25
 hero: image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/n2fXJDSlefAg8EPLkqEr.jpg
 description: |
   Passkeys make a website's user accounts safer, simpler, easier to use and passwordless. This article discusses how  how a passwordless sign-in with passkeys should be designed while accommodating existing password users.
@@ -165,6 +165,31 @@ Fetch a challenge from the RP server that is required to call
   replay attacks. Make sure to generate a new challenge on every sign-in attempt 
   and disregard it after a certain duration or after a sign-in attempt fails to 
   validate. Consider it like a CSRF token.
+* **[`allowCredentials`](https://w3c.github.io/webauthn/#dom-publickeycredentialrequestoptions-allowcredentials)**:
+  An array of acceptable credentials for this authentication. Pass an empty
+  array to let the user select an available passkey from a list shown by the
+  browser.
+* **[`userVerification`](https://w3c.github.io/webauthn/#dom-publickeycredentialrequestoptions-userverification)**:
+  Indicates whether user verification using the device screen lock is
+  `"required"`, `"preferred"` or `"discouraged"`. The default is `"preferred"`,
+  which means the authenticator may skip user verification. Set this to
+  `"preferred"` or omit the property. 
+
+{% Aside 'caution' %}
+
+For requests with `userVerification` set to `"preferred"`, authenticators may
+skip the user verification check, for example if the device doesn't have any
+biometric sensors, the user hasn't set it up (no enrolled fingerprints), or
+if the sensor is temporarily unavailable (a laptop running with a closed
+display lid). The [UV bit in the authenticator data of the
+response](https://w3c.github.io/webauthn/#authdata-flags-uv) always indicates
+whether user verification was performed.
+
+If you'd like to always require a user verification, set `userVerification` to
+`"required"`. Don't forget to check that the UV flag is `true` on the server as
+well.
+
+{% endAside %}
 
 {% Aside %}
 
