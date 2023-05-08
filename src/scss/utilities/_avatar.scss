@@ -13,3 +13,8 @@
 .avatar[data-size='large'] > img {
   --avatar-size: 192px;
 }
+
+.avatar[data-size='medium'],
+.avatar[data-size='medium'] > img {
+  --avatar-size: 120px;
+}
