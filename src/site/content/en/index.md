@@ -95,19 +95,19 @@ themes:
         cardLayout: vertical
         column: '1'
         theme: dark
-      - title: Web Vitals patterns
-        description: This collection includes patterns that are often tricky to implement without hurting your Core Web Vitals scores..
+      - title: How to Optimize INP
+        description: Learn how to optimize for the Interaction to Next Paint metric.
         eyebrow:
           icon: pattern
           text: Pattern
-        url: /patterns/web-vitals-patterns/
+        url: /how-to-optimize-inp/
         cardLayout: horizontal
         column: '2'
       - url: /better-youtube-web-part1/
         eyebrow:
           icon: blog
           text: Case Study
-      - url: /optimize-inp/
+      - url: /debug-cwvs-with-web-vitals-extension/
         eyebrow:
           icon: blog
           text: Blog
