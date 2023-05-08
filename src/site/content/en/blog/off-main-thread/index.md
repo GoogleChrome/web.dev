@@ -7,6 +7,9 @@ description: |
   The browser's main thread is incredibly overworked. By using web workers
   to shift code off the main thread, you can significantly improve
   your app's reliability and user experience.
+hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/LwqqWsiDgCI6DWSvIBx9.jpg
+thumbnail: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/0g1FW2vXmRc30u7BtWRc.jpg
+alt: A monochrome photo of a railroad junction.
 
 # A list of authors. Supports more than one.
 authors:
@@ -19,7 +22,7 @@ updated: 2022-11-29
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - performance
-  - test-post
+  - web-vitals
 ---
 
 In the past 20&nbsp;years,
@@ -331,3 +334,5 @@ Also, OMT has secondary benefits:
 Web workers don't have to be scary.
 Tools like Comlink are taking the work out of workers
 and making them a viable choice for a wide range of web applications.
+
+_Hero image from [Unsplash](https://unsplash.com/), by [James Peacock](https://unsplash.com/@jimmyp9751)._
