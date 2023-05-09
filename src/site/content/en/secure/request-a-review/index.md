@@ -146,11 +146,6 @@ caution to protect users.
 #### If your request was approved
 
 Verify that your site works as expected: pages load properly and links are clickable. To keep your site safe, we encourage all site owners to implement the maintenance and security plan created in [Clean and maintain your site](/secure/clean-and-maintain-your-site/).
-  
-For more information, consider the following resources from [StopBadware](https://www.stopbadware.org):
-
-* [Preventing badware: basics](https://www.stopbadware.org/prevent-badware-basics)
-* [Additional resources: hacked sites](https://www.stopbadware.org/hacked-sites-resources)
 
 #### If your request was not approved
 

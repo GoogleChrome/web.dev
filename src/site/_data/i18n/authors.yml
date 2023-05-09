@@ -362,7 +362,12 @@ paulkinlan:
   title:
     en: Paul Kinlan
   description:
-    en: Paul is a Developer Advocate
+    en: Developer Advocate
+  bio:
+    en: 
+      - I lead the Chrome Developer Relations team at Google.
+      - We want people to have the best experience possible on the web without having to install a native app or produce content in a walled garden.
+      - Our team tries to make it easier for developers to build on the web by supporting every Chrome release, creating great content to support developers on web.dev, contributing to MDN, helping to improve browser compatibility, and some of the best developer tools like Lighthouse, Workbox, Squoosh to name just a few.
 
 dalecurtis:
   title:
