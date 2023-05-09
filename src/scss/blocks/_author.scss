@@ -107,7 +107,7 @@
   }
 }
 
-.author-profile .switcher {
+.author-profile .wrapper > .switcher {
   gap: 0.25rem;
 
   .headline {
@@ -137,7 +137,15 @@
   }
 
   .card {
-    max-width: 25rem;
+    max-width: 37rem;
+
+    @media (min-width: 625px) {
+      max-width: calc(50% - 15px);
+    }
+
+    @include media-query('lg') {
+      max-width: 25rem;
+    }
 
     &__content {
       margin: 20px 0 10px;
