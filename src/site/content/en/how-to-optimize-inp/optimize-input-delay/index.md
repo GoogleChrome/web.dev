@@ -5,7 +5,7 @@ subhead: |
   Find out what input delay is, and learn techniques to reduce it for faster interactivity.
 authors:
   - jlwagner
-date: 2023-05-10
+date: 2023-05-09
 hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/97AJCstKrpjMHS2hHzdn.jpg
 thumbnail: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/vKO5f6HIbL9tMBXfuXlk.jpg
 alt: An LED road construction sign reading "Expect Delays".

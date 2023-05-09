@@ -5,7 +5,7 @@ subhead: |
   Rendering HTML with JavaScript is different than rendering HTML that's sent by the server—and that can affect performance. Learn the difference in this guide, and what you can do to preserve your website's rendering performance—especially where interactions are concerned.
 authors:
   - jlwagner
-date: 2023-05-10
+date: 2023-05-09
 hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/lRR1YOfuLD8yE8GFAtZI.jpg
 thumbnail: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/A4ghJlLCYgxyLNtzm12k.jpg
 alt: A photo of a monitor displaying HTML source code.

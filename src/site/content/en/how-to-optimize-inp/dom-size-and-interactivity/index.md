@@ -5,7 +5,7 @@ subhead: |
   Large DOM sizes have more of an effect on interactivity than you might think. This guide explains why, and what you can do.
 authors:
   - jlwagner
-date: 2023-05-10
+date: 2023-05-09
 hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/pUkrnwlKeVr2PXK8nfyY.jpg
 Thumbnail: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/aOStgq7HBKxGMfe8XpXt.jpg
 alt: A photo of numerous crates, stacked loosely atop one another in rows.

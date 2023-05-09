@@ -5,7 +5,7 @@ subhead: |
   When loading scripts, it takes time for the browser to evaluate them prior to execution, which can cause long tasks. Learn how script evaluation works, and what you can do to keep it from causing long tasks during page load.
 authors:
   - jlwagner
-date: 2023-05-10
+date: 2023-05-09
 hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/tVIXQnOvLFKAlT5FbFXu.jpg
 thumbnail: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/I9YhU611EE54POOUJV9l.jpg
 alt: A close-up photo of a monitor displaying minified JavaScript code.

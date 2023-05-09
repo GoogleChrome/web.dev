@@ -5,7 +5,7 @@ subhead: |
   Learn how to take your field data into the lab to reproduce and identify the causes behind slow interactions.
 authors:
   - jlwagner
-date: 2023-05-10
+date: 2023-05-09
 hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/D4fgU9geyo1xm2vd9q4J.jpg
 thumbnail: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/qgattSatrRyStFVkwakj.jpg
 alt: A photo of a dropper placing a purple liquid into various collection tubes.
