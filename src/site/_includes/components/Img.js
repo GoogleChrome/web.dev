@@ -19,7 +19,21 @@ function MetaImg(args) {
     args.params.auto = 'format';
   }
 
-  return Img(args);
+  const image = Img(args);
+
+  if (args.darkSrc) {
+    const darkArgs = { ...args, src: args.darkSrc };
+    const darkImage = Img(darkArgs);
+
+    return `
+      <picture>
+        <source srcset="${darkImage}" media="(prefers-color-scheme: dark)">
+        ${image}
+      </picture>
+    `;
+  }
+
+  return image;
 }
 
 /**
