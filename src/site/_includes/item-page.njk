@@ -95,10 +95,12 @@ eleventyComputed:
 
             {% set bio = renderData.bio | i18n(locale, '') %}
             {% if bio %}
-              {% Details %}
-              {% DetailsSummary %} Bio {% endDetailsSummary %}
-                {{ renderBio(bio) }}
-              {% endDetails %}
+              <details>
+                <summary>
+                  Bio
+                </summary>
+                {{ renderBio(bio) | safe }}
+              </details>
 
               <div class="author-profile__bio"> {{ renderBio(bio) }} </div>
             {% endif %}
