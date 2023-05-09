@@ -33,14 +33,12 @@ export class FilteredTable extends BaseElement {
   }
 
   onStateChanged() {
-    requestAnimationFrame(() => {
       const rows = this.querySelectorAll('filtered-element:not([hidden])');
       if (rows.length === 0) {
         this.placeholder?.removeAttribute('hidden');
         return;
       }
       this.placeholder?.setAttribute('hidden', '');
-    });
   }
 }
 customElements.define('filtered-table', FilteredTable);
