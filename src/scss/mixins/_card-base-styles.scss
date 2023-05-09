@@ -29,11 +29,11 @@
 
   &:link:hover {
     box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 10%),
-      0px 8px 8px 1px rgb(0 0 0 / 7%), 0px 3px 8px 2px rgb(0 0 0 / 8%),
-      0px 0px 0px 2px var(--color-focus-ring);
+    0px 8px 8px 1px rgb(0 0 0 / 7%), 0px 3px 8px 2px rgb(0 0 0 / 8%),
+    0px 0px 0px 2px var(--color-focus-ring);
     transition: transform $global-transition-movement,
-      box-shadow $global-transition-movement, background $global-transition-fade,
-      border-color $global-transition-fade;
+    box-shadow $global-transition-movement, background $global-transition-fade,
+    border-color $global-transition-fade;
     border-color: get-utility-value('bg', 'mid-bg');
   }
 
@@ -46,5 +46,26 @@
     height: 15rem;
     object-fit: cover;
     margin-inline: auto;
+  }
+}
+
+@mixin card-theme-styles($theme) {
+  background-color: $theme;
+
+  svg {
+    fill: get-color('shades-light-bright');
+  }
+
+  p,
+  span,
+  h4,
+  h3 {
+    color: get-color('shades-light-bright');
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: rgba($theme, .9);
   }
 }

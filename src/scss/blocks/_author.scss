@@ -1,6 +1,6 @@
 .author {
   display: flex;
-  gap: 1em;
+  column-gap: 1em;
   align-items: flex-start;
 }
 
@@ -58,7 +58,7 @@
   &__bio {
     display: none;
   }
-  
+
   &__detail {
     display: flex;
     flex-direction: column-reverse;
@@ -86,17 +86,17 @@
         height: 120px;
       }
     }
-  
+
     &__detail {
       display: flex;
       flex-direction: column;
       margin-top: 0 !important;
-  
+
       > details {
         display: none;
       }
     }
-  
+
     &__socials {
       margin: 1.25rem 0 1rem;
     }
@@ -108,19 +108,20 @@
 }
 
 .author-profile .wrapper > .switcher {
-  gap: 0.25rem;
+  // sass-lint:disable-block border-zero
+  column-gap: 0.25rem;
 
   .headline {
     min-width: 100%;
   }
 
   @include media-query('md') {
-    gap: 3rem;
+    column-gap: 3rem;
   }
 
   @include media-query('lg') {
-    gap: 6.25rem;
-  
+    column-gap: 6.25rem;
+
     .headline {
       min-width: 60%;
     }
@@ -137,6 +138,7 @@
   }
 
   .card {
+    @include card-base-styles();
     max-width: 37rem;
 
     @media (min-width: 625px) {
@@ -153,6 +155,26 @@
       @include media-query('md') {
         margin: 25px 0;
       }
+    }
+
+    &.bg-dark {
+      @include card-theme-styles(#26373d);
+    }
+
+    &.bg-quaternary {
+      @include card-theme-styles(get-color('core-quaternary'));
+    }
+
+    &.bg-tertiary {
+      @include card-theme-styles(get-color('core-tertiary'));
+    }
+
+    &.bg-pink {
+      @include card-theme-styles(get-color('core-secondary-shade'));
+    }
+
+    &.bg-blue {
+      @include card-theme-styles(get-color('core-primary'));
     }
   }
 
