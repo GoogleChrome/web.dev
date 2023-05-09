@@ -46,7 +46,7 @@ more time you can also record results from other tools:
   Make sure to test your site on devices representative of your users.
 - [WebPagetest](https://www.webpagetest.org/easy): performance for different locations
   and connection types, caching, time to first byte, CDN usage.
-- [Pagespeed Insights](/speed/pagespeed/insights/): load performance, data cost and
+- [Pagespeed Insights](https://developers.google.com/speed/pagespeed/insights/): load performance, data cost and
   resource usage, including Chrome User Experience report data highlighting real-world performance
   statistics.
 - [Speed Scorecard and Impact Calculator](https://www.thinkwithgoogle.com/feature/mobile/): compare site speed
@@ -63,10 +63,10 @@ runs performance tests from multiple locations globally using real browsers with
 to provide detailed metrics and optimization advice.
 
 <ul>
-<li>Leverage <a href="(https://www.webpagetest.org/easy">webpagetest.org/easy</a> to quickly 
+<li>Leverage <a href="(https://www.webpagetest.org/easy">webpagetest.org/easy</a> to quickly
 simulate differences between network connection types on mobile</li>
 <li>Generate a Lighthouse audit and report with every WebPagetest trace.</li>
-<li> Measure site on first visit as well as for repeat views — for example: to see how much 
+<li> Measure site on first visit as well as for repeat views — for example: to see how much
 service worker caching helps.</li>
 <li>Visually compare multiple sites and get filmstrip and waterfall comparisons.</li>
 </ul>

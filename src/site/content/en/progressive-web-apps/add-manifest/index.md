@@ -23,7 +23,7 @@ Progressive Web App and how it should behave when installed on the user's
 desktop or mobile device. A typical manifest file includes the app name, the
 icons the app should use, and the URL that should be opened when the
 app is launched, among other things.
-{% BrowserCompat 'html.manifest' %}
+{% BrowserCompat 'html.manifest.name' %}
 
 ## Create the manifest file {: #create }
 

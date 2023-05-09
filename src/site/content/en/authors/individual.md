@@ -9,6 +9,7 @@ description: Our latest news, updates, and stories for developers
 renderData:
   title: "{{ paged.overrideTitle or paged.title | i18n(locale) or title }}"
   description: "{{ paged.description | i18n(locale) or description }}"
+  bio: "{{ paged.bio }}"
   rss: "{{ paged.href }}feed.xml"
   hero: "{{ paged.data.hero }}"
 pagination:

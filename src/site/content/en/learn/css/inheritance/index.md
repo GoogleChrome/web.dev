@@ -303,7 +303,7 @@ Going back to the above example,
 what happens if the global `p` styles get an additional few properties?
 Only the rule that was set for `margin` and `color` will apply.
 
-```css/5-6
+```css/4-5
 /* Global color styles for paragraph in authored CSS */
 p {
 	margin-top: 2em;
@@ -331,7 +331,7 @@ If you change the `aside p` rule to `all: unset` instead,
 it doesn't matter what global styles are applied to `p` in the future,
 they will always be unset.
 
-```css/2-3
+```css/3
 aside p {
 	margin: unset;
 	color: unset;

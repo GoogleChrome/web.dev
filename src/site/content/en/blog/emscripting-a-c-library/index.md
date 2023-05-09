@@ -158,7 +158,7 @@ things. Emscripten provides most of these features, although there are some
 Let's go back to my original goal: compiling an encoder for WebP to Wasm. The
 source for the WebP codec is written in C and available on
 [GitHub](https://github.com/webmproject/libwebp) as well as some extensive
-[API documentation](/speed/webp/docs/api). That's a pretty good starting point.
+[API documentation](https://developers.google.com/speed/webp/docs/api). That's a pretty good starting point.
 
 ```bash
     $ git clone https://github.com/webmproject/libwebp
@@ -187,7 +187,7 @@ libwebp that it needs. I'm going to be honest: I just gave it **all** the C
 files I could find and relied on the compiler to strip out everything that was
 unnecessary. It seemed to work brilliantly!
 
-```c
+```bash
     $ emcc -O3 -s WASM=1 -s EXTRA_EXPORTED_RUNTIME_METHODS='["cwrap"]' \
         -I libwebp \
         webp.c \
@@ -231,7 +231,7 @@ image would be more impressive, right? Let's do that, then.
 
 The first question we have to answer is: How do we get the image into Wasm land?
 Looking at the
-[encoding API of libwebp](/speed/webp/docs/api#simple_encoding_api), it expects
+[encoding API of libwebp](https://developers.google.com/speed/webp/docs/api#simple_encoding_api), it expects
 an array of bytes in RGB, RGBA, BGR or BGRA. Luckily, the Canvas API has
 [`getImageData()`](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/getImageData),
 that gives us an
@@ -296,7 +296,7 @@ api.destroy_buffer(p);
 
 The image is now available in Wasm land. It is time to call the WebP encoder to
 do its job! Looking at the
-[WebP documentation](/speed/webp/docs/api#simple_encoding_api), `WebPEncodeRGBA`
+[WebP documentation](https://developers.google.com/speed/webp/docs/api#simple_encoding_api), `WebPEncodeRGBA`
 seems like a perfect fit. The function takes a pointer to the input image and
 its dimensions, as well as a quality option between 0 and 100. It also allocates
 an output buffer for us, that we need to free using `WebPFree()` once we are

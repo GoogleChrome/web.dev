@@ -45,7 +45,5 @@ tags:
 - [Edge](https://docs.microsoft.com/microsoft-edge/progressive-web-apps#requirements)
 - [파이어폭스](https://developer.mozilla.org/docs/Web/Progressive_web_apps/Installable_PWAs)
 - [오페라](https://dev.opera.com/articles/installable-web-apps/)
-- [삼성인터넷](https://hub.samsunginter.net/docs/ambient-badging/)
-- [UC 브라우저](https://plus.ucweb.com/docs/pwa/docs-en/zvrh56)
 
 {% Aside %} Android에서 웹 앱 매니페스트에 `related_applications` 및 `"prefer_related_applications": true` 포함되어 있으면 사용자는 Google Play 스토어로 이동하고 [대신 지정된 Android 앱을 설치하라는 메시지가 표시](https://developer.chrome.com/blog/app-install-banners-native/)됩니다. {% endAside %}
