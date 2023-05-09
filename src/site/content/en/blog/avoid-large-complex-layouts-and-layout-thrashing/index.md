@@ -71,7 +71,7 @@ Layout is almost always scoped to the entire document. If you have a lot of elem
 If it's not possible to avoid layout then the key is to once again use Chrome DevTools to see how long it's taking, and determine if layout is the cause of a bottleneck. Firstly, open DevTools, go to the Timeline tab, hit record and interact with your site. When you stop recording you'll see a breakdown of how your site performed:
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/HlHTc64DGtiGxcnGhWxP.png", alt="DevTools showing a long time in Layout", width="800", height="597" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/HlHTc64DGtiGxcnGhWxP.png", alt="DevTools showing a long time in Layout.", width="800", height="597" %}
 </figure>
 
 When digging into the trace in the above example, we see that over 28 milliseconds is spent inside layout for each frame, which, when we have 16 milliseconds to get a frame on screen in an animation, is far too high. You can also see that DevTools will tell you the tree size (1,618 elements in this case), and how many nodes were in need of layout (5 in this case).
@@ -87,7 +87,7 @@ Keep in mind that the general advice here is to avoid layout _whenever possible_
 Shipping a frame to screen has this order:
 
 <figure>
-  {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/mSZbp9o13Mub4fq8PWzT.jpg", alt="Using flexbox as layout", width="800", height="122" %}
+  {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/mSZbp9o13Mub4fq8PWzT.jpg", alt="Using flexbox as layout.", width="800", height="122" %}
 </figure>
 
 First the JavaScript runs, _then_ style calculations, _then_ layout. It is, however, possible to force a browser to perform layout earlier with JavaScript. This is called **forced synchronous layout**.
