@@ -3,3 +3,4 @@
  */
 
 import '../components/base';
+import '../utils/image-switcher';

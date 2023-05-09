@@ -15,5 +15,7 @@ logo: '/images/courses/accessibility/logo.svg'
 background: '/images/courses/accessibility/background.svg'
 # This provides the cover image for the card on /learn/
 card: '/images/courses/accessibility/card.svg'
+# This provides the dark cover image for the card on /learn/
+cardDark: '/images/courses/accessibility/card-dark.svg'
 # This is used for the social media thumbnail.
 thumbnail: 'image/VbsHyyQopiec0718rMq2kTE1hke2/03dCg7PsCbcwblqRHYMB.png'

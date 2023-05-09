@@ -15,6 +15,8 @@ logo: '/images/courses/images/logo.svg'
 background: '/images/courses/images/background.svg'
 # This provides the cover image for the card on /learn/
 card: '/images/courses/images/card.svg'
+# This provides the dark cover image for the card on /learn/
+cardDark: '/images/courses/images/card-dark.svg'
 # Abstract decorative image that's used in some card contexts
 decor: '/images/courses/images/card-decor.svg'
 # This is used for the social media thumbnail.

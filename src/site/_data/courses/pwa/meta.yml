@@ -15,5 +15,7 @@ logo: '/images/courses/pwa/logo.svg'
 background: '/images/courses/pwa/background.svg'
 # This provides the cover image for the card on /learn/
 card: '/images/courses/pwa/card.svg'
+# This provides the dark cover image for the card on /learn/
+cardDark: '/images/courses/pwa/card-dark.svg'
 # This is used for the social media thumbnail.
 thumbnail: 'image/kheDArv5csY6rvQUJDbWRscckLr1/NUc0UUPjUOXpaLvvEz1H.png'
