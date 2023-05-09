@@ -13,7 +13,7 @@ pageScripts:
         <div>
           <span aria-hidden="true" class="hero__eyebrow">{{ intro.eyebrow }}</span>
           <div class="hero__content flow">
-            <img fetchpriority="high" src="{{ intro.image }}" alt="" aria-hidden="true" class="hero__decor" width="{{ intro.imageWidth }}" height="{{ intro.imageHeight }}" />
+            <img fetchpriority="high" src="{{ intro.image }}" data-src-light="{{ intro.imageLight }}" data-src-dark="{{ intro.imageDark }}" alt="" aria-hidden="true" class="hero__decor" width="{{ intro.imageWidth }}" height="{{ intro.imageHeight }}" />
             <h1 class="hero__title">{{ intro.title }}</h1>
             {{ intro.summary | md | safe }}
             <a class="button" data-type="primary" href="{{ intro.buttonUrl }}">{{ intro.buttonText }}</a>
@@ -135,3 +135,33 @@ pageScripts:
 
   {% include 'partials/subscribe.njk' %}
 </div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const heroDecor = document.querySelector('.hero__decor');
+    if (heroDecor) {
+      const imageLight = heroDecor.getAttribute('data-src-light');
+      const imageDark = heroDecor.getAttribute('data-src-dark');
+      const themeToggle = document.getElementById('theme-toggle');
+
+      const updateImageSrc = () => {
+        const userColorScheme = localStorage.getItem("user-color-scheme");
+        const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const isDarkMode = themeToggle.checked || userColorScheme === "dark" || (!userColorScheme && prefersDarkScheme);
+
+        if (isDarkMode) {
+          heroDecor.src = imageDark;
+        } else {
+          heroDecor.src = imageLight;
+        }
+      };
+
+      updateImageSrc();
+
+      themeToggle.addEventListener('change', () => {
+        const userColorScheme = themeToggle.checked ? 'dark' : 'light';
+        localStorage.setItem("user-color-scheme", userColorScheme);
+        updateImageSrc();
+      });
+    }
+  });
+</script>

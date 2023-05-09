@@ -8,7 +8,8 @@ intro:
     Guidance to build modern web experiences that work on any browser.
   buttonText: 'About web.dev'
   buttonUrl: '/about/'
-  image: 'https://web-dev.imgix.net/image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/zrBPJq27O4Hs8haszVnK.svg'
+  imageLight: 'https://web-dev.imgix.net/image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/zrBPJq27O4Hs8haszVnK.svg'
+  imageDark: 'http://127.0.0.1:8080/images/collections/landing-hero-illustraiton-dark.svg'
   imageWidth: '333'
   imageHeight: '240'
 
