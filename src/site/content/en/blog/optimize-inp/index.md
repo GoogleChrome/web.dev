@@ -23,7 +23,7 @@ tags:
 Interaction to Next Paint (INP) is a [pending](/vitals/#pending) Core Web Vital metric that will [replace First Input Delay (FID)](/inp-cwv/) in March 2024.
 {% endAside %}
 
-[Interaction to Next Paint (INP)](/inp/) is an experimental metric that assesses a page's overall responsiveness to user interactions by observing the latency of all [qualifying interactions](/inp/#whats-in-an-interaction) that occur throughout the lifespan of a user's visit to a page. The final INP value is the longest interaction observed (sometimes ignoring outliers).
+[Interaction to Next Paint (INP)](/inp/) is a [pending](/vitals/#pending) Core Web Vital metric that assesses a page's overall responsiveness to user interactions by observing the latency of all [qualifying interactions](/inp/#whats-in-an-interaction) that occur throughout the lifespan of a user's visit to a page. The final INP value is the longest interaction observed (sometimes ignoring outliers).
 
 To provide a good user experience, websites should strive to have an Interaction to Next Paint of **200 milliseconds or less**. To ensure you're hitting this target for most of your users, a good threshold to measure is the **75th percentile of page loads**, segmented across mobile and desktop devices.
 
