@@ -52,7 +52,11 @@
   }
 
   &__socials {
-    margin: 2rem 0;
+    margin: 2rem 0 1rem;
+
+    @media screen and (min-width: 617px) {
+      justify-content: 2rem 0;
+    }
   }
 
   &__bio {
@@ -108,7 +112,7 @@
 }
 
 .author-profile .wrapper > .switcher {
-  column-gap: 0.25rem;
+  column-gap: 0;
 
   .headline {
     min-width: 100%;
@@ -123,28 +127,29 @@
   }
 
   @media screen and (min-width: 1280px) {
-    column-gap: 6.25rem;
-
     .headline {
-      min-width: 60%;
+      min-width: 65%;
     }
   }
 }
 
 .author-profile .author-featured {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
+
+  @media screen and (min-width: 925px) {
+    justify-content: flex-end;
+  }
 
   .card {
     @include card-base-styles();
     flex-flow: column-reverse;
-    max-width: 37rem;
+    width: 100%;
+    max-width: 100%;
 
     @media screen and (min-width: 617px) and (max-width: 924px) {
       flex-flow: row-reverse;
       justify-content: space-between;
-      margin-top: 20px;
-      max-width: 100%;
     }
 
     @media screen and (min-width: 925px) {
