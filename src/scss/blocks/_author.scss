@@ -132,6 +132,9 @@
 }
 
 .author-profile .author-featured {
+  display: flex;
+  justify-content: flex-end;
+
   .card {
     @include card-base-styles();
     flex-flow: column-reverse;
@@ -145,6 +148,7 @@
     }
 
     @media screen and (min-width: 925px) {
+      align-items: flex-end;
       flex-flow: column;
       max-width: 25rem;
     }
