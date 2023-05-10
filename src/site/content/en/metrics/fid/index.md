@@ -16,7 +16,7 @@ tags:
 {% BrowserCompat 'api.PerformanceEventTiming' %}
 
 {% Aside %}
-  First Input Delay (FID) is an important, [stable](/vitals/#stable) Core Web Vital metric for measuring load responsiveness because it quantifies the experience users feel when trying to interact with unresponsive pages—a low FID helps ensure that the page is usable. FID will be [replaced by Interaction to Next Paint (INP)](/inp-cwv/) as a Core Web Vital in March 2024.
+  First Input Delay (FID) is the [stable](/vitals/#stable) Core Web Vital metric for measuring load responsiveness because it quantifies the experience users feel when trying to interact with unresponsive pages—a low FID helps ensure that the page is usable. FID will be [replaced by Interaction to Next Paint (INP)](/inp-cwv/) as a Core Web Vital in March 2024.
 {% endAside %}
 
 We all know how important it is to make a good first impression. It's important
