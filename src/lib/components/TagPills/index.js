@@ -56,6 +56,16 @@ export class TagPillList extends BaseElement {
     this.items = items;
   }
 
+  _onKeydownPill(e, item) {
+    if (e.code !== 'Tab') {
+      e.preventDefault();
+    }
+
+    if (e.code === 'Enter' || e.code === 'Backspace') {
+      removeEntry(item.name, item);
+    }
+  }
+
   _onClickPill(item) {
     removeEntry(item.name, item);
   }
@@ -72,7 +82,9 @@ export class TagPillList extends BaseElement {
             class="surface color-blue-medium hairline rounded-lg tag-pill type--label display-inline-flex align-center "
             data-name="${item.name}"
             data-value="${item.value}"
+            tabindex="0"
             @click="${() => this._onClickPill(item)}"
+            @keydown="${(e) => this._onKeydownPill(e, item)}"
           >
             ${item.label}
             <svg

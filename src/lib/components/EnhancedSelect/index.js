@@ -186,31 +186,34 @@ export class EnhancedSelect extends BaseElement {
           class="enhanced-select__options"
           @keydown="${this.handleListKeydown}"
         >
-          ${this.options.map((option) => {
-            const selected = this.value?.includes(option.value);
-
-            return html`
-              <li
-                class="width-full gap-bottom-100 display-flex align-center justify-content-between"
-                id="${option.id}"
-                tabindex="0"
-                @click="${(event) => {
-                  this.handleSelection(event);
-                }}"
-                ?selected="${selected}"
-              >
-                <input
-                  type="checkbox"
-                  .value="${option.value}"
-                  .checked="${selected}"
-                />
-                <label for="${option.id}">${option.label}</label>
-              </li>
-            `;
-          })}
+          ${this._renderOptions()}
         </ul>
       </div>
     `;
+  }
+
+  _renderOptions() {
+    return this.options.map((option) => {
+      const selected = this.value?.includes(option.value);
+
+      return html`
+        <li
+          class="width-full gap-bottom-100 display-flex align-center justify-content-between"
+          id="${option.id}"
+          tabindex="0"
+          @click="${(e) => this.handleSelection(e)}"
+          @keydown="${(e) => this._onKeydownCheckbox(e)}"
+          ?selected="${selected}"
+        >
+          <input
+            type="checkbox"
+            .value="${option.value}"
+            .checked="${selected}"
+          />
+          <label for="${option.id}">${option.label}</label>
+        </li>
+      `;
+    });
   }
 
   /**
@@ -273,6 +276,16 @@ export class EnhancedSelect extends BaseElement {
 
   handleLabelClick() {
     this.toggleOpen();
+  }
+
+  _onKeydownCheckbox(e) {
+    if (e.code !== 'Tab') {
+      e.preventDefault();
+    }
+
+    if (e.code === 'enter' || e.code === 'escape') {
+      this.handleSelection(e);
+    }
   }
 
   /**

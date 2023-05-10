@@ -117,6 +117,7 @@ class CheckboxGroup extends BaseElement {
       <span
         class="checkbox-group__mass-select"
         @click="${this._handleMassSelect}"
+        @keydown="${this._onKeydownMassSelect}"
       >
         ${this.allSelected ? this.i18n.reset : this.i18n.select_all}
       </span>
@@ -137,6 +138,7 @@ class CheckboxGroup extends BaseElement {
       <span
         class="checkbox-group__show-more"
         @click="${this._handleShowMore}"
+        @keydown="{${this._onKeydownShowMore()}}"
       >
         <svg
           width="14"
@@ -171,6 +173,26 @@ class CheckboxGroup extends BaseElement {
         value: checkbox.value,
       }));
     setFilter(this.name, checked);
+  }
+
+  _onKeydownShowMore(e) {
+    if (e.code !== 'Tab') {
+      e.preventDefault();
+    }
+
+    if (e.code === 'Enter') {
+      this._handleShowMore(e);
+    }
+  }
+
+  _onKeydownMassSelect(e) {
+    if (e.code !== 'Tab') {
+      e.preventDefault();
+    }
+
+    if (e.code === 'Enter') {
+      this._handleMassSelect(e);
+    }
   }
 
   /**

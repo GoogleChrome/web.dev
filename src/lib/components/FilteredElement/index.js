@@ -59,7 +59,7 @@ export class FilteredElement extends BaseElement {
     // Remove any empty filter arrays
     for (const key in activeFilters) {
       if (
-        activeFilters.hasOwnProperty(key) &&
+        Object.prototype.hasOwnProperty.call(activeFilters, key) &&
         activeFilters[key].length === 0
       ) {
         delete activeFilters[key];
@@ -79,7 +79,6 @@ export class FilteredElement extends BaseElement {
     for (const [filter, filterValues] of Object.entries(activeFilters)) {
       const values = filterValues.map((value) => value.value);
       if (values.includes(this.filters[filter])) {
-        console.log('HERE');
         this.hidden = false;
       }
     }

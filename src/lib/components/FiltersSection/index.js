@@ -22,7 +22,6 @@ import {BaseElement} from '../BaseElement';
 import {clearFilters} from '../../actions';
 
 export class FiltersSection extends BaseElement {
-
   constructor() {
     super();
   }
@@ -49,7 +48,6 @@ export class FiltersSection extends BaseElement {
   resetFilters() {
     clearFilters();
   }
-
 }
 
 customElements.define('filters-section', FiltersSection);
