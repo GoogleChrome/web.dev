@@ -437,7 +437,7 @@ details summary {
   font-size: get-size('size-2');
   list-style: none;
   cursor: pointer;
-  padding-right: get-space('size-1'); // Prevent overlap with ::before element
+  padding-right: 28px; // Prevent overlap with ::before element
 
   @include apply-utility('color', 'action-text');
   @include apply-utility('weight', 'regular');
@@ -725,6 +725,7 @@ video,
 @import 'blocks/audio-player';
 @import 'blocks/author';
 @import 'blocks/banner';
+@import 'blocks/baseline';
 @import 'blocks/brand';
 @import 'blocks/breadcrumbs';
 @import 'blocks/button';

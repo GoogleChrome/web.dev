@@ -1,0 +1,66 @@
+.baseline {
+  border: 1px solid get-color('state-good');
+  border-radius: $global-radius-base;
+  padding: $global-gutter;
+
+
+  summary::before {
+    background-color: transparent;
+    border: none;
+  }
+
+  summary::after {
+    color: get-color('state-good');
+  }
+
+  summary:hover::before,
+  summary:focus::before {
+    background: get-color('state-good-bright');
+    outline: none;
+  }
+
+  &__title {
+    display: flex;
+    gap: 0.5em;
+  }
+
+  &__icon {
+    display: inline-block;
+    vertical-align: sub;
+  }
+
+  &__keyword {
+    font-weight: 500;
+  }
+
+  &__browser {
+    background: get-color('state-good-bright');
+    padding: 0.4rem;
+    border-radius: 1.4rem;
+    margin-inline-end: 8px;
+
+    img {
+      width: 1.4rem;
+      height: 1.4rem;
+      background-color: transparent;
+      display: inline-block;
+    vertical-align: sub;
+    }
+
+    img + img {
+      margin-left: 0.4rem;
+    }
+  }
+
+  a {
+    text-transform: uppercase;
+    letter-spacing: .03ch;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
