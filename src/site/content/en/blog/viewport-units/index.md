@@ -10,6 +10,7 @@ description: >
 date: 2022-11-29
 hero: image/AeNB0cHNDkYPUYzDuv8gInYA9rY2/3ZKf0cQWs0eESL5WZzb0.png
 alt: Visualization of the small viewport (left) and large viewport (right).
+is_baseline: true
 tags:
   - blog
   - css

@@ -7,6 +7,7 @@ description: >
 date: 2022-08-24
 hero: image/kheDArv5csY6rvQUJDbWRscckLr1/NqMw5qZ6sdS1UEG2Wx5u.png
 alt: A list showing two items with different color decorations. 
+is_baseline: true
 tags:
   - blog
   - css
