@@ -62,8 +62,6 @@ Once redBus had a system in place for tracking INP, they were able to analyze th
 
 When users search for fares on the redBus website, they can change the date on the search page to filter selected fares for the desired destination. The interaction to change the date on this page was slow, and was a cause of poor INP.
 
-**TODO: INSERT GIF**
-
 Additionally, when a user scrolls through fares, additional fares are lazy-loaded from the API. [Though scrolling itself isn't factored in how INP is measured](/inp/#whats-in-an-interaction), the `scroll` event listener itself schedules a lot of work that must run on the main thread. This work was causing contention on the main thread that increased interaction latency, leading to poor INP on the search page.
 
 <figure>
