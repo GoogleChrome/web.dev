@@ -1,0 +1,42 @@
+{
+  "slug": "how-to-optimize-inp",
+  "cover": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/1AtWWHLH0bovMgv44FBU.svg",
+  "title": "i18n.paths.how_to_optimize_inp.title",
+  "updated": "May 10, 2023",
+  "description": "i18n.paths.how_to_optimize_inp.description",
+  "overview": "i18n.paths.how_to_optimize_inp.overview",
+  "topics": [
+    {
+      "title": "i18n.paths.how_to_optimize_inp.topics.familiarize",
+      "pathItems": [
+        "inp",
+        "optimize-inp"
+      ]
+    },
+    {
+      "title": "i18n.paths.how_to_optimize_inp.topics.troubleshooting",
+      "pathItems": [
+        "find-slow-interactions-in-the-field",
+        "diagnose-slow-interactions-in-the-lab"
+      ]
+    },
+    {
+      "title": "i18n.paths.how_to_optimize_inp.topics.javascript",
+      "pathItems": [
+        "optimize-long-tasks",
+        "optimize-input-delay",
+        "script-evaluation-and-long-tasks",
+        "off-main-thread"
+      ]
+    },
+    {
+      "title": "i18n.paths.how_to_optimize_inp.topics.rendering",
+      "pathItems": [
+        "avoid-large-complex-layouts-and-layout-thrashing",
+        "reduce-the-scope-and-complexity-of-style-calculations",
+        "dom-size-and-interactivity",
+        "client-side-rendering-of-html-and-interactivity"
+      ]
+    }
+  ]
+}

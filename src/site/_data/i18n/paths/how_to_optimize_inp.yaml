@@ -1,0 +1,21 @@
+title:
+  en: How to Optimize Interaction to Next Paint (INP)
+
+description:
+  en: Learn how to optimize for the Interaction to Next Paint metric.
+
+overview:
+  en: Interaction to Next Paint (INP) is an important responsiveness metric that measures how quickly a page responds to user interactions. INP observes the latency of all interactions a user has made with the page, and reports a single value which all (or nearly all) interactions were below. Optimizing INP is an involved process, requiring knowledge of various aspects that drive interactivity. Fortunately, the collection of guides below will help you to understand how INP works, how to find slow interactions in the field, how to reproduce them in the lab, and then fix them.
+
+topics:
+  familiarize:
+    en: Familiarize yourself with INP and how to optimize it
+
+  troubleshooting:
+    en: Troubleshooting
+
+  javascript:
+    en: Optimize poor INP caused by JavaScript
+
+  rendering:
+    en: Optimize poor INP caused by rendering
