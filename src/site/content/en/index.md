@@ -13,10 +13,10 @@ intro:
   imageHeight: '240'
 
 featuredCard:
-  eyebrow: 'Featured'
-  title: 'Preview I/O web content. <br>Check out the sessions.'
-  background: 'image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/9WSNd3mdbXACF19ELKJ1.png'
-  url: 'https://io.google/2023/program/?q=web-topic,web/&utm_source=web&utm_medium=embedded_marketing&utm_campaign=hpp_reg_card&utm_content='
+  eyebrow: ''
+  title: '&nbsp; Google I/O is live. <br>&nbsp; Watch now!'
+  background: 'image/kheDArv5csY6rvQUJDbWRscckLr1/4i7JstVZvgTFk9dxCe4a.svg'
+  url: 'https://io.google/2023/?utm_source=web&utm_medium=embedded_marketing&utm_campaign=hpp_tunein_card&utm_content='
   image: '.'
   alt: '.'
   theme: 'light'
