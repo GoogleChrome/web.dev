@@ -108,7 +108,6 @@
 }
 
 .author-profile .wrapper > .switcher {
-  // sass-lint:disable-block border-zero
   column-gap: 0.25rem;
 
   .headline {
@@ -193,6 +192,7 @@
   .card__eyebrow {
     align-items: center;
     display: flex;
+    margin-top: 1.25rem;
 
     @include media-query('md') {
       margin-top: 1.75rem;
