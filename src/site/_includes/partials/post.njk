@@ -77,6 +77,32 @@
         {% endif %}
 
         <h1>{{ safeTitle }}</h1>
+        {% if is_baseline %}
+          <details class="baseline flow">
+            <summary class="color-core-text text-size-1">
+              <div class="switcher">
+                <div class="baseline__title">
+                  <span class="baseline__icon">
+                  {% include "icons/baseline.svg" %}
+                  </span>
+                  <p>
+                    <span class="baseline__keyword">Baseline: </span>{{ 'i18n.baseline.widely_supported' | i18n((locale)) }}
+                  </p>
+                </div>
+                <div>
+                    <span class="baseline__browser">
+                      <img alt="Chrome 74" src="/images/icons/chrome.svg"><img alt="Chrome 74" src="/images/icons/edge.svg"></span>
+                      <span class="baseline__browser"><img alt="Chrome 74" src="/images/icons/firefox.svg"></span>
+                      <span class="baseline__browser"><img alt="Chrome 74" src="/images/icons/safari.svg"></span>
+                </div>
+              </div>
+            </summary>
+            <p class="text-size-0">
+              {{ 'i18n.baseline.definition' | i18n((locale)) }}
+            </p>
+            <p><a href="http://web.dev/baseline">{{ 'i18n.baseline.learn_more' | i18n((locale)) }}</a></p>
+          </details>
+        {% endif %}
         {% if subhead | length %}
           <p class="color-mid-text flow-space-base">
             {{ subhead | md | safe }}
