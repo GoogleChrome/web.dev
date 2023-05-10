@@ -48,5 +48,5 @@ If you are a library or tool author, we'll be making it easy to show support. Co
 
 ## Find out more
 
-- [Introducing Baseline](/introducing-baseline)
-- [Baseline features you can use today](/baseline-features)
+- [Introducing Baseline](/introducing-baseline/)
+- [Baseline features you can use today](/baseline-features/)
