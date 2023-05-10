@@ -124,7 +124,7 @@ The table below reflects where all Core Web Vitals currently are in their lifecy
 Each phase is designed to signal to developers how they should think about each metric:
 
 - **Experimental metrics** are prospective Core Web Vitals that may still be undergoing significant changes depending on testing and community feedback.
-- **Pending metrics** are future Core Web Vitals that have passe0-d the testing and feedback stage and have a well-defined timeline to becoming stable.
+- **Pending metrics** are future Core Web Vitals that have passed the testing and feedback stage and have a well-defined timeline to becoming stable.
 - **Stable metrics** are the current set of Core Web Vitals that Chrome considers essential for great user experiences.
 
 #### Experimental
