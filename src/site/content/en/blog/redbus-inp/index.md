@@ -2,9 +2,9 @@
 layout: post
 title: How redBus improved their website's Interaction to Next Paint (INP) and increased sales by 7%
 subhead: |
-  INP optimizations helped redBus increase sales by ~7%
+  INP optimizations helped redBus increase sales by about 7%
 description: |
-  INP optimizations helped redBus increase sales by ~7%
+  INP optimizations helped redBus increase sales by about 7%
 authors:
   - amitkumar
   - saurabhrajpal
