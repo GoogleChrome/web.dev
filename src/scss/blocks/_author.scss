@@ -114,11 +114,15 @@
     min-width: 100%;
   }
 
-  @include media-query('md') {
+  @media screen and (min-width: 925px) {
     column-gap: 3rem;
+
+    .headline {
+      min-width: 52%;
+    }
   }
 
-  @include media-query('lg') {
+  @media screen and (min-width: 1280px) {
     column-gap: 6.25rem;
 
     .headline {
@@ -128,23 +132,20 @@
 }
 
 .author-profile .author-featured {
-  a {
-    flex-flow: column-reverse;
-
-    @include media-query('md') {
-      flex-flow: column;
-    }
-  }
-
   .card {
     @include card-base-styles();
+    flex-flow: column-reverse;
     max-width: 37rem;
 
-    @media (min-width: 625px) {
-      max-width: calc(50% - 15px);
+    @media screen and (min-width: 617px) and (max-width: 924px) {
+      flex-flow: row-reverse;
+      justify-content: space-between;
+      margin-top: 20px;
+      max-width: 100%;
     }
 
-    @include media-query('lg') {
+    @media screen and (min-width: 925px) {
+      flex-flow: column;
       max-width: 25rem;
     }
 
@@ -183,7 +184,13 @@
     border-radius: 5px;
     margin-top: 10px;
 
-    @include media-query('md') {
+    @media screen and (min-width: 617px) and (max-width: 924px) {
+      flex-flow: column-reverse;
+      margin: 0 0 0 30px;
+      max-width: calc(50% - 15px);;
+    }
+
+    @media screen and (min-width: 925px) {
       width: 100%;
       margin-top: 0;
     }
@@ -192,9 +199,8 @@
   .card__eyebrow {
     align-items: center;
     display: flex;
-    margin-top: 1.25rem;
 
-    @include media-query('md') {
+    @media screen and (min-width: 925px) {
       margin-top: 1.75rem;
     }
 
