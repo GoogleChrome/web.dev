@@ -45,3 +45,8 @@ Baseline will move as more features become interoperable, however we think there
 Baseline is developed as part of the [Feature Set project](https://github.com/web-platform-dx/feature-set), a community-driven project that aims to provide a comprehensive and up-to-date set of grouped web platform features. Anyone can contribute to Baseline by adding new features, reviewing existing features, or providing feedback as issues on that repository.
 
 If you are a library or tool author, we'll be making it easy to show support. Coming soon, we'll provide ways to show that your library or tool is compatible with Baseline. The widget can be displayed on Github and will link to the Baseline website. Watch this page for updates.
+
+## Find out more
+
+- [Introducing Baseline](/introducing-baseline)
+- [Baseline features you can use today](/baseline-features)

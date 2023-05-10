@@ -16,6 +16,8 @@ tags:
   - blog
 ---
 
+{% YouTube "x9rh0Du4Czg" %}
+
 The web is always evolving and browsers update constantly to give developers new tools to innovate on the platform. Things that previously required helper libraries become part of the web platform and supported on all browsers, along with shorter or easier ways to code design elements.
 
 While this constant evolution and adaptation is helpful, it can also bring confusion. It can be difficult to navigate all these updates. As developers, we have questions like, "When will all browser engines support this new feature?" "When can I actually start using those features in my production code?" "For how long should we support older browsers?" 
