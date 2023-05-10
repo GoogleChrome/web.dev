@@ -9,7 +9,8 @@
     {
       "title": "i18n.paths.webassembly.topics.introduction",
       "pathItems": [
-        "what-is-webassembly"
+        "what-is-webassembly",
+        "compiling-mkbitmap-to-webassembly"
       ]
     },
     {
