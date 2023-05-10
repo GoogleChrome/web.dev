@@ -21,7 +21,7 @@ Chrome's mission with the [Web Vitals program](/vitals/) is to help developers f
 
 After another year of testing and gathering feedback from the community, we're ready to take the training wheels off and announce that INP is no longer experimental. Furthermore, effective March 2024, we're also committed to promoting INP as the new Core Web Vital metric for responsiveness, replacing FID.
 
-In this post, we'll cover more about the motivation behind the decision, exactly what's changing, and how to get started.
+In this post, we'll cover more about the motivation behind the decision, exactly what's changing, and how to get started. For more on how this affects Google Search, refer to [their blog post](https://developers.google.com/search/blog/2023/05/introducing-inp).
 
 ## A better responsiveness metric
 
