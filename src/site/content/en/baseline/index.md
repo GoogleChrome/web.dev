@@ -3,8 +3,8 @@ layout: post
 title: "Baseline"
 subhead: |
   Web Platform Baseline brings clarity to information about browser support for web platform features.
-hero: image/kheDArv5csY6rvQUJDbWRscckLr1/2U7Pa4e7i1354LCJeOXC.png
-thumbnail: image/kheDArv5csY6rvQUJDbWRscckLr1/HNK5eXYurrMWExb8n7yd.png
+hero: image/kheDArv5csY6rvQUJDbWRscckLr1/Gv27TPZQF9EPSZIDmpHZ.png
+thumbnail: image/kheDArv5csY6rvQUJDbWRscckLr1/0VOcvycql3S9d7wFy6Zv.png
 alt: The Baseline icon for supported features which includes a green check.
 date: 2023-05-10
 description: |
@@ -18,7 +18,7 @@ Web Platform Baseline gives you clear information about which web platform featu
 Baseline is rolling out on MDN, web.dev, and we will be providing the tools for you to show that features described in an article or library are all in Baseline.
 
 <figure>
-{% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/EQXhvoMxYAzqYFdrohzt.png", alt="A screenshot of the page for CSS grid layout on MDN. The green checkmark for Baseline shows this feature is supported.", width="800", height="503" %}
+{% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/LdeGG4Edq2Q7TRfovzIz.png", alt="A screenshot of the page for the CSS grid property on MDN. The green checkmark for Baseline shows this feature is supported.", width="800", height="503" %}
     <figcaption>Baseline on MDN.</figcaption>
 </figure>
 
