@@ -8,7 +8,7 @@ description: >
 date: 2023-05-10
 hero: 'image/kheDArv5csY6rvQUJDbWRscckLr1/Gv27TPZQF9EPSZIDmpHZ.png'
 alt: The Baseline supported icon and the wordmark.
-thumbnail: image/kheDArv5csY6rvQUJDbWRscckLr1/0VOcvycql3S9d7wFy6Zv.png
+thumbnail: image/kheDArv5csY6rvQUJDbWRscckLr1/j1MZvXQ8fY232Q1z5El0.png
 authors:
   - rachelandrew
 tags:
