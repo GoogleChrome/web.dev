@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Announcing Baseline"
+title: "Introducing Baseline"
 subhead: >
   At Google I/O 2023 we announced Baseline, learn more about this initiative and why we think it's important.
 description: >
