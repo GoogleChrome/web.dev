@@ -144,7 +144,7 @@ The traffic received on topic pages represents a significantly smaller portion o
 
 ### Akamai mPulse TBT Analysis
 
-We use [Akamai mPulse](https://www.akamai.com/products/mpulse-real-user-monitoring) as our RUM solution. Though TBT is a lab metric, we observed a consistent decrease in TBT, clearly mapping to the outcomes of our efforts to reduce INP. As can be seen in the screenshot below, TBT values eventually dropped from approximately 5 seconds in to around 200 milliseconds in the field.
+We use [Akamai mPulse](https://www.akamai.com/products/mpulse-real-user-monitoring) as our RUM solution, which measures TBT in the field. We observed a consistent decrease in TBT, clearly mapping to the outcomes of our efforts to reduce INP. As can be seen in the screenshot below, TBT values eventually dropped from approximately 5 seconds in to around 200 milliseconds in the field.
 
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/eS3iIvNxEUhe19GGdDBG.png", alt="A screenshot of a chart in Akamai mPulse, showing a decline in TBT over the course of roughly a month.", width="800", height="118" %}
