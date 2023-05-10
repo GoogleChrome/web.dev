@@ -17,6 +17,8 @@ tags:
 
 Baseline helps you to see, at a glance, whether a feature or API is safe to use in your site or web applications. In this post, learn about the ideas that led to this concept, and how we hope it will help you.
 
+{% YouTube "eZa3BgGaAeA" %}
+
 ## Keeping up with changes to the web platform
 
 The web of today changes rapidly. Our browsers are _evergreen_, with new features landing in stable browsers each month. This is exciting, however it also poses problems. How do web developers keep up with all of this change? How do you know when it's safe to use a feature? When is it the right time to start to learn, and to invest in new features? 

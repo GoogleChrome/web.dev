@@ -12,6 +12,7 @@ thumbnail: image/AeNB0cHNDkYPUYzDuv8gInYA9rY2/4KSYYba8wDbfZsycAV23.svg
 hero: image/AeNB0cHNDkYPUYzDuv8gInYA9rY2/AtVvxkLmxdp0Mso8Mnnc.svg
 is_baseline: true
 date: 2022-08-02
+updated: 2023-05-10
 tags:
   - blog
   - newly-interoperable
@@ -21,6 +22,8 @@ tags:
 This web feature is now available in all three browser engines!
 {% BrowserCompat 'css.properties.rotate' %}
 {% endAside %}
+
+{% YouTube id="oDcb3fvtETs", startTime="844" %}
 
 ## The CSS `transform` property
 
