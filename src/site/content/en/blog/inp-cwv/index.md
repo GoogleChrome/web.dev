@@ -80,7 +80,7 @@ Across our tools, you'll start to see INP without the `experimental` prefix or i
         <td><code>interaction-to-next-paint</code></td>
       </tr>
     </tbody>
-    <caption>
+    <caption style="max-width: 60ch;">
       Map of APIs to their old and new INP field name.<br>
       * Lighthouse will stop using the experimental INP field in version 11.
     </caption>
