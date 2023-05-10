@@ -53,7 +53,7 @@ The next step is to install the tool. The [`INSTALL`](https://potrace.sourceforg
 
  If you follow these steps, you hopefully end up with two executables, `potrace` and `mkbitmap`—the latter is the focus of this article. You can verify it worked correctly by running `./mkbitmap --version`. Here is the output of all four steps from my machine, heavily trimmed for brevity:
 
-Step 1:
+Step 1, `./configure`:
 
  ```bash
  $ ./configure
@@ -69,7 +69,7 @@ checking whether make sets $(MAKE)... yes
 config.status: executing libtool commands
 ```
 
-Step 2:
+Step 2, `make`:
 
 ```bash
 $ make
@@ -81,7 +81,7 @@ mv -f .deps/main.Tpo .deps/main.Po
 make[2]: Nothing to be done for `all-am'.
 ```
 
-Step 3:
+Step 3, `make check`:
 
 ```bash
 $ make check
@@ -104,7 +104,7 @@ Testsuite summary for potrace 1.16
 make[1]: Nothing to be done for `check-am'.
 ```
 
-Step 4:
+Step 4, `sudo make install`:
 
 ```bash
 $ sudo make install
@@ -116,7 +116,7 @@ Making install in src
 make[2]: Nothing to be done for `install-data-am'.
 ```
 
-Checking if it worked:
+Checking if it worked, `mkbitmap --version`:
 
 ```bash
 $ mkbitmap --version
@@ -143,4 +143,82 @@ The documentation then goes on (a little edited for brevity):
 > `emconfigure ./configure`<br>
 > `emmake make`
 
-So essentially `./configure` becomes `emconfigure ./configure` and `make` becomes `emmake make`.
+So essentially `./configure` becomes `emconfigure ./configure` and `make` becomes `emmake make`. Let's try this with `mkbitmap`:
+
+{% Aside 'warning' %}
+If you followed the platform compilation steps above, be sure to run `make clean` before proceeding with the WebAssembly compilation steps.
+{% endAside %}
+
+Step 1, `emconfigure ./configure`:
+
+```bash
+$ emconfigure ./configure
+configure: ./configure
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... ./install-sh -c -d
+checking for gawk... no
+checking for mawk... no
+checking for nawk... no
+checking for awk... awk
+[…]
+config.status: executing libtool commands
+```
+
+Step 2, `emmake make`:
+
+```bash
+$ emmake make
+make: make
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  all-recursive
+Making all in src
+/opt/homebrew/Cellar/emscripten/3.1.36/libexec/emcc -DHAVE_CONFIG_H -I. -I..     -g -O2 -MT main.o -MD -MP -MF .deps/main.Tpo -c -o main.o main.c
+mv -f .deps/main.Tpo .deps/main.Po
+[…]
+make[2]: Nothing to be done for `all'.
+```
+
+If everything went well, there should now be `.wasm` files somewhere in the directory. You can find them by running `find . -name "*.wasm"`:
+
+```bash
+$ find . -name "*.wasm"
+./a.wasm
+./src/mkbitmap.wasm
+./src/potrace.wasm
+```
+
+The two last ones look promising. There are now also two corresponding files, `mkbitmap` and `potrace`. The fact that they don't have the `.js` extension is a little confusing, but they are in fact JavaScript files, verifiable with a quick `head` call:
+
+```bash
+$ head -n 20 mkbitmap
+// include: shell.js
+// The Module object: Our interface to the outside world. We import
+// and export values on it. There are various ways Module can be used:
+// 1. Not defined. We create it here
+// 2. A function parameter, function(Module) { ..generated code.. }
+// 3. pre-run appended it, var Module = {}; ..generated code..
+// 4. External script tag defines var Module.
+// We need to check if Module already exists (e.g. case 3 above).
+// Substitution will be replaced with actual code on later stage of the build,
+// this way Closure Compiler will not mangle it (e.g. case 4. above).
+// Note that if you want to run closure, and also to use Module
+// after the generated code, you will need to define   var Module = {};
+// before the code. Then that object will be used in the code, and you
+// can continue to use Module afterwards as well.
+var Module = typeof Module != 'undefined' ? Module : {};
+
+// --pre-jses are emitted after the Module integration code, so that they can
+// refer to Module (if they choose; they can also define Module)
+```
+
+So time for the first test and checking if it worked via `node mkbitmap --version`:
+
+```bash
+$ node mkbitmap --version
+mkbitmap 1.16. Copyright (C) 2001-2019 Peter Selinger.
+```
+
+Felicitation, you have successfully compiled `mkbitmap` to WebAssembly! Now the next step is to make it work in the browser.
+
+## Making it work in the browser
+
