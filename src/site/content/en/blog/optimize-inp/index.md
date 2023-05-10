@@ -240,4 +240,4 @@ Improving your site's INP is an iterative process. When you fix a slow interacti
 
 The key to improving INP is persistence. In time, you can get your page's responsiveness to a place where users are happy with the experience you're providing them. The chances are also good that as you develop new features for your users, you may need to go through the same process in optimizing interactions specific to them. It will take time and effort, but it's time and effort well spent.
 
-_Hero image from [Unsplash](https://unsplash.com/), by [David Pisnoy](https://unsplash.com/@davidpisnoy) and modified in accordance with the [Unsplash license](https://unsplash.com/license).
+_Hero image from [Unsplash](https://unsplash.com/), by [David Pisnoy](https://unsplash.com/@davidpisnoy) and modified in accordance with the [Unsplash license](https://unsplash.com/license)._
