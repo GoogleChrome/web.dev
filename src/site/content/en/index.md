@@ -88,7 +88,7 @@ themes:
 
   - category: Performance
     cards:
-      - url: /top-cwv-2023/
+      - url: /inp-cwv/
         eyebrow:
           icon: featured
           text: Featured
@@ -103,10 +103,10 @@ themes:
         url: /how-to-optimize-inp/
         cardLayout: horizontal
         column: '2'
-      - url: /better-youtube-web-part1/
+      - url: /top-cwv-2023/
         eyebrow:
           icon: blog
-          text: Case Study
+          text: Blog
       - url: /debug-cwvs-with-web-vitals-extension/
         eyebrow:
           icon: blog

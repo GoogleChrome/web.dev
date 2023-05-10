@@ -18,7 +18,7 @@ tags:
 {% BrowserCompat 'api.LayoutShift' %}
 
 {% Aside 'key-term' %}
-  Cumulative Layout Shift (CLS) is an important, user-centric metric for
+  Cumulative Layout Shift (CLS) is a stable Core Web Vital metric. It is an important, user-centric metric for
   measuring [visual
   stability](/user-centric-performance-metrics/#types-of-metrics) because it
   helps quantify how often users experience unexpected layout shifts&mdash;a low
