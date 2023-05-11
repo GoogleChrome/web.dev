@@ -50,3 +50,4 @@ If you are a library or tool author, we'll be making it easy to show support. Co
 
 - [Introducing Baseline](/introducing-baseline/)
 - [Baseline features you can use today](/baseline-features/)
+- [Introducing Baseline: a unified view of stable web features](https://developer.mozilla.org/en-US/blog/baseline-unified-view-stable-web-features/)

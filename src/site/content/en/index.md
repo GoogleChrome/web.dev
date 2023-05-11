@@ -14,7 +14,7 @@ intro:
 
 featuredCard:
   eyebrow: ''
-  title: '&nbsp; Google I/O is live. <br>&nbsp; Watch now!'
+  title: '&nbsp; Google I/O is here. <br>&nbsp; Watch the recap videos!'
   background: 'image/kheDArv5csY6rvQUJDbWRscckLr1/4i7JstVZvgTFk9dxCe4a.svg'
   url: 'https://io.google/2023/?utm_source=web&utm_medium=embedded_marketing&utm_campaign=hpp_tunein_card&utm_content='
   image: '.'
@@ -27,7 +27,7 @@ platformNews:
   title: Web platform news
   subTitle: Keep up to date with the latest news from the major browser engines.
   pickedLeft:
-    url: '/interop-2023/'
+    url: '/introducing-baseline/'
   pickedRight:
     url: '/web-platform-04-2023/'
 
