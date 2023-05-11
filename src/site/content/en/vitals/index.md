@@ -14,8 +14,7 @@ tags:
 ---
 
 {% Aside %}
-**New:** Check out [Web Vitals Patterns](/patterns/web-vitals-patterns) for
-implementations of common UX patterns optimized for Core Web Vitals.
+**New:** [Interaction to Next Paint (INP)](/inp/) is no longer experimental! [Learn more](/inp-cwv/) about our plans to replace FID with INP as a Core Web Vital in March 2024.
 {% endAside %}
 
 Optimizing for quality of user experience is key to the long-term success of any
