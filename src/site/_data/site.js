@@ -35,7 +35,7 @@ module.exports = {
   thumbnail: 'image/FNkVSAX8UDTTQWQkKftSgGe9clO2/uZ3hQS2EPrA9csOgkoXI.png',
   isBannerEnabled: true,
   banner:
-    'Tune in to watch the Google I/O livestreamed keynotes. [Watch now.](https://io.google/2023/?utm_source=web&utm_medium=embedded_marketing&utm_campaign=hpp_tunein_banner&utm_content=)',
+    'Thanks for tuning in to Google I/O. [Watch the Chrome content on-demand.](https://io.google/2023/program/?q=web-topic,web/&utm_source=web&utm_medium=embedded_marketing&utm_campaign=hpp_ondemand_banner&utm_content=)',
   paginationCount: PAGINATION_COUNT,
   imgixDomain: 'web-dev.imgix.net',
   bucket: 'web-dev-uploads',
