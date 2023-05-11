@@ -710,6 +710,19 @@ video,
   aspect-ratio: 16/9;
 }
 
+.youtube-fallback {
+  align-items: center;
+  aspect-ratio: 16 / 9;
+  background-color: var(--color-shades-charcoal);
+  color: var(--color-text);
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  justify-content: center;
+  padding: 1em;
+  text-decoration: none;
+}
+
 /// COMPOSITIONS
 @import 'compositions/auto-grid';
 @import 'compositions/breakout';
