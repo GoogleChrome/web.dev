@@ -57,6 +57,14 @@ Using CSS transforms is a performant way to add a movement to your site.
 You might be familiar with writing CSS transforms with three properties in one line.   
 With individual transform properties you can now specify transform properties individually. This comes in handy when you are writing complex keyframe animations. 
 
+```css
+.target {
+  translate: 50% 0;
+  rotate: 30deg;
+  scale: 1.2;
+}
+```
+
 {% BrowserCompat 'css.properties.scale' %}
 
 For an in-depth explanation of this change, read [Finer grained control over CSS transforms with individual transform properties](/css-individual-transform-properties/).
@@ -67,14 +75,6 @@ On mobile, viewport size is influenced by the presence or absence of dynamic too
 Sometimes you have a URL bar and navigation toolbar visible, but sometimes those toolbars are completely retracted.   
 The actual size of viewport will be different depending on whether the toolbars are visible or not.  
 New viewport units like `svh` and `lvh` give web developers finer control when designing for the mobile. You can learn more in the article [The large, small, and dynamic viewport units](/viewport-units/).
-
-```css
-.target {
-  translate: 50% 0;
-  rotate: 30deg;
-  scale: 1.2;
-}
-```
 
 {% BrowserCompat 'css.types.length.viewport_percentage_units_large' %}
 
