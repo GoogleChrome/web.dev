@@ -211,14 +211,63 @@ var Module = typeof Module != 'undefined' ? Module : {};
 // refer to Module (if they choose; they can also define Module)
 ```
 
-So time for the first test and checking if it worked via `node mkbitmap --version`:
+Rename the JavaScript file to `mkbitmap.js` by calling `mv mkbitmap mkbitmap.js` (and `mv potrace potrace.js` respectively if you want).
+Now it's time for the first test to see if it worked by executing the file with Node.js on the command line by running `node mkbitmap.js --version`:
 
 ```bash
-$ node mkbitmap --version
+$ node mkbitmap.js --version
 mkbitmap 1.16. Copyright (C) 2001-2019 Peter Selinger.
 ```
 
 Felicitation, you have successfully compiled `mkbitmap` to WebAssembly! Now the next step is to make it work in the browser.
 
 ## Making it work in the browser
+
+Copy the `mkbitmap.js` and the `mkbitmap.wasm` files to a new directory called `mkbitmap` and create an `index.html` HTML boilerplate file that loads the `mkbitmap.js` JavaScript file.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>mkbitmap</title>
+  </head>
+  <body>
+    <script src="mkbitmap.js"></script>
+  </body>
+</html>
+```
+
+Start a local server that serves the `mkbitmap` directory and open it in your browser. You should see a prompt that asks you for input. This is actually perfectly expected, since, [according to the tool's man page](https://potrace.sourceforge.net/mkbitmap.1.html#:~:text=A%20filename%20of%20%22%2D%22%20may%20be%20given%20to%20specify%20reading%20from%20standard%20input), _"[i]f no filename arguments are given, then mkbitmap acts as a filter, reading from standard input"_.
+
+{% Aside 'warning' %}
+Serving from the `file:` protocol doesn't work for `.wasm` files, you really need to start a local server.
+{% endAside %}
+
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/DbDQJnxA4GylWKZcmlJK.png", alt="The mkbitmap app showing a prompt that asks for input.", width="800", height="600" %}
+
+So how do you stop `mkbitmap` from executing immediately and instead make it wait for user input? For this, you need to understand Emscripten's `Module` object. `Module` is a global JavaScript object with attributes that Emscripten-generated code calls at various points in its execution.
+Developers can provide an implementation of `Module` to control the execution of code.
+When an Emscripten application starts up, it looks at the values on the `Module` object and applies them.
+
+In the case of `mkbitmap`, you need to set [`Module.noInitialRun`](https://emscripten.org/docs/api_reference/module.html#Module.noInitialRun) to `true` to prevent the initial run that caused the prompt to appear. Create a script called `script.js`, include it _before_ the `<script src="mkbitmap.js"></script>` and add the following code:
+
+```js
+var Module = {
+  // Don't run main() at page load
+  noInitialRun: true,
+};
+```
+
+When you now reload the app, the prompt should be gone. But how can you provide input to the app? This is where Emscripten's [file system](https://emscripten.org/docs/api_reference/Filesystem-API.html) support in `Module.FS` comes in. If you read the [Including File System Support](https://emscripten.org/docs/api_reference/Filesystem-API.html#including-file-system-support) section of the documentation, you will read:
+
+> Emscripten decides whether to include file system support automatically. Many programs don't need files, and file system support is not negligible in size, so Emscripten avoids including it when it doesn't see a reason to. That means that if your C/C++ code does not access files, then the `FS` object and other file system APIs will not be included in the output. And, on the other hand, if your C/C++ code does use files, then file system support will be automatically included.
+
+Unfortunately `mkbitmap` is one of these cases where this magic doesn't work, so you need to explicitly tell Emscripten to include file system support. This means you need to do the `emconfigure` and `emmake` dance from above again, with the right flags set that you pass via a `CFLAGS` argument. Set `-sFILESYSTEM` so file system support is included and `-sEXPORTED_RUNTIME_METHODS=FS,ccall,cwrap` so `Module.FS`, `Module.ccall`, and `Module.cwrap` are exported. (More on `cwrap` and `ccall` later.) The final `emconfigure` command looks like this:
+
+```bash
+$ emconfigure ./configure CFLAGS='-sFILESYSTEM -sEXPORTED_FUNCTIONS=_main -sEXPORTED_RUNTIME_METHODS=FS,ccall,cwrap'
+```
+
+Do not forget to run `emmake make` again and copy the freshly created files over to the `mkbitmap` folder.
 
