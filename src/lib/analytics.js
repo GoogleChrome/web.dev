@@ -8,7 +8,7 @@ import {
 } from 'web-vitals/attribution';
 import {store} from './store';
 import {checkIfUserAcceptsCookies} from './actions.js';
-import {version, dimensions} from 'webdev_analytics';
+import {version} from 'webdev_analytics';
 
 // A function that should be called once all all analytics code has been
 // initialized. Calling this will resolve the `whenAnalyticsInitialize`
@@ -185,9 +185,8 @@ function addPageShowEventListener() {
      */
     (e) => {
       if (e.persisted) {
-        logEvent('page_view', {
-          [dimensions.NAVIGATION_TYPE]: 'back-forward-cache',
-        });
+        window.dataLayer.push({navigation_type: 'back-forward-cache'});
+        logEvent('page_view');
       }
     },
   );

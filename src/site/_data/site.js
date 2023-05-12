@@ -44,12 +44,6 @@ module.exports = {
     ids: {
       gtm: 'GTM-MZWCJPP',
     },
-    dimensions: {
-      MEASUREMENT_VERSION: 'dimension5',
-      NAVIGATION_TYPE: 'dimension6',
-      COLOR_SCHEME_PREFERENCE: 'dimension7',
-      WEB_VITALS_DEBUG: 'dimension8',
-    },
     version: 15,
   },
   firebase: {
