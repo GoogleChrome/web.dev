@@ -14,9 +14,9 @@ intro:
 
 featuredCard:
   eyebrow: ''
-  title: '&nbsp; Google I/O is here. <br>&nbsp; Watch the recap videos!'
+  title: '&nbsp; Top web things from <br>&nbsp; Google I/O.'
   background: 'image/kheDArv5csY6rvQUJDbWRscckLr1/4i7JstVZvgTFk9dxCe4a.svg'
-  url: 'https://io.google/2023/?utm_source=web&utm_medium=embedded_marketing&utm_campaign=hpp_tunein_card&utm_content='
+  url: 'https://www.youtube.com/watch?v=gkAYHomO5Hg&list=PLOU2XLYxmsIJGxIV8Lt8gF_79Z334LQ6h'
   image: '.'
   alt: '.'
   theme: 'light'
