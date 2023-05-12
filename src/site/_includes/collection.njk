@@ -2,7 +2,7 @@
 layout: default
 algolia_priority: 1.1
 eleventyComputed:
-  pathTitle: "{{paths[pathName].title | i18n(locale)}}"
+  title: "{{paths[pathName].title | i18n(locale)}}"
   description: "{{paths[pathName].description | i18n(locale)}}"
   hero: "{{paths[pathName].cover}}"
 ---
@@ -15,7 +15,6 @@ eleventyComputed:
   <div class="wrapper">
     <div class="hero__content--split">
       <div>
-        {% set title = title or pathTitle %}
         <h1 class="text-size-6">{{ title }}</h1>
         <p>{{path.description | i18n(locale)}}</p>
       </div>
