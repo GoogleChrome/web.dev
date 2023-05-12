@@ -109,4 +109,4 @@ Client-side HTML rendering introduces a number of potential performance issues t
 
 If you can get your website's client-side rendering to be as minimal as possible, you'll improve not just your website's INP, but other metrics such as LCP, TBT, and possibly even your TTFB in some cases.
 
-_Hero image from [Unsplash](https://unsplash.com/), by []()._
+_Hero image from [Unsplash](https://unsplash.com/), by [Maik Jonietz](https://unsplash.com/de/fotos/nZcMWOKAJrY)._
