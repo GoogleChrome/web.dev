@@ -59,7 +59,7 @@ currently has focus with CSS, and avoid accessibility problems by not reordering
 
 ## Making inert elements interactive
 
-The `contentedible` and `tabindex` attributes, being global attributes, can be added to any element, making them focusable
+The `contenteditable` and `tabindex` attributes, being global attributes, can be added to any element, making them focusable
 in the process. Focusable elements can also be focused with a mouse or pointer, by having the [`autofocus`](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/autofocus)
 attribute set, or by script, such as with [`element.focus()`](https://developer.mozilla.org/docs/Web/API/HTMLElement/focus).
 
