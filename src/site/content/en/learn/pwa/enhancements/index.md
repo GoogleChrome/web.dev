@@ -74,7 +74,7 @@ These images are known as startup images on Apple devices and they use the `rel`
 
 The challenge is that the startup image must have the exact window size that your PWA will have on opening. So, different iOS and iPadOS devices will need different images. More situations need to be covered on the iPad, such as landscape/portrait openings and rendering the PWA in multitask mode (such as 1/3,1/2, or 2/3 of the screen).
 
-You can check an updated list of iOS and iPadOS screen sizes at the [Apple Human Interface Guidelines]( https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/adaptivity-and-layout/)
+You can check an updated list of iOS and iPadOS screen sizes at the [Apple Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/layout#Specifications)
 
 Different versions of the launch image can be set with a media query inside the `media` attribute:
 
