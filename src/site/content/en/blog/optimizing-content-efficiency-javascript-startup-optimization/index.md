@@ -219,7 +219,7 @@ JavaScript can impact page performance in other ways:
 - Memory. Pages can appear to jank or pause frequently due to GC (garbage
   collection). When a browser reclaims memory, JS execution is paused so a
   browser frequently collecting garbage can pause execution more frequently than
-  we may like. Avoid [memory leaks](/web/tools/chrome-devtools/memory-problems/)
+  we may like. Avoid [memory leaks](https://developer.chrome.com/docs/devtools/memory-problems/)
   and frequent gc pauses to keep pages jank free.
 - During runtime, long-running JavaScript can block the main-thread causing
   pages that are unresponsive. Chunking up work into smaller pieces (using
