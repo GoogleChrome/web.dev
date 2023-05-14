@@ -120,7 +120,7 @@ doesn't support WebM, it can fall back to MP4.
 {% Aside %}
 Browsers don't speculate about which `<source>` is optimal, so the order of
 `<source>`'s matters. For example, if you specify an MP4 video first and the
-browser supports WebM, browsers will skip the WebM `<source>` and use the MPEG-4
+browser supports MP4, browsers will skip the WebM `<source>` and use the MPEG-4
 instead. If you prefer a WebM `<source>` be used first, specify it first!
 {% endAside %}
 
