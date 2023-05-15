@@ -7,7 +7,10 @@ description: |
   Bringing down TBT by 30 times and migrating to Next.js helped The Ecomonic Times reduce INP nearly four times, leading to a 50% decrease in bounce rate and 43% uplift in pageviews.
 authors:
   - saurabhrajpal
+  - daya
+  - barunkumar
 date: 2023-05-10
+updated: 2023-05-15
 tags:
   - blog
   - web-vitals
