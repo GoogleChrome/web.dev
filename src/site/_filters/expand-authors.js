@@ -13,7 +13,7 @@ module.exports = (authorSlugs = [], authorsCollection, lang) => {
       const profile = authorsCollection[authorKey];
 
       if (!profile) {
-        console.log(`Author '${authorKey}'pages`);
+        console.log(`Author '${authorKey}' pages`);
       } else if (profile.twitter) {
         authors.push(`@${profile.twitter}`);
       } else {
