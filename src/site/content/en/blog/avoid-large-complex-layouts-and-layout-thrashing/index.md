@@ -42,7 +42,7 @@ The amount of time it takes for the browser to present the next frame in respons
 In order to keep your website's INP as low as possible, it's important to avoid layout when possible. If it's not possible to avoid layout entirely, it's important to limit that layout work so that the browser can present the next frame quickly.
 
 {% Aside 'objective' %}
-**Read to learn more:** [Interaction to Next Paint (INP)](/inp/).
+**Read to learn more:**&nbsp;[Interaction to Next Paint (INP)](/inp/).
 {% endAside %}
 
 ## Avoid layout wherever possible
@@ -79,7 +79,7 @@ When digging into the trace in the above example, we see that over 28 millisecon
 Keep in mind that the general advice here is to avoid layout _whenever possible_—but it isn't always possible to avoid layout. In cases where you can't avoid layout, know that the cost of layout has a relationship with the size of the DOM. Although the relationship between the two isn't tightly coupled, larger DOMs will generally incur higher layout costs.
 
 {% Aside 'objective' %}
-**Read to learn more:** [DOM size and interactivity](/dom-size-and-interactivity/).
+**Read to learn more:**&nbsp;[DOM size and interactivity](/dom-size-and-interactivity/).
 {% endAside %}
 
 ## Avoid forced synchronous layouts

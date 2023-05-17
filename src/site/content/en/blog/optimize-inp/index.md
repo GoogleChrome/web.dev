@@ -54,7 +54,7 @@ To provide a good user experience, websites should strive to have an Interaction
 Depending on the website, there may be few to no interactions—such as pages of mostly text and images with few to no interactive elements. Or, in the case of websites such as text editors or games, there could be hundreds—even thousands—of interactions. In either case, where there's a high INP, the user experience is at risk.
 
 {% Aside 'objective' %}
-**Read to learn more:** [Interaction to Next Paint (INP)](/inp/).
+**Read to learn more:**&nbsp;[Interaction to Next Paint (INP)](/inp/).
 {% endAside %}
 
 It takes time and effort to improve INP, but the reward is a better user experience. In this guide, a path to improving INP will be explored.
@@ -68,7 +68,7 @@ Before you can fix slow interactions, you'll need data to tell you if your websi
 Ideally, your journey in optimizing INP will start with [field data](/lab-and-field-data-differences/#field-data). At its best, field data from a Real User Monitoring (RUM) provider will give you not only a page's INP value, but also contextual data that highlights what specific interaction was responsible for the INP value itself, whether the interaction occurred during or after page load, the type of interaction (click, keypress, or tap), and other valuable information.
 
 {% Aside 'objective' %}
-**Read to learn more:** [Find slow interactions in the field](/find-slow-interactions-in-the-field/).
+**Read to learn more:**&nbsp;[Find slow interactions in the field](/find-slow-interactions-in-the-field/).
 {% endAside %}
 
 If you're not relying on a RUM provider to get field data, the [INP field data guide](/find-slow-interactions-in-the-field/) advises [using the Chrome User Experience Report (CrUX) via PageSpeed Insights](/find-slow-interactions-in-the-field/#get-field-data-quickly-with-crux) to help fill in the gaps. CrUX is the official dataset of the Core Web Vitals program and provides a high-level summary of metrics for millions of websites, including INP. However, CrUX often does not provide the contextual data you'd get from a RUM provider to help you to analyze issues. Because of this, we still recommend that sites use a RUM provider when possible, or implement their own RUM solution to supplement what is available in CrUX.
@@ -78,7 +78,7 @@ If you're not relying on a RUM provider to get field data, the [INP field data g
 Ideally, you'll want to start testing in the lab once you have field data that suggests you have slow interactions.
 
 {% Aside 'objective' %}
-**Read to learn more:** [Diagnose slow interactions in the lab](/diagnose-slow-interactions-in-the-lab/).
+**Read to learn more:**&nbsp;[Diagnose slow interactions in the lab](/diagnose-slow-interactions-in-the-lab/).
 {% endAside %}
 
 ## Optimize interactions
@@ -98,7 +98,7 @@ When a user interacts with a page, the first part of that interaction is the _in
 Whatever the source of an interaction's input delay, you'll want to reduce input delay to a minimum so that interactions can begin running event callbacks as soon as possible.
 
 {% Aside 'objective' %}
-**Read to learn more:** [Optimize input delay](/optimize-input-delay/).
+**Read to learn more:**&nbsp;[Optimize input delay](/optimize-input-delay/).
 {% endAside %}
 
 #### The relationship between script evaluation and long tasks during startup
@@ -110,7 +110,7 @@ One thing that can extend an interaction's input delay while a page loads is scr
 Depending on the size of a script, this work can introduce long tasks on the main thread, which will delay the browser from responding to other user interactions. To keep your page responsive to user input during page load, it's important to understand what you can do to reduce the likelihood of long tasks during page load so the page stays snappy.
 
 {% Aside 'objective' %}
-**Read to learn more:** [Script evaluation and long tasks](/script-evaluation-and-long-tasks/).
+**Read to learn more:**&nbsp;[Script evaluation and long tasks](/script-evaluation-and-long-tasks/).
 {% endAside %}
 
 ### Optimize event callbacks
@@ -126,7 +126,7 @@ If you find this is the case for your website, the next thing you can try is to 
 `setTimeout` is one way to break up tasks, because the callback passed to it runs in a new task. You can [use `setTimeout` by itself](/optimize-long-tasks/#manually-defer-code-execution) or abstract its use into a separate function [for more ergonomic yielding](/optimize-long-tasks/#use-asyncawait-to-create-yield-points).
 
 {% Aside 'objective' %}
-**Read to learn more:** [Optimize long tasks](/optimize-long-tasks/).
+**Read to learn more:**&nbsp;[Optimize long tasks](/optimize-long-tasks/).
 {% endAside %}
 
 Yielding indiscriminately is better than not yielding at all—however, there is a more nuanced way of yielding to the main thread, and that involves only yielding immediately after an event callback that updates the user interface so rendering logic can run sooner.
@@ -192,7 +192,7 @@ Layout thrashing—sometimes called forced synchronous layout—is a rendering p
 Layout thrashing is a performance bottleneck because by updating styles and then immediately requesting the values of those styles in JavaScript, the browser is forced to do synchronous layout work it otherwise could have waited to perform asynchronously later on after event callbacks have finished running.
 
 {% Aside 'objective' %}
-**Read to learn more:** [Avoid large, complex layouts and layout thrashing](/avoid-large-complex-layouts-and-layout-thrashing/).
+**Read to learn more:**&nbsp;[Avoid large, complex layouts and layout thrashing](/avoid-large-complex-layouts-and-layout-thrashing/).
 {% endAside %}
 
 ### Minimize presentation delay
@@ -207,7 +207,7 @@ When a page's DOM is small, rendering work usually finishes quickly. However, wh
 2. In response to a user interaction, where a large DOM can cause rendering updates to be very expensive, and therefore increase the time it takes for the browser to present the next frame.
 
 {% Aside 'objective' %}
-**Read to learn more:** [DOM size and interactivity](/dom-size-and-interactivity/).
+**Read to learn more:**&nbsp;[DOM size and interactivity](/dom-size-and-interactivity/).
 {% endAside %}
 
 Bear in mind that there are instances in which large DOMs can't be significantly reduced. While there are approaches you can take to reduce DOM size, such as [flattening your DOM](/dom-size-and-interactivity/#how-can-i-reduce-dom-size) or [add to the DOM during user interactions](/dom-size-and-interactivity/#consider-an-additive-approach) to keep your initial DOM size small, those techniques may only go so far.
@@ -217,7 +217,7 @@ Bear in mind that there are instances in which large DOMs can't be significantly
 One way you can limit the amount of both rendering work during page load and rendering work in response to user interactions is to lean on the CSS `content-visibility` property, which effectively amounts to lazily rendering elements as they approach the viewport. While `content-visibility` can take some practice to use effectively, it's worth investigating if the result is lower rendering time that can improve your page's INP.
 
 {% Aside 'objective' %}
-**Read to learn more:** [`content-visibility`: the new CSS property that boosts your rendering performance](/content-visibility/).
+**Read to learn more:**&nbsp;[`content-visibility`: the new CSS property that boosts your rendering performance](/content-visibility/).
 {% endAside %}
 
 #### Be aware of performance costs when rendering HTML using JavaScript
@@ -231,7 +231,7 @@ While the first visit to any website will always involve _some_ amount of HTML, 
 It's vital to remember though, that even websites that _aren't_ SPAs will probably involve some amount of HTML rendering through JavaScript as the result of interactions. This is generally fine, so long as you're not rendering large amounts of HTML on the client, which can delay presentation of the next frame. However, it's important to understand the performance implications of this approach to rendering HTML in the browser, and how it can impact the responsiveness of your website to user input if you are rendering a lot of HTML via JavaScript.
 
 {% Aside 'objective' %}
-**Read to learn more:** [Client-side rendering of HTML and interactivity](/client-side-rendering-of-html-and-interactivity/).
+**Read to learn more:**&nbsp;[Client-side rendering of HTML and interactivity](/client-side-rendering-of-html-and-interactivity/).
 {% endAside %}
 
 ## Conclusion

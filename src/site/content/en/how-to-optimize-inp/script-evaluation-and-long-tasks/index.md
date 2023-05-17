@@ -130,7 +130,7 @@ Dynamic `import()` calls behave similarly in all major browser engines: the scri
 In addition to reducing main thread work, web workers _themselves_ can load external scripts to be used in the worker context, either through [`importScripts`](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/importScripts) or static `import` statements in browsers that support [module workers](/module-workers/). The result is that any script requested by a web worker is evaluated off the main thread.
 
 {% Aside 'objective' %}
-**Read to learn more:** [Use web workers to run JavaScript off the browser's main thread](/off-main-thread/).
+**Read to learn more:**&nbsp;[Use web workers to run JavaScript off the browser's main thread](/off-main-thread/).
 {% endAside %}
 
 ## Trade-offs and considerations
