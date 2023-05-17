@@ -22,8 +22,8 @@ In order to better understand the architectures we're choosing from when we make
 
 **Rendering**
 
-- **Server-side rendering:** rendering a client-side or universal app to HTML on the server.
-- **Client-side rendering:** rendering an app in a browser via JavaScript to modify the DOM.
+- **Server-side rendering (SSR):** rendering a client-side or universal app to HTML on the server.
+- **Client-side rendering (CSR):** rendering an app in a browser via JavaScript to modify the DOM.
 - **Rehydration:** "booting up" JavaScript views on the client such that they reuse the server-rendered HTML's DOM tree and data.
 - **Prerendering:** running a client-side application at build time to capture its initial state as static HTML.
 
@@ -157,7 +157,7 @@ When in doubt, the [mobile friendly test tool](https://search.google.com/test/mo
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/2OH46CfDEvODtabXpKZp.png", alt="Screenshot of the Mobile Friendly Test UI.", width="800", height="817" %}
-<figure>
+</figure>
 
 ## Wrapping up
 
