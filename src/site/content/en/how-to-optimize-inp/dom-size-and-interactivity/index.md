@@ -144,7 +144,7 @@ Adding to the DOM over time can be tricky, and it has its own tradeoffs. If you'
 When the browser parses selectors in your CSS, it has to traverse the DOM tree to understand how—and if—those selectors apply to the current layout. The more complex these selectors are, the more work the browser has to do in order to perform both the initial rendering of the page, as well as increased style recalculations and layout work if the page changes as the result of an interaction.
 
 {% Aside 'objective' %}
-**Read to learn more:** [Reduce the scope and complexity of style calculations](/reduce-the-scope-and-complexity-of-style-calculations/).
+**Read to learn more:**&nbsp;[Reduce the scope and complexity of style calculations](/reduce-the-scope-and-complexity-of-style-calculations/).
 {% endAside %}
 
 ### Use the `content-visibility` property
@@ -152,7 +152,7 @@ When the browser parses selectors in your CSS, it has to traverse the DOM tree t
 CSS offers the `content-visibility` property, which is effectively a way to lazily render off-screen DOM elements. As the elements approach the viewport, they're rendered on demand. The benefits of `content-visibility` don't just cut out a significant amount of rendering work on the initial page render, but also skip rendering work for offscreen elements when the page DOM is changed as the result of a user interaction.
 
 {% Aside 'objective' %}
-**Read to learn more:** [`content-visibility`: the new CSS property that boosts your rendering performance](/content-visibility/).
+**Read to learn more:**&nbsp;[`content-visibility`: the new CSS property that boosts your rendering performance](/content-visibility/).
 {% endAside %}
 
 ## Conclusion

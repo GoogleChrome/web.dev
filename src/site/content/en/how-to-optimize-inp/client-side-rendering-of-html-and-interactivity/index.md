@@ -90,7 +90,7 @@ If your application uses either of these frameworks and requires interactivity o
 When DOMs are large, the amount of processing time required to render them tends to increase. Whether your website is a full-fledged SPA, or is injecting new nodes into an existing DOM as the result of an interaction for an MPA, consider keeping those DOMs as small as possible. This will help reduce the work required during client-side rendering to display that HTML, hopefully helping to keep your website's INP lower.
 
 {% Aside 'objective' %}
-**Read to learn more:** [DOM size and interactivity](/dom-size-and-interactivity/).
+**Read to learn more:**&nbsp;[DOM size and interactivity](/dom-size-and-interactivity/).
 {% endAside %}
 
 ### Consider a streaming service worker architecture
