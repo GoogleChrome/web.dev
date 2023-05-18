@@ -56,14 +56,19 @@ module.exports = (locale, page, renderData = {}) => {
       social.description || (social.path && social.path.description),
       forbiddenCharacters,
     );
-    let thumbnail = social.thumbnail || social.hero;
+    let thumbnail = social.thumbnail || social.hero || site.thumbnail;
     const alt = social.alt || site.name;
+    let imgixOptions = {};
 
-    thumbnail = generateImgixSrc(thumbnail || site.thumbnail, {
-      fit: 'max',
-      w: 1200,
-      fm: 'auto',
-    });
+    const IS_SVG_IMG = /\.svg$/i.test(thumbnail);
+    if (!IS_SVG_IMG) {
+      imgixOptions = {
+        fit: 'max',
+        w: 1200,
+        fm: 'auto',
+      };
+    }
+    thumbnail = generateImgixSrc(thumbnail, imgixOptions);
 
     return {title, description, thumbnail, alt};
   }
