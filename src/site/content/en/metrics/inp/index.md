@@ -54,7 +54,7 @@ INP is a metric that assesses a page's overall responsiveness to user interactio
 A note on how INP is calculated
 {% endDetailsSummary %}
 
-As stated above, INP is calculated by observing all the interactions made with a page. The resulting value is determined by a formula that calculates a high [percentile](https://en.wikipedia.org/wiki/Percentile) value of all the observed interactions. The interaction with the worst latency is chosen, dropping the worst of every 50 interactions.
+As stated above, INP is calculated by observing all the interactions made with a page. The interaction with the worst latency is reported as INP, however, one worst interaction is ignored for every 50 interactions. The vast majority of page experiences do not have over 50 interactions.
 {% endDetails %}
 
 An _interaction_ is a group of event handlers that fire during the same logical user gesture. For example, "tap" interactions on a touchscreen device include multiple events, such as `pointerup`, `pointerdown`, and `click`. An interaction can be driven by JavaScript, CSS, built-in browser controls (such as form elements), or a combination thereof.
