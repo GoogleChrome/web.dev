@@ -6,7 +6,7 @@ subhead: |
 authors:
   - jlwagner
   - philipwalton
-updated: 2023-05-09
+updated: 2023-05-19
 date: 2022-12-08
 hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/FV8Ls9SDF6UQ3v2IgKUw.jpg
 thumbnail: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/c2jPmJH5tCH2pnMq1CQu.jpg
@@ -75,7 +75,7 @@ If you're not relying on a RUM provider to get field data, the [INP field data g
 
 ### Diagnose slow interactions in the lab
 
-Ideally, you'll want to start testing in the lab once you have field data that suggests you have slow interactions.
+Ideally, you'll want to start testing in the lab once you have field data that suggests you have slow interactions. In the absence of field data, there are some strategies for reproducing slow interactions in the lab. Such strategies include following common user flows and testing interactions along the way, as well as interacting with the page during load—when the main thread is often busiest—in order to surface slow interactions during that crucial part of the user experience.
 
 {% Aside 'objective' %}
 **Read to learn more:**&nbsp;[Diagnose slow interactions in the lab](/diagnose-slow-interactions-in-the-lab/).
