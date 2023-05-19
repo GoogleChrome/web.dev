@@ -126,7 +126,7 @@ For example you can stream data from one place, then compress the data stream to
 
 ## Wrap up
 
-There are many more features that recently became interoperable and stable to use on the web platform. Going forward we will work with the[WebDX Community Group](https://www.w3.org/community/webdx/) to bring more clarity to these Baseline feature sets. Please check out [web.dev/baseline](/baseline/) for ongoing details. 
+There are many more features that recently became interoperable and stable to use on the web platform. Going forward we will work with the [WebDX Community Group](https://www.w3.org/community/webdx/) to bring more clarity to these Baseline feature sets. Please check out [web.dev/baseline](/baseline/) for ongoing details. 
 
 If you want to stay up-to-date, our team is publishing articles [when a feature becomes interoperable](/tags/newly-interoperable/), and publish [monthly updates on what's going on the web platform](/tags/new-to-the-web/) from experimental features to newly interoperable.   
   
