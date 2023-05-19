@@ -303,7 +303,7 @@ function getMeta(name) {
  * Sets the config for a given analytics measurement ID,
  * configured for the web.dev accounts.
  */
-export function setConfig() {
+function setConfig() {
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({measurement_version: version});
   window.dataLayer.push({navigation_type: getNavigationType()});
@@ -330,6 +330,8 @@ export function setConfig() {
 async function initAnalytics() {
   // If prerendering then only init once the page is activated
   await whenPageActivated;
+
+  setConfig();
 
   addClickEventListener();
   addPageShowEventListener();
