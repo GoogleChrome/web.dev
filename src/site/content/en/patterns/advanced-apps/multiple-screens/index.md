@@ -2,10 +2,12 @@
 layout: pattern
 title: How to use multiple screens
 date: 2022-10-10
+updated: 2023-05-19
 authors:
   - pliao
+  - thomassteiner
 description: >
-  Learn how to use the Multi-Screen Window Placement API to control multiple screens.
+  Learn how to use the Window Management API to control multiple screens.
 height: 800
 static:
   - popup.html
@@ -22,7 +24,7 @@ the needs of your app.
 
 ```js
 if ('getScreenDetails' in window) {
-  // The Multi-Screen Window Placement API is supported.
+  // The Window Management API is supported.
   const screenDetails = await window.getScreenDetails();
   screenDetails.addEventListener('screenschange', (event) => {
     // Handle screens change.
@@ -53,7 +55,7 @@ if (!('getScreenDetails' in window)) {
 
 ## Progressive enhancement
 
-The demo below shows how you can handle multiple screens with the Multi-Screen Window Placement API.
+The demo below shows how you can handle multiple screens with the Window Management API.
 The code checks the browser capability first and then falls back to the classic way.
 
 ```js
@@ -77,7 +79,7 @@ detectButton.addEventListener('click', async () => {
     });
     try {
       permission =
-        (await navigator.permissions.query({ name: 'window-placement' })).state === 'granted'
+        (await navigator.permissions.query({ name: 'window-management' })).state === 'granted'
           ? 'Granted'
           : 'No Permission';
     } catch (err) {
@@ -87,7 +89,7 @@ detectButton.addEventListener('click', async () => {
     updateScreenInfo();
   } else {
     screenDetails = window.screen;
-    permission = 'Multi-Screen Window Placement API - NOT SUPPORTED';
+    permission = 'Window Management API - NOT SUPPORTED';
     currentScreenLength = 1;
     updateScreenInfo();
   }
@@ -130,7 +132,7 @@ updateScreenInfo = () => {
 
 ## Further reading
 
-- [Managing several displays with the Multi-Screen Window Placement API](/multi-screen-window-placement/)
+- [Managing several displays with the Window Management API](https://developer.chrome.com/articles/window-management/)
 - [Screen API](https://developer.mozilla.org/docs/Web/API/Screen)
 
 ## Demo

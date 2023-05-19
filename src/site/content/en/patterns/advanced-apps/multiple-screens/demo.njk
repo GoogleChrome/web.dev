@@ -65,7 +65,7 @@ patternId: advanced-apps/multiple-screens
           });
           try {
             permission =
-              (await navigator.permissions.query({ name: 'window-placement' }))
+              (await navigator.permissions.query({ name: 'window-management' }))
                 .state === 'granted'
                 ? 'Granted'
                 : 'No Permission';
@@ -76,7 +76,7 @@ patternId: advanced-apps/multiple-screens
           updateScreenInfo();
         } else {
           screenDetails = window.screen;
-          permission = 'Multi-Screen Window Placement API - NOT SUPPORTED';
+          permission = 'Window Management API - NOT SUPPORTED';
           currentScreenLength = 1;
           updateScreenInfo();
         }
