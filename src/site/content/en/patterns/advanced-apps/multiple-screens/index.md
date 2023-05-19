@@ -5,6 +5,7 @@ date: 2022-10-10
 updated: 2023-05-19
 authors:
   - pliao
+  - thomassteiner
 description: >
   Learn how to use the Window Management API to control multiple screens.
 height: 800
