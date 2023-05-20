@@ -54,7 +54,7 @@ INP is a metric that assesses a page's overall responsiveness to user interactio
 A note on how INP is calculated
 {% endDetailsSummary %}
 
-As stated above, INP is calculated by observing all the interactions made with a page. The interaction with the worst latency is reported as INP, however, one worst interaction is ignored for every 50 interactions. The vast majority of page experiences do not have over 50 interactions.
+As stated above, INP is calculated by observing all the interactions made with a page. For most sites the interaction with the worst latency is reported as INP. However, for pages with large numbers of interactions, random hiccups can result in an unusually high interaction on an otherwise responsive site. The more interactions, the more likely this is to happen. To counter this, and give a better measure of the actual responsiveness for those types of pages, we ignore one highest interaction for every 50 interactions. The vast majority of page experiences do not have over 50 interactions so will report the worst interaction. The 75th percentile of all the page views is then reported as usual, which further removes outliers to give a value that the vast majority of users experience or better.
 {% endDetails %}
 
 An _interaction_ is a group of event handlers that fire during the same logical user gesture. For example, "tap" interactions on a touchscreen device include multiple events, such as `pointerup`, `pointerdown`, and `click`. An interaction can be driven by JavaScript, CSS, built-in browser controls (such as form elements), or a combination thereof.
@@ -159,7 +159,7 @@ The best way to measure your website's INP is by gathering metrics from actual u
 
 ### In the field
 
-Ideally, your journey in optimizing INP will start with field data. At its best, field data from a Real User Monitoring (RUM) provider will give you not only a page's INP value, but also contextual data that highlights what specific interaction was responsible for the INP value itself, whether the interaction occurred during or after page load, the type of interaction (click, keypress, or tap), and other valuable information.
+Ideally, your journey in optimizing INP will start with field data. At its best, field data from Real User Monitoring (RUM) will give you not only a page's INP value, but also contextual data that highlights what specific interaction was responsible for the INP value itself, whether the interaction occurred during or after page load, the type of interaction (click, keypress, or tap), and other valuable information.
 
 {% Aside 'objective' %}
 **Read to learn more:**&nbsp;[Find slow interactions in the field](/find-slow-interactions-in-the-field/).
