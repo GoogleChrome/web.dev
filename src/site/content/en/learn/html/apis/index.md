@@ -143,7 +143,7 @@ on top of the properties and methods inherited from `HTMLElement`, and are not l
 ### Redundant API methods and properties
 
 If an interface has the same method or property name as and interface it inherits, the inheriting method or property overwrites
-the inherited one. When we accessed the `alt` ond `offsetHeight` properties above with `imageInstance.alt` and `sectionInstance.offsetHeight`
+the inherited one. When we accessed the `alt` and `offsetHeight` properties above with `imageInstance.alt` and `sectionInstance.offsetHeight`
 respectively, the code didn't identify which API was being accessed.
 
 Generally, as with these two examples, this isn't an issue. But, it can be. For example, the [`HTMLCollection.length`](https://developer.mozilla.org/docs/Web/API/HTMLCollection/length)
