@@ -58,7 +58,7 @@ The chart below (higher is better) illustrates how AVIF encoding speed compares 
 
 For developers interested in more detailed encoding speed and visual quality comparisons, the [Image Coding Comparisons](https://storage.googleapis.com/avif-comparison/index.html) site contains reproducible benchmark results.
 
-While software implementations for modern image codecs like AVIF and WebP are optimized for x86 and ARM processors architectures, compressing vast amounts of images at scale can be computationally expensive. One alternative to reduce compression costs is to explore hardware acceleration. [Bluedot](https://www.blue-dot.io/) has developed a hardware accelerated Pulsar-AVIF encoder running on programmable FPGAs, such as AMD's Alveo U250. Compared to software based avifenc, Pulsar-AVIF delivers roughly a 7x to 23x speed improvement with similar [compression efficiency](https://www.blue-dot.io/avif-speed-quality-benchmark/).
+While software implementations for modern image codecs like AVIF and WebP are optimized for x86 and ARM processors architectures, compressing vast amounts of images at scale can be computationally expensive. One alternative to reduce compression costs is to explore hardware acceleration. [Bluedot](https://www.blue-dot.io/) has developed a hardware accelerated Pulsar-AVIF encoder running on programmable FPGAs, such as AMD's Alveo U250. Compared to software based avifenc, Pulsar-AVIF delivers a 7 to 23 times speed improvement with similar [compression efficiency](https://www.blue-dot.io/avif-speed-quality-benchmark/).
 
 <div class="table-wrapper scrollbar">
   <table>
