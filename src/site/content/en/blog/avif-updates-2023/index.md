@@ -82,7 +82,7 @@ While software implementations for modern image codecs like AVIF and WebP are op
         <td>305%</td>
         <td>
           AMD Alveo U250 1ea + Intel(R) Xeon(R)<br>
-          Platinum 8171 CPU @ 2.6GHz, 10 cores
+          Platinum 8171 CPU at 2.6GHz, 10 cores
         </td>
       </tr>
       <tr>
@@ -94,7 +94,7 @@ While software implementations for modern image codecs like AVIF and WebP are op
         <td>59.26</td>
         <td>3200%</td>
         <td>
-          Intel(R) Xeon(R) Platinum 8370C CPU @<br>
+          Intel(R) Xeon(R) Platinum 8370C CPU at<br>
           2.8GHz, 32 cores
         </td>
       </tr>
@@ -107,7 +107,7 @@ While software implementations for modern image codecs like AVIF and WebP are op
         <td>18.11</td>
         <td>3200%</td>
         <td>
-          Intel(R) Xeon(R) Platinum 8370C CPU @<br>
+          Intel(R) Xeon(R) Platinum 8370C CPU at<br>
           2.8GHz, 32 cores
         </td>
       </tr>
