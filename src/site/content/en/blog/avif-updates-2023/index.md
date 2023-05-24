@@ -11,7 +11,7 @@ authors:
   - vignesh
 description: |
   An overview of how AVIF is adopted in the ecosystem, and what kind of performance and quality benefits developers can expect from AVIF for still images and animations.
-date: 2023-05-22
+date: 2023-05-24
 tags:
   - blog
   - performance
@@ -146,7 +146,7 @@ Chrome, Firefox and Safari all support animated AVIF playbacks.
 
 FFmpeg is one tool to use for creating animated AVIF files, here’s a basic example of converting a GIF to AVIF using FFmpeg:
 
-```sh
+```bash
 ffmpeg -i "$INPUT_GIF" -crf $CRF -b:v 0 "$OUTPUT.avif"
 ```
 
@@ -156,10 +156,13 @@ FFmpeg uses libaom by default for encoding AVIF images, but it can also use [rav
 
 Another use case is to repackage an AV1 video into AVIF without re-encoding the original file. This is significantly cheaper than decoding/encoding the original AV1 file and makes the AV1 video available for use with the `<img>` element. Passing `-c:v copy` to FFmpeg can do this.
 
-```sh
+```bash
 ffmpeg -i "$INPUT_AV1_VIDEO" -c:v copy -an "$OUTPUT.avif"
 ```
 
 ## Conclusions
 
 AVIF use on the web has been steadily increasing since launch and is widely supported by browsers, image CDNs, WordPress plugins and encoding tools. All in all, AVIF is a great choice for serving images on the web; AVIF is fast to encode and decode while providing the best quality or smallest file size, whichever you prefer for your website. AVIF is the most efficient way to deliver animations on the web. If you have questions, comments, or feature requests, please reach out on the [av1-discuss mailing list](https://groups.google.com/a/aomedia.org/g/av1-discuss), [AOM Github community](https://github.com/AOMediaCodec/community/wiki), and [AVIF wiki](https://github.com/AOMediaCodec/av1-avif/wiki).
+
+_Hero image from [Unsplash](https://unsplash.com/photos/oXlXu2qukGE), by [Amal S
+](https://unsplash.com/@amal_z7z)._
