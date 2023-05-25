@@ -14,10 +14,16 @@
  * limitations under the License.
  */
 
-const {feed} = require('../../../_collections/hooks/authors');
+const filterByLang = require('../../../_filters/filter-by-lang');
+const {lang} = require('../lang');
 
 module.exports = {
   pagination: {
-    before: (authors) => feed(authors),
+    before: (authors) => {
+      for (const author of authors) {
+        author.elements = filterByLang(author.elements, lang);
+      }
+      return authors;
+    },
   },
 };
