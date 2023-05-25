@@ -143,6 +143,43 @@ function Aside(content, type = 'note') {
     titleHTML +
     `<div class="${utilities.body} flow">${renderedContent}</div></aside>`;
 
+  if (process.env.ALT_BUILD) {
+    const altAsides = {
+      gotchas: {
+        className: 'tip',
+        title: '',
+      },
+      important: {
+        className: 'key-point',
+        title: 'Key point',
+      },
+      'key-term': {
+        className: 'key-term',
+        title: 'Key term',
+      },
+      codelab: {
+        className: 'beta',
+        title: 'Try it',
+      },
+      celebration: {
+        className: 'success',
+        title: 'Celebration',
+      },
+      update: {
+        className: 'note',
+        title: 'Update',
+      },
+    };
+    const {className, title} = altAsides[type] || {
+      className: type,
+      title: type[0].toUpperCase() + type.slice(1), // Capitalize
+    };
+    const altAsideHTML =
+      `<aside class="${className}">` +
+      `<b>${title}</b>${renderedContent}</aside>`;
+    return html`${altAsideHTML}`;
+  }
+
   return html`${asideHTML}`;
 }
 

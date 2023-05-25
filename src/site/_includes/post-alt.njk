@@ -1,0 +1,3 @@
+{% for post in collections.alt_build %}
+  {{ post.template.frontMatter.content | njkRender | safe}}
+{% endfor %}

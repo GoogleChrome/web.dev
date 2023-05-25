@@ -90,6 +90,7 @@ const {minifyJs} = require('./src/site/_filters/minify-js');
 const {minifyJSON} = require('./src/site/_filters/minify-json');
 const {cspHash, getHashList} = require('./src/site/_filters/csp-hash');
 const {siteRender} = require('./src/site/_filters/site-render');
+const {njkRender} = require('./src/site/_filters/njk-render');
 const {
   isUpcoming,
   filterInUpcoming,
@@ -168,6 +169,7 @@ module.exports = function (config) {
   config.addFilter('md', md);
   config.addFilter('navigation', navigation);
   config.addNunjucksAsyncFilter('siteRender', siteRender);
+  config.addNunjucksAsyncFilter('njkRender', njkRender);
   config.addFilter('pagedNavigation', pagedNavigation);
   config.addFilter('postsLighthouseJson', postsLighthouseJson);
   config.addFilter('prettyDate', prettyDate);
