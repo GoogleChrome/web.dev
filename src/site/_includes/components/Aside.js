@@ -143,8 +143,8 @@ function Aside(content, type = 'note') {
     titleHTML +
     `<div class="${utilities.body} flow">${renderedContent}</div></aside>`;
 
-  if (process.env.DEVSITE) {
-    const devsiteAsides = {
+  if (process.env.ALT_BUILD) {
+    const altAsides = {
       gotchas: {
         className: 'tip',
         title: '',
@@ -170,14 +170,14 @@ function Aside(content, type = 'note') {
         title: 'Update',
       },
     };
-    const {className, title} = devsiteAsides[type] || {
+    const {className, title} = altAsides[type] || {
       className: type,
       title: type[0].toUpperCase() + type.slice(1), // Capitalize
     };
-    const devsiteAsideHTML =
+    const altAsideHTML =
       `<aside class="${className}">` +
       `<b>${title}</b>${renderedContent}</aside>`;
-    return html`${devsiteAsideHTML}`;
+    return html`${altAsideHTML}`;
   }
 
   return html`${asideHTML}`;

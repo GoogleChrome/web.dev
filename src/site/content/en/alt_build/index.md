@@ -1,6 +1,6 @@
 ---
-layout: post-devsite
-permalink: /devsite/index.md
+layout: post-alt
+permalink: /alt_build/index.md
 
 title: An example blog post used for screenshot testing.
 subhead: |
@@ -60,7 +60,7 @@ alt: A description of the hero image for screen reader users.
 tags:
   - accessibility
   - ux
-  - devsite
+  - alt_build
 
 excludeFromTags: true
 ---
