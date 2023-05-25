@@ -111,7 +111,8 @@ pageScripts:
         <h5> {{ theme.category }} </h5>
           <div class="collection__layout" aria-label="topics">
             {% set cards = theme.cards %}
-            {% include 'partials/cards-collection.njk' %}
+            {# Temp disable to allow rendering without blog posts #}
+            {# {% include 'partials/cards-collection.njk' %} #}
           </div>
       </div>
     </div>
