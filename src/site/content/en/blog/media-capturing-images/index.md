@@ -329,10 +329,8 @@ for the stream returned by `getUserMedia()`.
   captureButton.addEventListener('click', () => {
     context.drawImage(player, 0, 0, canvas.width, canvas.height);
 
-    <strong>
-      // Stop all video streams. player.srcObject.getVideoTracks().forEach(track
-      => track.stop());
-    </strong>;
+    // Stop all video streams.
+    player.srcObject.getVideoTracks().forEach(track => track.stop());
   });
 
   navigator.mediaDevices.getUserMedia(constraints).then((stream) => {
