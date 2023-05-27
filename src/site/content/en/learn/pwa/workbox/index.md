@@ -12,11 +12,11 @@ Maintaining your service worker and cache storage logic can be a challenge as yo
 
 Some tasks that it can help with are matching caching strategies to paths (or routing patterns), working with streams, and using features like background sync with proper fallbacks.
 
-Workbox can help you with managing your asset caching and serving needs. It's also the most used library for service workers; used by [32% of mobile sites](https://almanac.httparchive.org/en/2021/pwa#workbox-usage) and it is used in many build tools and CLIs, including the Angular CLI, Create-React-App, and Vue CLI. There are plugins to most other libraries and frameworks, too, such as Next.js.
+Workbox can help you with managing your asset caching and serving needs. It's also the most used library for service workers; used by [54% of mobile sites](https://almanac.httparchive.org/en/2022/pwa#workbox-usage) and it is used in many build tools and CLIs, including the Angular CLI, Create-React-App, and Vue CLI. There are plugins to most other libraries and frameworks, too, such as Next.js.
 
 <div class="w-stats">
   <div class="w-stat">
-    <p class="w-stat__figure">32<sub class="w-stat__sub">%</sub></p>
+    <p class="w-stat__figure">54<sub class="w-stat__sub">%</sub></p>
     <p class="w-stat__desc">Mobile sites with service workers use the Workbox library</p>
   </div>
  </div>
@@ -36,12 +36,12 @@ Workbox modules work in different contexts, such as:
 - **As part of a build system**: for example, webpack, for purposes such as creating a manifest of your assets, or even generating your entire service worker.
 
 Some popular modules are:
+
 - [workbox-routing](https://developer.chrome.com/docs/workbox/modules/workbox-routing/): When the service worker intercepts requests this module routes those requests to different functions that provide responses; it's an implementation of the `fetch` event handler as mentioned in the [Serving chapter](/learn/pwa/serving).
 - [workbox-strategies](https://developer.chrome.com/docs/workbox/modules/workbox-strategies/): A set of runtime caching strategies that handle responding to a request, such as cache first and stale while revalidate; it's an implementation of the different strategies mentioned in the [Serving chapter](/learn/pwa/serving).
 - [workbox-precaching](https://developer.chrome.com/docs/workbox/modules/workbox-precaching/): It's an implementation of caching files in the `install` event handler of the service worker (also known as precaching), as mentioned in the [Caching chapter](/learn/pwa/caching). With this module you can easily precache a set of files and efficiently manage updates to those assets. We'll cover updating assets in the [Update chapter](/learn/pwa/update).
 - [workbox-expiration](https://developer.chrome.com/docs/workbox/modules/workbox-expiration/): It is a plugin used with the caching strategies to remove cached requests based on the number of items in a cache or based on the age of the cached request. It helps manage your caches and sets limits on time and the number of items in each cache.
 - [workbox-window](https://developer.chrome.com/docs/workbox/modules/workbox-window/): A set of modules intended to run in the window context, which is to say, inside of your PWA web pages. You can simplify the process of service worker registration and updates and enable easier communication between code running in the service worker context and the window context.
-
 
 ## Using Workbox
 
@@ -101,11 +101,12 @@ With the strategy created, it's time to register a route to use it. The followin
 registerRoute( ({ request }) => request.mode === 'navigate',
   pageStrategy );
 ```
+
 Read the [Workbox documentation](https://developer.chrome.com/docs/workbox/) for more examples and best practices.
 
 ## Offline fallback
 
-The *workbox-routing* module also has an exported `setCatchHandler()`, that provides handling if a route throws an error. You can use this to set up an offline fallback to notify users that their requested route isn't currently available.
+The _workbox-routing_ module also has an exported `setCatchHandler()`, that provides handling if a route throws an error. You can use this to set up an offline fallback to notify users that their requested route isn't currently available.
 
 Here, a combination of Workbox and the Cache Storage API provides an offline fallback using a cache-only strategy.
 First, during the service worker's install lifecycle, the `offline-fallbacks` cache is opened, and the array of offline fallbacks is added to the cache.
@@ -154,7 +155,7 @@ You can play with Workbox right away using the following code lab:
 [Working With Workbox](https://developers.google.com/codelabs/pwa-training/pwa03--working-with-workbox?hl=pt#).
 {% endAside %}
 
-##  Resources
+## Resources
 
 - [Get Started with Workbox](https://developer.chrome.com/docs/workbox/)
 - [Workbox Modules](https://developer.chrome.com/docs/workbox/modules/)
