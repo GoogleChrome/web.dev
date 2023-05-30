@@ -176,7 +176,7 @@ function Aside(content, type = 'note') {
     };
     const altAsideHTML =
       `<aside class="${className}">` +
-      `<b>${title}</b>${renderedContent}</aside>`;
+      `<b>${title}: </b>${renderedContent}</aside>`;
     return html`${altAsideHTML}`;
   }
 
