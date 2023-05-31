@@ -20,18 +20,18 @@ tags:
 In May 2023, [Firefox 113](https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/113), [Chrome 113](https://developer.chrome.com/blog/new-in-chrome-113/), [Chrome 114](https://developer.chrome.com/blog/new-in-chrome-114/), and [Safari 16.5](https://developer.apple.com/documentation/safari-release-notes/safari-16_5-release-notes) became stable. Let's take a look at what this means for the web platform.
 
 {% Aside 'caution' %}
-We include browser compatibility data pulled from MDN in these posts which may not have updated for very recent browser releases. The post will show the correct information as soon as it appears in the [browser-compat-data release](https://github.com/mdn/browser-compat-data/releases).
+We include browser compatibility data pulled from MDN in these posts which may not have been updated yet for very recent browser releases. The post will show the correct information as soon as it appears in the [browser-compat-data release](https://github.com/mdn/browser-compat-data/releases).
 {% endAside %}
 
 ### WebGPU
 
-Chrome 113 includes [WebGPU](https://developer.chrome.com/blog/webgpu-release/), the successor to the WebGL and WebGL 2 graphics APIs for the Web. It provides modern features such as GPU compute, lower overhead access to GPU hardware, the ability to render to multiple canvases from a single graphics device, and better, more predictable performance.
+Chrome 113 includes [WebGPU](https://developer.chrome.com/blog/webgpu-release/), the successor to the WebGL and WebGL 2 graphics APIs for the web. It provides modern features such as GPU compute, lower overhead access to GPU hardware, the ability to render to multiple canvases from a single graphics device, and better, more predictable performance.
 
 {% BrowserCompat 'api.GPU' %}
 
 ### First-Party Sets
 
-[First Party Sets](https://developer.chrome.com/docs/privacy-sandbox/first-party-sets/) is part of the [Privacy Sandbox](https://privacysandbox.com/). It is a way for organizations to declare relationships among sites, so that browsers allow limited third-party cookie access for specific purposes. This began a staged rollout in Chrome 113. 
+[First-Party Sets (FPS)](https://developer.chrome.com/docs/privacy-sandbox/first-party-sets/) is part of the [Privacy Sandbox](https://privacysandbox.com/). It is a way for organizations to declare relationships among sites, so that browsers can decide when to allow limited third-party cookie access for sites within a set. FPS began a staged rollout in Chrome 113. 
 
 ### CSS media features and more
 
@@ -61,7 +61,7 @@ Firefox 113 also adds the ability to pass a selector list into `:nth-child()` an
 
 ### Compressions Streams API
 
-Now supported in all three major engines due to inclusion in Firefox 113, the Compressions Streams API enables the compression and decompression of streams. THis means that JavaScript applications no longer need to bundle a compression library.
+Now supported in all three major engines due to inclusion in Firefox 113, the Compressions Streams API enables the compression and decompression of streams. This means that JavaScript applications no longer need to bundle a compression library.
 
 {% BrowserCompat 'api.CompressionStream' %}
 
@@ -93,7 +93,7 @@ From Chrome 114 you can use `text-wrap: balance`. This allows you to balance hea
 
 ### CHIPS: Cookies Having Independent Partitioned State
 
-As part of the work to [phase out third-party cookies](https://developer.chrome.com/docs/privacy-sandbox/third-party-cookie-phase-out/), CHIPS enables opting-in to third-party cookies being partitioned by top-level site using the new cookie attribute `Partitioned`. CHIPS is available in Chrome 114. 
+As part of the work to [phase out third-party cookies](https://developer.chrome.com/docs/privacy-sandbox/third-party-cookie-phase-out/), [CHIPS](https://developer.chrome.com/docs/privacy-sandbox/chips/) enables opting-in to third-party cookies being partitioned by top-level site using the new cookie attribute `Partitioned`. CHIPS is available in Chrome 114. 
 
 ### The Popover API
 
