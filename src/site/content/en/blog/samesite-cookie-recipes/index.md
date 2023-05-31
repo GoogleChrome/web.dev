@@ -286,7 +286,3 @@ anyone has encountered it - so don't hesitate to reach out:
 - Follow Chrome's progress on the
   [`SameSite` updates page](https://www.chromium.org/updates/same-site).
 
-_Cookie hero image by
-[Calajay](https://unsplash.com/@calajay)
-on
-[Unsplash](https://unsplash.com)_
