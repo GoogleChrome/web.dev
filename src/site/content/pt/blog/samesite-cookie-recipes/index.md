@@ -7,7 +7,7 @@ authors:
   - rowan_m
 date: 2019-10-30
 updated: 2020-05-28
-hero: image/admin/V0dgwWTA61NTc55CAhSD.jpg
+hero: image/kheDArv5csY6rvQUJDbWRscckLr1/5f56hyvtMT6Dymo839tc.png
 description: Com a introdução do novo valor de atributo SameSite = None, os sites agora podem marcar explicitamente seus cookies para uso entre sites. Os navegadores estão mudando para fazer cookies sem um atributo SameSite atuarem como primários por padrão, uma opção de preservação de privacidade mais segura e mais do que o comportamento aberto atual. Aprenda como marcar seus cookies para garantir que seus cookies primários e terciários continuem a funcionar assim que essa alteração entrar em vigor.
 tags:
   - blog
@@ -157,4 +157,3 @@ Os cookies estão em todos os lugares e é raro que qualquer site tenha completa
 - Para problemas com o comportamento do Chromium, relate um bug por meio do [modelo de problema [cookies do SameSite]](https://bit.ly/2lJMd5c) .
 - Siga o progresso do Chrome na [página de atualizações `SameSite`](https://www.chromium.org/updates/same-site) .
 
-*Imagem do herói do cookie por [Calajay](https://unsplash.com/@calajay) no [Unsplash](https://unsplash.com)*

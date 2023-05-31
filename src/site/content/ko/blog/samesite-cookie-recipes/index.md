@@ -5,7 +5,7 @@ authors:
   - rowan_m
 date: 2019-10-30
 updated: 2020-05-28
-hero: image/admin/V0dgwWTA61NTc55CAhSD.jpg
+hero: image/kheDArv5csY6rvQUJDbWRscckLr1/5f56hyvtMT6Dymo839tc.png
 description: |2
 
   새로운 SameSite=None 속성 값의 도입으로 사이트는 이제
@@ -167,4 +167,3 @@ app.listen(process.env.PORT);
 - Chromium의 동작과 관련된 문제의 경우 [[SameSite 쿠키] 문제 템플릿](https://bit.ly/2lJMd5c)을 통해 버그를 제기하세요.
 - [`SameSite` 업데이트 페이지](https://www.chromium.org/updates/same-site)에서 Chrome의 진행 상황을 따르십시오.
 
-*[Unsplash](https://unsplash.com)에서 [Calajay](https://unsplash.com/@calajay)가 제공한 쿠키 히어로 이미지*
