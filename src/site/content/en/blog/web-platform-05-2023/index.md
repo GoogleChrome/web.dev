@@ -113,7 +113,7 @@ Beta browser versions give you a preview of things that will be in the next stab
 
 Chrome 115 includes multiple values for the CSS `display` property. This means that `display: flex` becomes `display: block flex` and `display: block` becomes `display: block flow`. The single values are maintained as legacy keywords, and once in Chrome Stable this makes the multiple values available accross all engines. 
 
-Also in Chrome 115 are the `ScrollTimeline` and `ViewTimeline` extensions to the Web Animations specification. These enable [scroll-driven animations](/articles/scroll-driven-animations/) via CSS and JavaScript. 
+Also in Chrome 115 are the `ScrollTimeline` and `ViewTimeline` extensions to the Web Animations specification. These enable [scroll-driven animations](https://developer.chrome.com/articles/scroll-driven-animations/) via CSS and JavaScript. 
 
 Firefox 114 includes the [WebTransport API](https://developer.mozilla.org/docs/Web/API/WebTransport_API), a modern update to WebSockets providing support for multiple streams, unidirectional streams, and out-of-order delivery.
 
