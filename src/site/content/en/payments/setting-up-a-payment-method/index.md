@@ -404,10 +404,10 @@ in the Payment Request UI, the selected payment app is launched.
 
 <figure>
   {% Video
-    src="video/YLflGBAPWecgtKJLqCJHSzHqe2J2/8T37CEyLisAjwW39dRwB.mp4", autoplay="true", loop="true", muted="true"
+    src="video/YLflGBAPWecgtKJLqCJHSzHqe2J2/VOKIj5Tqfi2bNPCjtkyi.mp4", autoplay="true", loop="true", muted="true"
   %}
   <figcaption>
-    Payment Request UI intervenes before launching the payment app.
+    Skip the Payment Request UI and launch the payment app directly.
   </figcaption>
 </figure>
 
@@ -419,10 +419,10 @@ launch a payment app directly without showing the Payment Request UI when
 
 <figure>
   {% Video
-    src="video/YLflGBAPWecgtKJLqCJHSzHqe2J2/VOKIj5Tqfi2bNPCjtkyi.mp4", autoplay="true", loop="true", muted="true"
+    src="video/YLflGBAPWecgtKJLqCJHSzHqe2J2/8T37CEyLisAjwW39dRwB.mp4", autoplay="true", loop="true", muted="true"
   %}
   <figcaption>
-    Skip the Payment Request UI and launch the payment app directly.
+    Payment Request UI intervenes before launching the payment app.
   </figcaption>
 </figure>
 
