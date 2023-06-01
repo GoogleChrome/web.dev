@@ -19,7 +19,6 @@ Use the menu pane to navigate the modules. (The menu is at left on desktop or be
 
 You'll learn PWA fundamentals like the Web App Manifest,
 service workers, how to design with an app in mind,
-what's different from a classic web app,
 how to use other tools to test and debug your PWA.
 After these fundamentals, you'll learn about integration with the platform and operating system,
 how to enhance your PWA's installation and usage experience, and how to offer an offline experience.
