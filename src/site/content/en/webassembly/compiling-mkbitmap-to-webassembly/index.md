@@ -35,7 +35,7 @@ The first step is to obtain the source code of `mkbitmap`. You can find it on th
 
 ## Installing the tool
 
-The next step is to install the tool. The [`INSTALL`](https://potrace.sourceforge.net/INSTALL) file contains the following instructions:
+The next step is to install the tool locally to get a feeling of how it behaves. The [`INSTALL`](https://potrace.sourceforge.net/INSTALL) file contains the following instructions:
 
  1. `cd` to the directory containing the package's source code and type
     `./configure` to configure the package for your system.
@@ -146,8 +146,19 @@ The documentation then goes on (a little edited for brevity):
 So essentially `./configure` becomes `emconfigure ./configure` and `make` becomes `emmake make`. Let's try this with `mkbitmap`:
 
 {% Aside 'warning' %}
-If you followed the platform compilation steps above, be sure to run `make clean` before proceeding with the WebAssembly compilation steps.
+If you followed the platform compilation steps above, be sure to run `make clean` before proceeding with the WebAssembly compilation steps to remove previous compile artifacts.
 {% endAside %}
+
+Step 0, `make clean`:
+
+```bash
+$ make clean
+Making clean in src
+ rm -f potrace mkbitmap
+test -z "" || rm -f
+rm -rf .libs _libs
+[…]
+rm -f *.lo
 
 Step 1, `emconfigure ./configure`:
 
@@ -187,9 +198,10 @@ $ find . -name "*.wasm"
 ./src/potrace.wasm
 ```
 
-The two last ones look promising. There are now also two corresponding files, `mkbitmap` and `potrace`. The fact that they don't have the `.js` extension is a little confusing, but they are in fact JavaScript files, verifiable with a quick `head` call:
+The two last ones look promising, so `cd` into the `src/` directory. There are now also two new corresponding files, `mkbitmap` and `potrace`. The fact that they don't have the `.js` extension is a little confusing, but they are in fact JavaScript files, verifiable with a quick `head` call:
 
 ```bash
+$ cd src/
 $ head -n 20 mkbitmap
 // include: shell.js
 // The Module object: Our interface to the outside world. We import
@@ -259,15 +271,158 @@ var Module = {
 };
 ```
 
-When you now reload the app, the prompt should be gone. But how can you provide input to the app? This is where Emscripten's [file system](https://emscripten.org/docs/api_reference/Filesystem-API.html) support in `Module.FS` comes in. If you read the [Including File System Support](https://emscripten.org/docs/api_reference/Filesystem-API.html#including-file-system-support) section of the documentation, you will read:
+When you now reload the app, the prompt should be gone. But how can you provide input to the app? This is where Emscripten's [file system](https://emscripten.org/docs/api_reference/Filesystem-API.html) support in `Module.FS` will come in. If you read the [Including File System Support](https://emscripten.org/docs/api_reference/Filesystem-API.html#including-file-system-support) section of the documentation, you will read:
 
 > Emscripten decides whether to include file system support automatically. Many programs don't need files, and file system support is not negligible in size, so Emscripten avoids including it when it doesn't see a reason to. That means that if your C/C++ code does not access files, then the `FS` object and other file system APIs will not be included in the output. And, on the other hand, if your C/C++ code does use files, then file system support will be automatically included.
 
-Unfortunately `mkbitmap` is one of these cases where this magic doesn't work, so you need to explicitly tell Emscripten to include file system support. This means you need to do the `emconfigure` and `emmake` dance from above again, with the right flags set that you pass via a `CFLAGS` argument. Set `-sFILESYSTEM` so file system support is included and `-sEXPORTED_RUNTIME_METHODS=FS,ccall,cwrap` so `Module.FS`, `Module.ccall`, and `Module.cwrap` are exported. (More on `cwrap` and `ccall` later.) The final `emconfigure` command looks like this:
+Unfortunately `mkbitmap` is one of these cases where this magic doesn't work, so you need to explicitly tell Emscripten to include file system support. This means you need to do the `emconfigure` and `emmake` dance from above again, with a couple more flags set that you pass via a `CFLAGS` argument.
+
+- Set [`-sFILESYSTEM=1`](https://github.com/emscripten-core/emscripten/blob/fd9b4862cd3729b58ecc0f26ce03f9b9513615b0/src/settings.js#L918-L926) so file system support is included.
+- Set [`-sEXPORTED_RUNTIME_METHODS=FS,callMain`](https://github.com/emscripten-core/emscripten/blob/fd9b4862cd3729b58ecc0f26ce03f9b9513615b0/src/settings.js#L862-L869) so `Module.FS` and `Module.callMain` are exported.
+- Set [`-sMODULARIZE=1`](https://github.com/emscripten-core/emscripten/blob/fd9b4862cd3729b58ecc0f26ce03f9b9513615b0/src/settings.js#L1162-L1224) and [`-sEXPORT_ES6`](https://github.com/emscripten-core/emscripten/blob/fd9b4862cd3729b58ecc0f26ce03f9b9513615b0/src/settings.js#L1226-L1229) to generate a modern ES6 module.
+- Set [`-sINVOKE_RUN=0`](https://github.com/emscripten-core/emscripten/blob/fd9b4862cd3729b58ecc0f26ce03f9b9513615b0/src/settings.js#L70-L74) to prevent the initial run that caused the prompt to appear.
+
+Also, in this particular case, you need to set the [`--host`](https://www.gnu.org/software/autoconf/manual/autoconf-2.69/html_node/Hosts-and-Cross_002dCompilation.html) flag to `wasm32` to tell the `configure` script that you are compiling for WebAssembly.
+
+The final `emconfigure` command looks like this:
 
 ```bash
-$ emconfigure ./configure CFLAGS='-sFILESYSTEM -sEXPORTED_FUNCTIONS=_main -sEXPORTED_RUNTIME_METHODS=FS,ccall,cwrap'
+$ emconfigure ./configure --host=wasm32 CFLAGS='-sFILESYSTEM=1 -sEXPORTED_RUNTIME_METHODS=FS,callMain -sMODULARIZE=1 -sEXPORT_ES6 -sINVOKE_RUN=0'
 ```
 
 Do not forget to run `emmake make` again and copy the freshly created files over to the `mkbitmap` folder.
 
+Modify `index.html` so that it loads the ES module `script.js`, from which you then import the `mkbitmap` module.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>mkbitmap</title>
+  </head>
+  <body>
+    <!-- See next listing. -->
+    <script src="/script.js" type="module"></script>
+  </body>
+</html>
+```
+
+```js
+// This is `script.js`.
+import loadWASM from './mkbitmap.js';
+
+const run = async () => {
+  const Module = await loadWASM();
+  console.log(Module);
+};
+
+run();
+```
+
+When you open the app now in the browser, you can see the `Module` object logged to the DevTools console, and the prompt is gone, since the `main()` function is no longer called at the start.
+
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/VDD7kemQvnMsC7vsGnEr.png", alt="The mkbitmap app with a white screen, showing the Module object logged to the DevTools console.", width="800", height="502" %}
+
+The next step is to manually call the `main()` function, which you do by running `Module.callMain()`. The `callMain()` function takes an array of arguments, which match one-by-one what you would pass on the command line. If one the command line you would run `mkbitmap -v`, you would call `Module.callMain(['-v'])` in the browser. This logs the `mkbitmap` version number to the DevTools console.
+
+```js
+// This is `script.js`.
+import loadWASM from './mkbitmap.js';
+
+const run = async () => {
+  const Module = await loadWASM();
+  Module.callMain(['-v']);
+};
+
+run();
+```
+
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/i4MTQgb47ColZt4pcAqr.png", alt="The mkbitmap app with a white screen, showing the mkbitmap version number logged to the DevTools console.", width="800", height="502" %}
+
+ The standard output (`stdout`) by default is to the console. The cool thing is that you can redirect it to something else, for example, a function that stores the output to a variable, so you can add it to the HTML.
+
+```js
+// This is `script.js`.
+import loadWASM from './mkbitmap.js';
+
+const run = async () => {
+  let consoleOutput = 'Powered by ';
+  const Module = await loadWASM({
+    print: (text) => (consoleOutput += text),
+  });
+  Module.callMain(['-v']);
+  document.body.textContent = consoleOutput;
+};
+
+run();
+```
+
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/61iaKchi6p0NmbfipNhO.png", alt="The mkbitmap app showing the mkbitmap version number.", width="800", height="502" %}
+
+The next step is to code up the equivalent of `mkbitmap filename`. If a `filename` argument is given, then `mkbitmap` will by default create an output file whose name is obtained from the input file name by changing its suffix to `.pbm` (for the input file name `example.bmp`, the output file name would be `example.pbm`).
+
+Emscripten provides a virtual file system that simulates the local file system, so that native code using synchronous file APIs can be compiled and run with little or no change.
+For this, you need to use the `FS` object that Emscripten provides. The `FS` object is backed by an in-memory file system (commonly referred to as MEMFS) and has a [`writeFile()`](https://emscripten.org/docs/api_reference/Filesystem-API.html#FS.writeFile) function that you use to write files to the virtual file system. To verify it worked, run the `FS` object's [`readdir()`](https://emscripten.org/docs/api_reference/Filesystem-API.html#FS.readdir) function with the parameter `'/'`. You will see `example.bmp` and a number of default files that [always are created automatically](https://emscripten.org/docs/api_reference/Filesystem-API.html#file-system-api). Note that the previous call to print the version number was removed. This is due to the fact that `Module.callMain()` is a function that generally expects to only be run once.
+
+```js
+// This is `script.js`.
+import loadWASM from './mkbitmap.js';
+
+const run = async () => {
+  const Module = await loadWASM();
+  const buffer = await fetch('https://example.com/example.bmp').then((res) => res.arrayBuffer());
+  Module.FS.writeFile('example.bmp', new Uint8Array(buffer));
+  console.log(Module.FS.readdir('/'));
+};
+
+run();
+```
+
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/b1Qgw3eQ5im50QAfHWJ5.png", alt="The mkbitmap app showing an array of files in the memory file system, including example.bmp.", width="800", height="502" %}
+
+Next, you need to actually execute `mkbitmap` by running `Module.callMain(['example.bmp'])`. If you now log the contents of the MEMFS' `'/'` folder, you should see the newly created `example.pbm` file.
+
+```js
+// This is `script.js`.
+import loadWASM from './mkbitmap.js';
+
+const run = async () => {
+  const Module = await loadWASM();
+  const buffer = await fetch('https://example.com/example.bmp').then((res) => res.arrayBuffer());
+  Module.FS.writeFile('example.bmp', new Uint8Array(buffer));
+  Module.callMain(['example.bmp']);
+  console.log(Module.FS.readdir('/'));
+};
+
+run();
+```
+
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/vGFJy0pHyNPxdUUPdIcZ.png", alt="The mkbitmap app showing an array of files in the memory file system, including example.bmp and example.pbm.", width="800", height="502" %}
+
+Now how to get the result `example.pbm` out of the memory file system? With the `FS` object's [`readFile()`](https://emscripten.org/docs/api_reference/Filesystem-API.html#FS.readFile) function, which returns a `Uint8Array` that you can then convert to a `File` and download, as browsers don't generally support `.pbm` files.
+(There are more elegant ways to [save a file](/patterns/files/save-a-file/), but using a dynamically created `<a download>` is the most widely supported one.)
+
+```js
+// This is `script.js`.
+import loadWASM from './mkbitmap.js';
+
+const run = async () => {
+  const Module = await loadWASM();
+  const buffer = await fetch('https://example.com/example.bmp').then((res) => res.arrayBuffer());
+  Module.FS.writeFile('example.bmp', new Uint8Array(buffer));
+  Module.callMain(['example.bmp']);
+  const output = Module.FS.readFile('example.pbm', { encoding: 'binary' });
+  const file = new File([output], 'example.pbm', {
+    type: 'image/x-portable-bitmap',
+  });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(file);
+  a.download = file.name;
+  a.click();
+};
+
+run();
+```
+
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/RstHspfwZIn7FW9aetVW.png", alt="macOS Finder with a preview of the input .bmp file and the output .pbm file.", width="800", height="519" %}

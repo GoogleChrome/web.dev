@@ -209,3 +209,7 @@ Hello World
 This brief introduction to WebAssembly is just the tip of the iceberg.
 Learn more about WebAssembly in the [WebAssembly documentation](https://developer.mozilla.org/docs/WebAssembly) on MDN
 and consult the [emscripten documentation](https://emscripten.org/docs/index.html). Truth be told, working with WebAssembly can feel a bit like the [How to draw an owl meme](https://knowyourmeme.com/memes/how-to-draw-an-owl), especially since web developers familiar with HTML, CSS, and JavaScript are not necessarily versed in the to-be-compiled-from languages like C. Luckily there are channels like [StackOverflow's `webassembly` tag](https://stackoverflow.com/questions/tagged/webassembly) where experts are often happy to help if you ask nicely.
+
+{% Aside %}
+Move on to the article [Compiling `mkbitmap` to WebAssembly](/compiling-mkbitmap-to-webassembly/) for a beginner-friendly introduction to compiling a not completely trivial but also not overly complex C program to WebAssembly. At the example of [`mkbitmap`](https://potrace.sourceforge.net/mkbitmap.1.html), this article shows how to use a Wasm program as a library in JavaScript that works with files as input and that outputs images.
+{% endAside %}
