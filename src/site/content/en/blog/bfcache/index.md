@@ -8,7 +8,7 @@ authors:
   - philipwalton
   - tunetheweb
 date: 2020-11-10
-updated: 2023-02-10
+updated: 2023-05-25
 hero: image/admin/Qoeb8x3a11BdGgRzYJbY.png
 alt: Back and forward buttons
 tags:
@@ -357,12 +357,12 @@ risk](https://mathiasbynens.github.io/rel-noopener/), a page with a non-null
 reference cannot safely be put into the bfcache because that could break any
 pages attempting to access it.
 
-As a result, it's best to avoid creating `window.opener` references by using
+As a result, it's best to avoid creating `window.opener` references. You can do this by using
 `rel="noopener"` whenever possible. If your site requires opening a window and
 controlling it through
 [`window.postMessage()`](https://developer.mozilla.org/docs/Web/API/Window/postMessage)
 or directly referencing the window object, neither the opened window nor the
-opener will be eligible for bfcache.
+opener will be eligible for the bfcache.
 
 ### Always close open connections before the user navigates away
 

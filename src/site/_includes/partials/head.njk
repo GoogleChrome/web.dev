@@ -46,7 +46,7 @@
 {# Exclude the /patterns/ section as a control #}
 {% set speculationRules %}
 {
-  "prefetch": [
+  "prerender": [
    {
       "source": "document",
       "where": {
@@ -61,7 +61,8 @@
             }
           }
         ]
-      }
+      },
+      "eagerness": "moderate"
     }
   ]
 }

@@ -17,7 +17,7 @@ tags:
 {% BrowserCompat 'api.LargestContentfulPaint' %}
 
 {% Aside %}
-  Largest Contentful Paint (LCP) is an important, user-centric metric for
+  Largest Contentful Paint (LCP) is an important, [stable](/vitals/#stable) Core Web Vital metric for
   measuring [perceived load
   speed](/user-centric-performance-metrics/#types-of-metrics) because it marks
   the point in the page load timeline when the page's main content has likely

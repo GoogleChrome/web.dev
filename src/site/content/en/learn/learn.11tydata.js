@@ -16,6 +16,7 @@ module.exports = function () {
     allPaths['learn-core-web-vitals'],
     allPaths['metrics'],
     allPaths['fast'],
+    allPaths['how-to-optimize-inp'],
   ];
 
   const build_excellent = [

@@ -13,10 +13,10 @@ intro:
   imageHeight: '240'
 
 featuredCard:
-  eyebrow: 'Featured'
-  title: 'Preview I/O web content. <br>Check out the sessions.'
-  background: 'image/cGQxYFGJrUUaUZyWhyt9yo5gHhs1/9WSNd3mdbXACF19ELKJ1.png'
-  url: 'https://io.google/2023/program/?q=web-topic,web/&utm_source=web&utm_medium=embedded_marketing&utm_campaign=hpp_reg_card&utm_content='
+  eyebrow: ''
+  title: '&nbsp; Top web things from <br>&nbsp; Google I/O.'
+  background: 'image/kheDArv5csY6rvQUJDbWRscckLr1/4i7JstVZvgTFk9dxCe4a.svg'
+  url: 'https://www.youtube.com/watch?v=gkAYHomO5Hg&list=PLOU2XLYxmsIJGxIV8Lt8gF_79Z334LQ6h'
   image: '.'
   alt: '.'
   theme: 'light'
@@ -27,9 +27,9 @@ platformNews:
   title: Web platform news
   subTitle: Keep up to date with the latest news from the major browser engines.
   pickedLeft:
-    url: '/interop-2023/'
+    url: '/introducing-baseline/'
   pickedRight:
-    url: '/web-platform-04-2023/'
+    url: '/web-platform-05-2023/'
 
 themes:
   - category: CSS and UI
@@ -88,26 +88,26 @@ themes:
 
   - category: Performance
     cards:
-      - url: /top-cwv-2023/
+      - url: /inp-cwv/
         eyebrow:
           icon: featured
           text: Featured
         cardLayout: vertical
         column: '1'
         theme: dark
-      - title: Web Vitals patterns
-        description: This collection includes patterns that are often tricky to implement without hurting your Core Web Vitals scores..
+      - title: How to Optimize INP
+        description: Learn how to optimize for the Interaction to Next Paint metric.
         eyebrow:
           icon: pattern
           text: Pattern
-        url: /patterns/web-vitals-patterns/
+        url: /how-to-optimize-inp/
         cardLayout: horizontal
         column: '2'
-      - url: /better-youtube-web-part1/
+      - url: /top-cwv-2023/
         eyebrow:
           icon: blog
-          text: Case Study
-      - url: /optimize-inp/
+          text: Blog
+      - url: /debug-cwvs-with-web-vitals-extension/
         eyebrow:
           icon: blog
           text: Blog

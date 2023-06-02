@@ -8,7 +8,7 @@ import {
 } from 'web-vitals/attribution';
 import {store} from './store';
 import {checkIfUserAcceptsCookies} from './actions.js';
-import {version, dimensions} from 'webdev_analytics';
+import {version} from 'webdev_analytics';
 
 // A function that should be called once all all analytics code has been
 // initialized. Calling this will resolve the `whenAnalyticsInitialize`
@@ -185,9 +185,8 @@ function addPageShowEventListener() {
      */
     (e) => {
       if (e.persisted) {
-        logEvent('page_view', {
-          [dimensions.NAVIGATION_TYPE]: 'back-forward-cache',
-        });
+        window.dataLayer.push({navigation_type: 'back-forward-cache'});
+        logEvent('page_view');
       }
     },
   );
@@ -304,7 +303,7 @@ function getMeta(name) {
  * Sets the config for a given analytics measurement ID,
  * configured for the web.dev accounts.
  */
-export function setConfig() {
+function setConfig() {
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({measurement_version: version});
   window.dataLayer.push({navigation_type: getNavigationType()});
@@ -331,6 +330,8 @@ export function setConfig() {
 async function initAnalytics() {
   // If prerendering then only init once the page is activated
   await whenPageActivated;
+
+  setConfig();
 
   addClickEventListener();
   addPageShowEventListener();

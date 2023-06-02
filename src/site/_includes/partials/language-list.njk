@@ -1,0 +1,18 @@
+<span class="post-signpost__title">
+  {% set languages = page | supportedLanguages(lang) %}
+
+  {% if (languages.length) %}
+    {{'i18n.post.available_in' | i18n(locale)}}:
+    {% for language in languages %}
+      {% set lang = language[0] %}
+      {% set langHref = language[1] %}
+      {% set langName = language[2] %}
+
+      <span>
+        <a href={{langHref}} class="post-signpost__link" translate="no" lang={{lang}}>{{langName}}</a>
+        {%- if not loop.last -%}, {%- endif -%} 
+        {% if loop.index === (languages.length - 1) %} and {% endif %}
+      </span>
+    {% endfor %}
+  {% endif %}
+</span>

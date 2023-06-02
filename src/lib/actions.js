@@ -6,7 +6,6 @@ import {localStorage} from './utils/storage';
 import cookies from 'js-cookie';
 import {ids} from 'webdev_analytics';
 import {isProd} from 'webdev_config';
-import {setConfig} from './analytics';
 
 export const clearSignedInState = store.action(() => {
   const {isSignedIn} = store.getState();
@@ -232,7 +231,6 @@ export const setLanguage = store.action((state, language) => {
 export const loadAnalyticsScript = store.action(() => {
   const {gtmScriptLoaded} = store.getState();
   if (!gtmScriptLoaded && isProd) {
-    setConfig();
     loadScript(`https://www.googletagmanager.com/gtm.js?id=${ids.GTM}`, null);
     return {
       gtmScriptLoaded: true,

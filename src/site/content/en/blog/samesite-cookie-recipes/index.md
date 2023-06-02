@@ -7,7 +7,7 @@ authors:
   - rowan_m
 date: 2019-10-30
 updated: 2020-05-28
-hero: image/admin/V0dgwWTA61NTc55CAhSD.jpg
+hero: image/kheDArv5csY6rvQUJDbWRscckLr1/5f56hyvtMT6Dymo839tc.png
 description: |
   With the introduction of the new SameSite=None attribute value, sites can now
   explicitly mark their cookies for cross-site usage. Browsers are moving to
@@ -286,7 +286,3 @@ anyone has encountered it - so don't hesitate to reach out:
 - Follow Chrome's progress on the
   [`SameSite` updates page](https://www.chromium.org/updates/same-site).
 
-_Cookie hero image by
-[Calajay](https://unsplash.com/@calajay)
-on
-[Unsplash](https://unsplash.com)_

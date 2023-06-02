@@ -364,7 +364,7 @@ paulkinlan:
   description:
     en: Developer Advocate
   bio:
-    en: 
+    en:
       - I lead the Chrome Developer Relations team at Google.
       - We want people to have the best experience possible on the web without having to install a native app or produce content in a walled garden.
       - Our team tries to make it easier for developers to build on the web by supporting every Chrome release, creating great content to support developers on web.dev, contributing to MDN, helping to improve browser compatibility, and some of the best developer tools like Lighthouse, Workbox, Squoosh to name just a few.
@@ -1244,7 +1244,6 @@ tunetheweb:
     pt: Developer Advocate para o Google
     ru: Developer Advocate по вопросам Google
     zh: 负责 Google 的开发技术推广工程师
-
 
 ekharvey:
   title:
@@ -4467,3 +4466,33 @@ anslo:
     en: Anslo
   description:
     en: Exploring creative development and digital craft
+
+amitkumar:
+  title:
+    en: Amit Kumar
+  description:
+    en: Senior Engineering Manager at redBus
+
+daya:
+  title:
+    en: Daya Ram Yadav
+  description:
+    en: Senior Engineering Manager at Times Internet
+
+barunkumar:
+  title:
+    en: Barun Kumar
+  description:
+    en: Senior Frontend Developer at Times Internet
+
+jhuoponen:
+  title: 
+    en: Jani Huoponen
+  description:
+    en: Group Product Manager at Google
+
+vignesh:
+  title:
+    en: Vignesh Venkatasubramanian
+  description:
+    en: Staff Software Engineer at Google

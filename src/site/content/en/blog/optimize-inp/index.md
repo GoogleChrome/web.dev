@@ -1,26 +1,31 @@
 ---
+layout: post
 title: Optimize Interaction to Next Paint
 subhead: |
-  Learn how to optimize for the Interaction to Next Paint metric.
+  Learn how to optimize your website's Interaction to Next Paint.
 authors:
   - jlwagner
   - philipwalton
-updated: 2023-01-25
+updated: 2023-05-09
 date: 2022-12-08
-hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Bynb3Y5cnZQ29P1lfJGP.png
-thumbnail: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/lsCmPkOtco4KA3pYKxAQ.png
-alt: The text "Optimize Interaction to Next Paint", with a watch emoji near the text, all set on a pink background.
+hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/FV8Ls9SDF6UQ3v2IgKUw.jpg
+thumbnail: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/c2jPmJH5tCH2pnMq1CQu.jpg
+alt: A photo of four paint rollers side by side, laying paint on a wall. The colors from left to right are green, red, orange, and blue. Text is overlaid, which reads 'Optimize Interaction to Next Paint'.
 description: |
-  Learn how to optimize for the Interaction to Next Paint metric.
+  Learn how to optimize your website's Interaction to Next Paint.
 tags:
   - blog
   - performance
   - web-vitals
 ---
 
-[Interaction to Next Paint (INP)](/inp/) is an experimental metric that assesses a page's overall responsiveness to user interactions by observing the latency of all [click, tap, and keyboard interactions](/better-responsiveness-metric/#interaction-types) that occur throughout the lifespan of a user's visit to a page. The final INP value is the longest interaction observed, ignoring outliers.
+{% Aside %}
+Interaction to Next Paint (INP) is a [pending](/vitals/#pending) Core Web Vital metric that will [replace First Input Delay (FID)](/inp-cwv/) in March 2024.
+{% endAside %}
 
-To provide a good user experience, sites should strive to have an Interaction to Next Paint of **200 milliseconds or less**. To ensure you're hitting this target for most of your users, a good threshold to measure is the **75th percentile** of page loads, segmented across mobile and desktop devices.
+[Interaction to Next Paint (INP)](/inp/) is a [pending](/vitals/#pending) Core Web Vital metric that assesses a page's overall responsiveness to user interactions by observing the latency of all [qualifying interactions](/inp/#whats-in-an-interaction) that occur throughout the lifespan of a user's visit to a page. The final INP value is the longest interaction observed (sometimes ignoring outliers).
+
+To provide a good user experience, websites should strive to have an Interaction to Next Paint of **200 milliseconds or less**. To ensure you're hitting this target for most of your users, a good threshold to measure is the **75th percentile of page loads**, segmented across mobile and desktop devices.
 
 <style>
   .inp-mobile {
@@ -46,198 +51,109 @@ To provide a good user experience, sites should strive to have an Interaction to
   <svg title="A diagram of the INP thresholds. An INP at or below 200 milliseconds is considered good. Between 200 and 500 milliseconds suggests a page's responsiveness needs improvement. Anything over 500 milliseconds means that a page's responsiveness is poor." class="inp-desktop" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 658.4 113.6" style="enable-background:new 0 0 658.4 113.6" xml:space="preserve"><style>.st0{fill: #2979FF} v.st1{fill-rule: evenodd;clip-rule: evenodd;fill: #0CCE6B} .st2 {fill: #191919} .st3{fill-rule: evenodd;clip-rule: evenodd;fill: #FFA400} .st4{fill-rule: evenodd;clip-rule: evenodd;fill: #FF4E42} @media screen and (prefers-color-scheme: light){.st2{fill: #191919}} @media screen and (prefers-color-scheme: dark){.st2{fill: #fff}} [data-user-theme=dark] .st2{fill: #fff}</style><path class="st0" d="M30.2 68.7V0h13v68.7h-13zm28.7 0V0H74l27.7 46.1h.8l-.8-13.2V0h12.9v68.7H101L71.7 20.1h-.8l.8 13.2v35.4H58.9zm71.3 0V0h24.2c4.4 0 8.4.9 11.9 2.7 3.5 1.8 6.3 4.4 8.4 7.6 2.1 3.3 3.1 7 3.1 11.3 0 4.3-1 8.1-3.1 11.4-2.1 3.3-4.9 5.8-8.4 7.7-3.5 1.8-7.5 2.7-11.9 2.7h-17V31.2h17.4c2.2 0 4.1-.4 5.7-1.3 1.5-.9 2.7-2.1 3.5-3.5.8-1.4 1.2-3 1.2-4.7 0-1.7-.4-3.2-1.2-4.6-.8-1.4-1.9-2.6-3.5-3.5-1.5-.9-3.4-1.3-5.7-1.3h-11.6v56.5h-13z"/><path class="st1" d="M303.2 14.9h115.2v43.2H303.2V14.9z"/><path class="st2" d="M345.3 41.5c-.7 0-1.3-.1-1.9-.4-.6-.2-1.1-.6-1.6-1s-.8-1-1.1-1.6c-.3-.6-.4-1.3-.4-2s.1-1.4.4-2c.3-.6.6-1.1 1.1-1.6.5-.5 1-.8 1.6-1 .6-.2 1.2-.4 1.9-.4s1.4.1 2 .4c.6.2 1.1.6 1.6 1.1l-1 1c-.2-.2-.4-.4-.7-.6-.3-.2-.5-.3-.9-.4-.3-.1-.6-.1-1-.1-.5 0-.9.1-1.3.3-.4.2-.8.4-1.1.7-.3.3-.6.7-.8 1.1-.2.4-.3.9-.3 1.5s.1 1 .3 1.5c.2.4.5.8.8 1.1.3.3.7.6 1.1.7.4.2.9.2 1.3.2s.8-.1 1.2-.2c.4-.1.7-.3 1-.5.3-.2.5-.5.7-.8.2-.3.3-.7.3-1.1h-3.3v-1.3h4.6v.8c0 .7-.1 1.3-.4 1.9-.2.6-.6 1-1 1.5-.4.4-.9.7-1.5.9-.3.2-.9.3-1.6.3zm10.5 0c-.7 0-1.4-.1-2-.4-.6-.3-1.1-.6-1.6-1.1-.4-.5-.8-1-1-1.6-.2-.6-.4-1.2-.4-1.9s.1-1.3.4-1.9c.2-.6.6-1.1 1-1.6s1-.8 1.6-1.1c.6-.3 1.3-.4 2-.4s1.4.1 2 .4c.6.2 1.1.6 1.6 1.1.5.5.8 1 1 1.6.2.6.4 1.2.4 1.9s-.1 1.3-.4 1.9c-.2.6-.6 1.1-1 1.6s-1 .8-1.6 1.1-1.2.4-2 .4zm0-1.4c.6 0 1.2-.2 1.8-.5.5-.3.9-.7 1.2-1.3s.5-1.2.5-1.9-.2-1.3-.5-1.9-.7-1-1.2-1.3c-.5-.3-1.1-.5-1.8-.5-.6 0-1.2.2-1.8.5-.5.3-.9.7-1.2 1.3s-.5 1.2-.5 1.9.2 1.3.5 1.9.7 1 1.2 1.3c.6.4 1.2.5 1.8.5zm11 1.4c-.7 0-1.4-.1-2-.4-.6-.3-1.1-.6-1.6-1.1-.4-.5-.8-1-1-1.6-.2-.6-.4-1.2-.4-1.9s.1-1.3.4-1.9c.2-.6.6-1.1 1-1.6s1-.8 1.6-1.1c.6-.3 1.3-.4 2-.4s1.4.1 2 .4c.6.2 1.1.6 1.6 1.1.5.5.8 1 1 1.6.2.6.4 1.2.4 1.9s-.1 1.3-.4 1.9c-.2.6-.6 1.1-1 1.6s-1 .8-1.6 1.1-1.3.4-2 .4zm0-1.4c.6 0 1.2-.2 1.8-.5.5-.3.9-.7 1.2-1.3s.5-1.2.5-1.9-.2-1.3-.5-1.9-.7-1-1.2-1.3c-.5-.3-1.1-.5-1.8-.5-.6 0-1.2.2-1.8.5-.5.3-.9.7-1.2 1.3s-.5 1.2-.5 1.9.2 1.3.5 1.9.7 1 1.2 1.3c.6.4 1.2.5 1.8.5zm6.6 1.2v-9.5h3c1 0 1.9.2 2.6.6.7.4 1.3 1 1.7 1.7s.6 1.5.6 2.5c0 .9-.2 1.8-.6 2.5s-1 1.3-1.7 1.7c-.7.4-1.6.6-2.6.6h-3zm1.5-1.4h1.5c.7 0 1.3-.1 1.8-.4.5-.3.9-.7 1.2-1.2.3-.5.4-1.1.4-1.8s-.1-1.3-.4-1.8c-.3-.5-.7-.9-1.2-1.2-.5-.3-1.1-.4-1.8-.4h-1.5v6.8z"/><path class="st3" d="M418.4 14.9h124.8v43.2H418.4V14.9z"/><path class="st2" d="M460.8 33.3v-9.5h1.7l4.3 7h.1l-.1-1.8v-5.2h1.5v9.5h-1.5l-4.5-7.4h-.1l.1 1.8v5.5h-1.5zm9.7 0v-9.5h5.8v1.4H472V32h4.3v1.4h-5.8zm.7-4.1v-1.4h4.6v1.4h-4.6zm6.9 4.1v-9.5h5.8v1.4h-4.3V32h4.3v1.4h-5.8zm.8-4.1v-1.4h4.6v1.4h-4.6zm6.8 4.1v-9.5h3c1 0 1.9.2 2.6.6.7.4 1.3 1 1.7 1.7s.6 1.5.6 2.5c0 .9-.2 1.8-.6 2.5s-1 1.3-1.7 1.7c-.7.4-1.6.6-2.6.6h-3zm1.5-1.4h1.5c.7 0 1.3-.1 1.8-.4.5-.3.9-.7 1.2-1.2.3-.5.4-1.1.4-1.8s-.1-1.3-.4-1.8c-.3-.5-.7-.9-1.2-1.2-.5-.3-1.1-.4-1.8-.4h-1.5v6.8zm10.9 1.6c-.5 0-1-.1-1.5-.3-.5-.2-.9-.5-1.2-.9-.3-.4-.6-.9-.8-1.5l1.4-.6c.1.5.4.9.8 1.3.4.3.8.5 1.3.5.3 0 .6-.1.8-.2.3-.1.5-.3.6-.5.2-.2.2-.5.2-.8 0-.3-.1-.5-.2-.7-.1-.2-.3-.4-.6-.5-.3-.2-.7-.3-1.1-.5l-.6-.2c-.3-.1-.5-.2-.8-.4-.3-.1-.5-.3-.7-.5-.2-.2-.4-.5-.5-.7-.1-.3-.2-.6-.2-1 0-.5.1-.9.4-1.3.2-.4.6-.7 1-.9.4-.2 1-.4 1.6-.4.6 0 1.1.1 1.5.3.4.2.7.5 1 .8.2.3.4.6.5.9l-1.3.6c-.1-.2-.2-.4-.3-.5-.1-.2-.3-.3-.5-.4-.2-.1-.5-.2-.8-.2-.3 0-.5.1-.8.2-.2.1-.4.2-.6.4-.1.2-.2.4-.2.6 0 .3.1.6.4.8s.7.4 1.2.6l.6.2c.3.1.6.2.9.4.3.1.6.3.8.6.2.2.4.5.6.8.1.3.2.7.2 1.2s-.1.9-.3 1.3c-.2.4-.4.6-.8.9-.3.2-.7.4-1 .5-.3 0-.7.1-1 .1zM434.4 49.3v-9.5h1.5v9.5h-1.5zm3.6 0v-9.5h2l2.8 7.3h.1l2.8-7.3h2v9.5h-1.4v-5.4l.1-1.7h-.1l-2.8 7.1h-1.2l-2.8-7.1h-.1l.1 1.7v5.4H438zm11.7 0v-9.5h3.3c.6 0 1.1.1 1.6.4.5.2.9.6 1.1 1 .3.4.4.9.4 1.5s-.1 1.1-.4 1.5c-.3.4-.7.8-1.1 1-.5.2-1 .4-1.6.4h-2.5v-1.4h2.5c.4 0 .7-.1.9-.2.2-.1.4-.3.5-.6.1-.2.2-.5.2-.8 0-.3-.1-.5-.2-.7-.1-.2-.3-.4-.5-.6-.2-.2-.5-.2-.9-.2h-1.8v8.2h-1.5zm8 0v-9.5h3.3c.6 0 1.1.1 1.6.4.5.2.8.6 1.1 1s.4.9.4 1.5c0 .4-.1.8-.2 1.1s-.4.7-.7.9c-.3.3-.6.5-1 .6-.4.1-.9.2-1.4.2h-2.3v-1.3h2.5c.3 0 .6-.1.8-.2.2-.1.4-.3.6-.6.2-.2.2-.5.2-.8 0-.3-.1-.5-.2-.7-.1-.2-.3-.4-.5-.6-.2-.1-.5-.2-.9-.2h-1.9v8.2h-1.4zm2.2-4.4h1.7l3 4.3v.1h-1.7l-3-4.4zm10.3 4.6c-.7 0-1.4-.1-2-.4-.6-.3-1.1-.6-1.6-1.1-.4-.5-.8-1-1-1.6-.2-.6-.4-1.2-.4-1.9s.1-1.3.4-1.9c.2-.6.6-1.1 1-1.6s1-.8 1.6-1.1c.6-.3 1.3-.4 2-.4s1.4.1 2 .4c.6.2 1.1.6 1.6 1.1.5.5.8 1 1 1.6.2.6.4 1.2.4 1.9s-.1 1.3-.4 1.9c-.2.6-.6 1.1-1 1.6s-1 .8-1.6 1.1c-.6.3-1.2.4-2 .4zm0-1.4c.6 0 1.2-.2 1.8-.5.5-.3.9-.7 1.2-1.3.3-.5.5-1.2.5-1.9s-.2-1.3-.5-1.9c-.3-.5-.7-1-1.2-1.3-.5-.3-1.1-.5-1.8-.5s-1.2.2-1.8.5c-.5.3-.9.7-1.2 1.3-.3.5-.5 1.2-.5 1.9s.2 1.3.5 1.9c.3.5.7 1 1.2 1.3.6.4 1.2.5 1.8.5zm8.8 1.2-3.4-9.5h1.6l2.2 6.3.3 1.1h.1l.4-1.1 2.2-6.3h1.6l-3.5 9.5H479zm6.2 0v-9.5h5.8v1.4h-4.3V48h4.3v1.4h-5.8zm.8-4.1v-1.4h4.6v1.4H486zm6.8 4.1v-9.5h2l2.8 7.3h.1l2.8-7.3h2v9.5H501v-5.4l.1-1.7h-.1l-2.8 7.1H497l-2.8-7.1h-.1l.1 1.7v5.4h-1.4zm11.8 0v-9.5h5.8v1.4h-4.3V48h4.3v1.4h-5.8zm.8-4.1v-1.4h4.6v1.4h-4.6zm6.8 4.1v-9.5h1.7l4.3 7h.1l-.1-1.8v-5.2h1.5v9.5h-1.5l-4.5-7.4h-.1l.1 1.8v5.5h-1.5zm11.7 0v-8.8h1.5v8.8h-1.5zm-2.7-8.2v-1.4h6.8v1.4h-6.8z"/><path class="st4" d="M543.2 14.9h115.2v43.2H543.2V14.9z"/><path class="st2" d="M582.9 41.3v-9.5h3.3c.6 0 1.1.1 1.6.4.5.2.9.6 1.1 1 .3.4.4.9.4 1.5s-.1 1.1-.4 1.5c-.3.4-.7.8-1.1 1-.5.2-1 .4-1.6.4h-2.5v-1.4h2.5c.4 0 .7-.1.9-.2.2-.1.4-.3.5-.6.1-.2.2-.5.2-.8 0-.3-.1-.5-.2-.7-.1-.2-.3-.4-.5-.6-.2-.2-.5-.2-.9-.2h-1.8v8.2h-1.5zm12.3.2c-.7 0-1.4-.1-2-.4-.6-.3-1.1-.6-1.6-1.1-.4-.5-.8-1-1-1.6-.2-.6-.4-1.2-.4-1.9s.1-1.3.4-1.9c.2-.6.6-1.1 1-1.6s1-.8 1.6-1.1c.6-.3 1.3-.4 2-.4s1.4.1 2 .4c.6.2 1.1.6 1.6 1.1.5.5.8 1 1 1.6.2.6.4 1.2.4 1.9s-.1 1.3-.4 1.9c-.2.6-.6 1.1-1 1.6s-1 .8-1.6 1.1c-.7.3-1.3.4-2 .4zm0-1.4c.6 0 1.2-.2 1.8-.5.5-.3.9-.7 1.2-1.3.3-.5.5-1.2.5-1.9s-.2-1.3-.5-1.9c-.3-.5-.7-1-1.2-1.3-.5-.3-1.1-.5-1.8-.5-.6 0-1.2.2-1.8.5-.5.3-.9.7-1.2 1.3-.3.5-.5 1.2-.5 1.9s.2 1.3.5 1.9c.3.5.7 1 1.2 1.3.6.4 1.1.5 1.8.5zm10.9 1.4c-.7 0-1.4-.1-2-.4-.6-.3-1.1-.6-1.6-1.1-.4-.5-.8-1-1-1.6-.2-.6-.4-1.2-.4-1.9s.1-1.3.4-1.9c.2-.6.6-1.1 1-1.6s1-.8 1.6-1.1c.6-.3 1.3-.4 2-.4s1.4.1 2 .4c.6.2 1.1.6 1.6 1.1.5.5.8 1 1 1.6.2.6.4 1.2.4 1.9s-.1 1.3-.4 1.9c-.2.6-.6 1.1-1 1.6s-1 .8-1.6 1.1c-.6.3-1.3.4-2 .4zm0-1.4c.6 0 1.2-.2 1.8-.5.5-.3.9-.7 1.2-1.3.3-.5.5-1.2.5-1.9s-.2-1.3-.5-1.9c-.3-.5-.7-1-1.2-1.3-.5-.3-1.1-.5-1.8-.5s-1.2.2-1.8.5c-.5.3-.9.7-1.2 1.3-.3.5-.5 1.2-.5 1.9s.2 1.3.5 1.9c.3.5.7 1 1.2 1.3.6.4 1.2.5 1.8.5zm6.7 1.2v-9.5h3.3c.6 0 1.1.1 1.6.4.5.2.8.6 1.1 1s.4.9.4 1.5c0 .4-.1.8-.2 1.1s-.4.7-.7.9c-.3.3-.6.5-1 .6-.4.1-.9.2-1.4.2h-2.3v-1.3h2.5c.3 0 .6-.1.8-.2.2-.1.4-.3.6-.6.2-.2.2-.5.2-.8 0-.3-.1-.5-.2-.7-.1-.2-.3-.4-.5-.6-.2-.1-.5-.2-.9-.2h-1.9v8.2h-1.4zm2.2-4.4h1.7l3 4.3v.1H618l-3-4.4zM517.7 102.9c-.6 0-1.1-.1-1.7-.3-.6-.2-1-.6-1.5-1-.4-.5-.7-1.1-.9-1.8l1.7-.7c.2.6.4 1.1.8 1.5.4.4.9.6 1.6.6.7 0 1.2-.2 1.6-.6.4-.4.7-1 .7-1.6 0-.7-.2-1.2-.6-1.6-.4-.4-1-.7-1.6-.7-.4 0-.8.1-1.1.2-.3.2-.6.4-.8.7l-1.8-.8.7-6h6.4v1.7h-4.9l-.4 3.2h.1c.3-.2.6-.4.9-.5.4-.1.8-.2 1.3-.2.7 0 1.3.2 1.9.5.6.3 1 .8 1.4 1.4.4.6.5 1.3.5 2 0 .8-.2 1.5-.5 2.1-.4.6-.8 1.1-1.5 1.4-.7.3-1.5.5-2.3.5zm10.8 0c-.7 0-1.4-.2-2-.5-.6-.3-1.1-.8-1.5-1.3-.4-.6-.8-1.2-1-2-.2-.8-.3-1.6-.3-2.4 0-.9.1-1.7.3-2.5.2-.8.6-1.4 1-2 .4-.6.9-1 1.5-1.3.6-.3 1.3-.5 2-.5.8 0 1.4.2 2 .5.6.3 1.1.8 1.5 1.3.4.6.8 1.2 1 2 .2.8.3 1.6.3 2.5 0 .9-.1 1.7-.3 2.4-.2.8-.5 1.4-1 2-.4.6-.9 1-1.5 1.3-.6.3-1.2.5-2 .5zm0-1.8c.6 0 1.1-.2 1.6-.6.4-.4.8-.9 1-1.6.2-.7.4-1.4.4-2.2 0-.8-.1-1.6-.4-2.3-.2-.7-.6-1.2-1-1.6-.4-.4-1-.6-1.6-.6-.6 0-1.2.2-1.6.6-.4.4-.8.9-1 1.6-.2.7-.4 1.4-.4 2.3 0 .8.1 1.6.4 2.2.2.7.6 1.2 1 1.6.5.4 1 .6 1.6.6zm11.4 1.8c-.7 0-1.4-.2-2-.5-.6-.3-1.1-.8-1.5-1.3-.4-.6-.8-1.2-1-2-.2-.8-.3-1.6-.3-2.4 0-.9.1-1.7.3-2.5.2-.8.6-1.4 1-2 .4-.6.9-1 1.5-1.3.6-.3 1.3-.5 2-.5.8 0 1.4.2 2 .5.6.3 1.1.8 1.5 1.3.4.6.8 1.2 1 2 .2.8.3 1.6.3 2.5 0 .9-.1 1.7-.3 2.4-.2.8-.5 1.4-1 2-.4.6-.9 1-1.5 1.3-.5.3-1.2.5-2 .5zm.1-1.8c.6 0 1.1-.2 1.6-.6.4-.4.8-.9 1-1.6.2-.7.4-1.4.4-2.2 0-.8-.1-1.6-.4-2.3-.2-.7-.6-1.2-1-1.6-.4-.4-1-.6-1.6-.6-.6 0-1.2.2-1.6.6-.4.4-.8.9-1 1.6-.2.7-.4 1.4-.4 2.3 0 .8.1 1.6.4 2.2.2.7.6 1.2 1 1.6.4.4.9.6 1.6.6zm10.8 1.5v-8.8h1.8V95h.1c.2-.3.4-.5.7-.8s.6-.4.9-.5c.4-.1.7-.2 1.1-.2.7 0 1.2.2 1.7.5s.8.7 1 1.2c.3-.5.7-.8 1.2-1.2.5-.3 1.1-.5 1.8-.5 1 0 1.8.3 2.3 1 .5.6.8 1.5.8 2.5v5.7h-1.9v-5.4c0-.7-.2-1.2-.5-1.5-.3-.3-.7-.5-1.3-.5-.4 0-.8.1-1.1.4-.3.2-.6.6-.8 1s-.3.9-.3 1.3v4.7h-1.9v-5.4c0-.7-.2-1.2-.5-1.5-.3-.3-.8-.5-1.3-.5-.4 0-.8.1-1.1.4-.3.2-.6.6-.7 1s-.3.9-.3 1.3v4.7h-1.7zm18.6.3c-.7 0-1.3-.1-1.8-.3-.5-.2-.9-.5-1.3-.9-.3-.4-.6-.8-.7-1.2l1.7-.7c.2.5.5.8.9 1.1.4.2.8.4 1.3.4s.9-.1 1.2-.2c.3-.2.5-.4.5-.8 0-.2-.1-.5-.2-.6s-.4-.3-.6-.4l-.9-.3-1.1-.2c-.4-.1-.8-.3-1.2-.5-.4-.2-.7-.5-.9-.9-.2-.4-.3-.8-.3-1.2 0-.5.2-1 .5-1.4.3-.4.7-.7 1.2-.9.5-.2 1.1-.3 1.7-.3.6 0 1.1.1 1.5.2.5.1.9.3 1.2.6.3.3.6.6.8 1l-1.6.7c-.2-.4-.5-.7-.8-.8-.3-.2-.7-.2-1.1-.2-.4 0-.8.1-1.1.3-.3.2-.4.4-.4.7 0 .3.1.5.4.7.3.2.6.3 1 .4l1.3.3c.9.2 1.5.6 2 1 .4.4.7 1 .7 1.6 0 .6-.2 1.1-.5 1.5-.3.4-.8.7-1.3 1-.8.2-1.5.3-2.1.3zM389.2 102.6v-1.8l.4-.4.9-.9c.4-.4.7-.8 1.1-1.2l1.1-1.1.8-.8c.3-.3.6-.6.8-.9.2-.3.3-.5.4-.8.1-.2.1-.5.1-.8 0-.3-.1-.6-.2-.8-.1-.3-.4-.5-.7-.6-.3-.2-.6-.2-1.1-.2-.4 0-.7.1-1 .2-.3.2-.5.4-.7.6-.2.2-.3.5-.3.7l-1.7-.7c.1-.3.2-.6.4-.9.2-.3.4-.6.8-.9.3-.3.7-.5 1.1-.7.4-.2.9-.3 1.5-.3.8 0 1.4.2 2 .5.6.3 1 .7 1.3 1.2.3.5.5 1.1.5 1.7 0 .5-.1 1-.3 1.5-.2.5-.4.9-.7 1.3-.3.4-.6.7-.9 1-.2.1-.4.3-.6.6-.2.2-.5.5-.7.8l-.8.8-.7.7-.4.4h5.2v1.7h-7.6zm14.2.3c-.7 0-1.4-.2-2-.5-.6-.3-1.1-.8-1.5-1.3-.4-.6-.8-1.2-1-2-.2-.8-.3-1.6-.3-2.4 0-.9.1-1.7.3-2.5.2-.8.6-1.4 1-2 .4-.6.9-1 1.5-1.3.6-.3 1.3-.5 2-.5.8 0 1.4.2 2 .5.6.3 1.1.8 1.5 1.3.4.6.8 1.2 1 2 .2.8.3 1.6.3 2.5 0 .9-.1 1.7-.3 2.4-.2.8-.5 1.4-1 2-.4.6-.9 1-1.5 1.3-.5.3-1.2.5-2 .5zm0-1.8c.6 0 1.1-.2 1.6-.6.4-.4.8-.9 1-1.6.2-.7.4-1.4.4-2.2 0-.8-.1-1.6-.4-2.3-.2-.7-.6-1.2-1-1.6-.4-.4-1-.6-1.6-.6-.6 0-1.2.2-1.6.6-.4.4-.8.9-1 1.6-.2.7-.4 1.4-.4 2.3 0 .8.1 1.6.4 2.2.2.7.6 1.2 1 1.6.5.4 1 .6 1.6.6zm11.5 1.8c-.7 0-1.4-.2-2-.5-.6-.3-1.1-.8-1.5-1.3-.4-.6-.8-1.2-1-2-.2-.8-.3-1.6-.3-2.4 0-.9.1-1.7.3-2.5.2-.8.6-1.4 1-2 .4-.6.9-1 1.5-1.3.6-.3 1.3-.5 2-.5.8 0 1.4.2 2 .5.6.3 1.1.8 1.5 1.3.4.6.8 1.2 1 2 .2.8.3 1.6.3 2.5 0 .9-.1 1.7-.3 2.4-.2.8-.5 1.4-1 2-.4.6-.9 1-1.5 1.3-.6.3-1.3.5-2 .5zm0-1.8c.6 0 1.1-.2 1.6-.6.4-.4.8-.9 1-1.6.2-.7.4-1.4.4-2.2 0-.8-.1-1.6-.4-2.3-.2-.7-.6-1.2-1-1.6-.4-.4-1-.6-1.6-.6-.6 0-1.2.2-1.6.6-.4.4-.8.9-1 1.6-.2.7-.4 1.4-.4 2.3 0 .8.1 1.6.4 2.2.2.7.6 1.2 1 1.6.4.4.9.6 1.6.6zm10.8 1.5v-8.8h1.8V95h.1c.2-.3.4-.5.7-.8s.6-.4.9-.5c.4-.1.7-.2 1.1-.2.7 0 1.2.2 1.7.5s.8.7 1 1.2c.3-.5.7-.8 1.2-1.2.5-.3 1.1-.5 1.8-.5 1 0 1.8.3 2.3 1 .5.6.8 1.5.8 2.5v5.7h-1.9v-5.4c0-.7-.2-1.2-.5-1.5-.3-.3-.7-.5-1.3-.5-.4 0-.8.1-1.1.4-.3.2-.6.6-.8 1s-.3.9-.3 1.3v4.7h-1.9v-5.4c0-.7-.2-1.2-.5-1.5-.3-.3-.8-.5-1.3-.5-.4 0-.8.1-1.1.4-.3.2-.6.6-.7 1s-.3.9-.3 1.3v4.7h-1.7zm18.6.3c-.7 0-1.3-.1-1.8-.3-.5-.2-.9-.5-1.3-.9-.3-.4-.6-.8-.7-1.2l1.7-.7c.2.5.5.8.9 1.1.4.2.8.4 1.3.4s.9-.1 1.2-.2c.3-.2.5-.4.5-.8 0-.2-.1-.5-.2-.6-.2-.2-.4-.3-.6-.4l-.9-.3-1.1-.2c-.4-.1-.8-.3-1.2-.5-.4-.2-.7-.5-.9-.9-.2-.4-.3-.8-.3-1.2 0-.5.2-1 .5-1.4.3-.4.7-.7 1.2-.9.5-.2 1.1-.3 1.7-.3.6 0 1.1.1 1.5.2.5.1.9.3 1.2.6.3.3.6.6.8 1l-1.6.7c-.2-.4-.5-.7-.8-.8-.3-.2-.7-.2-1.1-.2-.4 0-.8.1-1.1.3-.3.2-.4.4-.4.7 0 .3.1.5.4.7.3.2.6.3 1 .4l1.3.3c.9.2 1.5.6 2 1 .4.4.7 1 .7 1.6 0 .6-.2 1.1-.5 1.5-.3.4-.8.7-1.3 1-.8.2-1.4.3-2.1.3zM0 113.3V99h1.7v14.3H0zm4.6 0v-10.2h1.6v1.5h.1c.3-.5.7-.9 1.3-1.3.6-.4 1.3-.5 2-.5 1.2 0 2.2.4 2.8 1.1.6.7 1 1.7 1 2.9v6.5h-1.7V107c0-1-.2-1.7-.7-2.1-.5-.4-1.1-.6-1.8-.6-.6 0-1.1.2-1.5.5-.4.3-.8.7-1 1.2-.2.5-.4 1-.4 1.6v5.7H4.6zm10-10.2h6v1.5h-6v-1.5zm1.8 7.5v-10.4h1.7v10c0 .5.1.9.3 1.2.2.3.6.4 1.1.4.2 0 .4 0 .6-.1.2-.1.4-.2.5-.2v1.7c-.2.1-.4.1-.6.2-.2.1-.5.1-.8.1-.9 0-1.5-.2-2.1-.8-.5-.5-.7-1.2-.7-2.1zm10.3 3c-1 0-1.9-.2-2.6-.7-.8-.5-1.4-1.1-1.8-1.9-.4-.8-.6-1.7-.6-2.8 0-1 .2-1.9.6-2.7.4-.8 1-1.5 1.7-2s1.6-.8 2.6-.8 1.9.2 2.6.7c.7.4 1.3 1.1 1.7 1.8.4.8.6 1.7.6 2.7v.5h-8.8V107h7c0-.3-.1-.6-.2-.9-.1-.3-.3-.6-.5-.9-.2-.3-.6-.5-.9-.7-.4-.2-.8-.3-1.4-.3-.7 0-1.2.2-1.7.5s-.8.8-1.1 1.4c-.3.6-.4 1.2-.4 2 0 .9.2 1.6.5 2.2.3.6.8 1 1.3 1.3.5.3 1.1.4 1.7.4.8 0 1.4-.2 1.8-.5.5-.4.9-.8 1.2-1.3l1.4.7c-.4.8-1 1.4-1.7 1.9-1 .5-1.9.8-3 .8zm6.7-.3v-10.2H35v1.6h.1c.1-.4.4-.7.7-1 .3-.3.7-.5 1.1-.7.4-.2.8-.2 1.2-.2h.7c.2 0 .3.1.5.2v1.8c-.2-.1-.5-.2-.7-.2-.2-.1-.5-.1-.7-.1-.5 0-1 .1-1.4.4-.4.3-.7.7-1 1.1-.2.5-.4 1-.4 1.5v5.7h-1.7zm10.4.3c-.8 0-1.4-.1-2-.4-.6-.3-1-.7-1.3-1.2-.3-.5-.5-1.1-.5-1.8 0-.8.2-1.4.6-1.9.4-.5.9-.9 1.5-1.2.7-.3 1.4-.4 2.2-.4.4 0 .9 0 1.2.1.4.1.7.2 1 .3.3.1.5.2.7.3v-.6c0-.8-.3-1.4-.8-1.8-.5-.5-1.2-.7-2-.7-.6 0-1.1.1-1.6.4-.5.2-.9.6-1.1 1l-1.3-1c.3-.4.6-.7 1-1 .4-.3.9-.5 1.4-.7.5-.2 1.1-.2 1.6-.2 1.4 0 2.5.4 3.2 1.1.8.7 1.2 1.7 1.2 3v6.5h-1.6v-1.5h-.1c-.2.3-.4.6-.7.8-.3.3-.7.5-1.1.7-.5.1-1 .2-1.5.2zm.1-1.5c.6 0 1.1-.1 1.6-.4.5-.3.9-.7 1.2-1.2.3-.5.5-1 .5-1.6-.3-.2-.7-.4-1.2-.5-.5-.1-1-.2-1.5-.2-1 0-1.7.2-2.1.6-.4.4-.7.9-.7 1.5s.2 1 .6 1.4c.4.2 1 .4 1.6.4zm11.7 1.5c-1 0-1.9-.2-2.7-.7-.8-.5-1.4-1.1-1.8-1.9-.4-.8-.7-1.7-.7-2.8 0-1 .2-2 .7-2.8.4-.8 1.1-1.5 1.8-1.9.8-.5 1.7-.7 2.7-.7 1.1 0 2.1.3 2.8.8.7.5 1.3 1.2 1.6 2l-1.5.6c-.2-.6-.6-1.1-1.1-1.4-.5-.3-1.1-.5-1.8-.5-.6 0-1.2.2-1.7.5s-.9.8-1.2 1.4c-.3.6-.5 1.3-.5 2 0 .8.2 1.4.5 2 .3.6.7 1 1.2 1.4.5.3 1.1.5 1.7.5.7 0 1.3-.2 1.9-.5.5-.3.9-.8 1.2-1.4l1.5.6c-.3.8-.9 1.5-1.6 2-.9.5-1.8.8-3 .8zm5.5-10.5h6v1.5h-6v-1.5zm1.8 7.5v-10.4h1.7v10c0 .5.1.9.3 1.2.2.3.6.4 1.1.4.2 0 .4 0 .6-.1.2-.1.4-.2.5-.2v1.7c-.2.1-.4.1-.6.2-.2.1-.5.1-.8.1-.9 0-1.5-.2-2.1-.8-.4-.5-.7-1.2-.7-2.1zm6.5 2.7v-10.2h1.7v10.2h-1.7zm.9-12.1c-.3 0-.6-.1-.9-.4-.2-.2-.4-.5-.4-.9 0-.3.1-.6.4-.9.2-.2.5-.4.9-.4.3 0 .6.1.9.4.2.2.4.5.4.9 0 .3-.1.6-.4.9-.3.3-.6.4-.9.4zm8.1 12.4c-1 0-1.9-.2-2.7-.7-.8-.5-1.4-1.1-1.8-1.9-.4-.8-.7-1.7-.7-2.8 0-1 .2-1.9.7-2.8.4-.8 1.1-1.5 1.8-2 .8-.5 1.7-.7 2.7-.7 1 0 1.9.2 2.7.7.8.5 1.4 1.1 1.9 2 .4.8.7 1.7.7 2.7 0 1-.2 1.9-.7 2.8-.4.8-1.1 1.5-1.9 1.9-.8.5-1.7.8-2.7.8zm0-1.6c.6 0 1.2-.2 1.7-.5s1-.8 1.3-1.3c.3-.6.5-1.3.5-2.1s-.2-1.5-.5-2.1c-.3-.6-.8-1-1.3-1.3-.5-.3-1.1-.5-1.7-.5-.6 0-1.2.2-1.7.5s-1 .7-1.3 1.3c-.3.6-.5 1.3-.5 2.1s.2 1.5.5 2.1c.3.6.8 1 1.3 1.3.5.4 1.1.5 1.7.5zm7 1.3v-10.2H87v1.5h.1c.3-.5.7-.9 1.3-1.3.6-.4 1.3-.5 2-.5 1.2 0 2.2.4 2.8 1.1.6.7 1 1.7 1 2.9v6.5h-1.7V107c0-1-.2-1.7-.7-2.1-.5-.4-1.1-.6-1.8-.6-.6 0-1.1.2-1.5.5-.4.3-.8.7-1 1.2-.2.5-.4 1-.4 1.6v5.7h-1.7zm15.1-10.2h6v1.5h-6v-1.5zm1.8 7.5v-10.4h1.7v10c0 .5.1.9.3 1.2.2.3.6.4 1.1.4.2 0 .4 0 .6-.1.2-.1.4-.2.5-.2v1.7c-.2.1-.4.1-.6.2-.2.1-.5.1-.8.1-.9 0-1.5-.2-2.1-.8-.4-.5-.7-1.2-.7-2.1zm10.5 3c-1 0-1.9-.2-2.7-.7-.8-.5-1.4-1.1-1.8-1.9-.4-.8-.7-1.7-.7-2.8 0-1 .2-1.9.7-2.8.4-.8 1.1-1.5 1.8-2 .8-.5 1.7-.7 2.7-.7 1 0 1.9.2 2.7.7.8.5 1.4 1.1 1.9 2 .4.8.7 1.7.7 2.7 0 1-.2 1.9-.7 2.8-.4.8-1.1 1.5-1.9 1.9-.8.5-1.7.8-2.7.8zm0-1.6c.6 0 1.2-.2 1.7-.5s1-.8 1.3-1.3c.3-.6.5-1.3.5-2.1s-.2-1.5-.5-2.1c-.3-.6-.8-1-1.3-1.3-.5-.3-1.1-.5-1.7-.5-.6 0-1.2.2-1.7.5s-1 .7-1.3 1.3c-.3.6-.5 1.3-.5 2.1s.2 1.5.5 2.1c.3.6.8 1 1.3 1.3.5.4 1.1.5 1.7.5zm12.2 1.3V99h2.1l7.2 11.4h.1l-.1-2.8V99h1.7v14.3h-1.8l-7.5-11.9h-.1l.1 2.8v9.2H125zm18.2.3c-1 0-1.9-.2-2.6-.7-.8-.5-1.4-1.1-1.8-1.9-.4-.8-.6-1.7-.6-2.8 0-1 .2-1.9.6-2.7.4-.8 1-1.5 1.7-2s1.6-.8 2.6-.8 1.9.2 2.6.7c.7.4 1.3 1.1 1.7 1.8.4.8.6 1.7.6 2.7v.5h-8.8V107h7c0-.3-.1-.6-.2-.9-.1-.3-.3-.6-.5-.9-.2-.3-.6-.5-.9-.7-.4-.2-.8-.3-1.4-.3-.7 0-1.2.2-1.7.5s-.8.8-1.1 1.4c-.3.6-.4 1.2-.4 2 0 .9.2 1.6.5 2.2.3.6.8 1 1.3 1.3.5.3 1.1.4 1.7.4.8 0 1.4-.2 1.8-.5.5-.4.9-.8 1.2-1.3l1.4.7c-.4.8-1 1.4-1.7 1.9-1 .5-1.9.8-3 .8zm5.5-.3 4.1-5.9h.2l2.9-4.3h2l-4 5.6h-.1l-3.1 4.6h-2zm.1-10.2h1.9l3.2 4.5h.1l4 5.7h-2l-3-4.5h-.1l-4.1-5.7zm9.9 0h6v1.5h-6v-1.5zm1.8 7.5v-10.4h1.7v10c0 .5.1.9.3 1.2.2.3.6.4 1.1.4.2 0 .4 0 .6-.1.2-.1.4-.2.5-.2v1.7c-.2.1-.4.1-.6.2-.2.1-.5.1-.8.1-.9 0-1.5-.2-2.1-.8-.4-.5-.7-1.2-.7-2.1zm11.2 2.7V99h4.8c.8 0 1.5.2 2.2.5.7.4 1.2.8 1.6 1.5.4.6.6 1.4.6 2.2 0 .8-.2 1.6-.6 2.2-.4.6-.9 1.1-1.6 1.5-.7.4-1.4.5-2.2.5h-3.9v-1.6h4c.6 0 1-.1 1.4-.4.4-.3.7-.6.9-1 .2-.4.3-.8.3-1.2 0-.4-.1-.8-.3-1.2-.2-.4-.5-.7-.9-1-.4-.3-.9-.4-1.4-.4h-3.2v12.7h-1.7zm14 .3c-.8 0-1.4-.1-2-.4-.6-.3-1-.7-1.3-1.2-.3-.5-.5-1.1-.5-1.8 0-.8.2-1.4.6-1.9.4-.5.9-.9 1.5-1.2.7-.3 1.4-.4 2.2-.4.4 0 .9 0 1.2.1.4.1.7.2 1 .3.3.1.5.2.7.3v-.6c0-.8-.3-1.4-.8-1.8-.5-.5-1.2-.7-2-.7-.6 0-1.1.1-1.6.4-.5.2-.9.6-1.1 1l-1.3-1c.3-.4.6-.7 1-1 .4-.3.9-.5 1.4-.7.5-.2 1.1-.2 1.6-.2 1.4 0 2.5.4 3.2 1.1.8.7 1.2 1.7 1.2 3v6.5h-1.6v-1.5h-.1c-.2.3-.4.6-.7.8-.3.3-.7.5-1.1.7-.5.1-.9.2-1.5.2zm.2-1.5c.6 0 1.1-.1 1.6-.4.5-.3.9-.7 1.2-1.2.3-.5.5-1 .5-1.6-.3-.2-.7-.4-1.2-.5-.5-.1-1-.2-1.5-.2-1 0-1.7.2-2.1.6-.4.4-.7.9-.7 1.5s.2 1 .6 1.4c.4.2 1 .4 1.6.4zm7.4 1.2v-10.2h1.7v10.2h-1.7zm.8-12.1c-.3 0-.6-.1-.9-.4-.2-.2-.4-.5-.4-.9 0-.3.1-.6.4-.9.2-.2.5-.4.9-.4.3 0 .6.1.9.4.2.2.4.5.4.9 0 .3-.1.6-.4.9-.3.3-.5.4-.9.4zm3.5 12.1v-10.2h1.6v1.5h.1c.3-.5.7-.9 1.3-1.3.6-.4 1.3-.5 2-.5 1.2 0 2.2.4 2.8 1.1.6.7 1 1.7 1 2.9v6.5h-1.7V107c0-1-.2-1.7-.7-2.1-.5-.4-1.1-.6-1.8-.6-.6 0-1.1.2-1.5.5-.4.3-.8.7-1 1.2-.2.5-.4 1-.4 1.6v5.7h-1.7zm10-10.2h6v1.5h-6v-1.5zm1.8 7.5v-10.4h1.7v10c0 .5.1.9.3 1.2.2.3.6.4 1.1.4.2 0 .4 0 .6-.1.2-.1.4-.2.5-.2v1.7c-.2.1-.4.1-.6.2-.2.1-.5.1-.8.1-.9 0-1.5-.2-2.1-.8-.4-.5-.7-1.2-.7-2.1zM418.1 55.2c-1.8 0-3.3 1.5-3.3 3.3 0 1.5 1 2.7 2.3 3.1V83h2V61.6c1.3-.4 2.3-1.7 2.3-3.1 0-1.8-1.5-3.3-3.3-3.3zM546.5 58.6c0-1.8-1.5-3.3-3.3-3.3s-3.3 1.5-3.3 3.3c0 1.5 1 2.7 2.3 3.1v21.2h2V61.7c1.3-.4 2.3-1.6 2.3-3.1z"/></svg>
 </figure>
 
-Depending on the website, there may be few to no interactions—such as pages of mostly text and images with few to no interactive elements. Or, in the case of websites such as in-browser text editors or games, there could be hundreds—even thousands—of interactions. In either case, where there's a high INP, the user experience is at risk.
+Depending on the website, there may be few to no interactions—such as pages of mostly text and images with few to no interactive elements. Or, in the case of websites such as text editors or games, there could be hundreds—even thousands—of interactions. In either case, where there's a high INP, the user experience is at risk.
+
+{% Aside 'objective' %}
+**Read to learn more:**&nbsp;[Interaction to Next Paint (INP)](/inp/).
+{% endAside %}
 
 It takes time and effort to improve INP, but the reward is a better user experience. In this guide, a path to improving INP will be explored.
 
 ## Figure out what's causing poor INP
 
-Finding ways to fix a poor INP can be difficult. To start, you have to know _which_ interactions tend to be responsible for the page's INP, out of all the interactions users have with the page. To do that, you'll need to first lean on field data, and _then_ test in the lab to figure out what's making an interaction slow.
+Before you can fix slow interactions, you'll need data to tell you if your website's INP is poor or needs improvement. Once you have that information, you can move into the lab to begin diagnosing slow interactions, and work your way toward a solution.
 
 ### Find slow interactions in the field
 
-Field data should be the first place you go to find slow interactions. The `web-vitals` JavaScript library is one way to find these interactions, thanks in large part to its ability to attribute INP values to specific elements through its attribution build:
+Ideally, your journey in optimizing INP will start with [field data](/lab-and-field-data-differences/#field-data). At its best, field data from a Real User Monitoring (RUM) provider will give you not only a page's INP value, but also contextual data that highlights what specific interaction was responsible for the INP value itself, whether the interaction occurred during or after page load, the type of interaction (click, keypress, or tap), and other valuable information.
 
-```js
-// Use the attribution build:
-import { onINP } from "web-vitals/attribution";
-
-// Example reporting function that's passed to web-vitals:
-const report = ({ name, value, attribution }) => {
-  console.log(name);
-  console.log(value);
-  console.log(attribution.eventType);
-  console.log(attribution.eventTarget);
-};
-
-// Pass the reporting function to the INP reporter:
-onINP(report);
-```
-
-{% Aside 'important' %}
-Not every interaction can be attributed to a specific element. This is due to an underlying limitation of the [Event Timing API](https://developer.mozilla.org/docs/Web/API/PerformanceEventTiming) where an [event target](https://developer.mozilla.org/docs/Web/API/Event/target) may be absent if the element responsible for the interaction was disconnected from the DOM, or if the element was in the shadow DOM.
+{% Aside 'objective' %}
+**Read to learn more:**&nbsp;[Find slow interactions in the field](/find-slow-interactions-in-the-field/).
 {% endAside %}
 
-When this code runs and you interact with a page, the console may report something similar to the following:
+If you're not relying on a RUM provider to get field data, the [INP field data guide](/find-slow-interactions-in-the-field/) advises [using the Chrome User Experience Report (CrUX) via PageSpeed Insights](/find-slow-interactions-in-the-field/#get-field-data-quickly-with-crux) to help fill in the gaps. CrUX is the official dataset of the Core Web Vitals program and provides a high-level summary of metrics for millions of websites, including INP. However, CrUX often does not provide the contextual data you'd get from a RUM provider to help you to analyze issues. Because of this, we still recommend that sites use a RUM provider when possible, or implement their own RUM solution to supplement what is available in CrUX.
 
-```text
-INP
-248
-pointerdown
-#main-nav>ul>li>button
-```
+### Diagnose slow interactions in the lab
 
-In this case, you can see that tapping on a navigation menu toggle—which took 248 milliseconds—was responsible for the page's INP. At 248 milliseconds, this page's INP would be in the "needs improvement" category.
+Ideally, you'll want to start testing in the lab once you have field data that suggests you have slow interactions.
 
-{% Aside %}
-The above code snippet is a simplistic example of working with the `web-vitals` library. For an example that shows how to transmit data from the field to Google Analytics, read [this section of the `web-vitals` documentation](https://github.com/GoogleChrome/web-vitals#send-attribution-data).
+{% Aside 'objective' %}
+**Read to learn more:**&nbsp;[Diagnose slow interactions in the lab](/diagnose-slow-interactions-in-the-lab/).
 {% endAside %}
 
-Once you've found elements that are responsible for slow interactions in the field, you can go into lab tools to start profiling them.
+## Optimize interactions
 
-### Reproduce slow interactions in the lab
+Once you've identified a slow interaction and [can reproduce it in the lab](/diagnose-slow-interactions-in-the-lab/), the next step is to optimize it. Interactions can be broken down into three phases:
 
-Once you have a better idea of what's responsible for slow interactions, you should profile those interactions in the lab. Fortunately, there are a couple of avenues you can pursue to reproduce problematic interactions using lab tools.
+1. The input delay, which starts when the user initiates an interaction with the page, and ends when the event callbacks for the interaction begin to run.
+2. The processing time, which consists of the time it takes for event callbacks to run to completion.
+3. The presentation delay, which is the time it takes for the browser to present the next frame which contains the visual result of the interaction.
 
-{% Aside %}
-As you attempt to reproduce problems you find in the field in lab tools, you can't expect that you'll be able to reproduce the exact conditions in which a high INP was reported. There are many factors that can cause device responses to be slow, and it's impossible to replicate all of them. However, if certain interactions are consistently slow for many of your users, it should be possible to reproduce those recurring problems by mimicking the conditions common to those users.
+The sum of these three phases is the total interaction latency. Every single phase of an interaction contributes some amount of time to total interaction latency, so it's important to know how you can optimize each part of the interaction so it runs for as little time as possible.
+
+### Identify and reduce input delay
+
+When a user interacts with a page, the first part of that interaction is the _input delay_. Depending on other activity on the page, input delays can be considerable in length. This could be due to activity occurring on the main thread (perhaps due to scripts loading, parsing and compiling), fetch handling, timer functions, or even from other interactions that occur in quick succession and overlap with one another.
+
+Whatever the source of an interaction's input delay, you'll want to reduce input delay to a minimum so that interactions can begin running event callbacks as soon as possible.
+
+{% Aside 'objective' %}
+**Read to learn more:**&nbsp;[Optimize input delay](/optimize-input-delay/).
 {% endAside %}
 
-#### Using Chrome's performance profiler
+#### The relationship between script evaluation and long tasks during startup
 
-It's possible to surface slow interactions with the performance profiler in Chrome DevTools. To do so, take the following steps:
+A critical aspect of interactivity in the page lifecycle is during startup. As a page loads, it will initially render, but it's important to remember that just because a page has _rendered_, doesn't mean that the page is finished _loading_. Depending on how many resources a page requires to become fully functional, it's possible that users may attempt to interact with the page while it's still loading.
 
-1. Navigate to the page powering the interaction you want to test.
-2. Open Chrome's DevTools by pressing <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>I</kbd> (<kbd>Cmd</kbd>+<kbd>Option</kbd>+<kbd>I</kbd> on macOS).
-3. Go to the tab labeled **Performance** in DevTools.
-4. Click the record button at the upper left hand corner of the empty performance profiler to start recording.
-5. Test the desired interaction(s) on the page.
-6. Click the record button again to stop recording.
+One thing that can extend an interaction's input delay while a page loads is script evaluation. After a JavaScript file has been fetched from the network, the browser still has work to do before that JavaScript can run; that work includes parsing a script to ensure its syntax is valid, compiling it into bytecode, and then finally executing it.
 
-Once the profiler populates, you'll be able to see what work occurred to drive the interaction.
+Depending on the size of a script, this work can introduce long tasks on the main thread, which will delay the browser from responding to other user interactions. To keep your page responsive to user input during page load, it's important to understand what you can do to reduce the likelihood of long tasks during page load so the page stays snappy.
 
-There are some cues in the profiler you can use to narrow down where the interaction occurred, notably in the interactions track situated above the main thread track:
-
-<figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/x0WEjmPG6nnLy3Q2iJW3.png", alt="A depiction of tasks as related to interactions from Chrome's performance profiler. At top, an interactions panel with pointerdown, pointerup, and click events overlays a set of tasks in the main thread panel below. The click interaction starts before the event callbacks that drive the interaction due to a long task that delays the start of the event processing.", width="800", height="424" %}
-  <figcaption>
-    An interaction profiled in the performance profiler in Chrome's DevTools. The interactions track shows a series of events that amount to a click interaction. The interactions track entries span across the tasks responsible for driving the interaction.
-  </figcaption>
-</figure>
-
-#### Using Lighthouse's timespan mode
-
-Chrome's performance profiler—while incredibly useful and rich with diagnostic information—can be a bit intimidating to the uninitiated. If this is the case for you, Lighthouse's timespan mode might be a better alternative. To use this mode, do the following:
-
-1. Navigate to the page powering the interaction you want to test.
-2. Open Chrome's DevTools by pressing <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>I</kbd> (<kbd>Cmd</kbd>+<kbd>Option</kbd>+<kbd>I</kbd> on macOS).
-3. Go to the tab labeled **Lighthouse** in DevTools.
-4. Under the section labeled **Mode**, select the **Timespan** option.
-5. Select the desired device type under the section labeled **Device**.
-6. Ensure at least the checkbox labeled **Performance** is selected under the **Categories** label.
-7. Click the **Start timespan** button.
-8. Test the desired interaction(s) on the page.
-9. Click the **End timespan** button and wait for the audit to appear
-10. Once the audit populates in the Lighthouse tab, you can filter the audits by INP by clicking the **INP** link next to the label which reads **Show audits relevant to**.
-
-At this point, you'll see a dropdown for audits that have failed or passed. When you expand that dropdown, you'll likely see a breakdown time spent during the interaction.
-
-<figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/F3fWEdo61KDoAE1OQx9X.jpg", alt="A screenshot of a Lighthouse audit provided by its timespan mode. The audit is specific to INP, and shows details for an interaction, including a screenshot of the element that triggered it, and a table beneath detailing where time was spent processing the interaction.", width="800", height="662" %}
-  <figcaption>
-    An interaction profiled in Lighthouse's timespan mode. When interactions are made with the page, Lighthouse provides an audit detailing where the time during an interaction was spent, and breaks it down by input delay, processing delay, and presentation delay.
-  </figcaption>
-</figure>
-
-{% Aside %}
-If you want to dive a bit deeper into the cause behind a slow interaction, you can do so by clicking the **View Trace** button just above the filmstrip in the populated **Lighthouse** tab. This will take you to the performance profiler that shows interactions details for the interactions you tested in the timespan mode.
+{% Aside 'objective' %}
+**Read to learn more:**&nbsp;[Script evaluation and long tasks](/script-evaluation-and-long-tasks/).
 {% endAside %}
 
-Regardless of the tool you use to profile slow interactions in the lab, the end result is the same in that you'll be able to take actionable information from the field and discover the culprit of slow interactions. That's information that you can take straight to your code base and figure out what you need to do to get things going faster for a better user experience.
-
-### What if you don't have field data?
-
-Not everyone collects field data from their website's users. While your long term performance optimization plans should include collecting field data (as that will make diagnosing issues significantly easier), if you're not doing that today, it's still possible to profile your pages and look for interactions that might be slow.
-
-The first step is to diagnose common user flows. For example, if you're an online retailer, some common user flows would be to add items to a cart, search for products, and checkout.
-
-When you test these user flows in the lab, consider doing the following:
-
-1. [Throttle the CPU](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/#cpu-throttle) to 4x or 6x speeds to more accurately reflect interaction speeds experienced by users on low-end devices.
-2. Enable [mobile emulation](https://developer.chrome.com/blog/devtools-mobile/#mobile-emulation) and choose a low-end mobile device. When you use mobile emulation in DevTools, the [user agent string](https://developer.mozilla.org/docs/Web/HTTP/Headers/User-Agent) is changed to that of the emulated device, which can affect how page markup is served.
-3. If you have the ability, consider purchasing a cheaper Android phone (such as a Moto E) with reduced capabilities and profile interactions in the lab using [remote debugging](https://developer.chrome.com/docs/devtools/remote-debugging/).
-
-Once you've evaluated your potential user flows, make a note of the slowest interactions, and then you can begin to figure out where to start optimizing them. Regardless of whether you're collecting field data at this point, it depends on what part of the interaction you need to pay attention to in order to know what to optimize.
-
-## Diagnose and deal with long input delay
-
-The _input delay_ is the first phase of an interaction. This is the period of time from when the user action is first received by the operating system until the browser is able to start processing the first event triggered by that input. The input delay ends right as the event callbacks for the interaction begin to run.
-
-### How to identify input delay
-
-Identifying input delay in Chrome's performance profiler can be done by finding the start of an interaction in the interactions panel, and then finding the beginning of when the event callbacks for that interaction start to run.
-
-You'll always incur at least _some_ input delay, as it takes some time for the operating system to pass the input event to the browser—but you do have some control over how long the input delay is. **The key is to figure out if there is work running on the main thread that's preventing your callbacks from running.**
-
-<figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/QtGLNusw9pAe9DJ29Hd6.png", alt="A depiction of input delay in Chrome's performance panel. The start of the interaction comes significantly before the event callbacks because of increased input delay due to a timer firing from a third-party script.", width="800", height="605" %}
-  <figcaption>
-    Input delay caused by a task fired by a timer from a third-party script.
-  </figcaption>
-</figure>
-
-In the previous figure a task from a third-party script is running as the user attempts to interact with the page, and therefore extends the input delay. The extended input delay affects the interaction's latency, and could therefore affect the page's INP.
-
-### How to fix long input delays
-
-When it comes to solutions for long input delays, it all depends. If you have expensive first-party work that could be affecting an interaction's input delay, the answer is four-fold:
-
-1. Do as little work as possible in any tasks your code kicks off.
-2. [Break up long tasks](/optimize-long-tasks/#use-asyncawait-to-create-yield-points).
-3. [Use the Scheduler API](/optimize-long-tasks/#a-dedicated-scheduler-api) to prioritize critical tasks and defer non-critical tasks.
-4. Consider using [`isInputPending`](/optimize-long-tasks/#yield-only-when-necessary) to check if a user input is pending. If so, [you can yield to the main thread](/optimize-long-tasks/#yield-only-when-necessary) so the event callbacks for that input can run sooner than they otherwise would.
-
-If it's third-party code that's causing problems, then you have [a lot more to consider](/third-party-javascript/):
-
-1. Do a complete inventory of all your website's third-party scripts.
-2. Figure out if more than one third-party script's functionality overlaps significantly with others.
-3. Cull redundant or low-value third-party scripts.
-4. Maintain whatever third-party scripts are left over so that they impact performance as little as possible.
-
-This is difficult in large part because third-party JavaScript is an issue of work culture. For example tag managers make it easy for non-technical people in a company to add third-party scripts without the knowledge of the development teams. See our [Best practices for tags and tag managers](/tag-best-practices/) post on techniques for optimizing those for performance and Web Vitals.
-
-## Optimize event callbacks
+### Optimize event callbacks
 
 The input delay is only the first part of what INP measures. You'll also need to make sure that the event callbacks that run in response to a user interaction can complete as quickly as possible.
 
-<figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/KLel48JOVGvWEKdBrS5I.png", alt="A depiction of event callback tasks in Chrome's performance panel. The event callbacks occur for the pointerdown and click events, which compose a long task.", width="800", height="605" %}
-  <figcaption>
-    The event callbacks that run in response to a tap interaction, as shown in the performance profiler in Chrome DevTools.
-  </figcaption>
-</figure>
+#### Yield to the main thread often
 
-The best way to ensure your event callbacks run quickly is to limit what gets run to just the logic that is required to apply visual updates for the next frame. Everything else can be deferred to a subsequent task.
+The best general advice in optimizing event callbacks is to do as little work as possible in them. However, your interaction logic may be complex, and you may only be able to marginally reduce the work they do.
 
-For example, imagine a rich text editor that formats text as your type but also updates other aspects of the UI in response to what you've written (such as word count, spelling mistakes, etc.). In addition, the application may also need to save what you've written so that if you leave and return, you haven't lost any work.
+If you find this is the case for your website, the next thing you can try is to break up the work in event callbacks into separate tasks. This prevents the collective work from becoming a long task that blocks the main thread, which allows other interactions that otherwise would be waiting on the main thread to run sooner.
 
-In this example, the following four things need to happen in response to characters typed by the user. However, only the first item _needs_ to be done before the next frame is presented.
+`setTimeout` is one way to break up tasks, because the callback passed to it runs in a new task. You can [use `setTimeout` by itself](/optimize-long-tasks/#manually-defer-code-execution) or abstract its use into a separate function [for more ergonomic yielding](/optimize-long-tasks/#use-asyncawait-to-create-yield-points).
+
+{% Aside 'objective' %}
+**Read to learn more:**&nbsp;[Optimize long tasks](/optimize-long-tasks/).
+{% endAside %}
+
+Yielding indiscriminately is better than not yielding at all—however, there is a more nuanced way of yielding to the main thread, and that involves only yielding immediately after an event callback that updates the user interface so rendering logic can run sooner.
+
+#### Yield to allow rendering work to occur sooner
+
+A more advanced yielding technique involves structuring the code in your event callbacks to limit what gets run to just the logic required to apply visual updates for the next frame. Everything else can be deferred to a subsequent task. This not only keeps callbacks light and nimble, but it also improves rendering time for interactions by not allowing visual updates to block on event callback code.
+
+For example, imagine a rich text editor that formats text as you type, but also updates other aspects of the UI in response to what you've written (such as word count, highlighting spelling mistakes, and other important visual feedback). In addition, the application may also need to save what you've written so that if you leave and return, you haven't lost any work.
+
+In this example, the following four things need to happen in response to characters typed by the user. However, only the first item needs to be done before the next frame is presented.
 
 1. Update the text box with what the user typed and apply any required formatting.
 2. Update the part of the UI that displays the current word count.
 3. Run logic to check for spelling mistakes.
 4. Save the most recent changes (either locally or to a remote database).
 
-The code to do this might look something like this:
+The code to do this might look something like the following:
 
 ```js
-textBox.addEventListener('keydown', (keyboardEvent) => {
+textBox.addEventListener('input', (inputEvent) => {
   // Update the UI immediately, so the changes the user made
   // are visible as soon as the next frame is presented.
-  updateTextBox(keyboardEvent);
+  updateTextBox(inputEvent);
 
-  // Defer all other work until at least after the next frame,
-  // by queuing a task in a `requestAnimationFrame()` callback.
+  // Use `setTimeout` to defer all other work until at least the next
+  // frame by queuing a task in a `requestAnimationFrame()` callback.
   requestAnimationFrame(() => {
     setTimeout(() => {
       const text = textBox.textContent;
@@ -249,7 +165,7 @@ textBox.addEventListener('keydown', (keyboardEvent) => {
 });
 ```
 
-The following visualization should help explain why deferring any non-critical updates until after the next frame can reduce the processing time and thus the overall interaction latency.
+The following visualization shows how deferring any non-critical updates until after the next frame can reduce the processing time and thus the overall interaction latency.
 
 <figure>
   <a href="https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Me4oU1cqMPOqEaEg2XAP.svg" rel="noopener">
@@ -260,35 +176,68 @@ The following visualization should help explain why deferring any non-critical u
   </figcaption>
 </figure>
 
-While admittedly the use of `setTimeout()` inside of a call to `requestAnimationFrame()` in the previous code example is a bit esoteric, it is an effective and cross-browser way to ensure that the non-critical code does not block the next frame.
+While the use of `setTimeout()` inside a `requestAnimationFrame()` call in the previous code example is admittedly a bit esoteric, it is an effective method that works in all browsers to ensure that the non-critical code does not block the next frame.
 
-In the future, as new Scheduling APIs like [`scheduler.postTask()`](/optimize-long-tasks/#a-dedicated-scheduler-api) and [`scheduler.yield()`](/optimize-long-tasks/#built-in-yield-with-continuation) are standardized and implemented, it will be easier for developers to write code that can be automatically prioritized without them needing to have an intimate knowledge of the browser event loop.
+#### Avoid layout thrashing
 
-## Minimize presentation delay
-
-The last step of an interaction is the presentation delay, which starts when the event callbacks have finished running, and ends when the browser is able to present the next frame to the user's display.
-
-The unfortunate fact is that presentation delays are something you have the least amount of control over. However, here's a few things to look out for if you're noticing that frames are being delayed:
-
-1. Don't abuse [`requestAnimationFrame()`](https://developer.mozilla.org/docs/Web/API/window/requestAnimationFrame) for work not related to rendering. `requestAnimationFrame()` callbacks are run during the rendering phase of the event loop, and must complete before the next frame can be presented. If you're using `requestAnimationFrame()` to do work that doesn't involve changes to the user interface, understand that you could be delaying the next frame.
-2. Be careful with `async` and `await` and your assumptions around how they work. Just because you're using these features (or Promises in general) doesn't mean that the work they do won't block rendering. It's entirely possible that an `async` function—even if it _does_ break the work in a callback into a separate task—can still block rendering if the browser chooses to run it before the next frame is presented. This is why it's important to [keep all tasks short](/optimize-long-tasks/).
-3. Be careful with [`ResizeObserver`](https://developer.mozilla.org/docs/Web/API/ResizeObserver) observer callbacks. Such callbacks are run prior to rendering, and may delay presentation of the next frame if the work in them is expensive, as with event callbacks, defer any logic not needed for the very next frame.
-
-## When interactions overlap
-
-It's also important to understand how interactions can overlap. For example, if there are many interactions within a short period, it's possible that the processing time or presentation delay for one interaction can be a source of input delay for a subsequent interaction.
+Layout thrashing—sometimes called forced synchronous layout—is a rendering performance problem where layout occurs synchronously. It occurs when you update styles in JavaScript, and then read them in the same task—and [there are many properties in JavaScript that can cause layout thrashing](https://gist.github.com/paulirish/5d52fb081b3570c81e3a).
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/ohYy7phsKRbKCeth0iUu.png", alt="A depiction of when tasks can overlap to produce long input delays. In this depiction, a click interaction overlaps with a keydown interaction to increase the input delay for the keydown interaction.", width="800", height="307" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/2YZ1okUy3wtoJ0Y8wRtx.png", alt="A visualization of layout thrashing as shown in the performance panel of Chrome DevTools. The layout thrashing occurs in an event callback, thereby extending its latency.", width="730", height="656" %}
   <figcaption>
-    A visualization of two concurrent interactions in the performance profiler in Chrome's DevTools. The rendering work in the initial click interaction causes an input delay for the subsequent keyboard interaction.
+    An example of layout thrashing, as shown in the performance panel of Chrome DevTools. Rendering tasks that involve layout thrashing will be noted with a red triangle at the upper right corner of the portion of the call stack, often labeled **Recalculate Style** or **Layout**.
   </figcaption>
 </figure>
 
-These overlaps are tricky to diagnose in the field, in part because it's difficult to track if the source of a high INP is due to multiple interactions that interfere with one another. The best thing you can do to alleviate poor responsiveness in your interactions is to **do as little work as possible** in your interaction's event callbacks and **always keep your tasks short**. This helps to reduce contention between interactions and gives the main thread a bit more breathing room.
+Layout thrashing is a performance bottleneck because by updating styles and then immediately requesting the values of those styles in JavaScript, the browser is forced to do synchronous layout work it otherwise could have waited to perform asynchronously later on after event callbacks have finished running.
 
-## Improving INP requires persistence
+{% Aside 'objective' %}
+**Read to learn more:**&nbsp;[Avoid large, complex layouts and layout thrashing](/avoid-large-complex-layouts-and-layout-thrashing/).
+{% endAside %}
 
-Improving your site's INP is an iterative process. When you fix a slow interaction in the field, chances are good that—especially if your website provides tons of interactivity—you'll start to find other slow interactions, and you'll need to optimize them too.
+### Minimize presentation delay
 
-The key to improving INP is persistence. In time, you can get your page's responsiveness in a spot where users are happy with the experience you're providing them. Chances are also good that as you develop new features for your users, you may need to go through the same process in optimizing interactions specific to them. It will take time and effort, but it's time and effort well spent.
+The _presentation delay_ of an interaction marks spans from when an interaction's event callbacks have finished running, up to the point at which the browser is able to paint the next frame that shows the resulting visual changes.
+
+#### Minimize DOM size
+
+When a page's DOM is small, rendering work usually finishes quickly. However, when DOMs get very large, rendering work tends to scale with increasing DOM size. The relationship between rendering work and DOM size isn't a linear one, but large DOMs do require more work to render than small DOMs. A large DOM is problematic in two cases:
+
+1. During the initial page render, where a large DOM requires a lot of work to render the page's initial state.
+2. In response to a user interaction, where a large DOM can cause rendering updates to be very expensive, and therefore increase the time it takes for the browser to present the next frame.
+
+{% Aside 'objective' %}
+**Read to learn more:**&nbsp;[DOM size and interactivity](/dom-size-and-interactivity/).
+{% endAside %}
+
+Bear in mind that there are instances in which large DOMs can't be significantly reduced. While there are approaches you can take to reduce DOM size, such as [flattening your DOM](/dom-size-and-interactivity/#how-can-i-reduce-dom-size) or [add to the DOM during user interactions](/dom-size-and-interactivity/#consider-an-additive-approach) to keep your initial DOM size small, those techniques may only go so far.
+
+#### Use `content-visibility` to lazily render off-screen elements
+
+One way you can limit the amount of both rendering work during page load and rendering work in response to user interactions is to lean on the CSS `content-visibility` property, which effectively amounts to lazily rendering elements as they approach the viewport. While `content-visibility` can take some practice to use effectively, it's worth investigating if the result is lower rendering time that can improve your page's INP.
+
+{% Aside 'objective' %}
+**Read to learn more:**&nbsp;[`content-visibility`: the new CSS property that boosts your rendering performance](/content-visibility/).
+{% endAside %}
+
+#### Be aware of performance costs when rendering HTML using JavaScript
+
+Where there's HTML, there's HTML parsing, and after the browser has finished parsing HTML into a DOM, it must apply styles to it, perform layout calculations, and subsequently render that layout. This is an unavoidable cost, but _how_ you go about rendering HTML matters.
+
+When the server sends HTML, it arrives in the browser as a stream. Streaming means that the HTML response from the server is arriving in chunks. The browser optimizes how it handles a stream by incrementally parsing chunks of that stream as they arrive, and rendering them bit by bit. This is a performance optimization in that the browser implicitly yields periodically and automatically during page load, and you get that for free.
+
+While the first visit to any website will always involve _some_ amount of HTML, a common approach starts with a minimal initial bit of HTML, and then JavaScript is used to populate the content area. Subsequent updates to that content area also occur as the result of user interactions. This is usually called the [single-page application (SPA) model](https://en.wikipedia.org/wiki/Single-page_application). One drawback of this pattern is that, by rendering HTML with JavaScript on the client, you not only get the cost of the JavaScript processing to create that HTML, but also the browser will _not_ yield until it has finished parsing that HTML, and rendering it.
+
+It's vital to remember though, that even websites that _aren't_ SPAs will probably involve some amount of HTML rendering through JavaScript as the result of interactions. This is generally fine, so long as you're not rendering large amounts of HTML on the client, which can delay presentation of the next frame. However, it's important to understand the performance implications of this approach to rendering HTML in the browser, and how it can impact the responsiveness of your website to user input if you are rendering a lot of HTML via JavaScript.
+
+{% Aside 'objective' %}
+**Read to learn more:**&nbsp;[Client-side rendering of HTML and interactivity](/client-side-rendering-of-html-and-interactivity/).
+{% endAside %}
+
+## Conclusion
+
+Improving your site's INP is an iterative process. When you fix a slow interaction in the field, the chances are good that—especially if your website provides lots of interactivity—you'll start to find other slow interactions, and you'll need to optimize them too.
+
+The key to improving INP is persistence. In time, you can get your page's responsiveness to a place where users are happy with the experience you're providing them. The chances are also good that as you develop new features for your users, you may need to go through the same process in optimizing interactions specific to them. It will take time and effort, but it's time and effort well spent.
+
+_Hero image from [Unsplash](https://unsplash.com/), by [David Pisnoy](https://unsplash.com/@davidpisnoy) and modified in accordance with the [Unsplash license](https://unsplash.com/license)._
