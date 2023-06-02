@@ -5,9 +5,6 @@ layout: 'base'
 <a href="#main" class="skip-link button" data-type="primary">{{ 'i18n.common.skip_link' | i18n(locale) }}</a>
 {% include 'partials/site-header.njk' %}
 <main id="main">
-  {% if show_banner %}
-    {% include 'partials/banner.njk' %}
-  {% endif %}
   {{ content | safe }}
 </main>
 {% include 'partials/site-footer.njk' %}

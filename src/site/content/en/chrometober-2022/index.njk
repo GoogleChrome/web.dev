@@ -5,9 +5,6 @@ layout: 'base'
 <a href="#main" class="skip-link button" data-type="primary">{{ 'i18n.common.skip_link' | i18n(locale) }}</a>
 {% include 'partials/site-header.njk' %}
 <main id="main">
-  {% if show_banner %}
-    {% include 'partials/banner.njk' %}
-  {% endif %}
   <iframe title="Chrometober 2022. Scroll horizontally to navigate" tabindex="0" style="width: 100%; max-width: 100%; min-height: 480px; aspect-ratio: 16 / 10; max-height: 90vh;" src="/third_party/chrometober-2022/chrometober.html"></iframe>
 </main>
 {% include 'partials/site-footer.njk' %}

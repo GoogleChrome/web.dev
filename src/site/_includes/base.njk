@@ -10,6 +10,8 @@ tags: []
     {% include 'partials/head.njk' %}
   </head>
   <body class="unresolved">
+    {% Export %}
+
     {#
       Make the snackbar the first item in the DOM so we don't have to steal the
       user's focus on initial visit to show them a cookie banner. Instead, the
@@ -18,7 +20,5 @@ tags: []
     <web-snackbar-container></web-snackbar-container>
 
     {{ content | safe }}
-
-    {% include 'partials/devrel-ribbon.njk' %}
   </body>
 </html>

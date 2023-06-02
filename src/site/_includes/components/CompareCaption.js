@@ -19,6 +19,11 @@
  * @return {string}
  */
 function CompareCaption(content) {
+  if (process.env.ALT_BUILD) {
+    // DevSite only supports
+    return `<p class="webdev-caption">${content}</p>`;
+  }
+
   return `<figcaption class="compare__caption">
 ${content}</figcaption>`;
 }

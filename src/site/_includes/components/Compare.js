@@ -48,6 +48,12 @@ function Compare(content, type, labelOverride) {
     }
   }
 
+  if (process.env.ALT_BUILD) {
+    // DevSite only supports
+    return `<p><span class="compare-${type}">${label}</span></p>
+${content}`;
+  }
+
   // prettier-ignore
   return `<figure class="compare flow" data-type="${type}" data-size="full"><p class="compare__label">${label}</p>
 ${content}</figure>`;

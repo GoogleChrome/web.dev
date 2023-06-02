@@ -18,5 +18,8 @@ const {html} = require('common-tags');
 const md = require('markdown-it')();
 
 module.exports = (content) => {
+  if (process.env.ALT_BUILD) {
+    return `**${content}**`;
+  }
   return html`<p class="label">${md.renderInline(content)}</p>`;
 };

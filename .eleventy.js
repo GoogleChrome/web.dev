@@ -15,7 +15,6 @@
  */
 
 const chalk = require('chalk');
-const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const yaml = require('js-yaml');
 const fs = require('fs');
@@ -54,6 +53,8 @@ const Meta = require('./src/site/_includes/components/Meta');
 const StackOverflow = require('./src/site/_includes/components/StackOverflow');
 const YouTubePlaylist = require('./src/site/_includes/components/YouTubePlaylist');
 
+const {Export} = require('./src/site/_includes/components/Export');
+
 // Collections
 const authors = require('./src/site/_collections/authors');
 const blogPostsDescending = require('./src/site/_collections/blog-posts-descending');
@@ -90,7 +91,6 @@ const {minifyJs} = require('./src/site/_filters/minify-js');
 const {minifyJSON} = require('./src/site/_filters/minify-json');
 const {cspHash, getHashList} = require('./src/site/_filters/csp-hash');
 const {siteRender} = require('./src/site/_filters/site-render');
-const {njkRender} = require('./src/site/_filters/njk-render');
 const {
   isUpcoming,
   filterInUpcoming,
@@ -100,7 +100,6 @@ const {latestPostByTags} = require('./src/site/_filters/latest-post-by-tags');
 const {calendarLink} = require('./src/site/_filters/calendar-link');
 
 const disableLazyLoad = require('./src/site/_transforms/disable-lazy-load');
-const {minifyHtml} = require('./src/site/_transforms/minify-html');
 
 // Shared dependencies between web.dev and developer.chrome.com
 const {updateSvgForInclude} = require('webdev-infra/filters/svg');
@@ -113,15 +112,12 @@ global.__basedir = __dirname;
 module.exports = function (config) {
   console.log(chalk.black.bgGreen('Eleventy is building, please wait…'));
   const isProd = process.env.ELEVENTY_ENV === 'prod';
-  const isStaging = process.env.ELEVENTY_ENV === 'staging';
 
   // ----------------------------------------------------------------------------
   // PLUGINS
   // ----------------------------------------------------------------------------
   // Syntax highlighting for code snippets
   config.addPlugin(pluginSyntaxHighlight);
-  // RSS feeds
-  config.addPlugin(pluginRss);
 
   // ----------------------------------------------------------------------------
   // MARKDOWN
@@ -169,7 +165,6 @@ module.exports = function (config) {
   config.addFilter('md', md);
   config.addFilter('navigation', navigation);
   config.addNunjucksAsyncFilter('siteRender', siteRender);
-  config.addNunjucksAsyncFilter('njkRender', njkRender);
   config.addFilter('pagedNavigation', pagedNavigation);
   config.addFilter('postsLighthouseJson', postsLighthouseJson);
   config.addFilter('prettyDate', prettyDate);
@@ -218,16 +213,13 @@ module.exports = function (config) {
   config.addShortcode('YouTube', YouTube);
   config.addShortcode('YouTubePlaylist', YouTubePlaylist);
   config.addShortcode('includeRaw', includeRaw);
+  config.addNunjucksAsyncShortcode('Export', Export);
 
   // ----------------------------------------------------------------------------
   // TRANSFORMS
   // ----------------------------------------------------------------------------
   if (process.env.PERCY) {
     config.addTransform('disable-lazy-load', disableLazyLoad);
-  }
-
-  if (isProd || isStaging) {
-    config.addTransform('minifyHtml', minifyHtml);
   }
 
   // ----------------------------------------------------------------------------

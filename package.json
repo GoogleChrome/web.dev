@@ -17,6 +17,7 @@
     "deploy": "ELEVENTY_ENV=prod npm-run-all build deploy:firebase algolia",
     "deploy:firebase": "firebase deploy --non-interactive",
     "dev": "npm-run-all clean ignore rollup gulp eleventy --parallel watch:rollup watch:eleventy watch:gulp watch:patterns firebase-config start",
+    "dev:alt": "ALT_BUILD=true npm run dev",
     "dev:light": "npm-run-all clean ignore rollup gulp eleventy --parallel watch:rollup watch:eleventy watch:gulp watch:patterns firebase-config eleventy:serve",
     "eleventy": "eleventy --quiet",
     "eleventy:serve": "eleventy --quiet --serve",

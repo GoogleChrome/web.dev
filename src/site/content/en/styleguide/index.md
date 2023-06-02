@@ -1,14 +1,11 @@
 ---
-layout: post-alt
+layout: post
 title: web.dev components
 date: 2019-06-26
 updated: 2022-01-18
-tags:
-  - alt_build
-permalink: /alt_build/index.md
-description: |
-  Learn how to use web.dev's UI and content components.
 ---
+This is a test page for the Markdown export. It contains all existing shortcodes with their variants.
+
 ## Asides
 
 ### Note asides
@@ -163,7 +160,7 @@ as used on [BCD Schema](https://github.com/mdn/browser-compat-data), e.g. for
 the ID is `api.BackgroundFetchEvent`.
 
 ```text
-{% raw %}{% BrowserCompat 'api.BackgroundFetchEvent' %}{% endraw %}
+{% raw %}{% verbatim %}{% BrowserCompat 'api.BackgroundFetchEvent' %}{% endverbatim %}{% endraw %}
 ```
 
 {% BrowserCompat 'api.BackgroundFetchEvent' %}
@@ -284,7 +281,7 @@ To change the component height, specify the height value in pixels
 in the shortcode.
 
 ```text
-{% raw %}{% CodePattern 'pattern-id', optional-height-in-px %}{% endraw %}
+{% raw %}{% verbatim %}{% CodePattern 'pattern-id', optional-height-in-px %}{% endverbatim %}{% endraw %}
 ```
 
 {% CodePattern 'example-set/example-pattern', 500 %}

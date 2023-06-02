@@ -176,26 +176,6 @@
           </a>
         </div>
       {% endif %}
-      <div class="docked-actions flow flow-space-base">
-        <div>
-          <share-action class="gc-analytics-event fab"
-            authors="{{ authors | expandAuthors(collections.authors, lang) }}"
-            data-category="web.dev"
-            data-label="share"
-            data-action="click"
-            data-type="primary"
-            data-icon="share"
-            tabindex="0"
-            role="button"
-          >
-            {% include "icons/share.svg" %}
-            <span class="fab__label">{{ 'i18n.common.share' | i18n(locale) }}</span>
-          </share-action>
-        </div>
-        <div>
-          {% include 'partials/subscribe-action.njk' %}
-        </div>
-      </div>
     </article>
   </div>
 </div>
