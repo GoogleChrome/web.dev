@@ -13,6 +13,14 @@ tags:
 
 The [`mkbitmap`](https://potrace.sourceforge.net/mkbitmap.1.html) C program reads an image and applies one or more of the following operations to it, in this order: inversion, highpass filtering, scaling, and thresholding. Each operation can be individually controlled and turned on or off. The principal use of `mkbitmap` is to convert color or grayscale images into a format suitable as input for other programs, particularly the tracing program [`potrace`](https://potrace.sourceforge.net/potrace.1.html) that forms the basis of [SVGcode](/svgcode/). As a preprocessing tool, `mkbitmap` is particularly useful for converting scanned line art, such as cartoons, handwritten text, etc., to high-resolution bilevel images.
 
+You use `mkbitmap` by passing it a number of options and one or multiple file names. For all details, see the tool's [man page](https://potrace.sourceforge.net/mkbitmap.1.html):
+
+```bash
+$ mkbitmap [options] [filename...]
+```
+
+This article shows step-by-step how you might proceed if you wanted to compile `mkbitmap` to WebAssembly. Note that some of the steps mentioned below are dead ends, and the article doesn't show the magic compilation command as if it had dropped from the sky, but rather describes the actual progress, some frustrations included. Not getting something to compile on the first run is completely normal. But you got this!
+
 <figure>
   {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/IxTMIGl9KB2HQCI57VVk.png", alt="Cartoon image in color.", width="239", height="235" %}
   <figcaption>The original image (<a href="https://potrace.sourceforge.net/mkbitmap.html">Source</a>).</figcaption>
@@ -23,19 +31,13 @@ The [`mkbitmap`](https://potrace.sourceforge.net/mkbitmap.1.html) C program read
   <figcaption>First scaled, then thresholded: <code>mkbitmap -f 2 -s 2 -t 0.48</code> (<a href="https://potrace.sourceforge.net/mkbitmap.html">Source</a>).</figcaption>
 </figure>
 
-You use `mkbitmap` by passing it a number of options and one or multiple file names. For all details, see the tool's [man page](https://potrace.sourceforge.net/mkbitmap.1.html):
-
-```bash
-$ mkbitmap [options] [filename...]
-```
-
 ## Getting the code
 
 The first step is to obtain the source code of `mkbitmap`. You can find it on the [project's website](https://potrace.sourceforge.net/#downloading). At the time of this writing, [potrace-1.16.tar.gz](https://potrace.sourceforge.net/download/1.16/potrace-1.16.tar.gz) is the latest version.
 
-## Installing the tool
+## Compiling and installing locally
 
-The next step is to install the tool locally to get a feeling of how it behaves. The [`INSTALL`](https://potrace.sourceforge.net/INSTALL) file contains the following instructions:
+The next step is to compile and install the tool locally to get a feeling for how it behaves. The [`INSTALL`](https://potrace.sourceforge.net/INSTALL) file contains the following instructions:
 
  1. `cd` to the directory containing the package's source code and type
     `./configure` to configure the package for your system.
@@ -51,7 +53,7 @@ The next step is to install the tool locally to get a feeling of how it behaves.
      user, and only the `make install` phase executed with root
      privileges.
 
- If you follow these steps, you hopefully end up with two executables, `potrace` and `mkbitmap`—the latter is the focus of this article. You can verify it worked correctly by running `./mkbitmap --version`. Here is the output of all four steps from my machine, heavily trimmed for brevity:
+ If you follow these steps, you hopefully end up with two executables, `potrace` and `mkbitmap`—the latter is the focus of this article. You can verify it worked correctly by running `mkbitmap --version`. Here is the output of all four steps from my machine, heavily trimmed for brevity:
 
 Step 1, `./configure`:
 
@@ -123,11 +125,11 @@ $ mkbitmap --version
 mkbitmap 1.16. Copyright (C) 2001-2019 Peter Selinger.
  ```
 
-Congratulations, you have successfully installed `mkbitmap`! Now the next step is to make the equivalent of these steps work with WebAssembly.
+Congratulations, you have successfully compiled and installed `mkbitmap`! Now the next step is to make the equivalent of these steps work with WebAssembly.
 
 ## Compiling to WebAssembly
 
-The [Emscripten Building Projects documentation](https://Emscripten.org/docs/compiling/Building-Projects.html) state the following:
+For compiling C/C++ programs to WebAssembly, there's a tool called [Emscripten](http://emscripten.org/). Emscripten's [Building Projects](https://Emscripten.org/docs/compiling/Building-Projects.html) documentation states the following:
 
 > Building large projects with Emscripten is very easy. Emscripten provides two simple scripts that configure your makefiles to use `emcc` as a drop-in replacement for `gcc`—in most cases the rest of your project's current build system remains unchanged.
 
@@ -143,7 +145,7 @@ The documentation then goes on (a little edited for brevity):
 > `emconfigure ./configure`<br>
 > `emmake make`
 
-So essentially `./configure` becomes `emconfigure ./configure` and `make` becomes `emmake make`. Let's try this with `mkbitmap`:
+So essentially `./configure` becomes `emconfigure ./configure` and `make` becomes `emmake make`. Let's try this with `mkbitmap`.
 
 {% Aside 'warning' %}
 If you followed the platform compilation steps above, be sure to run `make clean` before proceeding with the WebAssembly compilation steps to remove previous compile artifacts.
@@ -159,6 +161,7 @@ test -z "" || rm -f
 rm -rf .libs _libs
 […]
 rm -f *.lo
+```
 
 Step 1, `emconfigure ./configure`:
 
@@ -198,7 +201,7 @@ $ find . -name "*.wasm"
 ./src/potrace.wasm
 ```
 
-The two last ones look promising, so `cd` into the `src/` directory. There are now also two new corresponding files, `mkbitmap` and `potrace`. The fact that they don't have the `.js` extension is a little confusing, but they are in fact JavaScript files, verifiable with a quick `head` call:
+The two last ones look promising, so `cd` into the `src/` directory. There are now also two new corresponding files, `mkbitmap` and `potrace`. For this article, only `mkbitmap` is relevant. The fact that they don't have the `.js` extension is a little confusing, but they are in fact JavaScript files, verifiable with a quick `head` call:
 
 ```bash
 $ cd src/
@@ -231,7 +234,7 @@ $ node mkbitmap.js --version
 mkbitmap 1.16. Copyright (C) 2001-2019 Peter Selinger.
 ```
 
-Felicitation, you have successfully compiled `mkbitmap` to WebAssembly! Now the next step is to make it work in the browser.
+Felicitations, you have successfully compiled `mkbitmap` to WebAssembly! Now the next step is to make it work in the browser.
 
 ## Making it work in the browser
 
@@ -250,7 +253,7 @@ Copy the `mkbitmap.js` and the `mkbitmap.wasm` files to a new directory called `
 </html>
 ```
 
-Start a local server that serves the `mkbitmap` directory and open it in your browser. You should see a prompt that asks you for input. This is actually perfectly expected, since, [according to the tool's man page](https://potrace.sourceforge.net/mkbitmap.1.html#:~:text=A%20filename%20of%20%22%2D%22%20may%20be%20given%20to%20specify%20reading%20from%20standard%20input), _"[i]f no filename arguments are given, then mkbitmap acts as a filter, reading from standard input"_.
+Start a local server that serves the `mkbitmap` directory and open it in your browser. You should see a prompt that asks you for input. This is actually perfectly expected, since, [according to the tool's man page](https://potrace.sourceforge.net/mkbitmap.1.html#:~:text=A%20filename%20of%20%22%2D%22%20may%20be%20given%20to%20specify%20reading%20from%20standard%20input), _"[i]f no filename arguments are given, then mkbitmap acts as a filter, reading from standard input"_, which for Emscripten by default is a [`prompt()`](https://developer.mozilla.org/docs/Web/API/Window/prompt).
 
 {% Aside 'warning' %}
 Serving from the `file:` protocol doesn't work for `.wasm` files, you really need to start a local server.
@@ -258,11 +261,13 @@ Serving from the `file:` protocol doesn't work for `.wasm` files, you really nee
 
 {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/DbDQJnxA4GylWKZcmlJK.png", alt="The mkbitmap app showing a prompt that asks for input.", width="800", height="600" %}
 
-So how do you stop `mkbitmap` from executing immediately and instead make it wait for user input? For this, you need to understand Emscripten's `Module` object. `Module` is a global JavaScript object with attributes that Emscripten-generated code calls at various points in its execution.
+### Preventing automatic execution
+
+So how do you stop `mkbitmap` from executing immediately and instead make it wait for user input? For this, you need to understand Emscripten's [`Module`](https://emscripten.org/docs/api_reference/module.html) object. `Module` is a global JavaScript object with attributes that Emscripten-generated code calls at various points in its execution.
 Developers can provide an implementation of `Module` to control the execution of code.
 When an Emscripten application starts up, it looks at the values on the `Module` object and applies them.
 
-In the case of `mkbitmap`, you need to set [`Module.noInitialRun`](https://emscripten.org/docs/api_reference/module.html#Module.noInitialRun) to `true` to prevent the initial run that caused the prompt to appear. Create a script called `script.js`, include it _before_ the `<script src="mkbitmap.js"></script>` and add the following code:
+In the case of `mkbitmap`, you need to set [`Module.noInitialRun`](https://emscripten.org/docs/api_reference/module.html#Module.noInitialRun) to `true` to prevent the initial run that caused the prompt to appear. Create a script called `script.js`, include it _before_ the `<script src="mkbitmap.js"></script>` in `index.html` and add the following code to `script.js`. When you now reload the app, the prompt should be gone.
 
 ```js
 var Module = {
@@ -271,11 +276,17 @@ var Module = {
 };
 ```
 
-When you now reload the app, the prompt should be gone. But how can you provide input to the app? This is where Emscripten's [file system](https://emscripten.org/docs/api_reference/Filesystem-API.html) support in `Module.FS` will come in. If you read the [Including File System Support](https://emscripten.org/docs/api_reference/Filesystem-API.html#including-file-system-support) section of the documentation, you will read:
+### Creating a modular build with some more build flags
+
+But how can you provide input to the app? This is where Emscripten's [file system](https://emscripten.org/docs/api_reference/Filesystem-API.html) support in `Module.FS` will come in. If you consult the [Including File System Support](https://emscripten.org/docs/api_reference/Filesystem-API.html#including-file-system-support) section of the documentation, you will read:
 
 > Emscripten decides whether to include file system support automatically. Many programs don't need files, and file system support is not negligible in size, so Emscripten avoids including it when it doesn't see a reason to. That means that if your C/C++ code does not access files, then the `FS` object and other file system APIs will not be included in the output. And, on the other hand, if your C/C++ code does use files, then file system support will be automatically included.
 
-Unfortunately `mkbitmap` is one of these cases where this magic doesn't work, so you need to explicitly tell Emscripten to include file system support. This means you need to do the `emconfigure` and `emmake` dance from above again, with a couple more flags set that you pass via a `CFLAGS` argument.
+Unfortunately `mkbitmap` is one of these cases where this automatic magic doesn't work, so you need to explicitly tell Emscripten to include file system support. This means you need to do the `emconfigure` and `emmake` dance from before again, with a couple more flags set that you pass via a `CFLAGS` argument. Above I promised not to just show a magic compilation command as if it had dropped from the sky, but all flags in the following are rather common and you might need them for other projects as well.
+
+{% Aside %}
+You may be wondering about the missing space after `-s` that you may see in other online tutorials. Some `-s` options may require quoting, or the space between `-s` and the next argument may confuse `CMake`. To avoid those problems, I recommend you generally use the `-sX=Y` notation, that is, without a space.
+{% endAside %}
 
 - Set [`-sFILESYSTEM=1`](https://github.com/emscripten-core/emscripten/blob/fd9b4862cd3729b58ecc0f26ce03f9b9513615b0/src/settings.js#L918-L926) so file system support is included.
 - Set [`-sEXPORTED_RUNTIME_METHODS=FS,callMain`](https://github.com/emscripten-core/emscripten/blob/fd9b4862cd3729b58ecc0f26ce03f9b9513615b0/src/settings.js#L862-L869) so `Module.FS` and `Module.callMain` are exported.
@@ -292,7 +303,7 @@ $ emconfigure ./configure --host=wasm32 CFLAGS='-sFILESYSTEM=1 -sEXPORTED_RUNTIM
 
 Do not forget to run `emmake make` again and copy the freshly created files over to the `mkbitmap` folder.
 
-Modify `index.html` so that it loads the ES module `script.js`, from which you then import the `mkbitmap` module.
+Modify `index.html` so that it only loads the ES module `script.js`, from which you then import the `mkbitmap.js` module.
 
 ```html
 <!DOCTYPE html>
@@ -302,8 +313,8 @@ Modify `index.html` so that it loads the ES module `script.js`, from which you t
     <title>mkbitmap</title>
   </head>
   <body>
-    <!-- See next listing. -->
-    <script src="/script.js" type="module"></script>
+    <!-- No longer load `mkbitmap.js` here -->
+    <script src="script.js" type="module"></script>
   </body>
 </html>
 ```
@@ -320,11 +331,13 @@ const run = async () => {
 run();
 ```
 
-When you open the app now in the browser, you can see the `Module` object logged to the DevTools console, and the prompt is gone, since the `main()` function is no longer called at the start.
+When you open the app now in the browser, you should see the `Module` object logged to the DevTools console, and the prompt is gone, since the `main()` function of `mkbitmap` is no longer called at the start.
 
 {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/VDD7kemQvnMsC7vsGnEr.png", alt="The mkbitmap app with a white screen, showing the Module object logged to the DevTools console.", width="800", height="502" %}
 
-The next step is to manually call the `main()` function, which you do by running `Module.callMain()`. The `callMain()` function takes an array of arguments, which match one-by-one what you would pass on the command line. If one the command line you would run `mkbitmap -v`, you would call `Module.callMain(['-v'])` in the browser. This logs the `mkbitmap` version number to the DevTools console.
+### Manually executing the main function
+
+The next step is to manually call `mkbitmap`'s `main()` function, which you do by running `Module.callMain()`. The `callMain()` function takes an array of arguments, which match one-by-one what you would pass on the command line. If on the command line you would run `mkbitmap -v`, you would call `Module.callMain(['-v'])` in the browser. This logs the `mkbitmap` version number to the DevTools console.
 
 ```js
 // This is `script.js`.
@@ -340,7 +353,9 @@ run();
 
 {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/i4MTQgb47ColZt4pcAqr.png", alt="The mkbitmap app with a white screen, showing the mkbitmap version number logged to the DevTools console.", width="800", height="502" %}
 
- The standard output (`stdout`) by default is to the console. The cool thing is that you can redirect it to something else, for example, a function that stores the output to a variable, so you can add it to the HTML.
+### Redirecting the standard output
+
+ The standard output (`stdout`) by default is the console. The cool thing is that you can redirect it to something else, for example, a function that stores the output to a variable, so you can add the output to the HTML. You do this by setting the [`Module.print`](https://emscripten.org/docs/api_reference/module.html#Module.print) property.
 
 ```js
 // This is `script.js`.
@@ -360,10 +375,14 @@ run();
 
 {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/61iaKchi6p0NmbfipNhO.png", alt="The mkbitmap app showing the mkbitmap version number.", width="800", height="502" %}
 
-The next step is to code up the equivalent of `mkbitmap filename`. If a `filename` argument is given, then `mkbitmap` will by default create an output file whose name is obtained from the input file name by changing its suffix to `.pbm` (for the input file name `example.bmp`, the output file name would be `example.pbm`).
+### Getting the input file into the memory file system
+
+The next step is to code up the equivalent of `mkbitmap filename` on the command line. Supported input formats of `mkbitmap` are [PNM](https://en.wikipedia.org/wiki/Netpbm) ([PBM](https://en.wikipedia.org/wiki/Netpbm#PBM_example), [PGM](https://en.wikipedia.org/wiki/Netpbm#PGM_example), [PPM](https://en.wikipedia.org/wiki/Netpbm#PPM_example)) and [BMP](https://en.wikipedia.org/wiki/BMP_file_format). The output formats are PBM for bitmaps, and PGM for graymaps.
+
+If a [`filename`](https://potrace.sourceforge.net/mkbitmap.1.html#:~:text=Input/output%20options%3A-,filename,the%20input%20filename%20by%20changing%20its%20suffix%20to%20%22.pbm%22%20or%20%22.pgm%22.,-If%20the%20name) argument is given, `mkbitmap` will by default create an output file whose name is obtained from the input file name by changing its suffix to [`.pbm`](https://en.wikipedia.org/wiki/Netpbm#File_formats). For example, for the input file name `example.bmp`, the output file name would be `example.pbm`.
 
 Emscripten provides a virtual file system that simulates the local file system, so that native code using synchronous file APIs can be compiled and run with little or no change.
-For this, you need to use the `FS` object that Emscripten provides. The `FS` object is backed by an in-memory file system (commonly referred to as MEMFS) and has a [`writeFile()`](https://emscripten.org/docs/api_reference/Filesystem-API.html#FS.writeFile) function that you use to write files to the virtual file system. To verify it worked, run the `FS` object's [`readdir()`](https://emscripten.org/docs/api_reference/Filesystem-API.html#FS.readdir) function with the parameter `'/'`. You will see `example.bmp` and a number of default files that [always are created automatically](https://emscripten.org/docs/api_reference/Filesystem-API.html#file-system-api). Note that the previous call to print the version number was removed. This is due to the fact that `Module.callMain()` is a function that generally expects to only be run once.
+For this, you need to use the [`FS`](https://emscripten.org/docs/api_reference/Filesystem-API.html#id2) object that Emscripten provides. The `FS` object is backed by an in-memory file system (commonly referred to as [MEMFS](https://emscripten.org/docs/api_reference/Filesystem-API.html#memfs)) and has a [`writeFile()`](https://emscripten.org/docs/api_reference/Filesystem-API.html#FS.writeFile) function that you use to write files to the virtual file system. To verify it worked, run the `FS` object's [`readdir()`](https://emscripten.org/docs/api_reference/Filesystem-API.html#FS.readdir) function with the parameter `'/'`. You will see `example.bmp` and a number of default files that [are always created automatically](https://emscripten.org/docs/api_reference/Filesystem-API.html#file-system-api). Note that the previous call to `Module.callMain(['-v'])` print the version number was removed. This is due to the fact that `Module.callMain()` is a function that generally expects to only be run once.
 
 ```js
 // This is `script.js`.
@@ -379,9 +398,11 @@ const run = async () => {
 run();
 ```
 
-{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/b1Qgw3eQ5im50QAfHWJ5.png", alt="The mkbitmap app showing an array of files in the memory file system, including example.bmp.", width="800", height="502" %}
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/HkJ5LUs5qcpP7Fwtu5iU.png", alt="The mkbitmap app showing an array of files in the memory file system, including example.bmp.", width="800", height="386" %}
 
-Next, you need to actually execute `mkbitmap` by running `Module.callMain(['example.bmp'])`. If you now log the contents of the MEMFS' `'/'` folder, you should see the newly created `example.pbm` file.
+### First actual execution
+
+Next, you need to actually execute `mkbitmap` by running `Module.callMain(['example.bmp'])`. If you now log the contents of the MEMFS' `'/'` folder, you should see the newly created `example.pbm` output file next to the `example.bmp` input file. Woohoo, almost there.
 
 ```js
 // This is `script.js`.
@@ -400,8 +421,10 @@ run();
 
 {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/vGFJy0pHyNPxdUUPdIcZ.png", alt="The mkbitmap app showing an array of files in the memory file system, including example.bmp and example.pbm.", width="800", height="502" %}
 
-Now how to get the result `example.pbm` out of the memory file system? With the `FS` object's [`readFile()`](https://emscripten.org/docs/api_reference/Filesystem-API.html#FS.readFile) function, which returns a `Uint8Array` that you can then convert to a `File` and download, as browsers don't generally support `.pbm` files.
-(There are more elegant ways to [save a file](/patterns/files/save-a-file/), but using a dynamically created `<a download>` is the most widely supported one.)
+### Getting the output file out of the memory file system
+
+Now how to get the resulting `example.pbm` out of the memory file system so it can actually be looked at? With the `FS` object's [`readFile()`](https://emscripten.org/docs/api_reference/Filesystem-API.html#FS.readFile) function, which returns a `Uint8Array` that you then convert to a `File` object that you save to disk, as browsers don't generally support [PBM](https://en.wikipedia.org/wiki/Netpbm#File_formats) files for direct in-browser viewing.
+(There are more elegant ways to [save a file](/patterns/files/save-a-file/), but using a dynamically created `<a download>` is the most widely supported one.) Once the file is saved, you can open it in your favorite image viewer.
 
 ```js
 // This is `script.js`.
@@ -426,3 +449,7 @@ run();
 ```
 
 {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/RstHspfwZIn7FW9aetVW.png", alt="macOS Finder with a preview of the input .bmp file and the output .pbm file.", width="800", height="519" %}
+
+### Adding an interactive UI
+
+{% Glitch id='mkbitmap', height=950 %}
