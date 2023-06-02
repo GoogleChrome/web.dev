@@ -452,4 +452,18 @@ run();
 
 ### Adding an interactive UI
 
+Up until now, the input file was hardcoded and `mkbitmap` only ran with its [default parameters](https://potrace.sourceforge.net/mkbitmap.1.html#:~:text=Normally%2C%20the%20following%20options%20are%20preselected%20by%20default%3A%20%2Df%204%20%2Ds%202%20%2D3%20%2Dt%200.45.). The final step is thus to let the user dynamically select an input file, tweak the `mkbitmap` parameters, and then run the tool with the selected options.
+
+```js
+// Corresponds to `mkbitmap -o output.pbm input.bmp -s 8 -3 -f 4 -t 0.45`.
+Module.callMain(['-o', 'output.pbm', 'input.bmp', '-s', '8', '-3', '-f', '4', '-t', '0.45']);
+```
+
+The PBM image format is not particularly hard to parse, so with [some JavaScript code](https://github.com/megawac/pbm-formatter), you could even show a preview of the output image. See the [source code](https://glitch.com/edit/#!/mkbitmap) of the embedded [demo](https://mkbitmap.glitch.me/) below for one way to do this.
+
+
 {% Glitch id='mkbitmap', height=950 %}
+
+## Conclusion
+
+Congratulations, you have successfully compiled `mkbitmap` to WebAssembly and made it work in the browser! There were some dead ends and you had to compile the tool more than once until it worked, but as I wrote above, that's part of the experience. Also remember the [StackOverflow's `webassembly` tag](https://stackoverflow.com/questions/tagged/webassembly) if you get stuck. Happy compiling!
