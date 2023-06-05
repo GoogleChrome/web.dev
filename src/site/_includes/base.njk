@@ -10,15 +10,29 @@ tags: []
     {% include 'partials/head.njk' %}
   </head>
   <body class="unresolved">
-    {% Export %}
-
-    {#
-      Make the snackbar the first item in the DOM so we don't have to steal the
-      user's focus on initial visit to show them a cookie banner. Instead, the
-      snackbar will be the first stop for the screen reader / focus.
-    #}
-    <web-snackbar-container></web-snackbar-container>
-
     {{ content | safe }}
+
+    <!-- The following content is toggled by the export toolbar -->
+    <section id="exported-markdown">
+      <div class="post wrapper">
+        <div class="sidebar region flex-align-start flex-dir-rev flex-wrap-no">
+          <article class="prose legacy-rollout">
+            <header class="flow gap-bottom-size-1">
+              <h3>{{ title }}</h3>
+              <h4>Exported markdown</h4>
+            </header>
+
+            {% Aside 'celebration' %}No external resources need to be migrated.{% endAside %}
+
+            <template>{% Export %}</template>
+            <web-copy-code>
+              <pre class="markdown"><code class="markdown"># Markdown</code></pre>
+            </web-copy-code>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <web-export-toolbar></web-export-toolbar>
   </body>
 </html>

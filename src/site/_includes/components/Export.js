@@ -19,6 +19,7 @@
 const {Environment} = require('nunjucks');
 
 const {findByUrl} = require('../../_filters/find-by-url');
+const {exportFile} = require('../../_utils/export-file');
 
 /**
  * Renders content with Nunjucks instance configured in .eleventy.
@@ -33,7 +34,8 @@ async function Export() {
 
   // The nunjucks env is not available in the context, so we need to dig it out
   // from 11ty internals
-  const njkEnv = page.template._extensionMap._engineManager.engineCache.njk.njkEnv;
+  const njkEnv =
+    page.template._extensionMap._engineManager.engineCache.njk.njkEnv;
 
   const source = page?.template?.frontMatter?.content;
   if (!source) {
@@ -41,17 +43,25 @@ async function Export() {
   }
 
   const markdown = await new Promise((resolve, reject) => {
-    njkEnv.renderString(source, this.ctx, (err, result) => {
-      if (err) {
-        resolve('Could not render template');
-        return;
-      }
+    njkEnv.renderString(
+      source,
+      Object.assign({}, this.ctx, {export: true}),
+      (err, result) => {
+        if (err) {
+          resolve('Could not render template: ' + err);
+          return;
+        }
 
-      resolve(result);
-    });
+        resolve(result);
+      },
+    );
   });
 
-  return `<template id="markdown-source">${markdown}</template>`;
+  // Note: the following lines can be altered to produce any directory scheme
+  // that is convenient for the migration
+  await exportFile(this.ctx, markdown);
+
+  return markdown;
 }
 
 module.exports = {Export};

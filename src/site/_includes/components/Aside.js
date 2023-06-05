@@ -143,7 +143,7 @@ function Aside(content, type = 'note') {
     titleHTML +
     `<div class="${utilities.body} flow">${renderedContent}</div></aside>`;
 
-  if (process.env.ALT_BUILD) {
+  if (this.ctx.export) {
     const altAsides = {
       gotchas: {
         className: 'tip',
