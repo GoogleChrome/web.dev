@@ -138,7 +138,7 @@ We ran a simple benchmark where we encoded a set of animated GIFs to both AVIF a
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/ltmx3lsTIyqiVcRAaYXL.png", alt="A comparison of animated image codec performance. AVIF outperforms GIF and JPEG XL in terms of both average and median file size.", width="600", height="371" %}
   <figcaption>
-    * libavif and libjxl versions: libavif version 4cff6a3 (libaom version v3.5.0), libjxl version 176b1c03. Test set: 15 sample GIFs from [Wikipedia](https://commons.wikimedia.org/wiki/Category:Animated_GIF_files).
+    * libavif and libjxl versions: libavif version 4cff6a3 (libaom version v3.5.0), libjxl version 176b1c03. Test set: 15 sample GIFs from <a href="https://commons.wikimedia.org/wiki/Category:Animated_GIF_files." rel="noopener">Wikipedia</a>.
   </figcaption>
 </figure>
 
