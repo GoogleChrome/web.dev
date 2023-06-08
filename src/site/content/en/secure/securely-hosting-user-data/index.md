@@ -3,14 +3,14 @@ layout: post
 title: Securely hosting user data
 date: 2023-06-01
 description: >
-  How to search for vulnerabilities on your site.
+  How to securely display user-controlled content on web applications.
 tags:
   - security
 ---
 
 Many web applications need to display user-controlled content. This can be as simple as serving user-uploaded images (for example, profile photos), or as complex as rendering user-controlled HTML (for example, a web development tutorial). This has always been difficult to do securely, so we've worked to find easy, but secure solutions that can be applied to most types of web applications.
 
-## Classical solutions for isolating untrusted content
+## Classic solutions for isolating untrusted content
 
 The classic solution for securely serving user-controlled content is to use what are known as [sandbox domains](https://security.googleblog.com/2012/08/content-hosting-for-modern-web.html). The basic idea is that if your application's main domain is `example.com`, you could serve all untrusted content on `exampleusercontent.com`. Since these two domains are [cross-site](/same-site-same-origin), any malicious content on `exampleusercontent.com` can't impact `example.com`.  
 This approach can be used to safely serve all kinds of untrusted content including images, downloads, and HTML. While it may not seem like it is necessary to use this for images or downloads, doing so helps avoid risks from [content sniffing](https://en.wikipedia.org/wiki/Content_sniffing), especially in legacy browsers.  
