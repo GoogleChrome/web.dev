@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Securely hosting user data
+authors:
+  - ddworken
 date: 2023-06-01
 description: >
   How to securely display user-controlled content on web applications.
