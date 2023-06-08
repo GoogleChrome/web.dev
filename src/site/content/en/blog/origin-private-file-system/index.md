@@ -2,7 +2,7 @@
 title: 'The origin private file system'
 subhead: >
   The File System Standard introduces an origin private file system (OPFS) as a storage endpoint private to the origin of the page and not visible to the user that provides optional access to a special kind of file that is highly optimized for performance.
-date: 2023-03-27
+date: 2023-06-08
 updated: 2023-06-05
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/g0thFlkimyIelTPoF4wD.jpg
 alt: A bunch of files in different colors.
@@ -72,8 +72,8 @@ To get access to the root directory, run the command below. You end up with an e
 
 ```js
 const opfsRoot = await navigator.storage.getDirectory();
-// A `FileSystemDirectoryHandle` whose `type` is `"directory"`
-// and whose name is `""`.
+// A FileSystemDirectoryHandle whose type is "directory"
+// and whose name is "".
 console.log(opfsRoot);
 ```
 
@@ -145,7 +145,7 @@ await writable.close();
 
 ### Deleting files and folders
 
-Delete files and folders by calling their file or directory handle's particular [`remove()`](https://developer.mozilla.org/docs/Web/API/FileSystemHandle/remove) method. To delete a folder including all subfolders, pass the [`{recursive: true})`](https://developer.mozilla.org/docs/Web/API/FileSystemHandle/remove#recursive) option.
+Delete files and folders by calling their file or directory handle's particular [`remove()`](https://developer.mozilla.org/docs/Web/API/FileSystemHandle/remove) method. To delete a folder including all subfolders, pass the [`{recursive: true}`](https://developer.mozilla.org/docs/Web/API/FileSystemHandle/remove#recursive) option.
 
 ```js
 await fileHandle.remove();
@@ -181,7 +181,7 @@ await fileHandle
 ```
 
 {% Aside %}
-Renaming and moving folders is not implemented yet In Chrome. You also can't move files from the origin private file system to the user-visible file system. You can [copy](#copying-a-file-from-the-origin-private-file-system-to-the-user-visible-file-system) them, though.
+Renaming and moving folders is not implemented yet in Chrome. You also can't move files from the origin private file system to the user-visible file system. You can [copy](#copying-a-file-from-the-origin-private-file-system-to-the-user-visible-file-system) them, though.
 {% endAside %}
 
 ### Resolving the path of a file or folder
@@ -357,10 +357,10 @@ Note that the first parameter for `read()` and `write()` is an [`ArrayBuffer`](h
 As mentioned above, moving files from the origin private file system to the user-visible file system isn't possible, but you can copy files. Since `showSaveFilePicker()` is only exposed on the main thread, but not in the Worker thread, be sure to run the code there.
 
 ```js
-// On the main thread, not in the `Worker`. This assumes
+// On the main thread, not in the Worker. This assumes
 // `fileHandle` is the `FileSystemFileHandle` you obtained
 // the `FileSystemSyncAccessHandle` from in the Worker
-// thread. Be sure to close the file in the `Worker` thread first.
+// thread. Be sure to close the file in the Worker thread first.
 const fileHandle = await opfsRoot.getFileHandle('fast');
 try {
   // Obtain a file handle to a new file in the user-visible file system
