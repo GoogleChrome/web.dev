@@ -31,8 +31,8 @@ Over time the web has evolved, and there are now easier, more secure ways to ser
 
 If a site only needs to serve inactive user content (that is content that is not HTML or JavaScript, for example images and downloads), this can now be safely done without an isolated sandbox domain. There are two key steps:
 
-1. Always set the `Content-Type` header to a well-known [MIME type](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/MIME_types) that is supported by all browsers and guaranteed not to contain active content (when in doubt, `application/octet-stream` is a safe choice).
-1. In addition, always set the below response headers to ensure that the browser fully isolates the response.
+* Always set the `Content-Type` header to a well-known [MIME type](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/MIME_types) that is supported by all browsers and guaranteed not to contain active content (when in doubt, `application/octet-stream` is a safe choice).
+* In addition, always set the below response headers to ensure that the browser fully isolates the response.
 
 <table>
   <thead>
