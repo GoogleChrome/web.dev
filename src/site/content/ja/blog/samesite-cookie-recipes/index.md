@@ -5,7 +5,7 @@ authors:
   - rowan_m
 date: 2019-10-30
 updated: 2020-05-28
-hero: image/admin/V0dgwWTA61NTc55CAhSD.jpg
+hero: image/kheDArv5csY6rvQUJDbWRscckLr1/5f56hyvtMT6Dymo839tc.png
 description: 新しいSameSite = None属性値の導入により、サイトでは、Cookieをクロスサイトで使用するように明示的に設定できるようになりました。ブラウザは、SameSite属性がないCookieをデフォルトでファーストパーティとして機能させようとしています。これは、現在のオープン動作よりも安全でプライバシーを保護するオプションです。ここでは、Cookieをマークアップし、この変更が適用されたときに、ファーストパーティおよびサードパーティCookieを確実に動作させ続ける方法について説明します。
 tags:
   - blog
@@ -155,4 +155,4 @@ Cookieはいたるところにあり、特にサイト間のユースケース�
 - Chromiumの動作に関する問題については、 [[SameSitecookies]問題テンプレートを](https://bit.ly/2lJMd5c)でバグを登録する。
 - [`SameSite`更新ページ](https://www.chromium.org/updates/same-site)でChromeの進捗状況をフォローする。
 
-*Cookieヒーロー画像の提供: [Unsplash](https://unsplash.com/@calajay) の [Pille-Riin Priske](https://unsplash.com)*
+

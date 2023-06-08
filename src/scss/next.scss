@@ -19,7 +19,7 @@ $global-gutter-narrow: 1.25rem;
 $global-stroke: 1px solid get-utility-value('color', 'stroke');
 
 /// Elements that feature in prose contexts need to have a consistent max width
-$global-prose-element-max-width: 50rem;
+$global-prose-element-max-width: min(50rem, 100%);
 
 // NOTE: there are more design token-led global variables in _tokens.scss
 
