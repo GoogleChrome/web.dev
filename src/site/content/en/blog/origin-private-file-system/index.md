@@ -3,13 +3,13 @@ title: 'The origin private file system'
 subhead: >
   The File System Standard introduces an origin private file system (OPFS) as a storage endpoint private to the origin of the page and not visible to the user that provides optional access to a special kind of file that is highly optimized for performance.
 date: 2023-06-08
-updated: 2023-06-08
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/g0thFlkimyIelTPoF4wD.jpg
 alt: A bunch of files in different colors.
 authors:
   - thomassteiner
 tags:
   - capabilities
+  - blog
 ---
 
 {% Aside 'celebration' %}
