@@ -10,6 +10,10 @@ tags:
   - security
 ---
 
+{% Aside %} 
+This article was originally posted on the [Google Security Blog](https://security.googleblog.com/2023/04/securely-hosting-user-data-in-modern.html). 
+{% endAside %}
+
 Many web applications need to display user-controlled content. This can be as simple as serving user-uploaded images (for example, profile photos), or as complex as rendering user-controlled HTML (for example, a web development tutorial). This has always been difficult to do securely, so we've worked to find easy, but secure solutions that can be applied to most types of web applications.
 
 ## Classic solutions for isolating untrusted content
