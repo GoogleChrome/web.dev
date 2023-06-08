@@ -16,6 +16,12 @@ tags:
 The origin private file system allows web apps to store and manipulate files in their very own origin-specific virtual filesystem, including low-level file manipulation, byte-by-byte access, and file streaming. The origin private file system is supported across all major browsers.
 {% endAside %}
 
+## Browser support
+
+The origin private file system is supported by modern browsers and is standardized by the Web Hypertext Application Technology Working Group ([WHATWG](https://whatwg.org/)) in the [File System Living Standard](https://fs.spec.whatwg.org/).
+
+{% BrowserCompat 'api.StorageManager.getDirectory' %}
+
 ## Motivation
 
 When you think of files on your computer, you probably think about a file hierarchy: files organized in folders that you can explore with your operating system's file explorer. For example, on Windows, for a user called Tom, their To Do list might live in `C:\Users\Tom\Documents\ToDo.txt`. In this example, `ToDo.txt` is the file name, and `Users`, `Tom`, and `Documents` are folder names. `C:\` on Windows  represents the root directory of the drive.
@@ -59,12 +65,6 @@ Unlike the user-visible file system browsed via the operating system's file expl
 ## Specifics of the origin private file system
 
 Just like other storage mechanisms in the browser (for example, [localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage) or [IndexedDB](https://developer.mozilla.org/docs/Web/API/IndexedDB_API/Using_IndexedDB)), the origin private file system is subject to browser quota restrictions. When a user [clears all browsing data](https://support.google.com/chrome/answer/2392709) or [all site data](https://developer.chrome.com/docs/devtools/storage/cache/#deletecache), the origin private file system will be deleted, too. Call [`navigator.storage.estimate()`](https://developer.mozilla.org/docs/Web/API/StorageManager/estimate) and in the resulting response object see the [`usage`](https://developer.mozilla.org/docs/Web/API/StorageManager/estimate#usage) entry to see how much storage your app already consumes, which is broken down by storage mechanism in the [`usageDetails`](https://developer.mozilla.org/docs/Web/API/StorageManager/estimate#usagedetails) object, where you want to look at the `fileSystem` entry specifically. Since the origin private file system is not visible to the user, there are no permissions prompts and no Safe Browsing checks.
-
-## Browser support
-
-The origin private file system is supported by modern browsers and is standardized by the Web Hypertext Application Technology Working Group ([WHATWG](https://whatwg.org/)) in the [File System Living Standard](https://fs.spec.whatwg.org/).
-
-{% BrowserCompat 'api.StorageManager.getDirectory' %}
 
 ## Getting access to the root directory
 
