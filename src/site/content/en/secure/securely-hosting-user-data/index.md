@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Securely hosting user data
+title: Securely hosting user data in modern web applications
 authors:
   - ddworken
 date: 2023-06-08
