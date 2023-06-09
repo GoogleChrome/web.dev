@@ -3,8 +3,8 @@ layout: post
 title: What is WebAssembly and where did it come from?
 authors:
   - thomassteiner
-date: 2023-04-28
-# updated: 2023-04-28
+date: 2023-06-09
+# updated: 2023-06-09
 description: >
   An introduction to WebAssembly (sometimes abbreviated Wasm), the portable binary-code format and
   corresponding text format for executable programs as well as software interfaces for facilitating
@@ -47,13 +47,13 @@ Performance was improved by limiting language features to those amenable to AOT.
 
 ## WebAssembly
 
-WebAssembly is a low-level assembly-like language with a compact binary format that runs with near-native performance and provides languages such as C/C++ and Rust, and many more with a compilation target so that they run on the web. WebAssembly is designed to run alongside JavaScript, allowing both to work together.
+WebAssembly is a low-level assembly-like language with a compact binary format that runs with near-native performance and provides languages such as C/C++ and Rust, and many more with a compilation target so that they run on the web. Support for memory-managed languages such as Java, Kotlin, and Dart is in the works and should become available soon. WebAssembly is designed to run alongside JavaScript, allowing both to work together.
 
 Apart from the browser, WebAssembly programs also run in other runtimes thanks to [WASI](https://wasi.dev/), the WebAssembly System Interface, a modular system interface for WebAssembly. WASI is created to be portable across operating systems, with the objective of being secure and the ability to run in a sandboxed environment.
 
-WebAssembly code (binary code, i.e., bytecode) is intended to be run on a portable virtual stack machine (VM). The VM is designed to be faster to parse and execute than JavaScript and to have a compact code representation.
+WebAssembly code (binary code, i.e., bytecode) is intended to be run on a portable virtual stack machine (VM). The bytecode is designed to be faster to parse and execute than JavaScript and to have a compact code representation.
 
-Execution of instructions proceeds by way of a traditional program counter that advances through the instructions. Instructions fall into two categories:
+Conceptual execution of instructions proceeds by way of a traditional program counter that advances through the instructions. In practice, most Wasm engines compile the Wasm bytecode to machine code, and then execute that. Instructions fall into two categories:
 
 - **Control instructions** that form control constructs and pop their argument value(s) off the stack, may change the program counter, and push result value(s) onto the stack.
 - **Simple instructions** that pop their argument value(s) from the stack, apply an operator to the values, and then push the result value(s) onto the stack, followed by an implicit advancement of the program counter.
@@ -213,3 +213,7 @@ and consult the [emscripten documentation](https://emscripten.org/docs/index.htm
 {% Aside %}
 Move on to the article [Compiling `mkbitmap` to WebAssembly](/compiling-mkbitmap-to-webassembly/) for a beginner-friendly introduction to compiling a not completely trivial but also not overly complex C program to WebAssembly. At the example of [`mkbitmap`](https://potrace.sourceforge.net/mkbitmap.1.html), this article shows how to use a Wasm program as a library in JavaScript that works with files as input and that outputs images.
 {% endAside %}
+
+## Acknowledgements
+
+This article was reviewed by [Jakob Kummerow](https://github.com/jakobkummerow).

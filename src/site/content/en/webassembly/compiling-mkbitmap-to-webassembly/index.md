@@ -3,8 +3,8 @@ layout: post
 title: Compiling mkbitmap to WebAssembly
 authors:
   - thomassteiner
-date: 2023-04-28
-# updated: 2023-04-28
+date: 2023-06-09
+# updated: 2023-06-09
 description: >
   The mkbitmap C program reads an image and applies one or more of the following operations to it, in this order: inversion, highpass filtering, scaling, and thresholding. Each operation can be individually controlled and turned on or off. This article shows how to compile mkbitmap to WebAssembly.
 tags:
