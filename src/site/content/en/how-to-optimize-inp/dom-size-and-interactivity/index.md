@@ -50,7 +50,7 @@ Large DOMs affect page performance in a few ways:
 3. When JavaScript queries the DOM, references to DOM elements are stored in memory. For example, if you call [`document.querySelectorAll`](https://developer.mozilla.org/docs/Web/API/Document/querySelectorAll) to select all `<div>` elements on a page, the memory cost could be considerable if the result returns a large number of DOM elements.
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/HJhx0TrVj3v3YbvwEBeK.png", alt="A screenshot of a long task caused by excessive rendering work in the performance panel of Chrome DevTools. The long task's call stack shows significant time spent recalculating page styles, as well as pre-paint.", width="800", height="200" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/qqLuCIvjmvKn5L8YTLGt.png", alt="A screenshot of a long task caused by excessive rendering work in the performance panel of Chrome DevTools. The long task's call stack shows significant time spent recalculating page styles, as well as pre-paint.", width="800", height="248" %}
   <figcaption>
     A long task as shown in the performance profiler in Chrome DevTools. The long task shown is caused by inserting DOM elements into a large DOM via JavaScript.
   </figcaption>
@@ -87,6 +87,7 @@ If the DOM's size is approaching Lighthouse DOM size's warning threshold—or fa
 
 If you're profiling a slow interaction in the lab that you suspect might have something to do with the size of the page's DOM, you can figure out how many DOM elements were affected by selecting any piece of activity in the profiler labeled "Recalculate Style" and observe the contextual data in the bottom panel.
 
+<!-- TODO -->
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/4weVVsGAJErkc16BH7Zj.png", alt="A screenshot of selected style recalculation activity in the performance panel of Chrome DevTools. At top, the interactions track shows a click interaction, and the majority of the work is spent doing style recalculation and pre-paint work. At the bottom, a panel shows more detail for the selected activity, which reports that 2,547 DOM elements were affected.", width="800", height="599" %}
   <figcaption>
