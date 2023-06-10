@@ -31,9 +31,8 @@ To get your head around why it's important to optimize tasks in JavaScript, you 
 
 A _task_ is any discrete piece of work that the browser does. Tasks involve work such as rendering, parsing HTML and CSS, running the JavaScript code you write, and other things you may not have direct control over. Of all of this, the JavaScript you write and deploy to the web is a major source of tasks.
 
-<!-- TODO -->
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/xTKRUAedOdL0VQIZalRL.png", alt="A screenshot of a task as depicted in the performance profliler of Chrome's DevTools. The task is at the top of a stack, with a click event handler, a function call, and more items beneath it.", width="800", height="181" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/nGGHSMo0XT3wfSt5hNfC.png", alt="A screenshot of a task as depicted in the performance profliler of Chrome's DevTools. The task is at the top of a stack, with a click event handler, a function call, and more items beneath it.", width="800", height="171" %}
   <figcaption>
     A depiction of a task kicked off by a <code>click</code> event handler in the performance profiler in Chrome DevTools.
   </figcaption>
