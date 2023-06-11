@@ -117,7 +117,7 @@ If you know their name, access previously created files and folders by calling t
 ```js
 const existingFileHandle = await opfsRoot.getFileHandle('my first file');
 const existingDirectoryHandle = await opfsRoot
-    .getDirectoryHandle('my first folder);
+    .getDirectoryHandle('my first folder');
 ```
 
 ### Getting the file associated with a file handle for reading
