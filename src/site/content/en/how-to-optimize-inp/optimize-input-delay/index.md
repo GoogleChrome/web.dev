@@ -84,7 +84,6 @@ Yielding isn't foolproof, as tasks from third-party JavaScript can still make th
 
 A particularly challenging part of optimizing INP can be if you have interactions that overlap. Interaction overlap means that after you've interacted with one element, you make another interaction with the page before the initial interaction has had a chance to render the next frame.
 
-<!-- TODO -->
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/ohYy7phsKRbKCeth0iUu.png", alt="A depiction of when tasks can overlap to produce long input delays. In this depiction, a click interaction overlaps with a keydown interaction to increase the input delay for the keydown interaction.", width="800", height="307" %}
   <figcaption>

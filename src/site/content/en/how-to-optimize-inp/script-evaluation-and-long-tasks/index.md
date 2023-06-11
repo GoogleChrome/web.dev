@@ -87,9 +87,8 @@ It's now possible to load ES modules natively in the browser with the [`type=mod
 
 In browsers such as Chrome—or those derived from it—loading ES modules using the `type=module` attribute produces different sorts of tasks than you'd normally see when not using `type=module`. For example, a task for each module script will run that involves activity labeled as **Compile module**.
 
-<!-- TODO -->
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/hNTJv7TAWckoZSdYYwfI.png", alt="Module compilation work in multiple tasks as visualized in Chrome DevTools.", width="800", height="153" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/aEGTjOqtruKet5I6sCLM.png", alt="Module compilation work in multiple tasks as visualized in Chrome DevTools.", width="800", height="140" %}
   <figcaption>
     Module loading behavior in Chromium-based browsers. Each module script will spawn a "Compile module" call to compile their contents prior to evaluation.
   </figcaption>
