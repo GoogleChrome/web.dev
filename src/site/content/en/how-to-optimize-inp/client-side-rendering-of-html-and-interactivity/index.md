@@ -33,7 +33,7 @@ The navigation pattern used in traditional page loads involves receiving HTML fr
 The last step of these is key. It's also one of the most fundamental performance optimizations in the server/browser exchange, and is known as _streaming_. If the server can begin sending HTML as soon as possible, and the browser doesn't wait for the entire response to arrive, the browser can process HTML in chunks as it arrives.
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/wVyHQMNEEWKNo3wFP8b7.png", alt="A screenshot of parsing of HTML sent by the server visualized in the performance panel of Chrome DevTools. As the HTML streams in, chunks of it are processed across multiple shorter tasks, and rendering is incremental.", width="800", height="379" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8ZgdJRdWzvk5L72XKv2Z.png", alt="A screenshot of parsing of HTML sent by the server visualized in the performance panel of Chrome DevTools. As the HTML streams in, chunks of it are processed across multiple shorter tasks, and rendering is incremental.", width="800", height="379" %}
   <figcaption>
     Parsing and rendering of HTML provided by the server as visualized in the performance panel of Chrome DevTools. The tasks involved in parsing HTML and rendering it are split into chunks.
   </figcaption>
