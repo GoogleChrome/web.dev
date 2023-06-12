@@ -382,7 +382,7 @@ async function saveSettings () {
 You'll note that the code above is largely familiar, but instead of using `yieldToMain()`, you call and `await scheduler.yield()` instead.
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/k5kRQqz6VFe8uFMHWxB9.png", alt="Three diagrams depicting tasks without yielding, yielding, and with yielding and continuation. Without yielding, there are long tasks. With yielding, there are more tasks that are shorter, but may be interrupted by other unrelated tasks. With yielding and continuation, there are more tasks that are shorter, but their order of execution is preserved.", width="800", height="337" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/5q9WG0lmBOwlqGYK16hd.png", alt="Three diagrams depicting tasks without yielding, yielding, and with yielding and continuation. Without yielding, there are long tasks. With yielding, there are more tasks that are shorter, but may be interrupted by other unrelated tasks. With yielding and continuation, there are more tasks that are shorter, but their order of execution is preserved.", width="800", height="337" %}
   <figcaption>
     A visualization of task execution without yielding, with yielding, and with yielding and continuation. When <code>scheduler.yield()</code> is used, task execution picks up where it left off even after the yield point.
   </figcaption>
