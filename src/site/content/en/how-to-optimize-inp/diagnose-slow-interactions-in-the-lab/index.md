@@ -169,7 +169,7 @@ Identifying input delay in Chrome's performance profiler can be done by finding 
 You'll always incur at least some input delay, as it takes some time for the operating system to pass the input event to the browser—but you do have some control over how long the input delay is. **The key is to figure out if there is work running on the main thread that's preventing your callbacks from running.**
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/LAruEQVMakML4uCXsWoX.png", alt="A depiction of input delay in Chrome's performance panel. The start of the interaction comes significantly before the event callbacks because of increased input delay due to a timer firing from a third-party script.", width="800", height="291" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UrkbAOpDSW2ABcG5ZHE3.png", alt="A depiction of input delay in Chrome's performance panel. The start of the interaction comes significantly before the event callbacks because of increased input delay due to a timer firing from a third-party script.", width="800", height="291" %}
   <figcaption>
     Input delay caused by a task fired by a timer from a third-party script.
   </figcaption>
