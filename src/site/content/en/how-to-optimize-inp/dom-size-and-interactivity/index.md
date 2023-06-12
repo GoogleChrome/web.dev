@@ -90,7 +90,7 @@ If you're profiling a slow interaction in the lab that you suspect might have so
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/IjTPVbiLoerWFO5eClbl.png", alt="A screenshot of selected style recalculation activity in the performance panel of Chrome DevTools. At top, the interactions track shows a click interaction, and the majority of the work is spent doing style recalculation and pre-paint work. At the bottom, a panel shows more detail for the selected activity, which reports that 2,547 DOM elements were affected.", width="800", height="639" %}
   <figcaption>
-    Observing the number of affected elements in the DOM as the result of style recalculation work.
+    Observing the number of affected elements in the DOM as the result of style recalculation work. Note that the shaded portion of the interaction in the interactions track represents the portion of the interaction duration that was over 200 milliseconds, which is <a href="https://web.dev/inp/#what-is-a-good-inp-score" rel="noopener">the designated "good" threshold for INP</a>.
   </figcaption>
 </figure>
 
