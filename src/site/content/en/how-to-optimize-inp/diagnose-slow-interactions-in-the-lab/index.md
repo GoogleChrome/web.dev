@@ -211,7 +211,7 @@ The [rendering performance guide](/rendering-performance/) is a good primer on u
 {% endAside %}
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/pFmaZMXrlbugrC9WPoHM.png", alt="Rendering work as visualized in the performance panel of Chrome DevTools. The rendering work occurs both within an event callback, as well as after the event callback in order to paint the next frame.", width="800", height="229" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/pFmaZMXrlbugrC9WPoHM.png", alt="Rendering work as visualized in the performance panel of Chrome DevTools. The rendering work occurs after the event callback in order to paint the next frame.", width="800", height="229" %}
   <figcaption>
     Rendering tasks as shown in Chrome's performance profiler. The rendering work is shown in purple, with paint work in green.
   </figcaption>
