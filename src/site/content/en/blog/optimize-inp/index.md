@@ -183,7 +183,7 @@ While the use of `setTimeout()` inside a `requestAnimationFrame()` call in the p
 Layout thrashing—sometimes called forced synchronous layout—is a rendering performance problem where layout occurs synchronously. It occurs when you update styles in JavaScript, and then read them in the same task—and [there are many properties in JavaScript that can cause layout thrashing](https://gist.github.com/paulirish/5d52fb081b3570c81e3a).
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/06CXJcBsqO6kdj1Bjml7.png", alt="A visualization of layout thrashing as shown in the performance panel of Chrome DevTools. The layout thrashing occurs in an event callback, thereby extending its latency.", width="800", height="336" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/06CXJcBsqO6kdj1Bjml7.png", alt="A visualization of layout thrashing as shown in the performance panel of Chrome DevTools.", width="800", height="336" %}
   <figcaption>
     An example of layout thrashing, as shown in the performance panel of Chrome DevTools. Rendering tasks that involve layout thrashing will be noted with a red triangle at the upper right corner of the portion of the call stack, often labeled <strong>Recalculate Style</strong> or <strong>Layout</strong>.
   </figcaption>

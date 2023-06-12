@@ -90,7 +90,7 @@ In browsers such as Chrome—or those derived from it—loading ES modules using
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/aEGTjOqtruKet5I6sCLM.png", alt="Module compilation work in multiple tasks as visualized in Chrome DevTools.", width="800", height="140" %}
   <figcaption>
-    Module loading behavior in Chromium-based browsers. Each module script will spawn a "Compile module" call to compile their contents prior to evaluation.
+    Module loading behavior in Chromium-based browsers. Each module script will spawn a <strong>Compile module</strong> call to compile their contents prior to evaluation.
   </figcaption>
 </figure>
 

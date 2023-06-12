@@ -241,7 +241,7 @@ async function saveSettings () {
 While `saveSettings()` runs, it will loop over the tasks in the queue. If `isInputPending()` returns `true` during the loop, `saveSettings()` will call `yieldToMain()` so the user input can be handled. Otherwise, it will shift the next task off the front of the queue and run it continuously. It will do this until no more tasks are left.
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Oz00JZNrYH4dNE3pmYss.png", alt="A depiction of the saveSettings function running in Chrome's performance profiler. The resulting task blocks the main thread until isInputPending returns true, in which case, the task yields to the main thread.", width="800", height="260" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Oz00JZNrYH4dNE3pmYss.png", alt="A depiction of the saveSettings function running in Chrome's performance profiler. The resulting task blocks the main thread until isInputPending returns true, at which point, the task yields to the main thread.", width="800", height="260" %}
   <figcaption>
     <code>saveSettings()</code> runs a task queue for five tasks, but the user has clicked to open a menu while the second work item was running. <code>isInputPending()</code> yields to the main thread to handle the interaction, and resume running the rest of the tasks.
   </figcaption>

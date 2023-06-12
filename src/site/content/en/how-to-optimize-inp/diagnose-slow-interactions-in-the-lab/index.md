@@ -123,12 +123,12 @@ When the profile populates, the first place to look should be the activity summa
   </figcaption>
 </figure>
 
-You can quickly focus on the problem area by dragging and selecting a region in the activity summary. Once you've focused to where the interaction occurred, the **interactions** track will help you line up the interaction and the activity that occurred in the main thread track below it:
+You can quickly focus on the problem area by dragging and selecting a region in the activity summary. Once you've focused to where the interaction occurred, the **Interactions** track will help you line up the interaction and the activity that occurred in the main thread track below it:
 
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/jBaGt4uA0PVo0RX2cdxj.png", alt="A screenshot of an interaction as visualized in the performance panel of Chrome DevTools. An interactions track above the main thread track shows the duration of an interaction, which can be lined up with main thread activity.", width="800", height="325" %}
   <figcaption>
-    An interaction profiled in the performance profiler in Chrome's DevTools. The <strong>interactions</strong> track shows a series of events that amount to a click interaction. The interactions track entries span across the tasks responsible for driving the interaction.
+    An interaction profiled in the performance profiler in Chrome's DevTools. The <strong>Interactions</strong> track shows a series of events that amount to a click interaction. The Interactions track entries span across the tasks responsible for driving the interaction.
   </figcaption>
 </figure>
 
@@ -186,7 +186,7 @@ Event callbacks occur immediately after the input delay. If an event callback ru
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/h0UKtDuUBvWxd10vjrsn.png", alt="A depiction of event callback tasks in Chrome's performance panel. The event callbacks occur for the pointerdown and click events, which occur in a long task.", width="800", height="291" %}
   <figcaption>
-    The event callbacks that run in response to a click interaction, as shown in the performance profiler in Chrome DevTools. Note the red triangle in the upper right corner of the <strong>Event: click</strong> entry, which identifies an expensive event callback.
+    The event callbacks that run in response to a click interaction, as shown in the performance profiler in Chrome DevTools. Note the red triangle in the upper right corner of both the <strong>Event: pointerdown</strong> and <strong>Event: click</strong> entries, which identifies expensive event callbacks.
   </figcaption>
 </figure>
 
