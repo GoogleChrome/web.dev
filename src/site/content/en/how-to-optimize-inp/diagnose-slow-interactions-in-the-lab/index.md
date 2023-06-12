@@ -126,7 +126,7 @@ When the profile populates, the first place to look should be the activity summa
 You can quickly focus on the problem area by dragging and selecting a region in the activity summary. Once you've focused to where the interaction occurred, the **Interactions** track will help you line up the interaction and the activity that occurred in the main thread track below it:
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/jBaGt4uA0PVo0RX2cdxj.png", alt="A screenshot of an interaction as visualized in the performance panel of Chrome DevTools. An interactions track above the main thread track shows the duration of an interaction, which can be lined up with main thread activity.", width="800", height="325" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/YKYLTuog3110ynQyXDdM.png", alt="A screenshot of an interaction as visualized in the performance panel of Chrome DevTools. An interactions track above the main thread track shows the duration of an interaction, which can be lined up with main thread activity.", width="800", height="325" %}
   <figcaption>
     An interaction profiled in the performance profiler in Chrome's DevTools. The <strong>Interactions</strong> track shows a series of events that amount to a click interaction. The Interactions track entries span across the tasks responsible for driving the interaction.
   </figcaption>
