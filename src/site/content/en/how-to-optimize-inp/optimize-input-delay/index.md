@@ -57,7 +57,7 @@ Additionally, `setTimeout` can be run in a loop or recursively, where it acts mo
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UrkbAOpDSW2ABcG5ZHE3.png", alt="A screenshot of the performance profiler in Chrome DevTools demonstrating input delay. A task fired by a timer function occurs just before a user initiates a click interaction. However, the timer extends the input delay, causing the interaction's event callbacks to run later than they otherwise would.", width="800", height="291" %}
   <figcaption>
-    A timer registered by a previous `setInterval` call contributing to input delay as depicted in the performance panel of Chrome DevTools. The added input delay causes the event callbacks for the interaction to run later than they otherwise could.
+    A timer registered by a previous <code>setInterval</code> call contributing to input delay as depicted in the performance panel of Chrome DevTools. The added input delay causes the event callbacks for the interaction to run later than they otherwise could.
   </figcaption>
 </figure>
 

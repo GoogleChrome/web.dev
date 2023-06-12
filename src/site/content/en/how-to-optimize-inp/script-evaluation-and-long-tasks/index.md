@@ -97,7 +97,7 @@ In browsers such as Chrome—or those derived from it—loading ES modules using
 Once the modules have compiled, any code that subsequently runs in them will kick off activity labeled as **Evaluate module**.
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/teF15QP0NdL2K2GuvStJ.png", alt="Just-in-time evaluation of a module as visualized in the performance panel of Chrome DevTools.", width="800", height="184" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/CQpGnJmXh9JSUIMuBpeu.png", alt="Just-in-time evaluation of a module as visualized in the performance panel of Chrome DevTools.", width="800", height="184" %}
   <figcaption>
     When code in a module runs, that module will be evaluated just-in-time.
   </figcaption>
