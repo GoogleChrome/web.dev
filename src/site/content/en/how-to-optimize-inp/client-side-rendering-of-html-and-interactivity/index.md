@@ -24,6 +24,7 @@ However, developers may work around browser defaults to suit their application n
 This guide will help you weigh the difference between using HTML sent by the server to the browser versus creating it on the client with JavaScript, and how the latter can result in high interaction latency at crucial moments.
 
 ## How the browser renders HTML provided by the server
+
 The navigation pattern used in traditional page loads involves receiving HTML from the server on every navigation. If you enter a URL in the address bar of your browser or click on a link in an MPA, the following series of events occurs:
 
 1. The browser sends a navigation request for the URL provided.
@@ -32,7 +33,7 @@ The navigation pattern used in traditional page loads involves receiving HTML fr
 The last step of these is key. It's also one of the most fundamental performance optimizations in the server/browser exchange, and is known as _streaming_. If the server can begin sending HTML as soon as possible, and the browser doesn't wait for the entire response to arrive, the browser can process HTML in chunks as it arrives.
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/n0TXaZizlNhxvqlqqCY8.png", alt="A screenshot of parsing of HTML sent by the server visualized in the performance panel of Chrome DevTools. As the HTML streams in, chunks of it are processed across multiple shorter tasks, and rendering is incremental.", width="800", height="261" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8ZgdJRdWzvk5L72XKv2Z.png", alt="A screenshot of parsing of HTML sent by the server visualized in the performance panel of Chrome DevTools. As the HTML streams in, chunks of it are processed across multiple shorter tasks, and rendering is incremental.", width="800", height="379" %}
   <figcaption>
     Parsing and rendering of HTML provided by the server as visualized in the performance panel of Chrome DevTools. The tasks involved in parsing HTML and rendering it are split into chunks.
   </figcaption>
@@ -55,7 +56,7 @@ There are a few common ways of creating HTML or adding to the DOM through JavaSc
 3. The [`document.write` method](https://developer.mozilla.org/docs/Web/API/Document/write) allows you to write HTML to the document (and the browser parses it, just like in approach #1). Due to [a number of reasons](https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#document.write()), however, **usage of `document.write` is strongly discouraged.**
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Qm1RStdxd80nLxRzWDQH.png", alt="A screenshot of parsing of HTML rendered via JavaScript visualized in the performance panel of Chrome DevTools. The work occurs in a single, long task that blocks the main thread.", width="800", height="210" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Xam8fQoVZBmDPET1dVQ1.png", alt="A screenshot of parsing of HTML rendered via JavaScript visualized in the performance panel of Chrome DevTools. The work occurs in a single, long task that blocks the main thread.", width="800", height="141" %}
   <figcaption>
     Parsing and rendering of HTML through JavaScript on the client as visualized in the performance panel of Chrome DevTools. The tasks involved in parsing and rendering it are not chunked up, resulting in a long task that blocks the main thread.
   </figcaption>
@@ -67,6 +68,7 @@ The consequences of creating HTML/DOM through client-side JavaScript can be sign
 - If HTML is created on the client during startup, resources referenced within it [will _not_ be discovered by the browser preload scanner](/preload-scanner/#rendering-markup-with-client-side-javascript). This will certainly have a negative effect on a page's [Largest Contentful Paint (LCP)](/lcp/). While this is not a runtime performance issue (instead it's an issue of network delay in fetching important resources), you don't want your website's LCP to be affected by sidestepping this fundamental browser performance optimization.
 
 ## What you can do about the performance impact of client-side rendering
+
 If your website depends heavily on client-side rendering and you've observed [poor INP values in your field data](/find-slow-interactions-in-the-field/), you might be wondering if client-side rendering has anything to do with the problem. For example, if your website is an SPA, your field data may reveal interactions responsible for considerable rendering work.
 
 Whatever the cause, here are some potential causes you can explore to help get things back on track.
