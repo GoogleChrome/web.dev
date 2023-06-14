@@ -554,7 +554,7 @@ browser enigines, so there is no need to add fallbacks to your CSP unless you
 need to support users on outdated browser versions (see version details below).
 While setting fallbacks doesn't reduce the security of your policy in modern 
 browsers, they can lead to confusion as many developers are not familar with 
-the complex CSP fallback meachanisms. 
+the complex CSP fallback mechanisms. 
 {% endAside %}
 
 {% BrowserCompat 'http.headers.Content-Security-Policy.strict-dynamic' %}
