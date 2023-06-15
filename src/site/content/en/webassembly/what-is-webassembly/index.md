@@ -165,8 +165,8 @@ The binary format that uses the file extension `.wasm` is not meant for human co
 
 ### Compiling to WebAssembly
 
-As you see, neither `.wat` nor `.wasm` are particularly very human-friendly. This is where [emscripten](https://emscripten.org/) comes into play.
-It lets you compile from higher-level languages like C, C++, Rust, and many more to WebAssembly. Consider the following C code:
+As you see, neither `.wat` nor `.wasm` are particularly very human-friendly. This is where a compiler like [emscripten](https://emscripten.org/) comes into play.
+It lets you compile from higher-level languages like C and C++. There are other compilers for other languages like Rust and many more. Consider the following C code:
 
 ```c
 #include <stdio.h>
