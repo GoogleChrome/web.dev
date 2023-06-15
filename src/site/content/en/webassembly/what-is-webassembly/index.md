@@ -216,4 +216,4 @@ Move on to the article [Compiling `mkbitmap` to WebAssembly](/compiling-mkbitmap
 
 ## Acknowledgements
 
-This article was reviewed by [Jakob Kummerow](https://github.com/jakobkummerow).
+This article was reviewed by [Jakob Kummerow](https://github.com/jakobkummerow) and [Derek Schuff](https://www.linkedin.com/in/derek-schuff-117b11b1).
