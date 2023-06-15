@@ -467,3 +467,7 @@ The PBM image format is not particularly hard to parse, so with [some JavaScript
 ## Conclusion
 
 Congratulations, you have successfully compiled `mkbitmap` to WebAssembly and made it work in the browser! There were some dead ends and you had to compile the tool more than once until it worked, but as I wrote above, that's part of the experience. Also remember the [StackOverflow's `webassembly` tag](https://stackoverflow.com/questions/tagged/webassembly) if you get stuck. Happy compiling!
+
+## Acknowledgements
+
+This article was reviewed by [Sam Clegg](https://www.linkedin.com/in/samclegg/).
