@@ -67,7 +67,7 @@ i32.mul      ; Pop the two most recent items on the stack,
              ; multiply them, and push the result onto the stack.
 ```
 
-While asm.js was implemented all in software, WebAssembly required new functionality that all browser vendors agreed on. [Announced in 2015](https://github.com/WebAssembly/design/issues/150) and first released in March 2017, WebAssembly became a [W3C recommendation](https://www.w3.org/TR/wasm-core-1/) on December&nbsp;5, 2019. The W3C maintains the standard with contributions from all major browser vendors and other interested parties. Since 2017, browser support is universal.
+While asm.js was implemented all in software, that is, its code can run in any JavaScript engine (even if unoptimized), WebAssembly required new functionality that all browser vendors agreed on. [Announced in 2015](https://github.com/WebAssembly/design/issues/150) and first released in March 2017, WebAssembly became a [W3C recommendation](https://www.w3.org/TR/wasm-core-1/) on December&nbsp;5, 2019. The W3C maintains the standard with contributions from all major browser vendors and other interested parties. Since 2017, browser support is universal.
 
 {% BrowserCompat 'javascript.builtins.WebAssembly' %}
 
