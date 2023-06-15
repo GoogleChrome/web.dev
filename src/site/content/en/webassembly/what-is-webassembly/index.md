@@ -41,7 +41,7 @@ Now as the name already suggests, x86 code is dependent on the x86 architecture.
 
 ## asm.js
 
-The first step to getting there was [asm.js](http://asmjs.org/spec/latest/), a strict subset of JavaScript that could be used as a low-level, efficient target language for compilers. This sub-language effectively described a sandboxed virtual machine for memory-unsafe languages like C or C++. A combination of static and dynamic validation allowed JavaScript engines to employ an ahead-of-time (AOT) optimizing compilation strategy for valid asm.js code. Code written in statically-typed languages with manual memory management (such as C) was translated by a source-to-source compiler such as the [early emscripten](https://web.archive.org/web/20130420191339/http://kripken.github.io/mloc_emscripten_talk/) (based on LLVM).
+The first step to getting there was [asm.js](http://asmjs.org/spec/latest/), a strict subset of JavaScript that could be used as a low-level, efficient target language for compilers. This sub-language effectively described a sandboxed virtual machine for memory-unsafe languages like C or C++. A combination of static and dynamic validation allowed JavaScript engines to employ an ahead-of-time (AOT) optimizing compilation strategy for valid asm.js code. Code written in statically-typed languages with manual memory management (such as C) was translated by a source-to-source compiler such as the [early Emscripten](https://web.archive.org/web/20130420191339/http://kripken.github.io/mloc_emscripten_talk/) (based on LLVM).
 
 Performance was improved by limiting language features to those amenable to AOT. Firefox&nbsp;22 was the first browser to [support asm.js](https://www.mozilla.org/firefox/22.0/releasenotes/), released under the name [OdinMonkey](https://blog.mozilla.org/luke/2013/03/21/asm-js-in-firefox-nightly/). Chrome added [asm.js support](https://v8.dev/blog/v8-release-61#asm.js-is-now-validated-and-compiled-to-webassembly) in version&nbsp;61. While technically asm.js still works, I wrote this paragraph in the past tense because it has been superseded by something even better: WebAssembly. (Actually, asm.js is still considered a viable alternative for browsers that don't support WebAssembly or have it disabled.)
 
@@ -165,7 +165,7 @@ The binary format that uses the file extension `.wasm` is not meant for human co
 
 ### Compiling to WebAssembly
 
-As you see, neither `.wat` nor `.wasm` are particularly very human-friendly. This is where a compiler like [emscripten](https://emscripten.org/) comes into play.
+As you see, neither `.wat` nor `.wasm` are particularly very human-friendly. This is where a compiler like [Emscripten](https://emscripten.org/) comes into play.
 It lets you compile from higher-level languages like C and C++. There are other compilers for other languages like Rust and many more. Consider the following C code:
 
 ```c
@@ -183,7 +183,7 @@ Usually, you would compile this C program with the compiler `gcc`.
 $ gcc hello.c -o hello
 ```
 
-With [emscripten installed](https://emscripten.org/docs/getting_started/downloads.html), you compile it to WebAssembly using the `emcc` command and almost the same arguments:
+With [Emscripten installed](https://emscripten.org/docs/getting_started/downloads.html), you compile it to WebAssembly using the `emcc` command and almost the same arguments:
 
 ```bash
 $ emcc hello.c -o hello.html
@@ -208,7 +208,7 @@ Hello World
 
 This brief introduction to WebAssembly is just the tip of the iceberg.
 Learn more about WebAssembly in the [WebAssembly documentation](https://developer.mozilla.org/docs/WebAssembly) on MDN
-and consult the [emscripten documentation](https://emscripten.org/docs/index.html). Truth be told, working with WebAssembly can feel a bit like the [How to draw an owl meme](https://knowyourmeme.com/memes/how-to-draw-an-owl), especially since web developers familiar with HTML, CSS, and JavaScript are not necessarily versed in the to-be-compiled-from languages like C. Luckily there are channels like [StackOverflow's `webassembly` tag](https://stackoverflow.com/questions/tagged/webassembly) where experts are often happy to help if you ask nicely.
+and consult the [Emscripten documentation](https://emscripten.org/docs/index.html). Truth be told, working with WebAssembly can feel a bit like the [How to draw an owl meme](https://knowyourmeme.com/memes/how-to-draw-an-owl), especially since web developers familiar with HTML, CSS, and JavaScript are not necessarily versed in the to-be-compiled-from languages like C. Luckily there are channels like [StackOverflow's `webassembly` tag](https://stackoverflow.com/questions/tagged/webassembly) where experts are often happy to help if you ask nicely.
 
 {% Aside %}
 Move on to the article [Compiling `mkbitmap` to WebAssembly](/compiling-mkbitmap-to-webassembly/) for a beginner-friendly introduction to compiling a not completely trivial but also not overly complex C program to WebAssembly. At the example of [`mkbitmap`](https://potrace.sourceforge.net/mkbitmap.1.html), this article shows how to use a Wasm program as a library in JavaScript that works with files as input and that outputs images.
