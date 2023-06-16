@@ -52,7 +52,7 @@ Many modern frameworks, libraries and architectures make it possible to render t
 
 ## Static rendering
 
-[Static rendering](https://frontarm.com/articles/static-vs-server-rendering/) happens at build-time. This apporach offers a fast FCP, and also a lower TBT and INP—assuming the amount of client-side JS is limited. Unlike server-side rendering, it also manages to achieve a consistently fast TTFB, since the HTML for a page doesn't have to be dynamically generated on the server. Generally, static rendering means producing a separate HTML file for each URL ahead of time. With HTML responses generated in advance, static renders can be deployed to multiple CDNs to take advantage of edge caching.
+[Static rendering](https://frontarm.com/james-k-nelson/static-vs-server-rendering/) happens at build-time. This apporach offers a fast FCP, and also a lower TBT and INP—assuming the amount of client-side JS is limited. Unlike server-side rendering, it also manages to achieve a consistently fast TTFB, since the HTML for a page doesn't have to be dynamically generated on the server. Generally, static rendering means producing a separate HTML file for each URL ahead of time. With HTML responses generated in advance, static renders can be deployed to multiple CDNs to take advantage of edge caching.
 
 <figure>
   {% Img src="image/T4FyVKpzu4WKF1kBNvXepbi08t52/SRsl2UcHyJquzuJkdTHR.png", alt="Diagram showing static rendering and optional JS execution affecting FCP and TTI.", width="800", height="613" %}
