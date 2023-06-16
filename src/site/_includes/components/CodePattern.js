@@ -3,6 +3,9 @@ const {i18n} = require('../../_filters/i18n');
 const {defaultLocale} = require('../../_data/site');
 const patterns = require('../../_data/patterns').patterns;
 
+// eslint-disable-next-line no-unused-vars
+const {Environment} = require('nunjucks');
+
 /**
  * @fileoverview A component to display code samples, organized in tabs,
  *   and a code demo side-by-side.
@@ -30,8 +33,13 @@ const tabListHeight = 54;
  * A component to display code samples and a code demo side-by-side.
  * @param {string} patternId Id of the Code Pattern to be displayed.
  * @param {number} height Optional desired height of the demo frame.
+ * @this {{env: Environment, ctx: Object}}
  */
-module.exports = (patternId, height) => {
+function CodePattern(patternId, height) {
+  if (this.ctx.export) {
+    return `{% include '/patterns/${patternId}/pattern.md' %}`;
+  }
+
   const pattern = patterns[patternId];
   if (!pattern) {
     return '';
@@ -93,4 +101,6 @@ module.exports = (patternId, height) => {
       </a>
     </div>
   </div>`;
-};
+}
+
+module.exports = CodePattern;
