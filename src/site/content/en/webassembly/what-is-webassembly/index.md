@@ -13,6 +13,8 @@ tags:
   - webassembly
 ---
 
+Ever since the web became a platform not just for documents but also for apps, some of the most advanced apps have pushed web browsers to their limits. The approach of going "closer to the metal" by interfacing with lower-level languages is encountered in many higher-level languages. As an example, Java has the Java Native Interface. For JavaScript, this lower-level language is WebAssembly. In this article, I first give an overview of assembly language in general, and then explain how via the interim solution asm.js we eventually arrived at the WebAssembly of today.
+
 ## Assembly language
 
 Have you ever programmed in assembly language? In computer programming, assembly language, often referred to simply as Assembly and commonly abbreviated as ASM or asm, is _any_ low-level programming language with a very strong correspondence between the instructions in the language and the architecture's machine code instructions.
@@ -35,15 +37,15 @@ const factor2 = 10;
 const result = factor1 * factor2;
 ```
 
-The advantage of going the assembly route is that such low-level and machine-optimized code is way more efficient than high-level and human-optimized code. In the concrete case of course this doesn't matter, but you can imagine that for more complex operations, the difference can be significant.
+The advantage of going the assembly route is that such low-level and machine-optimized code is much more efficient than high-level and human-optimized code. In the preceding case it doesn't matter, but you can imagine that for more complex operations, the difference can be significant.
 
-Now as the name already suggests, x86 code is dependent on the x86 architecture. What if there were a way of writing assembly code that was not dependent on a specific architecture, but that would inherit the performance benefits of assembly?
+As the name suggests, x86 code is dependent on the x86 architecture. What if there were a way of writing assembly code that was not dependent on a specific architecture, but that would inherit the performance benefits of assembly?
 
 ## asm.js
 
-The first step to getting there was [asm.js](http://asmjs.org/spec/latest/), a strict subset of JavaScript that could be used as a low-level, efficient target language for compilers. This sub-language effectively described a sandboxed virtual machine for memory-unsafe languages like C or C++. A combination of static and dynamic validation allowed JavaScript engines to employ an ahead-of-time (AOT) optimizing compilation strategy for valid asm.js code. Code written in statically-typed languages with manual memory management (such as C) was translated by a source-to-source compiler such as the [early Emscripten](https://web.archive.org/web/20130420191339/http://kripken.github.io/mloc_emscripten_talk/) (based on LLVM).
+The first step to writing assembly code with no architecture dependencies was [asm.js](http://asmjs.org/spec/latest/), a strict subset of JavaScript that could be used as a low-level, efficient target language for compilers. This sub-language effectively described a sandboxed virtual machine for memory-unsafe languages like C or C++. A combination of static and dynamic validation allowed JavaScript engines to employ an ahead-of-time (AOT) optimizing compilation strategy for valid asm.js code. Code written in statically-typed languages with manual memory management (such as C) was translated by a source-to-source compiler such as the [early Emscripten](https://web.archive.org/web/20130420191339/http://kripken.github.io/mloc_emscripten_talk/) (based on LLVM).
 
-Performance was improved by limiting language features to those amenable to AOT. Firefox&nbsp;22 was the first browser to [support asm.js](https://www.mozilla.org/firefox/22.0/releasenotes/), released under the name [OdinMonkey](https://blog.mozilla.org/luke/2013/03/21/asm-js-in-firefox-nightly/). Chrome added [asm.js support](https://v8.dev/blog/v8-release-61#asm.js-is-now-validated-and-compiled-to-webassembly) in version&nbsp;61. While technically asm.js still works, I wrote this paragraph in the past tense because it has been superseded by something even better: WebAssembly. (Actually, asm.js is still considered a viable alternative for browsers that don't support WebAssembly or have it disabled.)
+Performance was improved by limiting language features to those amenable to AOT. Firefox&nbsp;22 was the first browser to [support asm.js](https://www.mozilla.org/firefox/22.0/releasenotes/), released under the name [OdinMonkey](https://blog.mozilla.org/luke/2013/03/21/asm-js-in-firefox-nightly/). Chrome added [asm.js support](https://v8.dev/blog/v8-release-61#asm.js-is-now-validated-and-compiled-to-webassembly) in version&nbsp;61. While asm.js still works in browsers, it has been superseded by WebAssembly. The reason to use asm.js at this point would be as an alternative for browsers that don't have WebAssembly support.
 
 ## WebAssembly
 
@@ -51,7 +53,7 @@ WebAssembly is a low-level assembly-like language with a compact binary format t
 
 Apart from the browser, WebAssembly programs also run in other runtimes thanks to [WASI](https://wasi.dev/), the WebAssembly System Interface, a modular system interface for WebAssembly. WASI is created to be portable across operating systems, with the objective of being secure and the ability to run in a sandboxed environment.
 
-WebAssembly code (binary code, i.e., bytecode) is intended to be run on a portable virtual stack machine (VM). The bytecode is designed to be faster to parse and execute than JavaScript and to have a compact code representation.
+WebAssembly code (binary code, that is, bytecode) is intended to be run on a portable virtual stack machine (VM). The bytecode is designed to be faster to parse and execute than JavaScript and to have a compact code representation.
 
 Conceptual execution of instructions proceeds by way of a traditional program counter that advances through the instructions. In practice, most Wasm engines compile the Wasm bytecode to machine code, and then execute that. Instructions fall into two categories:
 
@@ -67,7 +69,7 @@ i32.mul      ; Pop the two most recent items on the stack,
              ; multiply them, and push the result onto the stack.
 ```
 
-While asm.js was implemented all in software, that is, its code can run in any JavaScript engine (even if unoptimized), WebAssembly required new functionality that all browser vendors agreed on. [Announced in 2015](https://github.com/WebAssembly/design/issues/150) and first released in March 2017, WebAssembly became a [W3C recommendation](https://www.w3.org/TR/wasm-core-1/) on December&nbsp;5, 2019. The W3C maintains the standard with contributions from all major browser vendors and other interested parties. Since 2017, browser support is universal.
+While asm.js is implemented all in software, that is, its code can run in any JavaScript engine (even if unoptimized), WebAssembly required new functionality that all browser vendors agreed on. [Announced in 2015](https://github.com/WebAssembly/design/issues/150) and first released in March 2017, WebAssembly became a [W3C recommendation](https://www.w3.org/TR/wasm-core-1/) on December&nbsp;5, 2019. The W3C maintains the standard with contributions from all major browser vendors and other interested parties. Since 2017, browser support is universal.
 
 {% BrowserCompat 'javascript.builtins.WebAssembly' %}
 
@@ -75,7 +77,7 @@ WebAssembly has two representations: [textual](https://developer.mozilla.org/doc
 
 ### Textual representation
 
-The textual representation is based on [S-expressions](https://developer.mozilla.org/docs/WebAssembly/Understanding_the_text_format#s-expressions) and commonly uses the file extension `.wat` (for **W**eb**A**ssembly **t**ext format). If you really, really wanted to, you could write it by hand. Taking the multiplication example from above and making it more useful by no longer hardcoding the factors, you can probably make sense of the following code:
+The textual representation is based on [S-expressions](https://developer.mozilla.org/docs/WebAssembly/Understanding_the_text_format#s-expressions) and commonly uses the file extension `.wat` (for **W**eb**A**ssembly **t**ext format). If you really wanted to, you could write it by hand. Taking the multiplication example from above and making it more useful by no longer hardcoding the factors, you can probably make sense of the following code:
 
 ```bash
 (module
@@ -216,4 +218,4 @@ Move on to the article [Compiling `mkbitmap` to WebAssembly](/compiling-mkbitmap
 
 ## Acknowledgements
 
-This article was reviewed by [Jakob Kummerow](https://github.com/jakobkummerow) and [Derek Schuff](https://www.linkedin.com/in/derek-schuff-117b11b1).
+This article was reviewed by [Jakob Kummerow](https://github.com/jakobkummerow), [Derek Schuff](https://www.linkedin.com/in/derek-schuff-117b11b1), and [Rachel Andrew](https://rachelandrew.co.uk/).
