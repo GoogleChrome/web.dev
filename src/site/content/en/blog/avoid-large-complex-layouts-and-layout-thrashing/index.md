@@ -71,7 +71,7 @@ Layout is almost always scoped to the entire document. If you have a lot of elem
 If it's not possible to avoid layout then the key is to once again use Chrome DevTools to see how long it's taking, and determine if layout is the cause of a bottleneck. Firstly, open DevTools, go to the Timeline tab, hit record and interact with your site. When you stop recording you'll see a breakdown of how your site performed:
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/HlHTc64DGtiGxcnGhWxP.png", alt="DevTools showing a long time in Layout.", width="800", height="597" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/ZK8uTy6hUd50CVY6hoMS.png", alt="DevTools showing a long time in Layout.", width="800", height="602" %}
 </figure>
 
 When digging into the trace in the above example, we see that over 28 milliseconds is spent inside layout for each frame, which, when we have 16 milliseconds to get a frame on screen in an animation, is far too high. You can also see that DevTools will tell you the tree size (1,618 elements in this case), and how many nodes were in need of layout (5 in this case).

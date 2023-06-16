@@ -32,7 +32,7 @@ To get your head around why it's important to optimize tasks in JavaScript, you 
 A _task_ is any discrete piece of work that the browser does. Tasks involve work such as rendering, parsing HTML and CSS, running the JavaScript code you write, and other things you may not have direct control over. Of all of this, the JavaScript you write and deploy to the web is a major source of tasks.
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/xTKRUAedOdL0VQIZalRL.png", alt="A screenshot of a task as depicted in the performance profliler of Chrome's DevTools. The task is at the top of a stack, with a click event handler, a function call, and more items beneath it.", width="800", height="181" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/uDfxNSJzEDGD2jy1fU45.png", alt="A screenshot of a task as depicted in the performance profliler of Chrome's DevTools. The task is at the top of a stack, with a click event handler, a function call, and more items beneath it. The task also includes some rendering work on the right-hand side.", width="800", height="338" %}
   <figcaption>
     A depiction of a task kicked off by a <code>click</code> event handler in the performance profiler in Chrome DevTools.
   </figcaption>
@@ -47,7 +47,7 @@ The _main thread_ is where most tasks are run in the browser. It's called the ma
 The main thread can only process one task at a time. When tasks stretch beyond a certain point&mdash;50 milliseconds to be exact&mdash;they're classified as _long tasks_. If the user is attempting to interact with the page while a long task runs&mdash;or if an important rendering update needs to happen&mdash;the browser will be delayed in handling that work. This results in interaction or rendering latency.
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/NOVR7JgJ8sMM7Fhc0tzo.png", alt="A long task in the performance profiler of Chrome's DevTools. The blocking portion of the task (greater than 50 milliseconds) is depicted with a pattern of red diagonal stripes.", width="800", height="179" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/ZQtmFaSwfopJ3mEn7whr.png", alt="A long task in the performance profiler of Chrome's DevTools. The blocking portion of the task (greater than 50 milliseconds) is depicted with a pattern of red diagonal stripes.", width="800", height="171" %}
   <figcaption>
     A long task as depicted in Chrome's performance profiler. Long tasks are indicated by a red triangle in the corner of the task, with the blocking portion of the task filled in with a pattern of diagonal red stripes.
   </figcaption>
@@ -98,7 +98,7 @@ JavaScript works this way because it uses the [run-to-completion model](https://
 {% endAside %}
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/0c61l5DCix9y0GBa3pFj.png", alt="The saveSettings function as depicted in Chrome's performance profiler. While the top-level function calls five other functions, all the work takes place in one long task that blocks the main thread.", width="800", height="181" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/1gENo7PnUwPhbTJmQKmX.png", alt="The saveSettings function as depicted in Chrome's performance profiler. While the top-level function calls five other functions, all the work takes place in one long task that blocks the main thread.", width="800", height="301" %}
   <figcaption>
     A single function <code>saveSettings()</code> that calls five functions. The work is run as part of one long monolithic task.
   </figcaption>
@@ -195,7 +195,7 @@ You don't have to yield after _every_ function call. For example, if you run two
 The result is that the once-monolithic task is now broken up into separate tasks.
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/wg0FW6S29CzOCbbwk9kK.png", alt="The same saveSettings function depicted in Chrome's performance profiler, only with yielding. The result is the once-monolithic task is now broken up into five separate tasks&mdash;one for each function.", width="800", height="211" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/mzrFeqjk00zUlKK0xzI8.png", alt="The same saveSettings function depicted in Chrome's performance profiler, only with yielding. The result is the once-monolithic task is now broken up into five separate tasks&mdash;one for each function.", width="800", height="350" %}
   <figcaption>
     The <code>saveSettings()</code> function now executes its child functions as separate tasks.
   </figcaption>
@@ -241,7 +241,7 @@ async function saveSettings () {
 While `saveSettings()` runs, it will loop over the tasks in the queue. If `isInputPending()` returns `true` during the loop, `saveSettings()` will call `yieldToMain()` so the user input can be handled. Otherwise, it will shift the next task off the front of the queue and run it continuously. It will do this until no more tasks are left.
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/snMl3kRlWyJjdbL0qsqM.png", alt="A depiction of the saveSettings function running in Chrome's performance profiler. The resulting task blocks the main thread until isInputPending returns true, in which case, the task yields to the main thread.", width="800", height="254" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Oz00JZNrYH4dNE3pmYss.png", alt="A depiction of the saveSettings function running in Chrome's performance profiler. The resulting task blocks the main thread until isInputPending returns true, at which point, the task yields to the main thread.", width="800", height="260" %}
   <figcaption>
     <code>saveSettings()</code> runs a task queue for five tasks, but the user has clicked to open a menu while the second work item was running. <code>isInputPending()</code> yields to the main thread to handle the interaction, and resume running the rest of the tasks.
   </figcaption>
@@ -337,7 +337,7 @@ function saveSettings () {
 Here, the priority of tasks is scheduled in such a way that browser-prioritized tasks&mdash;such as user interactions&mdash;can work their way in. 
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/ttvI1HqusI02CAdqhjWP.png", alt="The saveSettings function as depicted in Chrome's performance profiler, but using postTask. postTask splits up each function saveSettings runs, and prioritizes them such that a user interaction has a chance to run without being blocked.", width="800", height="256" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/J6Ec735EReBFCTj1CuVf.png", alt="The saveSettings function as depicted in Chrome's performance profiler, but using postTask. postTask splits up each function saveSettings runs, and prioritizes them such that a user interaction has a chance to run without being blocked.", width="800", height="342" %}
   <figcaption>
     When <code>saveSettings()</code> is run, the function schedules the individual functions using <code>postTask()</code>. The critical user-facing work is scheduled at high priority, while work the user doesn't know about is scheduled to run in the background. This allows for user interactions to execute more quickly, as the work is both broken up <em>and</em> prioritized appropriately.
   </figcaption>
@@ -382,7 +382,7 @@ async function saveSettings () {
 You'll note that the code above is largely familiar, but instead of using `yieldToMain()`, you call and `await scheduler.yield()` instead.
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/fyuvJqAV0mLxfZDM9tAm.png", alt="Three diagrams depicting tasks without yielding, yielding, and with yielding and continuation. Without yielding, there are long tasks. With yielding, there are more tasks that are shorter, but may be interrupted by other unrelated tasks. With yielding and continuation, there are more tasks that are shorter, but their order of execution is preserved.", width="647", height="258" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/5q9WG0lmBOwlqGYK16hd.png", alt="Three diagrams depicting tasks without yielding, yielding, and with yielding and continuation. Without yielding, there are long tasks. With yielding, there are more tasks that are shorter, but may be interrupted by other unrelated tasks. With yielding and continuation, there are more tasks that are shorter, but their order of execution is preserved.", width="800", height="337" %}
   <figcaption>
     A visualization of task execution without yielding, with yielding, and with yielding and continuation. When <code>scheduler.yield()</code> is used, task execution picks up where it left off even after the yield point.
   </figcaption>

@@ -86,9 +86,9 @@ saving, opening, dragging and dropping, receiving or sharing.
 
 {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/Smch2ZFw5PxkiQZPkl3v.svg", alt="", width="200", height="200" %}
 
-### Advanced apps patterns
+### Web apps patterns
 
-[Advanced apps patterns](/patterns/advanced-apps/) for everything concerned with advanced app
+[Web apps patterns](/patterns/web-apps/) for everything concerned with advanced app
 features like providing app shortcuts, periodically syncing data in the background, showing app
 badges, and many more.
 

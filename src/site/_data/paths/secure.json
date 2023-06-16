@@ -39,7 +39,7 @@
     },
     {
       "title": "i18n.paths.secure.topics.protect_websites_from_xss",
-      "pathItems": ["trusted-types", "strict-csp"]
+      "pathItems": ["trusted-types", "strict-csp", "securely-hosting-user-data"]
     },
     {
       "title": "i18n.paths.secure.topics.protect_users_from_tracking",
