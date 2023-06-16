@@ -17,9 +17,31 @@
 // Imported just for types.
 // eslint-disable-next-line no-unused-vars
 const {Environment} = require('nunjucks');
+const cheerio = require('cheerio');
 
 const {findByUrl} = require('../../_filters/find-by-url');
 const {exportFile} = require('../../_utils/export-file');
+
+function addCaptionStyles($) {
+  $('figcaption').each((i, el) => {
+    const $figcaption = $(el);
+    $figcaption.addClass('webdev-caption');
+  });
+}
+
+function rewriteFloatClasses($) {
+  $('.float-left').each((i, el) => {
+    const $el = $(el);
+    $el.removeClass('float-left');
+    $el.addClass('attempt-left');
+  });
+
+  $('.float-right').each((i, el) => {
+    const $el = $(el);
+    $el.removeClass('float-right');
+    $el.addClass('attempt-right');
+  });
+}
 
 /**
  * Renders content with Nunjucks instance configured in .eleventy.
@@ -42,7 +64,7 @@ async function Export() {
     return '';
   }
 
-  const markdown = await new Promise((resolve, reject) => {
+  const markdown = await new Promise((resolve) => {
     njkEnv.renderString(
       source,
       Object.assign({}, this.ctx, {export: true}),
@@ -57,11 +79,17 @@ async function Export() {
     );
   });
 
+  const $ = cheerio.load(`<main>${markdown}</main>`);
+  addCaptionStyles($);
+  rewriteFloatClasses($);
+
+  const transformedMarkdown = $('main').html();
+
   // Note: the following lines can be altered to produce any directory scheme
   // that is convenient for the migration
-  await exportFile(this.ctx, markdown);
+  await exportFile(this.ctx, transformedMarkdown);
 
-  return markdown;
+  return transformedMarkdown;
 }
 
 module.exports = {Export};
