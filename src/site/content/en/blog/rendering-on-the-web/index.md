@@ -5,7 +5,7 @@ authors:
  - developit
  - addyosmani
 date: 2019-02-06
-updated: 2023-05-17
+updated: 2023-06-16
 description: |
   Where should we implement logic and rendering in our applications? Should we use Server Side Rendering? What about Rehydration? Let's find some answers!
 tags:
@@ -33,6 +33,7 @@ In order to better understand the architectures we're choosing from when we make
 - **[First Contentful Paint (FCP)](/fcp/):** the time when requested content (article body, etc) becomes visible.
 - **[Interaction to Next Paint (INP)](/inp/):** seen as a representative metric that assesses whether a page is responding consistently fast to user inputs.
 - **[Total Blocking Time (TBT)](/tbt/):** A [proxy metric for INP](https://almanac.httparchive.org/en/2022/performance#inp-and-tbt), which calculates the amount of time the main thread was blocked during page load.
+- **[Time to Interactivity](/tti/):** measures how long it takes a page to become fully interactive.
 
 ## Server-side rendering
 
