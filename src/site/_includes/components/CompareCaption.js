@@ -15,13 +15,13 @@
  */
 
 /**
+ * @this {Object}
  * @param {string} content Markdown with the content for the compare element.
  * @return {string}
  */
 function CompareCaption(content) {
-  if (process.env.ALT_BUILD) {
-    // DevSite only supports
-    return `<p class="webdev-caption">${content}</p>`;
+  if (this.ctx.export) {
+    return `<span class="webdev-caption">${content}</span>`;
   }
 
   return `<figcaption class="compare__caption">

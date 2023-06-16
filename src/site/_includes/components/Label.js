@@ -17,9 +17,16 @@
 const {html} = require('common-tags');
 const md = require('markdown-it')();
 
-module.exports = (content) => {
-  if (process.env.ALT_BUILD) {
-    return `**${content}**`;
+/**
+ * @this {{env: Environment, ctx: Object}}
+ */
+function Label(content) {
+  const renderedContent = md.renderInline(content);
+  if (this.ctx.export) {
+    return `<span class="webdev-label">${renderedContent}</span>`;
   }
-  return html`<p class="label">${md.renderInline(content)}</p>`;
-};
+
+  return html`<p class="label">${renderedContent}</p>`;
+}
+
+module.exports = Label;

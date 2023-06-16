@@ -17,7 +17,7 @@
 const {i18n, getLocaleFromPath} = require('../../_filters/i18n');
 
 /**
- * @this {EleventyPage}
+ * @this {Object}
  * @param {string} content Markdown with the content for the compare element.
  * @param {string} type Compare element type: 'worse' or 'better'.
  * @param {string} labelOverride Custom label for the compare element.
@@ -48,7 +48,7 @@ function Compare(content, type, labelOverride) {
     }
   }
 
-  if (process.env.ALT_BUILD) {
+  if (this.ctx.export) {
     // DevSite only supports
     return `<p><span class="compare-${type}">${label}</span></p>
 ${content}`;

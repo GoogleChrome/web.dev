@@ -5,8 +5,6 @@
  * sw cleanup code.
  */
 
-import {store} from './store';
-import {loadAnalyticsScript} from './actions';
 import removeServiceWorkers from './utils/sw-remove';
 
 // This hides a legacy browser warning that can appear on the /measure page
@@ -22,12 +20,5 @@ if (matchMedia('(prefers-reduced-motion)').matches) {
     b.setAttribute('controls', '');
   });
 }
-
-function onGlobalStateChanged({cookiePreference}) {
-  window.dataLayer.push({cookiePreference: cookiePreference});
-}
-loadAnalyticsScript();
-store.subscribe(onGlobalStateChanged);
-onGlobalStateChanged(store.getState());
 
 removeServiceWorkers();

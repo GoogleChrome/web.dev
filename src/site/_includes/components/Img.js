@@ -6,7 +6,7 @@ const {imgix: imgixFilter} = require('webdev-infra/filters/imgix');
 const {Img: BuildImgShortcode} = require('webdev-infra/shortcodes/Img');
 
 const {imgixDomain} = require('../../_data/site');
-const { exportFile } = require('../../_utils/export-file');
+const {exportFile} = require('../../_utils/export-file');
 
 const TMP_IMG_PATH = path.join(__dirname, '../../../..', '.tmp', 'img');
 
@@ -44,7 +44,10 @@ async function MetaImg(args) {
 
     // And after it's cached we just copy it to the export directory.
     await exportFile(this.ctx, image, args.src);
-    return `![${args.alt}](${args.src})`;
+    // Instead of markdown img syntax we use HTML img syntax, to make sure
+    // that the image is rendered in <figures> and tables - height is omitted
+    // as the CMS does it's own thing with it.
+    return `<img src="${args.src}" alt="${args.alt}" width="${args.width}">`;
   }
 
   return Img(args);
