@@ -304,7 +304,7 @@ Or, use protocol-relative intrasite URLs.
 <link rel="stylesheet" href="/assets/style.css"/>
 <img src="/images/logo.png"/>;
 <p>A <a href="/2014/12/24/">new post on cats!</a></p>
-&lt;p>Check out this <a href="<b>https://foo.com/</b>">other cool site.</a></p>
+<p>Check out this <a href="https://foo.com/"><b>other cool site.</b></a></p>
 ```
 
 {% CompareCaption %}
