@@ -85,3 +85,7 @@ It doesn't have options to inline and minify critical CSS, but it does let you f
 [Penthouse](https://github.com/pocketjoso/penthouse) is a good choice if your site or app has a large number of styles or styles which are being dynamically injected into the DOM (common in Angular apps). It uses [Puppeteer](https://github.com/GoogleChrome/puppeteer) under the hood and even features an [online hosted version](https://jonassebastianohlsson.com/criticalpathcssgenerator/) too.
 
 Penthouse doesn't detect stylesheets automatically, you have to specify the HTML and CSS files that you want to generate critical CSS for. The upside is that it's good at running many jobs in parallel.
+
+### Jetpack Boost
+
+If you have a WordPress website, [Jetpack Boost](https://wordpress.org/plugins/jetpack-boost/) can automatically generate critical CSS for you. This is a convenient solution as it can take all stylesheets in your site from plugins and theme, and generate critical CSS for your homepage, post, page, etc. The plugin offers other features that can help with Web Vitals improvements.
