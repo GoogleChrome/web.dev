@@ -292,7 +292,7 @@ It might seem confusing, but you actually get a _synchronous_ `FileSystemSyncAcc
 Once you have a synchronous access handle, you get access to fast in-place file methods that are all synchronous.
 
 - [`getSize()`](https://developer.mozilla.org/docs/Web/API/FileSystemSyncAccessHandle/getSize): Returns the size of the file in bytes.
-- [`write()`](https://developer.mozilla.org/docs/Web/API/FileSystemSyncAccessHandle/write): Writes the content of a buffer into the, optionally at a given offset, and returns the number of written bytes. Checking the returned number of written bytes allows callers to detect and handle errors and partial writes.
+- [`write()`](https://developer.mozilla.org/docs/Web/API/FileSystemSyncAccessHandle/write): Writes the content of a buffer into the file, optionally at a given offset, and returns the number of written bytes. Checking the returned number of written bytes allows callers to detect and handle errors and partial writes.
 - [`read()`](https://developer.mozilla.org/docs/Web/API/FileSystemSyncAccessHandle/read): Reads the contents of the file into a buffer, optionally at a given offset.
 - [`truncate()`](https://developer.mozilla.org/docs/Web/API/FileSystemSyncAccessHandle/truncate): Resizes the file to the given size.
 - [`flush()`](https://developer.mozilla.org/docs/Web/API/FileSystemSyncAccessHandle/flush): Ensures that the contents of the file contain all the modifications done through `write()`.
