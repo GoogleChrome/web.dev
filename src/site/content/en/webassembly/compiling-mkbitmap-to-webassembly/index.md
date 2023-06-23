@@ -3,8 +3,8 @@ layout: post
 title: Compiling mkbitmap to WebAssembly
 authors:
   - thomassteiner
-date: 2023-06-09
-# updated: 2023-06-09
+date: 2023-06-26
+# updated: 2023-06-26
 description: >
   The mkbitmap C program reads an image and applies one or more of the following operations to it, in this order: inversion, highpass filtering, scaling, and thresholding. Each operation can be individually controlled and turned on or off. This article shows how to compile mkbitmap to WebAssembly.
 tags:
@@ -286,7 +286,7 @@ To provide input to the app, you can use Emscripten's [file system](https://emsc
 
 > Emscripten decides whether to include file system support automatically. Many programs don't need files, and file system support is not negligible in size, so Emscripten avoids including it when it doesn't see a reason to. That means that if your C/C++ code does not access files, then the `FS` object and other file system APIs will not be included in the output. And, on the other hand, if your C/C++ code does use files, then file system support will be automatically included.
 
-Unfortunately `mkbitmap` is one of these cases where this automatic magic doesn't work, so you need to explicitly tell Emscripten to include file system support. This means you need to follow the `emconfigure` and `emmake` steps described previously, with a couple more flags set via a `CFLAGS` argument. Above I promised not to just show the final magic compilation command as if it had dropped from the sky, but all flags in the following are rather common and you might need them for other projects as well.
+Unfortunately `mkbitmap` is one of the cases where Emscripten does not automatically include file system support, so you need to explicitly tell it to do so. This means you need to follow the `emconfigure` and `emmake` steps described previously, with a couple more flags set via a `CFLAGS` argument. The following flags may come in useful for other projects, too.
 
 {% Aside %}
 When looking at the following commands, you might wonder about the missing space after `-s` that you may see in other online tutorials. Some `-s` options may require quoting, or the space between `-s` and the next argument may confuse `CMake`. To avoid those problems, I recommend you generally use the `-sX=Y` notation, that is, without a space.
@@ -388,7 +388,7 @@ Supported input formats of `mkbitmap` are [PNM](https://en.wikipedia.org/wiki/Ne
 Emscripten provides a virtual file system that simulates the local file system, so that native code using synchronous file APIs can be compiled and run with little or no change.
 For `mkbitmap` to read an input file as if it was passed as a `filename` command line argument, you need to use the [`FS`](https://emscripten.org/docs/api_reference/Filesystem-API.html#id2) object that Emscripten provides.
 
-The `FS` object is backed by an in-memory file system (commonly referred to as [MEMFS](https://emscripten.org/docs/api_reference/Filesystem-API.html#memfs)) and has a [`writeFile()`](https://emscripten.org/docs/api_reference/Filesystem-API.html#FS.writeFile) function that you use to write files to the virtual file system. You use `writeFile()` as you see in the following code sample.
+The `FS` object is backed by an in-memory file system (commonly referred to as [MEMFS](https://emscripten.org/docs/api_reference/Filesystem-API.html#memfs)) and has a [`writeFile()`](https://emscripten.org/docs/api_reference/Filesystem-API.html#FS.writeFile) function that you use to write files to the virtual file system. You use `writeFile()` as shown in the following code sample.
 
 To verify the file write operation worked, run the `FS` object's [`readdir()`](https://emscripten.org/docs/api_reference/Filesystem-API.html#FS.readdir) function with the parameter `'/'`. You will see `example.bmp` and a number of default files that [are always created automatically](https://emscripten.org/docs/api_reference/Filesystem-API.html#file-system-api).
 

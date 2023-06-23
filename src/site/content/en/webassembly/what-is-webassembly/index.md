@@ -3,8 +3,8 @@ layout: post
 title: What is WebAssembly and where did it come from?
 authors:
   - thomassteiner
-date: 2023-06-09
-# updated: 2023-06-09
+date: 2023-06-26
+# updated: 2023-06-26
 description: >
   An introduction to WebAssembly (sometimes abbreviated Wasm), the portable binary-code format and
   corresponding text format for executable programs as well as software interfaces for facilitating
@@ -13,7 +13,7 @@ tags:
   - webassembly
 ---
 
-Ever since the web became a platform not just for documents but also for apps, some of the most advanced apps have pushed web browsers to their limits. The approach of going "closer to the metal" by interfacing with lower-level languages is encountered in many higher-level languages. As an example, Java has the Java Native Interface. For JavaScript, this lower-level language is WebAssembly. In this article, I first give an overview of assembly language in general, and then explain how via the interim solution asm.js we eventually arrived at the WebAssembly of today.
+Ever since the web became a platform not just for documents but also for apps, some of the most advanced apps have pushed web browsers to their limits. The approach of going "closer to the metal" by interfacing with lower-level languages in order to improve performance is encountered in many higher-level languages. As an example, Java has the [Java Native Interface](https://web.archive.org/web/20080330002620/http://today.java.net/pub/a/today/2006/10/19/invoking-assembly-language-from-java.html). For JavaScript, this lower-level language is WebAssembly. In this article, you will discover what assembly language is, and why it can be useful on the web, then learn how WebAssembly was created via the interim solution of asm.js.
 
 ## Assembly language
 
