@@ -62,7 +62,7 @@ isn't, they'll likely respond in one of two ways:
   leave. They may even lose confidence or trust in the value of your brand.
 
 To avoid this problem, make every effort to minimize the difference
-between FCP and TTI. And in cases were a noticeable difference does exist,
+between FCP and TTI. And in cases where a noticeable difference does exist,
 make it clear through visual indicators that the components on your page are not yet
 interactive.
 
