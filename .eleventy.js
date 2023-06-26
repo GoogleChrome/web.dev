@@ -24,6 +24,7 @@ const zip = require('cross-zip');
 const fse = require('fs-extra');
 
 const markdown = require('./src/site/_plugins/markdown');
+const {exportFile} = require('./src/site/_utils/export-file');
 
 // Shortcodes used in prose
 const Aside = require('./src/site/_includes/components/Aside');
@@ -277,6 +278,45 @@ module.exports = function (config) {
       });
       config.addPassthroughCopy(rewrite);
     }
+  }
+
+  if (process.env.ALT_BUILD) {
+    config.addCollection('courses', (collections) => {
+      const coursesGlob = '**/en/learn/*/*.md';
+      collections.getFilteredByGlob(coursesGlob).forEach(async (course) => {
+        const toc =
+          course.data.courses[course.data.projectKey].toc[0].sections ||
+          course.data.courses[course.data.projectKey].toc;
+        const activities = toc.map((tocItem) => {
+          if (tocItem.url) {
+            const post = findByUrl('/en' + tocItem.url + '/');
+            return {
+              step_title: post?.data?.title || 'TBD',
+              step_description: post?.data?.description || 'TBD',
+              importance: 'required',
+              devsite_path: {
+                serve_path: tocItem.url,
+                tenant_id: 27,
+              },
+            };
+          }
+        });
+        const courseJson = {
+          project_path: '/_project.yaml',
+          book_path: '/_book.yaml',
+          title: course.data.title,
+          description: course.data.description,
+          image_path: `/image/courses/${course.data.projectKey}/card.svg`,
+          activities: activities,
+        };
+        await exportFile(
+          null,
+          yaml.dump(courseJson, {noArrayIndent: true}),
+          path.join('learn', course.data.projectKey, '_playlist.yaml'),
+        );
+      });
+      return [];
+    });
   }
 
   // Third party scripts and assets
