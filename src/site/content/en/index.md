@@ -21,7 +21,7 @@ featuredCard:
   alt: '.'
   theme: 'light'
 
-pickedCaseStudyUrl: '/mishipay/'
+pickedCaseStudyUrl: '/redbus-inp/'
 
 platformNews:
   title: Web platform news
