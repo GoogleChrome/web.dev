@@ -47,7 +47,7 @@ async function MetaImg(args) {
     // Instead of markdown img syntax we use HTML img syntax, to make sure
     // that the image is rendered in <figures> and tables - height is omitted
     // as the CMS does it's own thing with it.
-    return `<img src="${args.src}" alt="${args.alt}" width="${args.width}">`;
+    return `<img src="${args.src}" alt="${args.alt}" width="${args.width}" height="${args.height}">`;
   }
 
   return Img(args);
