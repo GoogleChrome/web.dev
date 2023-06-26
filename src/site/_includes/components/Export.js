@@ -18,9 +18,14 @@
 // eslint-disable-next-line no-unused-vars
 const {Environment} = require('nunjucks');
 const cheerio = require('cheerio');
+const yaml = require('js-yaml');
+const fs = require('fs');
 
 const {findByUrl} = require('../../_filters/find-by-url');
 const {exportFile} = require('../../_utils/export-file');
+const authorValues = yaml.load(
+  fs.readFileSync('./src/site/_data/i18n/authors.yml', 'utf-8'),
+);
 
 function addCaptionStyles($) {
   $('figcaption').each((i, el) => {
@@ -64,17 +69,18 @@ async function Export() {
     return '';
   }
 
-  const authors = JSON.stringify(page?.template?.frontMatter?.data.authors);
+  const authors = page?.template?.frontMatter?.data.authors;
 
   const frontMatter = `project_path: /_project.yaml
 book_path: /_book.yaml
+author_name: ${authorValues[authors[0]].title.en}
 
 {% import "/_macros.html" as macros %}
 
 # ${page?.template?.frontMatter?.data.title}
 
-{{ macros.Authors(${authors}) }}
-`
+{{ macros.Authors(${JSON.stringify(authors)}) }}
+`;
 
   const markdown = await new Promise((resolve) => {
     njkEnv.renderString(
@@ -95,13 +101,13 @@ book_path: /_book.yaml
   addCaptionStyles($);
   rewriteFloatClasses($);
 
-  const transformedMarkdown = $('main').html();
+  const transformedMarkdown = frontMatter + $('main').html();
 
   // Note: the following lines can be altered to produce any directory scheme
   // that is convenient for the migration
   await exportFile(this.ctx, transformedMarkdown);
 
-  return frontMatter + transformedMarkdown;
+  return transformedMarkdown;
 }
 
 module.exports = {Export};
