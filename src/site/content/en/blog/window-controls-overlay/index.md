@@ -268,7 +268,7 @@ function handleDisplayModeChange(mql) {
 }
 
 // Run the display mode change handler once.
-handleOrientationChange(mediaQueryList);
+handleDisplayModeChange(mediaQueryList);
 
 // Add the callback function as a listener to the query list.
 mediaQueryList.addEventListener('change', handleDisplayModeChange);
