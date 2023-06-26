@@ -64,6 +64,18 @@ async function Export() {
     return '';
   }
 
+  const authors = JSON.stringify(page?.template?.frontMatter?.data.authors);
+
+  const frontMatter = `project_path: /_project.yaml
+book_path: /_book.yaml
+
+{% import "/_macros.html" as macros %}
+
+# ${page?.template?.frontMatter?.data.title}
+
+{{ macros.Authors(${authors}) }}
+`
+
   const markdown = await new Promise((resolve) => {
     njkEnv.renderString(
       source,
@@ -89,7 +101,7 @@ async function Export() {
   // that is convenient for the migration
   await exportFile(this.ctx, transformedMarkdown);
 
-  return transformedMarkdown;
+  return frontMatter + transformedMarkdown;
 }
 
 module.exports = {Export};
