@@ -33,7 +33,7 @@ const run = async () => {
       let image = await fetch(generateImgixSrc(authorsData[id].image));
       image = await image.buffer();
       const ext = authorsData[id].image.split('.').pop();
-      authorsData[id].image = `image/${id}.${ext}`;
+      authorsData[id].image = `image/authors/${id}.${ext}`;
       exportFile(null, image, path.join('authors', authorsData[id].image));
     }
   }
