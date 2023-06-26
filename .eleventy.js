@@ -281,6 +281,8 @@ module.exports = function (config) {
   }
 
   if (process.env.ALT_BUILD) {
+    // WARNING: This script runs async code that is not awaited level above,
+    // might lead to incconsistent results. Delete when not needed anymore.
     config.addCollection('courses', (collections) => {
       const coursesGlob = '**/en/learn/*/*.md';
       collections.getFilteredByGlob(coursesGlob).forEach(async (course) => {
