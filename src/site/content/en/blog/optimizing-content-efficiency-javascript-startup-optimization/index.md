@@ -27,7 +27,7 @@ resource, that resource needs to be fetched and then decompressed. In the case
 of resources like JavaScript, they must be parsed and compiled prior to
 execution.", width="800", height="493" %}
 
-This can be a problem, even in first-world countries, as the **effective network
+This can be a problem as the **effective network
 connection type** a user has might not actually be 3G, 4G or Wi-Fi. You can be on
 coffee-shop Wi-Fi but connected to a cellular hotspot with 2G speeds.
 
