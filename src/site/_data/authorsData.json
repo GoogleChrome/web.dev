@@ -602,6 +602,7 @@
   },
   "rviscomi": {
     "country": "USA",
+    "homepage": "https://rviscomi.dev/",
     "twitter": "rick_viscomi",
     "github": "rviscomi",
     "image": "image/admin/oWRqaR6XXwIdNXPLpUMn.jpg"
@@ -1299,7 +1300,7 @@
     "image": "image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/Mpe7GGUwnUsy9Gx7UxZK.jpg"
   },
   "saurabhrajpal": {
-    "twitter": "saurabhrajpal",
+    "twitter": "imsaurabhrajpal",
     "image": "image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/pgfTCNTb5C2ThMcZCzPQ.jpg"
   },
   "arturjanc": {
@@ -1786,5 +1787,18 @@
     "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/0fDWYdhK8RVDKLvhQv69.jpg",
     "linkedin": "https://www.linkedin.com/in/kumarbarun89/",
     "github": "kumar-barun"
+  },
+  "jhuoponen": {
+    "country": "US",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/m4DVyjMLVB2tOQu8g92S.jpg",
+    "linkedin": "https://www.linkedin.com/in/janihuoponen/"
+  },
+  "vignesh": {
+    "country": "US",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8c6t6kea6QWzRJ1oEIal.jpg"
+  },
+  "ddworken": {
+    "country": "US",
+    "image": "image/udVScdcCFAdRjZwFdLk2jWAFQyr1/n7JbFJPZgqVm1n60t62o.jpeg"
   }
 }

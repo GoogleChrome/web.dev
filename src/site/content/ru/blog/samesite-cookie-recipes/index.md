@@ -5,7 +5,7 @@ authors:
   - rowan_m
 date: 2019-10-30
 updated: 2020-05-28
-hero: image/admin/V0dgwWTA61NTc55CAhSD.jpg
+hero: image/kheDArv5csY6rvQUJDbWRscckLr1/5f56hyvtMT6Dymo839tc.png
 description: Теперь, благодаря введению нового значения атрибута SameSite=None, сайты могут явно помечать файлы cookie как предназначенные для межсайтового использования. В ближайшее время браузеры станут блокировать межсайтовое использование файлов cookie без атрибута SameSite, чтобы повысить уровень безопасности и конфиденциальности. Узнайте о том, как помечать файлы cookie, чтобы после вступления изменения в силу ваши внутренние и межсайтовые файлы cookie продолжили работать.
 tags:
   - blog
@@ -155,4 +155,3 @@ app.listen(process.env.PORT);
 - Если проблема связана с поведением Chromium, сообщите об ошибке, используя [шаблон [SameSite cookies]](https://bit.ly/2lJMd5c).
 - Следите за ходом разработки Chrome на [странице обновлений `SameSite`](https://www.chromium.org/updates/same-site).
 
-*Автор изображения в шапке — [Calajay](https://unsplash.com/@calajay) с [Unsplash](https://unsplash.com)*

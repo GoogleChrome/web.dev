@@ -289,7 +289,7 @@ Make sure that every form field has an associated `<label>` element. You can ass
 
 {% Compare 'better' %}
 ```html
-<label for=​​"name">Your name</label>
+<label for="name">Your name</label>
 <input id="name" type="text">
 ```
 {% endCompare %}

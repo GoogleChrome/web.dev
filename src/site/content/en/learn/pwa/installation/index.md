@@ -26,12 +26,7 @@ The metadata for your PWA is set by a JSON-based file known as the Web App Manif
 
 As a minimum requirement for installability, most browsers that support it use the Web App Manifest file and certain properties such as the name of the app, and configuration of the installed experience. An exception to this is Safari for macOS, which does not support installability.
 
-Chromium-based browsers on desktop and Android, including Google Chrome, Samsung Internet, and Microsoft Edge, have additional requirements, such as:
-
-- Serving the web app on HTTPS.
-- At least one icon in the correct format and size.
-- A registered service worker.
-- A `fetch` event handler in the service worker to provide a basic offline experience.
+The requirements to allow installation differ among the different browsers, [this article](/install-criteria/) details the criteria for Google Chrome and includes links to requirements for other browsers.
 
 Because the test that a PWA meets installability requirements can take several seconds, installability itself may not be available as soon as a URLs response is received.
 

@@ -76,8 +76,7 @@ Users expect your application to offer a fast and always-ready experience.
 That means your app should work offline.
 
 Being offline-ready doesn't mean that all your content or services should be available without a network connection.
-Having at least a basic experience when the user is offline, like a page that asks you to connect to the Internet to continue,
-is one of the [requirements](/learn/pwa/getting-started/) of being a Progressive Web App.
+However having at least a basic experience when the user is offline, like a page that asks you to connect to the Internet to continue, will provide for a better user experience, keeping the user within the experience of your app instead of a generic browser error.
 In some browsers this is a must-have feature to pass the PWA installation criteria.
 Displaying your PWA's user interface, along with cached content, is better.
 Letting users continue using your whole PWA and syncing server changes when they're back online is the gold standard for working offline.

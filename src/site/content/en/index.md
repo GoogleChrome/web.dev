@@ -21,7 +21,7 @@ featuredCard:
   alt: '.'
   theme: 'light'
 
-pickedCaseStudyUrl: '/mishipay/'
+pickedCaseStudyUrl: '/redbus-inp/'
 
 platformNews:
   title: Web platform news
@@ -29,7 +29,7 @@ platformNews:
   pickedLeft:
     url: '/introducing-baseline/'
   pickedRight:
-    url: '/web-platform-04-2023/'
+    url: '/web-platform-05-2023/'
 
 themes:
   - category: CSS and UI

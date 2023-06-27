@@ -8,7 +8,7 @@ description: |
 authors:
   - lwe
 date: 2021-03-15
-# updated:
+updated: 2023-06-10
 hero: image/3lmWcR1VGYVMicNlBh4aZWBTcSg1/mhE0NYvP3JFyvNyiQ1dj.jpg
 alt: A screenshot of JavaScript code setting a strict Content Security Policy.
 tags:
@@ -60,6 +60,12 @@ _and_ use CSP as an extra security layer. CSP is a
 technique that can prevent the execution of malicious scripts, but it's not a
 substitute for avoiding (and promptly fixing) XSS bugs.
 {% endAside %}
+
+## Browser compatibility {: #compatibility }
+
+Strict CSP is supported in all modern browser engines.
+
+{% BrowserCompat 'http.headers.Content-Security-Policy.strict-dynamic' %}
 
 ### Why a strict CSP is recommended over allowlist CSPs
 
@@ -160,7 +166,6 @@ To adopt a strict CSP, you need to:
    response header across your application.
 1. Refactor HTML templates and client-side code to remove patterns that are
    incompatible with CSP.
-1. Add fallbacks to support Safari and older browsers.
 1. Deploy your CSP.
 
 You can use [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
@@ -274,7 +279,7 @@ app.get('/', function(request, response) {
     // Generate a new random nonce value for every response.
     const nonce = crypto.randomBytes(16).toString("base64");
     // Set the strict nonce-based CSP response header
-    const csp = `script-src 'nonce-${nonce}' 'strict-dynamic' https:; object-src 'none'; base-uri 'none';`;
+    const csp = `script-src 'nonce-${nonce}' 'strict-dynamic'; object-src 'none'; base-uri 'none';`;
     response.set("Content-Security-Policy", csp);
     // Every <script> tag in your application should set the `nonce` attribute to this value.
     response.render(template, { nonce: nonce });
@@ -541,17 +546,28 @@ Codelab:
   allow: []
 } %}
 
-### Step 4:  Add fallbacks to support Safari and older browsers
+### Step 4 (Optional):  Add fallbacks to support old browser versions
 
-CSP is supported by all major browsers, but you'll need two fallbacks:
+{% Aside 'caution' %}
+Strict CSP (in particular the `'strict-dynamic'` keyword) is supported by all
+browser enigines, so there is no need to add fallbacks to your CSP unless you
+need to support users on outdated browser versions (see version details below).
+While setting fallbacks doesn't reduce the security of your policy in modern 
+browsers, they can lead to confusion as many developers are not familar with 
+the complex CSP fallback mechanisms. 
+{% endAside %}
 
-- Using `'strict-dynamic'` requires adding `https:` as a fallback for Safari,
-  the only major browser without support for `'strict-dynamic'`. By doing so:
+{% BrowserCompat 'http.headers.Content-Security-Policy.strict-dynamic' %}
+
+If you need to support browser versions older than the one listed above:
+
+- Using `'strict-dynamic'` requires adding `https:` as a fallback for old
+  versions of Safari. By doing so:
   - All browsers that support `'strict-dynamic'` will ignore the `https:`
     fallback, so this won't reduce the strength of the policy.
-  - In Safari, externally sourced scripts will be allowed to load only if they
-     come from an HTTPS origin. This is less secure than a strict CSP–it's a
-     fallback–but would still prevent certain common XSS causes like injections
+  - In old browser, externally sourced scripts will be allowed to load only if
+     they come from an HTTPS origin. This is less secure than a strict CSP–it's
+     a fallback–but would still prevent certain common XSS causes like injections
      of `javascript:` URIs because `'unsafe-inline'` is not present or ignored
      in presence of a hash or nonce.
 
@@ -568,7 +584,8 @@ Content-Security-Policy:
 
 {% Aside %}
 `https:` and `unsafe-inline` don't make your policy less safe
-because they will be ignored by browsers which support `strict-dynamic`.
+because they will be ignored by all modern browsers which support
+`strict-dynamic`.
 {% endAside %}
 
 ### Step 5:  Deploy your CSP

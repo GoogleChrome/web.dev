@@ -403,9 +403,9 @@ if (result.status === 0) {
   const suffix = fragment.suffix ?
     `,-${encodeURIComponent(fragment.suffix)}` :
     '';
-  const start = encodeURIComponent(fragment.start);
-  const end = fragment.end ?
-    `,${encodeURIComponent(fragment.end)}` :
+  const start = encodeURIComponent(fragment.textStart);
+  const end = fragment.textEnd ?
+    `,${encodeURIComponent(fragment.textEnd)}` :
     '';
   url += `#:~:text=${prefix}${start}${end}${suffix}`;
   console.log(url);

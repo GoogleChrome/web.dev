@@ -4,7 +4,7 @@ title: Make it installable
 authors:
   - petelepage
 date: 2018-11-05
-updated: 2021-02-12
+updated: 2023-06-06
 description: |
   In this codelab, learn how to make a site installable using the
   beforeinstallprompt event.
@@ -14,25 +14,25 @@ tags:
   - progressive-web-apps
 ---
 
-This glitch already contains the critical components required to make a
-Progressive Web App installable, including a
-[very simple service worker](https://glitch.com/edit/#!/make-it-installable?path=service-worker.js)
-and a
-[web app manifest](https://glitch.com/edit/#!/make-it-installable?path=manifest.json).
+This glitch contains the [web manifest](https://glitch.com/edit/#!/make-it-installable?path=manifest.json) with the required fields to make a Web App [installable](/install-criteria/).
+
 It also has an install button that is hidden by default.
 
 ## Listen for the beforeinstallprompt event
 
 When the browser fires the `beforeinstallprompt` event, that's the indication
-that the Progressive Web App can be installed and an install button can be shown
-to the user. The `beforeinstallprompt` event is fired when the PWA meets [the
+that the Web App can be installed and an install button can be shown
+to the user. The `beforeinstallprompt` event is fired when the app meets [the
 installability criteria](/install-criteria/).
+
+Capturing the event enables developers to customize the installation and prompt the user
+to install when they consider it is the best time.
 
 {% Instruction 'remix', 'ol' %}
 1. Add a `beforeinstallprompt` event handler to the `window` object.
-1. Save the `event` as a global variable; we'll need it later to show the
+2. Save the `event` as a global variable; we'll need it later to show the
     prompt.
-1. Unhide the install button.
+3. Unhide the install button.
 
 Code:
 
@@ -91,14 +91,14 @@ butInstall.addEventListener('click', async () => {
 
 ## Track the install event
 
-Installing a Progressive Web App through an install button is only one way users
-can install a PWA. They can also use Chrome's menu, the mini-infobar, and
+Installing a Web App through an install button is only one way users
+can install it. They can also use Chrome's menu, the mini-infobar, and
 through [an icon in the omnibox](/promote-install/#browser-promotion). You can
 track all of these ways of installation by listening for the `appinstalled`
 event.
 
 1. Add an `appinstalled` event handler to the `window` object.
-1. Log the install event to analytics or other mechanism.
+2. Log the install event to analytics or other mechanism.
 
 Code:
 

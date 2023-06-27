@@ -5,7 +5,7 @@ authors:
   - rowan_m
 date: 2019-10-30
 updated: 2020-05-28
-hero: image/admin/V0dgwWTA61NTc55CAhSD.jpg
+hero: image/kheDArv5csY6rvQUJDbWRscckLr1/5f56hyvtMT6Dymo839tc.png
 description: 随着新的 SameSite=None 属性值的引入，网站现在可以明确地将其 cookie 标记为跨网站使用。浏览器正倾向于使不带 SameSite 属性的 cookie 默认成为第一方，这是比当前的开放行为更安全、更保护隐私的选项。了解如何标记 cookie 以确保第一方和第三方 cookie 在此更改生效后继续工作。
 tags:
   - blog
@@ -154,5 +154,3 @@ Cookie 无处不在，但很少有网站对它们的设置和使用位置进行�
 - 在 [StackOverflow 上的“samesite”标签](https://stackoverflow.com/questions/tagged/samesite)下提出问题。
 - 对于 Chromium 行为的问题，通过 [[SameSite cookie] 问题模板](https://bit.ly/2lJMd5c)提出错误。
 - 关注 [`SameSite` 更新页面](https://www.chromium.org/updates/same-site)上 Chrome 的进展。
-
-*Cookie 主页横幅图像由 [Unsplash](https://unsplash.com) 上的 [Calajay](https://unsplash.com/@calajay) 提供*
