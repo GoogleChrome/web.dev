@@ -17,7 +17,6 @@
 // Imported just for types.
 // eslint-disable-next-line no-unused-vars
 const {Environment} = require('nunjucks');
-const cheerio = require('cheerio');
 const yaml = require('js-yaml');
 const fs = require('fs');
 
@@ -27,25 +26,97 @@ const authorValues = yaml.load(
   fs.readFileSync('./src/site/_data/i18n/authors.yml', 'utf-8'),
 );
 
-function addCaptionStyles($) {
-  $('figcaption').each((i, el) => {
-    const $figcaption = $(el);
-    $figcaption.addClass('webdev-caption');
+const MULTI_LINE_CODE_PATTERN = /```.*?```/gms;
+const INLINE_CODE_PATTERN = /`[^`]*`/g;
+
+const MULTI_LINE_CODE_PLACEHOLDER = 'MULTI_LINE_CODE_PLACEHOLDER';
+const INLINE_CODE_PLACEHOLDER = 'INLINE_CODE_PLACEHOLDER';
+
+const NESTED_MULTI_LINE_CODE_PATTERN = new RegExp(
+  '<div( .*)?>[\\s\\S]*?<\\/div>',
+  'gi',
+);
+
+const RAW_SHORTCODE_PATTERN = /{% raw %}(.*?){% endraw %}/gm;
+const RAW_PLACEHOLDER = 'RAW_PLACEHOLDER';
+
+function pluck(matches = [], pattern, placeholder, content) {
+  let index = 0;
+  content = content.replace(pattern, (match) => {
+    matches.push(match);
+    return `${placeholder}_${index++}`;
   });
+
+  return content;
 }
 
-function rewriteFloatClasses($) {
-  $('.float-left').each((i, el) => {
-    const $el = $(el);
-    $el.removeClass('float-left');
-    $el.addClass('attempt-left');
+function insert(stack, placeholder, content) {
+  return content.replace(
+    new RegExp(`${placeholder}_(\\d+)`, 'g'),
+    (match, index) => {
+      return stack[index];
+    },
+  );
+}
+
+function transform(markdown) {
+  // Pluck out code snippets to not accidentally alter code examples
+  const codeBlocks = [];
+  markdown = pluck(
+    codeBlocks,
+    MULTI_LINE_CODE_PATTERN,
+    MULTI_LINE_CODE_PLACEHOLDER,
+    markdown,
+  );
+  const inlineCode = [];
+  markdown = pluck(
+    inlineCode,
+    INLINE_CODE_PATTERN,
+    INLINE_CODE_PLACEHOLDER,
+    markdown,
+  );
+
+  // Rewrite the float-left and float-right classes to attempt-left and attempt-right -
+  // as of 06/23 both are not used literally so it's safe to omit a complex regex
+  markdown = markdown.replace(/float-(left|right)/g, 'attempt-$1');
+
+  // Add the webdev-caption class to all figcaptions - as of 06/23, no figcaption as other
+  // custom classes, so a simple replace is enough
+  markdown = markdown.replace(
+    /<figcaption>/g,
+    '<figcaption class="wd-caption">',
+  );
+
+  // Rewrite the switcher class - as of 06/23 this class is not used with other classes,
+  // so a simple replace is enough
+  markdown = markdown.replace(/class="switcher"/g, 'class="wd-switcher"');
+
+  // Rewrite nested code blocks to <pre> blocks, as they are not rendered by DevSite
+
+  markdown = markdown.replace(NESTED_MULTI_LINE_CODE_PATTERN, (match) => {
+    return match.replace(
+      new RegExp(`${MULTI_LINE_CODE_PLACEHOLDER}_(\\d+)`, 'g'),
+      (match, index) => {
+        let codeBlock = codeBlocks[index];
+        codeBlock = codeBlock.replace(
+          /```(.*?)$\n/gm,
+          '<pre class="prettyprint lang-$1">{% htmlescape %}\n',
+        );
+        codeBlock = codeBlock.replace(/^```$/gm, '{% endhtmlescape %}</pre>');
+        return codeBlock;
+      },
+    );
   });
 
-  $('.float-right').each((i, el) => {
-    const $el = $(el);
-    $el.removeClass('float-right');
-    $el.addClass('attempt-right');
-  });
+  // Put remaining code blocks and snippets back into the transformed content
+  markdown = insert(codeBlocks, MULTI_LINE_CODE_PLACEHOLDER, markdown);
+  markdown = insert(inlineCode, INLINE_CODE_PLACEHOLDER, markdown);
+
+  // Replace raw shortcodes with their verbatim DevSite equivalent
+  markdown = markdown.replace(/{% raw %}/g, '{% verbatim %}');
+  markdown = markdown.replace(/{% endraw %}/g, '{% endverbatim %}');
+
+  return markdown;
 }
 
 /**
@@ -57,7 +128,8 @@ function rewriteFloatClasses($) {
 async function Export() {
   // Need to re-retrieve the page from the collections.all array (which findByUrl uses)
   // as the page object from the context does not have the source content and environment.
-  const page = findByUrl(this.ctx.page.url);
+  const pageUrl = this.ctx.page.url;
+  const page = findByUrl(pageUrl);
 
   // The nunjucks env is not available in the context, so we need to dig it out
   // from 11ty internals
@@ -70,21 +142,40 @@ async function Export() {
   }
 
   const authors = page?.template?.frontMatter?.data.authors;
+  const frontMatter = [
+    'project_path: /_project.yaml',
+    'book_path: /_book.yaml',
+  ];
 
-  const frontMatter = `project_path: /_project.yaml
-book_path: /_book.yaml
-author_name: ${authorValues[authors[0]].title.en}
+  if (authors) {
+    frontMatter.push(`author_name: ${authorValues[authors[0]].title.en}`);
+  }
+
+  const template = `${frontMatter.join('\n')}
 
 {% import "/_macros.html" as macros %}
+{% include "/_styles/style.md" %}
 
-# ${page?.template?.frontMatter?.data.title}
+# ${this.ctx.title}
 
-{{ macros.Authors(${JSON.stringify(authors)}) }}
+${authors ? `{{ macros.Authors(${JSON.stringify(authors)}) }}` : ''}
 `;
 
-  const markdown = await new Promise((resolve) => {
+  let transformedSource = source;
+  // Raw shortcodes gone from the rendered template, but their content would still infer with DevSite.
+  // Hence we need to pluck them out and re-insert them too.
+  const rawShortcodes = [];
+  transformedSource = pluck(
+    rawShortcodes,
+    RAW_SHORTCODE_PATTERN,
+    RAW_PLACEHOLDER,
+    transformedSource,
+  );
+
+  let markdown = await new Promise((resolve) => {
+    console.log('Rendering template', pageUrl);
     njkEnv.renderString(
-      source,
+      transformedSource,
       Object.assign({}, this.ctx, {export: true}),
       (err, result) => {
         if (err) {
@@ -97,11 +188,11 @@ author_name: ${authorValues[authors[0]].title.en}
     );
   });
 
-  const $ = cheerio.load(`<main>${markdown}</main>`);
-  addCaptionStyles($);
-  rewriteFloatClasses($);
+  // Put raw shortcodes back into the transformed content, they get then rewritten
+  // to DevSite compatible `{% verbatim %}` tags in the transform method
+  markdown = insert(rawShortcodes, RAW_PLACEHOLDER, markdown);
 
-  const transformedMarkdown = frontMatter + $('main').html();
+  const transformedMarkdown = template + transform(markdown);
 
   // Note: the following lines can be altered to produce any directory scheme
   // that is convenient for the migration

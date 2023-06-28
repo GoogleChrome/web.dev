@@ -33,12 +33,10 @@ async function MetaImg(args) {
     if (!fse.existsSync(path.join(TMP_IMG_PATH, args.src))) {
       image = await fetch(generateImgixSrc(args.src, args.params));
       image = await image.buffer();
-      console.log('Downloading', args.src);
       await fse.outputFile(path.join(TMP_IMG_PATH, args.src), image);
     }
 
     if (!image) {
-      console.log('Reading', args.src, 'from cache');
       image = await fse.readFile(path.join(TMP_IMG_PATH, args.src));
     }
 

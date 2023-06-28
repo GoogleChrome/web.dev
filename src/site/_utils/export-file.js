@@ -34,7 +34,7 @@ async function exportFile(ctx, data = undefined, customFilePath = undefined) {
 
   filePath = path.join(BASE_PATH, filePath)
 
-  console.log(`Writing ${filePath}`);
+  // console.log(`Writing ${filePath}`);
   await fse.outputFile(filePath, data);
 }
 

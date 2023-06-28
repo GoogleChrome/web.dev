@@ -1,28 +1,6 @@
 ---
-title: '{% Switcher %}'
+title: 'Switcher'
 ---
-
-<style>
-.switcher {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  align-items: flex-start;
-}
-
-.switcher > * {
-  flex-grow: 1;
-  flex-basis: calc(
-    (752px - 100%) * 999
-  );
-}
-
-.switcher > :nth-last-child(n + 3),
-.switcher > :nth-last-child(n + 3) ~ * {
-  flex-basis: 100%;
-}
-</style>
-
 ## The app domain
 
 To show the [mini app way of programming](/mini-app-programming-way/)

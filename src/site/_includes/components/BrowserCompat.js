@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,19 +14,17 @@
  * limitations under the License.
  */
 
-const {html} = require('common-tags');
-const md = require('markdown-it')();
+const {BrowserCompat} = require('webdev-infra/shortcodes/BrowserCompat');
 
 /**
  * @this {{env: Environment, ctx: Object}}
  */
-function Label(content) {
-  const renderedContent = md.renderInline(content);
-  if (this.ctx.export) {
-    return `<span class="wd-label">${renderedContent}</span>`;
+function BrowserCompatAlt(id) {
+  if (!this.ctx.export) {
+    return BrowserCompat.call(this, id);
   }
 
-  return html`<p class="label">${renderedContent}</p>`;
+  return `{{ macros.BrowserCompat(${id}) }}`;
 }
 
-module.exports = Label;
+module.exports = {BrowserCompat: BrowserCompatAlt};

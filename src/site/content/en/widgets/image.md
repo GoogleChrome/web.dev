@@ -1,5 +1,5 @@
 ---
-title: '{% Img %} and <figure>'
+title: Images
 ---
 ## Building a Galaxy
 

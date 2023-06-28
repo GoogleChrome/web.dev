@@ -1,8 +1,6 @@
 ---
-title: '{% Blockquote %} and <blockquote>'
+title: 'Blockquote'
 ---
-## Block quotes
-
 <blockquote>
   <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.

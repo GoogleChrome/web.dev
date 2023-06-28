@@ -33,11 +33,9 @@ function expandAllowSource(s) {
 }
 
 /**
- *
- * @param {string | GlitchParam } param
- * @return string
+ * @this {{env: Environment, ctx: Object}}
  */
-module.exports = (param) => {
+function Glitch(param) {
   const defaultAllow = [
     'camera',
     'clipboard-read',
@@ -98,9 +96,19 @@ module.exports = (param) => {
 
   const src = `${url}?${stringify(queryParams)}`;
 
+  if (this.ctx.export) {
+    return html`
+<div class="wd-embed" style="height: ${height}px;">
+  ${iframe({src, title: `${escape(id)} on Glitch`, allow})}
+</div>
+    `;
+  }
+
   return html`
     <div class="glitch-embed-wrap" style="height: ${height}px; width: 100%;">
       ${iframe({src, title: `${escape(id)} on Glitch`, allow})}
     </div>
   `;
-};
+}
+
+module.exports = Glitch;

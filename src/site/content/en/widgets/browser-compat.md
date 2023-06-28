@@ -1,27 +1,41 @@
 ---
-title: '{% BrowserCompat %}'
+title: 'BrowserCompat'
 ---
-## Browser compatibility table {: #browsercompat }
 
-With the `BrowserCompat` shortcode, you can embed an
-[MDN - Browser Compatibility Data](https://github.com/mdn/browser-compat-data/)
-widget in your post. You have to pass in the dot-separated feature ID,
-as used on [BCD Schema](https://github.com/mdn/browser-compat-data), e.g. for
-[Web/API/BackgroundFetchEvent](https://developer.mozilla.org/docs/Web/API/BackgroundFetchEvent)
-the ID is `api.BackgroundFetchEvent`.
+{% BrowserCompat %}
+{% BrowserCompat "api.CSPViolationReportBody"%}
+{% BrowserCompat "api.AnimationEffect"%}
+{% BrowserCompat "api.Sanitizer"%}
 
-```text
-{% raw %}{% verbatim %}{% BrowserCompat 'api.BackgroundFetchEvent' %}{% endverbatim %}{% endraw %}
+{% BrowserCompat "css.types.filter_function.opacity"%}
+{% BrowserCompat "css.types.min"%}
+
+```css
+.snaps {
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+}
 ```
 
-{% BrowserCompat 'api.BackgroundFetchEvent' %}
+{% Codepen {
+  user: 'web-dot-dev',
+  id: 'QWVmYLv',
+  height: 700,
+  tab: 'result'
+} %}
 
-The widget will use 🗑 symbols to represent features that are deprecated:
+Learn more about the potential of this CSS feature in this [huge and inspiring
+Codepen collection](https://codepen.io/collection/KpqBGW) of around 25 demos.
 
-{% BrowserCompat 'api.Document.execCommand' %}
+<div class="compat-subject"><code>scroll-snap-type</code></div>
+{% BrowserCompat 'css.properties.scroll-snap-type' %}
 
-The following JavaScript snippet, run from the DevTools console, will display the correct ID for a given MDN page that's currently open:
+<div class="compat-subject"><code>scroll-snap-align</code></div>
+{% BrowserCompat 'css.properties.scroll-snap-align' %}
 
-```js
-window.alert(document.querySelector(".bc-github-link")?.href.match(/title=(.+?)\+/)[1] ?? "No browser compat widget found on the page.")
-```
+<div class="compat-subject"><code>scroll-snap-stop</code></div>
+{% BrowserCompat 'css.properties.scroll-snap-stop' %}
+
+<div class="compat-subject"><code>overscroll-behavior</code></div>
+{% BrowserCompat 'css.properties.overscroll-behavior' %}

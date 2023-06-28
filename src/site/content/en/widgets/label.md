@@ -1,13 +1,6 @@
 ---
-title: '{% Label %}'
+title: 'Label'
 ---
-
-<style>
-  .webdev-label {
-    opacity: 0.8;
-    font-size: 0.8em;
-  }
-</style>
 
 ### AIDL
 
