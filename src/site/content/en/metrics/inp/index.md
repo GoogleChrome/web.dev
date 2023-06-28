@@ -171,7 +171,7 @@ However, while CrUX is useful to tell you that there _is_ a problem at a high le
 
 ### In the lab
 
-Ideally, you'll want to start testing in the lab once you have field data that suggests you have slow interactions. In the absence of field data, there are some strategies for reproducing slow interactions in the lab. Such strategies include following common user flows and testing interactions along the way, as well as interacting with the page during load—when the main thread is often busiest—in order to surface slow interactions during that crucial part of the user experience.
+Optimally, you'll want to start testing in the lab once you have field data that suggests you have slow interactions. In the absence of field data, however, there are some strategies for reproducing slow interactions in the lab. Such strategies include following common user flows and testing interactions along the way, as well as interacting with the page during load—when the main thread is often busiest—in order to surface slow interactions during that crucial part of the user experience.
 
 {% Aside 'objective' %}
 **Read to learn more:**&nbsp;[Diagnose slow interactions in the lab](/diagnose-slow-interactions-in-the-lab/).
