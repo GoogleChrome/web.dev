@@ -91,6 +91,10 @@ Once you've identified a slow interaction and [can reproduce it in the lab](/dia
 
 The sum of these three phases is the total interaction latency. Every single phase of an interaction contributes some amount of time to total interaction latency, so it's important to know how you can optimize each part of the interaction so it runs for as little time as possible.
 
+{% Aside 'important' %}
+When optimizing interactions, it's important to understand that each [browsing context](https://developer.mozilla.org/docs/Glossary/Browsing_context) will have its own main thread. This means that the top-level page will have a main thread, but each `<iframe>` element on the page will have its own main thread as well. This is important in part because resource-constrained devices—despite having multiple cores and threads themselves—can experience high compute pressure on pages with multiple browsing contexts, or if the current device is busy handling other processes altogether. A potential result is that high compute pressure can create situations where the overall ability of the device to respond to user inputs in a timely fashion can be compromised and result in an undesirable INP for users on devices with limited processing capabilities.
+{% endAside %}
+
 ### Identify and reduce input delay
 
 When a user interacts with a page, the first part of that interaction is the _input delay_. Depending on other activity on the page, input delays can be considerable in length. This could be due to activity occurring on the main thread (perhaps due to scripts loading, parsing and compiling), fetch handling, timer functions, or even from other interactions that occur in quick succession and overlap with one another.

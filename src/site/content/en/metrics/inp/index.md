@@ -4,7 +4,7 @@ title: Interaction to Next Paint (INP)
 authors:
   - jlwagner
 date: 2022-05-06
-updated: 2023-05-19
+updated: 2023-06-28
 description: |
   This post introduces the Interaction to Next Paint (INP) metric and explains how it works, how to measure it, and offers suggestions on how to improve it.
 tags:
@@ -151,7 +151,7 @@ It's possible that a page can return no INP value. This can happen for a number 
 
 ## How to measure INP
 
-INP can be measured both in [the field](/lab-and-field-data-differences/#field-data) and in [the lab](/lab-and-field-data-differences/#lab-data) (with some effort) through a variety of tools.
+INP can be measured both in [the field](/lab-and-field-data-differences/#field-data) and in [the lab](/lab-and-field-data-differences/#lab-data) through a variety of tools.
 
 {% Aside 'important' %}
 The best way to measure your website's INP is by gathering metrics from actual users in the field. If you're accustomed to relying on lab data for assessing performance, take some time to read [Why lab and field data can be different (and what to do about it)](/lab-and-field-data-differences/).
@@ -159,13 +159,15 @@ The best way to measure your website's INP is by gathering metrics from actual u
 
 ### In the field
 
-Ideally, your journey in optimizing INP will start with field data. At its best, field data from Real User Monitoring (RUM) will give you not only a page's INP value, but also contextual data that highlights what specific interaction was responsible for the INP value itself, whether the interaction occurred during or after page load, the type of interaction (click, keypress, or tap), and other valuable information.
+Ideally, your journey in optimizing INP will start with field data. At its best, field data from a Real User Monitoring (RUM) provider will give you not only a page's INP value, but also contextual data that highlights what specific interaction was responsible for the INP value itself, whether the interaction occurred during or after page load, the type of interaction (click, keypress, or tap), and other valuable information.
 
 {% Aside 'objective' %}
 **Read to learn more:**&nbsp;[Find slow interactions in the field](/find-slow-interactions-in-the-field/).
 {% endAside %}
 
-If you're not relying on a RUM provider to get field data, the [INP field data guide](/find-slow-interactions-in-the-field/) advises [using the Chrome User Experience Report (CrUX) via PageSpeed Insights](/find-slow-interactions-in-the-field/#get-field-data-quickly-with-crux) to help fill in the gaps. CrUX is the official dataset of the Core Web Vitals program and provides a high-level summary of metrics for millions of websites, including INP. However, CrUX often does not provide the contextual data you'd get from a RUM provider to help you to analyze issues. Because of this, we still recommend that sites use a RUM provider when possible, or implement their own RUM solution to supplement what is available in CrUX.
+If your website qualifies for inclusion in the [Chrome User Experience Report (CrUX)](https://developer.chrome.com/docs/crux/), you can quickly get field data for INP [via CrUX in PageSpeed Insights](/find-slow-interactions-in-the-field/#get-field-data-quickly-with-crux) (and other Core Web Vitals). At a minimum, you can get an origin-level picture of your website's INP, but in some cases, you can also get page-level data as well.
+
+However, CrUX doesn't provide attribution for what element was responsible for the page's INP. Ideally, you would get this from a RUM provider, but it's possible a RUM provider may not provide attribution data, or obtaining a provider to begin with may not be feasible for you. In any event, CrUX data is enough to tell you that there _is_ a problem, and you can then shift towards lab tools to start reproducing slow interactions.
 
 ### In the lab
 
