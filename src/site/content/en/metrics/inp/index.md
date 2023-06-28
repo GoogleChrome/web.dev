@@ -159,7 +159,7 @@ The best way to measure your website's INP is by gathering metrics from actual u
 
 ### In the field
 
-Ideally, your journey in optimizing INP will start with field data. At its best, field data from a Real User Monitoring (RUM) provider will give you not only a page's INP value, but also contextual data that highlights what specific interaction was responsible for the INP value itself, whether the interaction occurred during or after page load, the type of interaction (click, keypress, or tap), and other valuable information.
+Ideally, your journey in optimizing INP will start with field data. At its best, field data from Real User Monitoring (RUM) will give you not only a page's INP value, but also contextual data that highlights what specific interaction was responsible for the INP value itself, whether the interaction occurred during or after page load, the type of interaction (click, keypress, or tap), and other valuable information.
 
 {% Aside 'objective' %}
 **Read to learn more:**&nbsp;[Find slow interactions in the field](/find-slow-interactions-in-the-field/).
@@ -167,7 +167,7 @@ Ideally, your journey in optimizing INP will start with field data. At its best,
 
 If your website qualifies for inclusion in the [Chrome User Experience Report (CrUX)](https://developer.chrome.com/docs/crux/), you can quickly get field data for INP [via CrUX in PageSpeed Insights](/find-slow-interactions-in-the-field/#get-field-data-quickly-with-crux) (and other Core Web Vitals). At a minimum, you can get an origin-level picture of your website's INP, but in some cases, you can also get page-level data as well.
 
-However, CrUX doesn't provide attribution for what element was responsible for the page's INP. Ideally, you would get this from a RUM provider, but it's possible a RUM provider may not provide attribution data, or obtaining a provider to begin with may not be feasible for you. In any event, CrUX data is enough to tell you that there _is_ a problem, and you can then shift towards lab tools to start reproducing slow interactions.
+However, while CrUX is useful to tell you that there _is_ a problem at a high level, it often doesn't provide enough detail to help fully understand what the problem is. A RUM solution can help you drill down into more detail as to the pages, users or user interactions which are experiencing slow interactions. Being able to attribute INP to individual interactions avoids guesswork and wasted effort.
 
 ### In the lab
 
