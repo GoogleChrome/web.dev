@@ -189,6 +189,8 @@ redirects:
     destination: /speed-index
 
   # Redirects Progressive Web App content
+  - source: /wasm
+    destination: /webassembly/
 
   - source: /pwa
     destination: /progressive-web-apps/

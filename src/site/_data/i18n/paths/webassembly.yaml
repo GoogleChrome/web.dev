@@ -1,0 +1,22 @@
+title:
+  en: WebAssembly
+
+description:
+  en: Enable high-performance applications on web pages.
+
+overview:
+  en: <p>WebAssembly (sometimes abbreviated Wasm) defines a portable binary-code format and a corresponding text format for executable programs and software interfaces for facilitating interactions between such programs and their host environment.</p><p>The main goal of WebAssembly is to enable high-performance applications on web pages, <em>"but it does not make any Web-specific assumptions or provide Web-specific features, so it can be employed in other environments as well"</em>, according to the <a href="https://webassembly.github.io/mutable-global/core/intro/introduction.html#:~:text=but%20it%20does%20not%20make%20any%20Web%2Dspecific%20assumptions%20or%20provide%20Web%2Dspecific%20features%2C%20so%20it%20can%20be%20employed%20in%20other%20environments%20as%20well">spec</a>.</p><p>It is an open standard and aims to support any language on any operating system, and in practice all of the most popular languages already have at least some level of support.</p>
+
+topics:
+  introduction:
+    en: Introduction
+  debugging:
+    en: WebAssembly debugging
+  coding:
+    en: Coding with WebAssembly
+  practice:
+    en: WebAssembly in practice
+  case-studies:
+    en: WebAssembly case studies
+  emscripten:
+    en: Emscripten
