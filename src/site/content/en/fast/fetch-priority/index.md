@@ -182,14 +182,6 @@ The following table considers such factors to show how most resources are curren
         <td></td>
         <td></td>
       </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>Favicon</td>
-        <td></td>
-        <td></td>
-      </tr>
     </tbody>
   </table>
 </div>
