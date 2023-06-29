@@ -4,7 +4,7 @@ title: Interaction to Next Paint (INP)
 authors:
   - jlwagner
 date: 2022-05-06
-updated: 2023-04-25
+updated: 2023-06-28
 description: |
   This post introduces the Interaction to Next Paint (INP) metric and explains how it works, how to measure it, and offers suggestions on how to improve it.
 tags:
@@ -54,7 +54,7 @@ INP is a metric that assesses a page's overall responsiveness to user interactio
 A note on how INP is calculated
 {% endDetailsSummary %}
 
-As stated above, INP is calculated by observing all the interactions made with a page. The chosen value is then a [percentile](https://en.wikipedia.org/wiki/Percentile) of those interactions. A formula is then used to choose a high percentile value of those interactions. For pages with few interactions, the interaction with the worst latency (the 100th percentile) is chosen. For pages with many interactions, the 99th or 98th percentile is chosen.
+As stated above, INP is calculated by observing all the interactions made with a page. For most sites the interaction with the worst latency is reported as INP. However, for pages with large numbers of interactions, random hiccups can result in an unusually high interaction on an otherwise responsive site. The more interactions, the more likely this is to happen. To counter this, and give a better measure of the actual responsiveness for those types of pages, we ignore one highest interaction for every 50 interactions. The vast majority of page experiences do not have over 50 interactions so will report the worst interaction. The 75th percentile of all the page views is then reported as usual, which further removes outliers to give a value that the vast majority of users experience or better.
 {% endDetails %}
 
 An _interaction_ is a group of event handlers that fire during the same logical user gesture. For example, "tap" interactions on a touchscreen device include multiple events, such as `pointerup`, `pointerdown`, and `click`. An interaction can be driven by JavaScript, CSS, built-in browser controls (such as form elements), or a combination thereof.
@@ -122,7 +122,6 @@ Hovering and scrolling does not factor into INP. However, scrolling with the key
 
 Interactions happen in the main document or in iframes embedded in the document&mdash;for example clicking play on an embedded video. End users will not be aware what is in an iframe or not. Therefore, INP within iframes are needed to measure the user experience for the top level page. Note JavaScript Web APIs will not have access to the iframe contents so may not be able to measure INP within an iframe and this will [show as a difference between CrUX and RUM](/crux-and-rum-differences/#iframes).
 
-
 Interactions may consist of two parts, each with multiple events. For example, a keystroke consists of the `keydown`, `keypress`, and `keyup` events. Tap interactions contain `pointerup` and `pointerdown` events. The event with the longest duration within the interaction is chosen as the interaction's latency.
 
 <figure>
@@ -152,62 +151,30 @@ It's possible that a page can return no INP value. This can happen for a number 
 
 ## How to measure INP
 
-INP can be measured both in [the field](/lab-and-field-data-differences/#field-data) and in [the lab](/lab-and-field-data-differences/#lab-data) (with some effort) through a variety of tools.
+INP can be measured both in [the field](/lab-and-field-data-differences/#field-data) and in [the lab](/lab-and-field-data-differences/#lab-data) through a variety of tools.
 
 {% Aside 'important' %}
 The best way to measure your website's INP is by gathering metrics from actual users in the field. If you're accustomed to relying on lab data for assessing performance, take some time to read [Why lab and field data can be different (and what to do about it)](/lab-and-field-data-differences/).
 {% endAside %}
 
-### Field tools
+### In the field
 
-- [PageSpeed Insights](https://pagespeed.web.dev).
-- [Chrome User Experience Report (CrUX)](https://developer.chrome.com/docs/crux/).
-  - Via BigQuery in the CrUX dataset's `interaction_to_next_paint` table.
-  - CrUX API via `interaction_to_next_paint`.
-  - CrUX Dashboard.
-- [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals).
+Ideally, your journey in optimizing INP will start with field data. At its best, field data from Real User Monitoring (RUM) will give you not only a page's INP value, but also contextual data that highlights what specific interaction was responsible for the INP value itself, whether the interaction occurred during or after page load, the type of interaction (click, keypress, or tap), and other valuable information.
 
-### Lab tools
+{% Aside 'objective' %}
+**Read to learn more:**&nbsp;[Find slow interactions in the field](/find-slow-interactions-in-the-field/).
+{% endAside %}
 
-- Lighthouse Panel in DevTools, available in "Timespan Mode".
-- [Lighthouse npm module](https://www.npmjs.com/package/lighthouse).
-- [Lighthouse User Flows](/lighthouse-user-flows/).
-- [Web Vitals extension for Chrome](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma).
+If your website qualifies for inclusion in the [Chrome User Experience Report (CrUX)](https://developer.chrome.com/docs/crux/), you can quickly get field data for INP [via CrUX in PageSpeed Insights](/find-slow-interactions-in-the-field/#get-field-data-quickly-with-crux) (and other Core Web Vitals). At a minimum, you can get an origin-level picture of your website's INP, but in some cases, you can also get page-level data as well.
 
-### Measure interactions in JavaScript
+However, while CrUX is useful to tell you that there _is_ a problem at a high level, it often doesn't provide enough detail to help fully understand what the problem is. A RUM solution can help you drill down into more detail as to the pages, users or user interactions which are experiencing slow interactions. Being able to attribute INP to individual interactions avoids guesswork and wasted effort.
 
-INP is calculated based on interaction events. The following example shows how to create a [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) to log interaction entries to the console:
+### In the lab
 
-```js
-new PerformanceObserver((entryList) => {
-  for (const entry of entryList.getEntries()) {
-    if (entry.interactionId) {
-      const duration = entry.processingEnd - entry.startTime;
-      console.log('Interaction:', entry.name, duration, entry);
-    }
-  }
-}).observe({type: 'event', buffered: true, durationThreshold: 16});
-```
+Optimally, you'll want to start testing in the lab once you have field data that suggests you have slow interactions. In the absence of field data, however, there are some strategies for reproducing slow interactions in the lab. Such strategies include following common user flows and testing interactions along the way, as well as interacting with the page during load—when the main thread is often busiest—in order to surface slow interactions during that crucial part of the user experience.
 
-### Measure INP in JavaScript
-
-To measure INP in JavaScript, it's advised that you use the [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals), which exports an `onINP` function to handle the aggregation of each individual interaction. You can then get a page's INP by passing a function to the `onINP` method:
-
-```js
-import {onINP} from 'web-vitals';
-
-onINP(({value}) => {
-  // Log the value to the console, or send it to your analytics provider.
-  console.log(value);
-});
-```
-
-As with other methods exported by `web-vitals`, `onINP` accepts a function as an argument, and will pass metric data to the function you give it. From there, you can send that data to an endpoint for collection and analysis.
-
-See the [`onINP()`](https://github.com/GoogleChrome/web-vitals#oninp) reference documentation for additional usage instructions.
-
-{% Aside 'warning' %}
-Gathering INP metrics in the field will only work on browsers that [fully support the Event Timing API](https://caniuse.com/mdn-api_performanceeventtiming), including its `interactionId` property.
+{% Aside 'objective' %}
+**Read to learn more:**&nbsp;[Diagnose slow interactions in the lab](/diagnose-slow-interactions-in-the-lab/).
 {% endAside %}
 
 ## How to improve INP

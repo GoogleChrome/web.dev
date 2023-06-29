@@ -9,6 +9,8 @@ alt: An illustration of a smartphone next to the text "Scale on web"
 description: >
   Learn how Goibibo, India’s top online travel company, achieved a 60% increase in
   conversions by building reliable user experiences between their PWA and iOS/Android apps.
+authors:
+  - saurabhrajpal
 tags:
   - blog
   - case-study

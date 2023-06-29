@@ -92,7 +92,7 @@ If you're into Web Components, it's worth noting that style calculations here ar
 One way to measure the cost of style recalculations is to use the performance panel in Chrome DevTools. To begin, open DevTools, go to the tab labeled **Performance**, hit record, and interact with the page. When you stop recording, you'll see something like the image below:
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/wfJrPeoKeLzbJLEjoZsz.png", alt="DevTools showing style calculations.", width="800", height="595" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/mpzxBlLCKMupmkZV13pj.png", alt="DevTools showing style calculations.", width="800", height="586" %}
 </figure>
 
 The strip at the top is a miniature flame chart that also plots frames per second. The closer the activity is to the bottom of the strip, the faster frames are being painted by the browser. If you see the flame chart leveling out at the top with red strips above it, then you have work that's causing long running frames.

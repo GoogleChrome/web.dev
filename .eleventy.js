@@ -20,6 +20,8 @@ const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const yaml = require('js-yaml');
 const fs = require('fs');
 const path = require('path');
+const fse = require('fs-extra');
+const fetch = require('node-fetch');
 const patterns = require('./src/lib/patterns').patterns();
 
 const markdown = require('./src/site/_plugins/markdown');
@@ -279,6 +281,33 @@ module.exports = function (config) {
   config.addPassthroughCopy({
     'src/site/content/en/third_party/': 'third_party',
   });
+
+  // ----------------------------------------------------------------------------
+  // ALTERNATIVE BUILD FOR EXPORT
+  // ----------------------------------------------------------------------------
+  // Temporary
+  if (process.env.ALT_BUILD) {
+    const downloadImage = async (src, outputPath) => {
+      let image = await fetch(generateImgixSrc(src));
+      image = await image.buffer();
+      await fse.outputFile(outputPath, image);
+      console.log('Downloaded ', outputPath);
+    };
+
+    config.addCollection('hero', (collection) => {
+      collection.getAll().forEach((el) => {
+        if (el.data.hero) {
+          const ext = el.data.hero.split('.').pop();
+          const outputPath = el.data.page.outputPath.replace(
+            'index.html',
+            'hero.' + ext,
+          );
+          downloadImage(el.data.hero, outputPath);
+        }
+      });
+      return [];
+    });
+  }
 
   return {
     dir: {

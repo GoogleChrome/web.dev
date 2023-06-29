@@ -16,6 +16,7 @@ const secure = require('./secure.json');
 const animations = require('./animations.json');
 const identity = require('./identity.json');
 const webDevBasicsOne = require('./web-dev-basics-one.json');
+const webassembly = require('./webassembly.json');
 const howToOptimizeINP = require('./how-to-optimize-inp.json');
 
 module.exports = {
@@ -37,5 +38,6 @@ module.exports = {
   secure,
   'mini-apps': miniApps,
   'web-dev-basics-one': webDevBasicsOne,
+  webassembly,
   'how-to-optimize-inp': howToOptimizeINP,
 };

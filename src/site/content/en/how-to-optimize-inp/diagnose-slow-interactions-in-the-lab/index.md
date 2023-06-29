@@ -117,18 +117,18 @@ To get more information on why an interaction is slow, you'll need to take thing
 When the profile populates, the first place to look should be the activity summary at the top of the profiler. The activity summary will show red bars at the top where long tasks occurred in the recording. This allows you to quickly zoom in on problem areas.
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/BuE3dMMHux2xLl1jm40k.png", alt="A screenshot of the activity summary in the performance panel of Chrome DevTools. The activity displayed is mostly from JavaScript that causes a long task, which is highlighted in red above the flame chart.", width="573", height="87" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UcSCVSfw65rg6u1YkqmY.png", alt="A screenshot of the activity summary in the performance panel of Chrome DevTools. The activity displayed is mostly from JavaScript that causes a long task, which is highlighted in red above the flame chart.", width="674", height="126" %}
   <figcaption>
     The activity summary at the top of Chrome's performance profiler. Long tasks are highlighted in red above the activity flame chart. In this case, significant scripting work was responsible for most of the work in the long task.
   </figcaption>
 </figure>
 
-You can quickly focus on the problem area by dragging and selecting a region in the activity summary. Once you've focused to where the interaction occurred, the interactions track will help you line up the interaction and the activity that occurred in the main thread track below it:
+You can quickly focus on the problem area by dragging and selecting a region in the activity summary. Once you've focused to where the interaction occurred, the **Interactions** track will help you line up the interaction and the activity that occurred in the main thread track below it:
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/taWMcW9SqVCufYcfpOQc.png", alt="A screenshot of an interaction as visualized in the performance panel of Chrome DevTools. An interactions track above the main thread track shows the duration of an interaction, which can be lined up with main thread activity.", width="800", height="424" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/YKYLTuog3110ynQyXDdM.png", alt="A screenshot of an interaction as visualized in the performance panel of Chrome DevTools. An interactions track above the main thread track shows the duration of an interaction, which can be lined up with main thread activity.", width="800", height="325" %}
   <figcaption>
-    An interaction profiled in the performance profiler in Chrome's DevTools. The interactions track shows a series of events that amount to a click interaction. The interactions track entries span across the tasks responsible for driving the interaction.
+    An interaction profiled in the performance profiler in Chrome's DevTools. The <strong>Interactions</strong> track shows a series of events that amount to a click interaction. The Interactions track entries span across the tasks responsible for driving the interaction.
   </figcaption>
 </figure>
 
@@ -169,7 +169,7 @@ Identifying input delay in Chrome's performance profiler can be done by finding 
 You'll always incur at least some input delay, as it takes some time for the operating system to pass the input event to the browser—but you do have some control over how long the input delay is. **The key is to figure out if there is work running on the main thread that's preventing your callbacks from running.**
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/gXuxRxCNKPXTtZ1dtgec.png", alt="A depiction of input delay in Chrome's performance panel. The start of the interaction comes significantly before the event callbacks because of increased input delay due to a timer firing from a third-party script.", width="800", height="458" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UrkbAOpDSW2ABcG5ZHE3.png", alt="A depiction of input delay in Chrome's performance panel. The start of the interaction comes significantly before the event callbacks because of increased input delay due to a timer firing from a third-party script.", width="800", height="291" %}
   <figcaption>
     Input delay caused by a task fired by a timer from a third-party script.
   </figcaption>
@@ -184,9 +184,9 @@ For more information on how you can resolve long input delays, read about how yo
 Event callbacks occur immediately after the input delay. If an event callback runs too long, it delays the browser from presenting the next frame, and can add significantly to an interaction's total latency. Event callbacks can often run for too long, whether they run as the result of first-party or third-party JavaScript—and in some cases, both.
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/TZB4XCDKUsxi4muHfCUx.png", alt="A depiction of event callback tasks in Chrome's performance panel. The event callbacks occur for the pointerdown and click events, which occur in a long task.", width="800", height="458" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/h0UKtDuUBvWxd10vjrsn.png", alt="A depiction of event callback tasks in Chrome's performance panel. The event callbacks occur for the pointerdown and click events, which occur in a long task.", width="800", height="291" %}
   <figcaption>
-    The event callbacks that run in response to a click interaction, as shown in the performance profiler in Chrome DevTools. Note the red triangle in the upper right corner of the **Event: click** entry, which identifies an expensive event callback.
+    The event callbacks that run in response to a click interaction, as shown in the performance profiler in Chrome DevTools. Note the red triangle in the upper right corner of both the <strong>Event: pointerdown</strong> and <strong>Event: click</strong> entries, which identifies expensive event callbacks.
   </figcaption>
 </figure>
 
@@ -211,7 +211,7 @@ The [rendering performance guide](/rendering-performance/) is a good primer on u
 {% endAside %}
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Y9mNXlHmq8sOvQgVgv5Y.png", alt="Rendering work as visualized in the performance panel of Chrome DevTools. The rendering work occurs both within an event callback, as well as after the event callback in order to paint the next frame.", width="730", height="1140" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/pFmaZMXrlbugrC9WPoHM.png", alt="Rendering work as visualized in the performance panel of Chrome DevTools. The rendering work occurs after the event callback in order to paint the next frame.", width="800", height="229" %}
   <figcaption>
     Rendering tasks as shown in Chrome's performance profiler. The rendering work is shown in purple, with paint work in green.
   </figcaption>

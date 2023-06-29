@@ -189,6 +189,8 @@ redirects:
     destination: /speed-index
 
   # Redirects Progressive Web App content
+  - source: /wasm
+    destination: /webassembly/
 
   - source: /pwa
     destination: /progressive-web-apps/
@@ -495,9 +497,9 @@ redirects:
     destination: /debug-performance-in-the-field/
 
   # Redirects for patterns
-  - source: /patterns/advanced-apps/audio-effects/demo.html
+  - source: /patterns/web-apps/audio-effects/demo.html
     destination: /patterns/media/audio-effects/demo.html
-  - source: /patterns/advanced-apps/audio-effects
+  - source: /patterns/web-apps/audio-effects
     destination: /patterns/media/audio-effects
 
   # Redirects for Lighthouse performance content.
