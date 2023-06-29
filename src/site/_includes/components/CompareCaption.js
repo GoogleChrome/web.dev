@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+const md = require('markdown-it')();
+
 /**
  * @this {Object}
  * @param {string} content Markdown with the content for the compare element.
@@ -21,7 +23,7 @@
  */
 function CompareCaption(content) {
   if (this.ctx.export) {
-    return `<span class="webdev-caption">${content}</span>`;
+    return `<span class="wd-caption">${md.renderInline(content)}</span>`;
   }
 
   return `<figcaption class="compare__caption">

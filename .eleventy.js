@@ -28,7 +28,7 @@ const {exportFile} = require('./src/site/_utils/export-file');
 
 // Shortcodes used in prose
 const Aside = require('./src/site/_includes/components/Aside');
-const {Blockquote} = require('webdev-infra/shortcodes/Blockquote');
+const {Blockquote} = require('./src/site/_includes/components/Blockquote');
 const {BrowserCompat} = require('./src/site/_includes/components/BrowserCompat');
 const {Codepen} = require('./src/site/_includes/components/CodePen');
 const Compare = require('./src/site/_includes/components/Compare');

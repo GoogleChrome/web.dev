@@ -14,17 +14,25 @@
  * limitations under the License.
  */
 
-const {BrowserCompat} = require('webdev-infra/shortcodes/BrowserCompat');
+const {Blockquote} = require('webdev-infra/shortcodes/Blockquote');
+const md = require('markdown-it')();
+const {html} = require('common-tags');
 
 /**
  * @this {{env: Environment, ctx: Object}}
  */
-function BrowserCompatAlt(id) {
+function BlockquoteAlt(content, source, type) {
   if (!this.ctx.export) {
-    return BrowserCompat.call(this, id);
+    return Blockquote.call(this, content, source, type);
   }
 
-  return `{{ macros.BrowserCompat('${id}') }}`;
+  const typeAttr = type ? `data-type="${type}"` : '';
+  return html`
+    <blockquote ${typeAttr}>
+      ${md.render(content)}
+      <cite>${md.renderInline(source)}</cite>
+    </blockquote>
+  `;
 }
 
-module.exports = {BrowserCompat: BrowserCompatAlt};
+module.exports = {Blockquote: BlockquoteAlt};

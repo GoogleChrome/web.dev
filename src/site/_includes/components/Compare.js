@@ -15,6 +15,17 @@
  */
 
 const {i18n, getLocaleFromPath} = require('../../_filters/i18n');
+const md = require('markdown-it')({
+  html: true,
+  highlight: function (str, lang) {
+    // Some code snippets have line-highlights that are not supported on DevSite,
+    // they need to be removed.
+    const cleanLang = lang.split('/')[0];
+    return `<pre class="prettyprint lang-${cleanLang}">${
+      cleanLang === 'html' ? '{% htmlescape %}' : ''
+    }${str}${cleanLang === 'html' ? '{% endhtmlescape %}' : ''}</pre>`;
+  },
+});
 
 /**
  * @this {Object}
@@ -49,9 +60,14 @@ function Compare(content, type, labelOverride) {
   }
 
   if (this.ctx.export) {
-    // DevSite only supports
-    return `<p><span class="compare-${type}">${label}</span></p>
-${content}`;
+    // Compare is often used in switcher divs, where DevSite wouldn't render Markdown - so statify it
+    // and wrap it in a parent div for the column layout to work. Pluck out
+    const mdContent = md.render(content.trim());
+
+    return `<div class="wd-compare">
+  <div class="compare-${type}">${label}</div>
+  ${mdContent}
+</div>`;
   }
 
   // prettier-ignore
