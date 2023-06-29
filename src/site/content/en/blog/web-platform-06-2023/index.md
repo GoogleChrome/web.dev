@@ -33,7 +33,7 @@ Firefox 114 includes the [WebTransport API](https://developer.mozilla.org/docs/W
 
 The [`crossorigin` attribute](https://developer.mozilla.org/docs/Web/SVG/Attribute/crossorigin), on the `<image>` and `<feImage>` elements in SVG, provides support for configuration of the Cross-Origin Resource Sharing (CORS) requests for the element's fetched data. This works in the same way as the HTML [`crossorigin`](https://developer.mozilla.org/docs/Web/HTML/Attributes/crossorigin) attribute.
 
-{% BrowserCompat 'svg.attributes.crossorigin' %}
+{% BrowserCompat 'svg.elements.image.crossorigin' %}
 
 ## Beta browser releases
 
