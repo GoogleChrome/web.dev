@@ -132,7 +132,7 @@ mkbitmap 1.16. Copyright (C) 2001-2019 Peter Selinger.
 If you get the version details, you have successfully compiled and installed `mkbitmap`. Next, make the equivalent of these steps work with WebAssembly.
 
 {% Aside 'warning' %}
-If you followed the preceding platform compilation steps, run `make clean`` before proceeding with the WebAssembly compilation steps to remove previous compile artifacts.
+If you followed the preceding platform compilation steps, run `make clean` before proceeding with the WebAssembly compilation steps to remove previous compile artifacts.
 {% endAside %}
 
 ## Compile `mkbitmap` to WebAssembly
