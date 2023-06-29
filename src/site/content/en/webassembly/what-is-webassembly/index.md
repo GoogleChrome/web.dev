@@ -3,8 +3,8 @@ layout: post
 title: What is WebAssembly and where did it come from?
 authors:
   - thomassteiner
-date: 2023-06-26
-# updated: 2023-06-26
+date: 2023-06-29
+# updated: 2023-06-29
 description: >
   An introduction to WebAssembly (sometimes abbreviated Wasm), the portable binary-code format and
   corresponding text format for executable programs as well as software interfaces for facilitating
