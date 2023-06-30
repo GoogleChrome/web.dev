@@ -14,6 +14,7 @@ tags:
   - seo
   # - discoverability
   - javascript
+  - news
 ---
 
 Great things are happening with Google Search, and we were excited to share them at Google I/O 2019!

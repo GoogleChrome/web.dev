@@ -12,6 +12,7 @@ alt: Lighthouse logo.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - performance
+  - news
 ---
 
 In the [Speed Tooling Evolutions](https://youtu.be/iaWLXf1FgI0) talk at Chrome

@@ -17,6 +17,7 @@ thumbnail: image/VbsHyyQopiec0718rMq2kTE1hke2/F6xN4wjE6Y9vgh1m1uCi.png
 tags:
   - blog
   - accessibility
+  - news
 ---
 
 This week we highlighted accessibility resources to help you make your sites

@@ -57,6 +57,7 @@ tags:
   - houdini
   - layout
   - ux
+  - news
 ---
 
 There are a _ton_ of exciting things happening in CSS right now—and

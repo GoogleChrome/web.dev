@@ -14,6 +14,7 @@ updated: 2022-03-07
 tags:
   - blog
   - css
+  - news
 ---
 
 For the first time ever, all major browser vendors, and other stakeholders, have come together to solve the top browsers compatibility issues identified by web developers. Interop 2022 will improve the experience of developing for the web in 15 key areas. In this article, find out how we got here, what the project focuses on, how success will be measured, and how you can track progress.

@@ -13,6 +13,7 @@ date: 2022-12-19
 tags:
   - blog
   - css
+  - news
 ---
 
 We've reached the end of another year, and it's time to look at the improvements made by browsers as we work together to improve the interoperability of the web platform. You can check out how things started in [our post in March this year](/interop-2022/), as the initiative was launched.

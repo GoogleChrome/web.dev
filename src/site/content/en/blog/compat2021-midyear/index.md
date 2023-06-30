@@ -13,6 +13,7 @@ updated: 2021-07-23
 tags:
   - blog
   - css
+  - news
 ---
 
 It's time for the mid-year update on Compat 2021—an effort to eliminate browser compatibility

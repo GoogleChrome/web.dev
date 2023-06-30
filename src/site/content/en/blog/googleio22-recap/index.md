@@ -12,6 +12,7 @@ authors:
   - paulkinlan
 tags:
   - blog
+  - news
 ---
 
 At [Google IO 2022](https://io.google/2022/products/web/) we shared updates on our progress to help create a web that is instant, and connects people, no matter their device or bandwidth. A powerful platform that delivers experiences that we once never thought possible in a browser. And one that people can trust to keep their data safe. Here's a recap on how we're making it easy for you to build experiences that people will love.
