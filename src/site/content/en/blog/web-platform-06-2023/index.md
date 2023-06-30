@@ -17,7 +17,7 @@ tags:
 
 ## Stable browser releases
 
-In June 2023 [Firefox 114](https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/114) became stable, so it's a single browser issue this month, with Chrome releasing two versions in May. Check out the beta browser releases section for details of several features that are about to become interoperable one those betas become stable.
+In June 2023 [Firefox 114](https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/114) became stable, so it's a single browser issue this month. Check out the beta browser releases section for details of several features that are about to become interoperable once those betas become stable.
 
 {% Aside 'caution' %}
 We include browser compatibility data pulled from MDN in these posts which may not have been updated yet for very recent browser releases. The post will show the correct information as soon as it appears in the [browser-compat-data release](https://github.com/mdn/browser-compat-data/releases).
@@ -31,7 +31,7 @@ Firefox 114 includes the [WebTransport API](https://developer.mozilla.org/docs/W
 
 ### The SVG `crossorigin` attribute
 
-The [`crossorigin` attribute](https://developer.mozilla.org/docs/Web/SVG/Attribute/crossorigin), on the `<image>` and `<feImage>` elements in SVG, provides support for configuration of the Cross-Origin Resource Sharing (CORS) requests for the element's fetched data. This works in the same way as the HTML [`crossorigin`](https://developer.mozilla.org/docs/Web/HTML/Attributes/crossorigin) attribute.
+Firefox 114 also includes the [`crossorigin` attribute](https://developer.mozilla.org/docs/Web/SVG/Attribute/crossorigin), on the `<image>` and `<feImage>` elements in SVG, provides support for configuration of the Cross-Origin Resource Sharing (CORS) requests for the element's fetched data. This works in the same way as the HTML [`crossorigin`](https://developer.mozilla.org/docs/Web/HTML/Attributes/crossorigin) attribute.
 
 {% BrowserCompat 'api.SVGImageElement.crossOrigin' %}
 
@@ -43,7 +43,7 @@ Firefox 115 supports the CSS [`animation-composition`](https://developer.mozilla
 
 Also reaching interoperability with Firefox 115 are a set of methods for `Array` and `TypedArray`.  `Array.toReversed()`, `Array.toSorted()`, `Array.toSpliced()`, `Array.with()`, `TypedArrays.toReversed()`, `TypedArrays.toSorted()`, and `TypedArrays.with()` return a new array with elements that have been shallow copied.
 
-There is a whole stack of new features and fixes in the Safari 17 beta. Safari 17 adds Web Apps to macOS Sonoma. This means you can add a website to the Dock from the File menu or Share Sheet, and it will open in its own window.
+There is a whole stack of new features and fixes in the Safari 17 beta. Safari 17 adds [Web Apps](https://blog.tomayac.com/2023/06/07/web-apps-on-macos-sonoma-14-beta/) to macOS Sonoma. This means you can add a website to the Dock from the File menu or Share Sheet, and it will open in its own window.
 
 Safari 17 also brings some features to interoperable status—[`contain-intrinsic-size`](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-size), [`@counter-style`](https://developer.mozilla.org/docs/Web/CSS/@counter-style), [@font-face size-adjust](https://developer.mozilla.org/docs/Web/CSS/@font-face/size-adjust), and the [`overflow-block`](https://developer.mozilla.org/docs/Web/CSS/@media/overflow-block) and [`overflow-inline`](https://developer.mozilla.org/docs/Web/CSS/@media/overflow-inline) media features will be available in all major engines when Safari 17 ships.
 
