@@ -1,81 +1,20 @@
 ---
-title: '{% Details %}'
+title: 'Details'
 ---
 
-## Details
-
-### Basic details component
-
 {% Details %}
-
 {% DetailsSummary %}
-Details _summary_
+Explanation of _ancestor_, _parent_, and _descendant_
 {% endDetailsSummary %}
-
-Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
-at.
-
+The term descendant refers to the
+fact that an item is contained somewhere inside of another. The opposite term is ancestor, which is
+to say an item is contained by ancestors. For the next container up/down, these may use the more
+specific terms parent/child. For example, imagine a document with a paragraph that has a link
+inside. The link's parent is a paragraph, but it also has the document as an ancestor.
+Conversely, the document may have many paragraph children, each with links. The links are all
+descendants of the grandparent document.
 {% endDetails %}
 
-### Details component with preview
-
-{% Details %}
-
-{% DetailsSummary %}
-Details _summary_
-This is an optional preview. Make your preview text match the first paragraph
-of your panel text.
-{% endDetailsSummary %}
-
-This is an optional preview. Make your preview text match the first paragraph
-of your panel text.
-
-Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
-at.
-
-{% endDetails %}
-
-### Details component with custom heading level
-
-The default heading level is `h2`.
-To ensure the `Details` component is in the correct place in the page hierarchy,
-add a custom heading argument to the `DetailsSummary` shortcode.
-For example, if the component is in an `h2` section,
-use an `h3` heading.
-
-{% Details %}
-
-{% DetailsSummary 'h3' %}
-Details _summary_
-{% endDetailsSummary %}
-
-Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
-at.
-
-{% endDetails %}
-
-### Details component in open state
-
-The `Details` component is closed by default.
-If for some reason you want it open,
-add the `open` argument to the `Details` shortcode.
-
-{% Details 'open' %}
-
-{% DetailsSummary %}
-Details _summary_
-{% endDetailsSummary %}
-
-Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
-at.
-
-{% endDetails %}
-
-### Details used in the wild
 
 [Try to build a form](https://codepen.io/web-dot-dev/pen/c7d89671f738240187a86cda1074d554) where users can submit their favorite color.
 The data should be sent as a `POST` request, and the URL where the data will be processed should be `/color`.
@@ -109,5 +48,50 @@ You can select the location of the script by using the `action` attribute.
 ...
 </form>
 ```
+
+{% endDetails %}
+
+### Using mkcert: cheatsheet
+
+{% Details %}
+{% DetailsSummary %}
+mkcert in short
+{% endDetailsSummary %}
+
+To run your local development site with HTTPS:
+
+1.  Set up mkcert.
+
+    If you haven't yet, install mkcert, for example on macOS:
+
+    ```bash
+    brew install mkcert
+
+    ```
+
+    Check [install mkcert](https://github.com/FiloSottile/mkcert#installation) for Windows and Linux instructions.
+
+    Then, create a local certificate authority:
+
+    ```bash
+    mkcert -install
+    ```
+
+2.  Create a trusted certificate.
+
+    ```bash
+    mkcert {YOUR HOSTNAME e.g. localhost or mysite.example}
+    ```
+
+    This create a valid certificate (that will be signed by `mkcert` automatically).
+
+3.  Configure your development server to use HTTPS and the certificate you've created in Step 2.
+4.  ✨ You're done! You can now access `https://{YOUR HOSTNAME}` in your browser, without warnings
+
+{% Aside 'caution' %}
+
+Do this only for **development purposes** and **never export or share** the file `rootCA-key.pem` (if you need to know where this file is located to make sure it's safe, run `mkcert -CAROOT`).
+
+{% endAside %}
 
 {% endDetails %}

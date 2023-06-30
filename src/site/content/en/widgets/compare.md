@@ -22,7 +22,7 @@ Multiple languages are not supported.
 ```
 
 {% CompareCaption %}
-Set only the page's primary language. In this case, the language is Arabic.
+Set only the **page's primary** language. In this case, the language is Arabic.
 {% endCompareCaption %}
 {% endCompare %}
 </div>

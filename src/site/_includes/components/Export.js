@@ -76,9 +76,12 @@ function transform(markdown) {
     markdown,
   );
 
-  // Rewrite the float-left and float-right classes to attempt-left and attempt-right -
+  // Remove the float-left and float-right classes as they are not used on web.dev
   // as of 06/23 both are not used literally so it's safe to omit a complex regex
-  markdown = markdown.replace(/float-(left|right)/g, 'attempt-$1');
+  markdown = markdown.replace(
+    /<figure class="float-(left|right)">/g,
+    '<figure>',
+  );
 
   // Add the webdev-caption class to all figcaptions - as of 06/23, no figcaption as other
   // custom classes, so a simple replace is enough
@@ -86,6 +89,10 @@ function transform(markdown) {
     /<figcaption>/g,
     '<figcaption class="wd-caption">',
   );
+
+  // Remove the screenshot class from figure elements as it has no effect on web.dev,
+  // but would have on DevSite
+  markdown = markdown.replace(/<figure class="screenshot">/g, '<figure>');
 
   // Rewrite the switcher class - as of 06/23 this class is not used with other classes,
   // so a simple replace is enough
@@ -157,9 +164,12 @@ async function Export() {
 {% include "/_styles/style.md" %}
 
 # ${this.ctx.title}
-
-${authors ? `{{ macros.Authors(${JSON.stringify(authors)}) }}` : ''}
-`;
+${
+  authors
+    ? `
+{{ macros.Authors(${JSON.stringify(authors)}) }}`
+    : ''
+}`;
 
   let transformedSource = source;
   // Raw shortcodes gone from the rendered template, but their content would still infer with DevSite.

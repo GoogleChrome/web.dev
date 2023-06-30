@@ -1,7 +1,18 @@
 const {Details} = require('webdev-infra/shortcodes/Details');
 const {DetailsSummary} = require('webdev-infra/shortcodes/DetailsSummary');
-const md = require('markdown-it')();
+const md = require('markdown-it')({
+  html: true,
+  highlight: function (str, lang) {
+    // Some code snippets have line-highlights that are not supported on DevSite,
+    // they need to be removed.
+    const cleanLang = lang.split('/')[0];
+    return `<pre class="prettyprint lang-${cleanLang}">${
+      cleanLang === 'html' ? '{% htmlescape %}' : ''
+    }${str}${cleanLang === 'html' ? '{% endhtmlescape %}' : ''}</pre>`;
+  },
+});
 const cheerio = require('cheerio');
+const pretty = require('pretty');
 
 /**
  * @this {Object}
@@ -42,7 +53,9 @@ function DetailsAlt(content, state) {
 <div>
   <devsite-expandable ${computedState} class="arrow-icon">
     ${summary}
-    <div>${$('#content').html()}</div>
+    <div>
+      ${pretty($('#content').html())}
+    </div>
   </devsite-expandable>
 </div>`;
 }
