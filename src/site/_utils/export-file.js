@@ -27,12 +27,17 @@ const BASE_PATH = path.join(__dirname, '../../../dist/_export/');
 async function exportFile(ctx, data = undefined, customFilePath = undefined) {
   let filePath = customFilePath;
   if (!filePath) {
-    filePath = path.parse(ctx.page.url).dir;
-    // Assume we are only writing .md files.
-    filePath = `${filePath}/${ctx.page.fileSlug}.md`;
+    filePath = ctx.exportPath;
+    // Assume we are only writing .md files - images are written into directories,
+    // so if one is present we need to add an index.md to the path.
+    if (fse.existsSync(path.join(BASE_PATH, filePath, ctx.page.fileSlug))) {
+      filePath = `${filePath}/${ctx.page.fileSlug}/index.md`;
+    } else {
+      filePath = `${filePath}/${ctx.page.fileSlug}.md`;
+    }
   }
 
-  filePath = path.join(BASE_PATH, filePath)
+  filePath = path.join(BASE_PATH, filePath);
 
   // console.log(`Writing ${filePath}`);
   await fse.outputFile(filePath, data);

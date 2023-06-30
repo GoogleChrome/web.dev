@@ -41,7 +41,8 @@ async function MetaImg(args) {
     }
 
     // And after it's cached we just copy it to the export directory.
-    await exportFile(this.ctx, image, args.src);
+    const parsedPath = path.parse(this.ctx.page.url);
+    await exportFile(this.ctx, image, path.join(this.ctx.exportPath, parsedPath.name, args.src));
     // Instead of markdown img syntax we use HTML img syntax, to make sure
     // that the image is rendered in <figures> and tables - height is omitted
     // as the CMS does it's own thing with it.

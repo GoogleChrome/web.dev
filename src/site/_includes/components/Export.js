@@ -19,6 +19,7 @@
 const {Environment} = require('nunjucks');
 const yaml = require('js-yaml');
 const fs = require('fs');
+const path = require('path');
 
 const {findByUrl} = require('../../_filters/find-by-url');
 const {exportFile} = require('../../_utils/export-file');
@@ -39,6 +40,11 @@ const NESTED_MULTI_LINE_CODE_PATTERN = new RegExp(
 
 const RAW_SHORTCODE_PATTERN = /{% raw %}(.*?){% endraw %}/gm;
 const RAW_PLACEHOLDER = 'RAW_PLACEHOLDER';
+
+/**
+ * Used to keep track of old URLs and their potential new URLs.
+ */
+const exportUrls = new Map();
 
 function pluck(matches = [], pattern, placeholder, content) {
   let index = 0;
@@ -98,8 +104,10 @@ function transform(markdown) {
   // so a simple replace is enough
   markdown = markdown.replace(/class="switcher"/g, 'class="wd-switcher"');
 
-  // Rewrite nested code blocks to <pre> blocks, as they are not rendered by DevSite
+  // Prefix the stats class names with wd-
+  markdown = markdown.replace(/class="stats/g, 'class="wd-stats');
 
+  // Rewrite nested code blocks to <pre> blocks, as they are not rendered by DevSite
   markdown = markdown.replace(NESTED_MULTI_LINE_CODE_PATTERN, (match) => {
     return match.replace(
       new RegExp(`${MULTI_LINE_CODE_PLACEHOLDER}_(\\d+)`, 'g'),
@@ -167,7 +175,8 @@ async function Export() {
 ${
   authors
     ? `
-{{ macros.Authors(${JSON.stringify(authors)}) }}`
+{{ macros.Authors(${JSON.stringify(authors)}) }}
+`
     : ''
 }`;
 
@@ -182,20 +191,36 @@ ${
     transformedSource,
   );
 
+  const tags = page?.template?.frontMatter?.data?.tags || [];
+
+  // Determine a export path for the page, to dissolve the flat-file structure that
+  // is currently used for web.dev
+  const originalUrl = path.parse(this.ctx.page.url);
+  let exportPath = originalUrl.dir;
+  if (tags.includes('case-study')) {
+    exportPath = path.join(exportPath, 'case-studies');
+  } else if (tags.includes('new-to-the-web')) {
+    exportPath = path.join(exportPath, 'news');
+  } else {
+    // Put everything else into the articles directory
+    exportPath = path.join(exportPath, 'articles');
+  }
+
+  // Add the export path to the exportUrls map, so we can construct a redirect map
+  exportUrls.set(this.ctx.page.url, `/${exportPath}/${originalUrl.name}`);
+
+  const ctx = Object.assign({}, this.ctx, {export: true, exportPath});
+
   let markdown = await new Promise((resolve) => {
     console.log('Rendering template', pageUrl);
-    njkEnv.renderString(
-      transformedSource,
-      Object.assign({}, this.ctx, {export: true}),
-      (err, result) => {
-        if (err) {
-          resolve('Could not render template: ' + err);
-          return;
-        }
+    njkEnv.renderString(transformedSource, ctx, (err, result) => {
+      if (err) {
+        resolve('Could not render template: ' + err);
+        return;
+      }
 
-        resolve(result);
-      },
-    );
+      resolve(result);
+    });
   });
 
   // Put raw shortcodes back into the transformed content, they get then rewritten
@@ -206,9 +231,9 @@ ${
 
   // Note: the following lines can be altered to produce any directory scheme
   // that is convenient for the migration
-  await exportFile(this.ctx, transformedMarkdown);
+  await exportFile(ctx, transformedMarkdown);
 
   return transformedMarkdown;
 }
 
-module.exports = {Export};
+module.exports = {Export, exportUrls};

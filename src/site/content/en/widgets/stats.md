@@ -1,44 +1,6 @@
 ---
 title: 'Stats'
 ---
-<style>
-  .stats {
-    display: flex;
-    gap: 0 24px;
-    /* Removes DevSite default padding for lists */
-    padding: 0;
-  }
-
-  .stats__item {
-    flex: 1 1;
-    max-width: calc(33.3333333333% - 16px);
-    background: var(--devsite-success-notice-background);
-    border: var(--devsite-success-notice-color);
-    border-radius: var(--devsite-card-border-radius);
-    box-shadow: var(--devsite-card-box-shadow);
-    color: var(--devsite-success-notice-color);
-    padding: 18px 20px 20px;
-  }
-
-  .stats__figure {
-    font-size: 2em;
-    font-weight: 500;
-  }
-
-  .stats__figure sub {
-    font-weight: normal;
-    vertical-align: baseline;
-  }
-
-  @media screen and (max-width: 1253px) {
-    .stats {
-      display: block;
-    }
-  }
-</style>
-
-## Stats
-
 Use the Stats component to call out important statistics
 about a product or service discussed in a post.
 (Stats are primarily used in case studies.)
