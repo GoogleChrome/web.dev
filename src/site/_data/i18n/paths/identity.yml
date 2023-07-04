@@ -6,20 +6,20 @@ description:
 
 overview:
   en: A curated collection of high-quality resources that will help you understand authentication basics and how to build your own authentication systems with modern APIs.
-  
+
 topics:
   understand_authentication_basics:
     en: Understand authentication basics
- 
+
   build_authentication_systems_with_modern_APIs:
     en: Build authentication systems with modern APIs
 
-  strenghten_security_with_two-factor_authentication:
+  strengthen_security_with_two-factor_authentication:
     en: Strengthen security with two-factor authentication
 
   build_advanced_authentication_systems:
     en: Build advanced authentication systems
-    
+
   build_authentication_with_identity_federation:
     en: Build authentication with identity federation
 

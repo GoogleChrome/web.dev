@@ -26,7 +26,7 @@ However, what about the long tasks that come from loading scripts themselves? Th
 If you've profiled an application that ships a lot of JavaScript, you may have seen long tasks where the culprit is labeled **Evaluate Script**.
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/rrbK8pdmQOQt9OjZqHUJ.png", alt="Script evaluation work as visualized in the performance profiler of Chrome DevTools. The work causes a long task during startup, which blocks the main thread's ability to respond to user interactions.", width="800", height="139" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/WZyF71IiPWyG8vwKQcdP.png", alt="Script evaluation work as visualized in the performance profiler of Chrome DevTools. The work causes a long task during startup, which blocks the main thread's ability to respond to user interactions.", width="697", height="107" %}
   <figcaption>
     Script evaluation work as shown in the performance profiler in Chrome DevTools. In this case, the work is enough to cause a long task that blocks the main thread from taking on other work—including tasks that drive user interactions.
   </figcaption>
@@ -63,7 +63,7 @@ As devices vary in their capability, it's very difficult to define a set limit f
 While you should always strive to load as little JavaScript as possible during page load, splitting up your scripts ensures that, instead of one large task that may block the main thread, you have a greater number of smaller tasks that won't block the main thread at all—or at least less than what you started with.
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/RsUKhU804ZuMcMzgqlpC.png", alt="Multiple tasks involving script evaluation as visualized in the performance profiler of Chrome DevTools. Because multiple smaller scripts are loaded instead of fewer larger scripts, tasks are less likely to become long tasks, allowing the main thread to respond to user input more quickly.", width="800", height="164" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/dajGS6urKufQoweVhJQh.png", alt="Multiple tasks involving script evaluation as visualized in the performance profiler of Chrome DevTools. Because multiple smaller scripts are loaded instead of fewer larger scripts, tasks are less likely to become long tasks, allowing the main thread to respond to user input more quickly.", width="800", height="174" %}
   <figcaption>
     Multiple tasks spawned to evaluate scripts as a result of multiple <code>&lt;script&gt;</code> elements present in the page's HTML. This is preferable to sending one large script bundle to users, which is more likely to block the main thread.
   </figcaption>
@@ -88,16 +88,16 @@ It's now possible to load ES modules natively in the browser with the [`type=mod
 In browsers such as Chrome—or those derived from it—loading ES modules using the `type=module` attribute produces different sorts of tasks than you'd normally see when not using `type=module`. For example, a task for each module script will run that involves activity labeled as **Compile module**.
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/hNTJv7TAWckoZSdYYwfI.png", alt="Module compilation work in multiple tasks as visualized in Chrome DevTools.", width="800", height="153" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/aEGTjOqtruKet5I6sCLM.png", alt="Module compilation work in multiple tasks as visualized in Chrome DevTools.", width="800", height="140" %}
   <figcaption>
-    Module loading behavior in Chromium-based browsers. Each module script will spawn a "Compile module" call to compile their contents prior to evaluation.
+    Module loading behavior in Chromium-based browsers. Each module script will spawn a <strong>Compile module</strong> call to compile their contents prior to evaluation.
   </figcaption>
 </figure>
 
 Once the modules have compiled, any code that subsequently runs in them will kick off activity labeled as **Evaluate module**.
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/wdXKwqmehqqFvkhboMg3.png", alt="Just-in-time evaluation of a module as visualized in the performance panel of Chrome DevTools.", width="800", height="181" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/CQpGnJmXh9JSUIMuBpeu.png", alt="Just-in-time evaluation of a module as visualized in the performance panel of Chrome DevTools.", width="800", height="184" %}
   <figcaption>
     When code in a module runs, that module will be evaluated just-in-time.
   </figcaption>

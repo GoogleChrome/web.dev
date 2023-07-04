@@ -55,9 +55,9 @@ Additionally, `setTimeout` can be run in a loop or recursively, where it acts mo
 `setInterval` runs a callback on an interval, and is therefore much more likely to get in the way of interactions. This is because—unlike a single instance of a `setTimeout` call, which is a one-off callback that _may_ get in the way of a user interaction—`setInterval`'s recurring nature makes it much more likely that it _will_ get in the way of an interaction, thus increasing the interaction's input delay.
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/TxMJD9z8fKs8CxOywEWS.png", alt="A screenshot of the performance profiler in Chrome DevTools demonstrating input delay. A task fired by a timer function occurs just before a user initiates a click interaction. However, the timer extends the input delay, causing the interaction's event callbacks to run later than they otherwise would.", width="800", height="458" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/tjzVtS9wFXxd06gaPHNY.png", alt="A screenshot of the performance profiler in Chrome DevTools demonstrating input delay. A task fired by a timer function occurs just before a user initiates a click interaction. However, the timer extends the input delay, causing the interaction's event callbacks to run later than they otherwise would.", width="800", height="291" %}
   <figcaption>
-    A timer registered by a previous `setInterval` call contributing to input delay as depicted in the performance panel of Chrome DevTools. The added input delay causes the event callbacks for the interaction to run later than they otherwise could.
+    A timer registered by a previous <code>setInterval</code> call contributing to input delay as depicted in the performance panel of Chrome DevTools. The added input delay causes the event callbacks for the interaction to run later than they otherwise could.
   </figcaption>
 </figure>
 

@@ -1,0 +1,78 @@
+{
+  "slug": "webassembly",
+  "cover": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/8Gm7xljiB4j6K5VeQNMV.svg",
+  "title": "i18n.paths.webassembly.title",
+  "updated": "April 28, 2023",
+  "description": "i18n.paths.webassembly.description",
+  "overview": "i18n.paths.webassembly.overview",
+  "topics": [
+    {
+      "title": "i18n.paths.webassembly.topics.introduction",
+      "pathItems": [
+        "what-is-webassembly",
+        "compiling-mkbitmap-to-webassembly"
+      ]
+    },
+    {
+      "title": "i18n.paths.webassembly.topics.emscripten",
+      "pathItems": [
+        "drawing-to-canvas-in-emscripten",
+        "embind",
+        "emscripten-embedding-js-snippets",
+        "emscripten-npm"
+      ]
+    },
+    {
+      "title": "i18n.paths.webassembly.topics.coding",
+      "pathItems": [
+        "webassembly-threads",
+        "webassembly-feature-detection",
+        "loading-wasm",
+        "asyncify"
+      ]
+    },
+    {
+      "title": "i18n.paths.webassembly.topics.debugging",
+      "pathItems": [
+        {
+          "title": "Debugging WebAssembly with modern tools",
+          "url": "https://developer.chrome.com/blog/wasm-debugging-2020/"
+        },
+        {
+          "title": "Debugging WebAssembly faster",
+          "url": "https://developer.chrome.com/blog/faster-wasm-debugging/"
+        },
+        {
+          "title": "WebAssembly memory inspection",
+          "url": "https://developer.chrome.com/docs/devtools/memory-inspector/#wasm"
+        },
+        "webassembly-memory-debugging"
+      ]
+    },
+    {
+      "title": "i18n.paths.webassembly.topics.practice",
+      "pathItems": [
+        "wasm-libraries",
+        {
+          "title": "SQLite Wasm in the browser backed by the Origin Private File System",
+          "url": "https://developer.chrome.com/blog/sqlite-wasm-in-the-browser-backed-by-the-origin-private-file-system/"
+        },
+        {
+          "title": "Replacing a hot path in your app's JavaScript with WebAssembly",
+          "url": "https://developer.chrome.com/blog/hotpath-with-wasm/"
+        },
+        "emscripting-a-c-library",
+        "wasm-av1"
+      ]
+    },
+    {
+      "title": "i18n.paths.webassembly.topics.case-studies",
+      "pathItems": [
+        "wordpress-playground",
+        "porting-libusb-to-webusb",
+        "porting-gphoto2-to-the-web",
+        "earth-webassembly"
+      ]
+    }
+  ]
+}

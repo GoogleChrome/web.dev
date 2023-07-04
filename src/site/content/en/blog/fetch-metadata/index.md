@@ -4,7 +4,7 @@ subhead: Prevent CSRF, XSSI, and cross-origin information leaks.
 authors:
   - lwe
 date: 2020-06-04
-updated: 2020-06-10
+updated: 2023-06-10
 hero: image/admin/El8ytnIgMDWVzdsglcfv.jpg
 alt: A screenshot of Python code related to Resource Isolation Policy.
 description: |
@@ -27,9 +27,9 @@ It is common for resources exposed by a given web application to only be loaded 
 
 ## Browser compatibility {: #compatibility }
 
-Fetch Metadata request headers are supported as of Firefox 90 and as of Chrome 76 in all Chromium-based browsers.
+Fetch Metadata request headers are supported in all modern browser engines.
 
-{% BrowserCompat 'http.headers.sec-fetch-site' %}
+{% BrowserCompat 'http.headers.Sec-Fetch-Site' %}
 
 ## Background
 
@@ -114,14 +114,6 @@ Since not all browsers support Fetch Metadata, you need to allow requests that d
 if not req['sec-fetch-site']:
   return True  # Allow this request
  ```
-
-{% Aside 'caution' %}
-Since Fetch Metadata is not supported in all browsers,
-it should be used as a
-[defense-in-depth protection](https://static.googleusercontent.com/media/landing.google.com/en//sre/static/pdf/Building_Secure_and_Reliable_Systems.pdf#page=181)
-and not as your primary line of defense.
-{% endAside %}
-
 
 #### Step 2: Allow same-site and browser-initiated requests
 

@@ -14,7 +14,7 @@ static:
   - sharewindows.svg
 ---
 
-Letting the user share the website they are on is a common advanced apps pattern
+Letting the user share the website they are on is a common web apps pattern
 that you can find on many news sites, blogs, or shopping sites. Since linking is
 one of the web's super powers, the hope is to acquire traffic from users who see
 the shared link on social networking sites, or who receive it via chat messages

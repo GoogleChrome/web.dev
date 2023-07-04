@@ -6,7 +6,7 @@ subhead: |
 authors:
   - jlwagner
   - philipwalton
-updated: 2023-05-09
+updated: 2023-05-19
 date: 2022-12-08
 hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/FV8Ls9SDF6UQ3v2IgKUw.jpg
 thumbnail: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/c2jPmJH5tCH2pnMq1CQu.jpg
@@ -75,7 +75,7 @@ If you're not relying on a RUM provider to get field data, the [INP field data g
 
 ### Diagnose slow interactions in the lab
 
-Ideally, you'll want to start testing in the lab once you have field data that suggests you have slow interactions.
+Ideally, you'll want to start testing in the lab once you have field data that suggests you have slow interactions. In the absence of field data, there are some strategies for identifying slow interactions in the lab. Such strategies include following common user flows and testing interactions along the way, as well as interacting with the page during load—when the main thread is often busiest—in order to surface slow interactions during that crucial part of the user experience.
 
 {% Aside 'objective' %}
 **Read to learn more:**&nbsp;[Diagnose slow interactions in the lab](/diagnose-slow-interactions-in-the-lab/).
@@ -90,6 +90,10 @@ Once you've identified a slow interaction and [can reproduce it in the lab](/dia
 3. The presentation delay, which is the time it takes for the browser to present the next frame which contains the visual result of the interaction.
 
 The sum of these three phases is the total interaction latency. Every single phase of an interaction contributes some amount of time to total interaction latency, so it's important to know how you can optimize each part of the interaction so it runs for as little time as possible.
+
+{% Aside 'important' %}
+When optimizing interactions, it's important to understand that each [browsing context](https://developer.mozilla.org/docs/Glossary/Browsing_context) will have its own main thread. This means that the top-level page will have a main thread, but each `<iframe>` element on the page will have its own main thread as well. INP will be reported at the page-level including any slow interactions on the page or any iframes within that page. Ensure you understand which frame an interaction is happening in, to understand which main thread to look at. However, even with multiple main threads, resource-constrained devices can result in impact being felt across these seemingly independent threads.
+{% endAside %}
 
 ### Identify and reduce input delay
 
@@ -183,9 +187,9 @@ While the use of `setTimeout()` inside a `requestAnimationFrame()` call in the p
 Layout thrashing—sometimes called forced synchronous layout—is a rendering performance problem where layout occurs synchronously. It occurs when you update styles in JavaScript, and then read them in the same task—and [there are many properties in JavaScript that can cause layout thrashing](https://gist.github.com/paulirish/5d52fb081b3570c81e3a).
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/2YZ1okUy3wtoJ0Y8wRtx.png", alt="A visualization of layout thrashing as shown in the performance panel of Chrome DevTools. The layout thrashing occurs in an event callback, thereby extending its latency.", width="730", height="656" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/06CXJcBsqO6kdj1Bjml7.png", alt="A visualization of layout thrashing as shown in the performance panel of Chrome DevTools.", width="800", height="336" %}
   <figcaption>
-    An example of layout thrashing, as shown in the performance panel of Chrome DevTools. Rendering tasks that involve layout thrashing will be noted with a red triangle at the upper right corner of the portion of the call stack, often labeled **Recalculate Style** or **Layout**.
+    An example of layout thrashing, as shown in the performance panel of Chrome DevTools. Rendering tasks that involve layout thrashing will be noted with a red triangle at the upper right corner of the portion of the call stack, often labeled <strong>Recalculate Style</strong> or <strong>Layout</strong>.
   </figcaption>
 </figure>
 
