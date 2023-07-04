@@ -12,7 +12,7 @@ tags:
 
 [AngularJS](http://angularjs.org) is an awesome JavaScript framework that gives you two-way data binding that's both easy to use and fast, a powerful directive system that lets you use create reusable custom components, plus a lot more. Socket.IO is a cross-browser wrapper and polyfill for websockets that makes developing real-time applications a breeze. Incidentally, the two work quite well together!
 
-I've written before about [writing an AngularJS app with Express](http://briantford.com/blog/angular-express.html), but this time I'll be writing about how to integrate <a href="">[Socket.IO](http://socket.io/) to add real-time features to an AngularJS application. In this tutorial, I'm going to walk through writing a instant messaging app. This builds upon my earlier tutorial (using a similar node.js stack on the server), so I recommend checking that out first if you're not familiar with Node.js or Express.
+I've written before about [writing an AngularJS app with Express](http://briantford.com/blog/angular-express.html), but this time I'll be writing about how to integrate [Socket.IO](http://socket.io/) to add real-time features to an AngularJS application. In this tutorial, I'm going to walk through writing a instant messaging app. This builds upon my earlier tutorial (using a similar node.js stack on the server), so I recommend checking that out first if you're not familiar with Node.js or Express.
 
 [Open the Demo](http://btford.angular-socket-io-im.jit.su/)
 

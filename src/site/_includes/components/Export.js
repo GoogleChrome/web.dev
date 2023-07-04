@@ -23,15 +23,17 @@ const path = require('path');
 
 const {findByUrl} = require('../../_filters/find-by-url');
 const {exportFile} = require('../../_utils/export-file');
+const {
+  pluck,
+  insert,
+  MULTI_LINE_CODE_PATTERN,
+  MULTI_LINE_CODE_PLACEHOLDER,
+  INLINE_CODE_PATTERN,
+  INLINE_CODE_PLACEHOLDER,
+} = require('../../_utils/pluck-insert');
 const authorValues = yaml.load(
   fs.readFileSync('./src/site/_data/i18n/authors.yml', 'utf-8'),
 );
-
-const MULTI_LINE_CODE_PATTERN = /```.*?```/gms;
-const INLINE_CODE_PATTERN = /`[^`]*`/g;
-
-const MULTI_LINE_CODE_PLACEHOLDER = 'MULTI_LINE_CODE_PLACEHOLDER';
-const INLINE_CODE_PLACEHOLDER = 'INLINE_CODE_PLACEHOLDER';
 
 const NESTED_MULTI_LINE_CODE_PATTERN = new RegExp(
   '<div( .*)?>[\\s\\S]*?<\\/div>',
@@ -45,25 +47,6 @@ const RAW_PLACEHOLDER = 'RAW_PLACEHOLDER';
  * Used to keep track of old URLs and their potential new URLs.
  */
 const exportUrls = new Map();
-
-function pluck(matches = [], pattern, placeholder, content) {
-  let index = 0;
-  content = content.replace(pattern, (match) => {
-    matches.push(match);
-    return `${placeholder}_${index++}`;
-  });
-
-  return content;
-}
-
-function insert(stack, placeholder, content) {
-  return content.replace(
-    new RegExp(`${placeholder}_(\\d+)`, 'g'),
-    (match, index) => {
-      return stack[index];
-    },
-  );
-}
 
 function transform(markdown) {
   // Pluck out code snippets to not accidentally alter code examples
@@ -197,17 +180,23 @@ ${
   // is currently used for web.dev
   const originalUrl = path.parse(this.ctx.page.url);
   let exportPath = originalUrl.dir;
+  // Make sure exportPath has a trailing slash, to safely append path segments
+  if (!exportPath.endsWith('/')) {
+    exportPath = `${exportPath}/`;
+  }
+
   if (tags.includes('case-study')) {
-    exportPath = path.join(exportPath, 'case-studies');
+    exportPath += 'case-studies/';
   } else if (tags.includes('new-to-the-web')) {
-    exportPath = path.join(exportPath, 'news');
+    exportPath += 'blog/';
   } else {
-    // Put everything else into the articles directory
-    exportPath = path.join(exportPath, 'articles');
+    // Put everything else from the blog the articles directory
+    exportPath += 'articles/';
   }
 
   // Add the export path to the exportUrls map, so we can construct a redirect map
-  exportUrls.set(this.ctx.page.url, `/${exportPath}/${originalUrl.name}`);
+  exportUrls.set(this.ctx.page.url, `${exportPath}/${originalUrl.name}`);
+  console.log(this.ctx.page.url, `${exportPath}/${originalUrl.name}`);
 
   const ctx = Object.assign({}, this.ctx, {export: true, exportPath});
 
@@ -236,4 +225,4 @@ ${
   return transformedMarkdown;
 }
 
-module.exports = {Export, exportUrls};
+module.exports = {Export, exportUrls, pluck, insert};

@@ -20,11 +20,10 @@ const yaml = require('js-yaml');
 const fs = require('fs');
 const path = require('path');
 const patterns = require('./src/lib/patterns').patterns();
-const zip = require('cross-zip');
-const fse = require('fs-extra');
 
 const markdown = require('./src/site/_plugins/markdown');
 const {exportFile} = require('./src/site/_utils/export-file');
+const {finalizeExport} = require('./src/site/_utils/finalize-export');
 
 // Shortcodes used in prose
 const Aside = require('./src/site/_includes/components/Aside');
@@ -245,13 +244,7 @@ module.exports = function (config) {
     });
   }
 
-  config.on('afterBuild', () => {
-    // Also zip the export directory for download.
-    console.log('Zipping export directory...');
-    // zip.zipSync('dist/_export', 'export.zip');
-    // console.log('Removing export directory...');
-    // fse.remove('dist/_export');
-  });
+  config.on('afterBuild', finalizeExport);
 
   // Because eleventy's passthroughFileCopy does not work with permalinks
   // we need to manually copy general assets ourselves using gulp.
