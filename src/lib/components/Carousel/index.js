@@ -72,6 +72,7 @@ export class Carousel extends BaseElement {
    * Event listener function for next button.
    */
   _next() {
+    console.log('BARRY - the button clicked!');
     this._scroll(true);
   }
 

@@ -82,7 +82,6 @@ describe('Carousel', function () {
 
   it('clicking on arrow scrolls carousel', async function () {
     const webCarousel = await setup();
-    await sleep();
 
     const carouselTrack = webCarousel._carouselTrack;
     const overflow =
@@ -91,13 +90,13 @@ describe('Carousel', function () {
     let previousScrollLeft = carouselTrack.scrollLeft + overflow;
     const nextButton = webCarousel._nextButton;
     const previousButton = webCarousel._previousButton;
-    console.log('BARRY', carouselTrack.parentElement.clientWidth);
+    console.log('BARRY1', carouselTrack.parentElement.clientWidth);
+    console.log('BARRY2', nextButton);
 
     // Check if next moves forward
     nextButton.click();
     await sleep();
-    const left = carouselTrack.scrollLeft;
-    console.log('BARRY', left, previousScrollLeft, overflow);
+    console.log('BARRY3', carouselTrack.scrollLeft, previousScrollLeft);
     expect(carouselTrack.scrollLeft).to.be.above(previousScrollLeft);
     previousScrollLeft = carouselTrack.scrollLeft + overflow; // Account for overflow
 
