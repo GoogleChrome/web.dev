@@ -34,6 +34,8 @@ const setup = async () => {
     /** @type {import('../../../../../../src/lib/components/Carousel/index').Carousel} */ (
       document.createElement('web-carousel')
     );
+  webCarousel.style.minWidth = '500px';
+  webCarousel.style.maxWidth = '500px';
 
   const divCarousel = document.createElement('div');
   divCarousel.classList.add('carousel');
@@ -41,8 +43,6 @@ const setup = async () => {
   const backButton = document.createElement('button');
   backButton.setAttribute('data-direction', 'prev');
   divCarousel.append(backButton);
-  divCarousel.style.minWidth = '500px';
-  divCarousel.style.maxWidth = '500px';
 
   const divCarouselTrack = document.createElement('div');
   divCarouselTrack.classList.add('carousel__track', 'reel');
@@ -97,6 +97,7 @@ describe('Carousel', function () {
     const previousButton = webCarousel._previousButton;
     console.log(
       'BARRY1',
+      webCarousel.clientWidth,
       carouselTrack.parentElement.clientWidth,
       carouselTrack.clientWidth,
     );

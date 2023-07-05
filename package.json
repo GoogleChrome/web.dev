@@ -45,7 +45,7 @@
     "test:integration": "mocha ./test/integration",
     "test:lib": "npx gulp sass && ELEVENTY_ENV=test npm-run-all rollup karma",
     "test:unit": "mocha ./test/unit",
-    "test": "npm-run-all test:unit test:lib test:integration",
+    "test": "npm-run-all rollup gulp test:unit test:lib test:integration",
     "translated": "node ./tools/update-translated/index.js",
     "updated": "node ./tools/update-updated/index.js",
     "version-check": "node version-check.js",
