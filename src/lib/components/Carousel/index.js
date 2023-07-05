@@ -127,6 +127,7 @@ export class Carousel extends BaseElement {
     console.log('BARRY._scroll', this._items.length);
     for (let i = 0; i < this._items.length; i++) {
       const item = this._items[i];
+      console.log('BARRY._scroll', i, item.clientWidth);
       const overflow =
         this._carouselTrack.parentElement.clientWidth -
         this._carouselTrack.clientWidth;
