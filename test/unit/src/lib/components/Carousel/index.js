@@ -82,6 +82,7 @@ describe('Carousel', function () {
 
   it('clicking on arrow scrolls carousel', async function () {
     const webCarousel = await setup();
+    await sleep();
 
     const carouselTrack = webCarousel._carouselTrack;
     const overflow =
