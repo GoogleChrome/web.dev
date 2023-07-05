@@ -96,6 +96,11 @@ describe('Carousel', function () {
     // Check if next moves forward
     nextButton.click();
     await sleep();
+    await sleep();
+    await sleep();
+    await sleep();
+    await sleep();
+    await sleep();
     console.log('BARRY3', carouselTrack.scrollLeft, previousScrollLeft);
     expect(carouselTrack.scrollLeft).to.be.above(previousScrollLeft);
     previousScrollLeft = carouselTrack.scrollLeft + overflow; // Account for overflow

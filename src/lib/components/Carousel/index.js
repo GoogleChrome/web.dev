@@ -124,6 +124,7 @@ export class Carousel extends BaseElement {
   }
 
   _scroll(forward = true) {
+    console.log('BARRY._scroll', this._items.length);
     for (let i = 0; i < this._items.length; i++) {
       const item = this._items[i];
       const overflow =
@@ -142,6 +143,7 @@ export class Carousel extends BaseElement {
         }
 
         const scrollTo = this._items[index];
+        console.log('BARRY._scroll', scrollTo, scrollTo.offsetLeft);
         return this._carouselTrack.scrollTo(scrollTo.offsetLeft, 0);
       }
     }
