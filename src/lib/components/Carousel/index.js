@@ -148,7 +148,11 @@ export class Carousel extends BaseElement {
           scrollTo.clientWidth,
           scrollTo.offsetLeft,
         );
-        this._carouselTrack.scrollTo(scrollTo.offsetLeft, 0);
+        this._carouselTrack.scrollTo({
+          left: scrollTo.offsetLeft,
+          top: 0,
+          behavior: 'instant',
+        });
         console.log('BARRY3._scroll', this._carouselTrack.scrollLeft);
         return this._carouselTrack;
       }
