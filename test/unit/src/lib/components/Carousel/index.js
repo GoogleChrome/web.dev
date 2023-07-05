@@ -91,7 +91,7 @@ describe('Carousel', function () {
     let previousScrollLeft = carouselTrack.scrollLeft + overflow;
     const nextButton = webCarousel._nextButton;
     const previousButton = webCarousel._previousButton;
-    console.log('BARRY', previousScrollLeft, overflow);
+    console.log('BARRY', carouselTrack.parentElement.clientWidth);
 
     // Check if next moves forward
     nextButton.click();
