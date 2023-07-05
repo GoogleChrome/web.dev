@@ -45,7 +45,7 @@ const setup = async () => {
 
   const divCarouselTrack = document.createElement('div');
   divCarouselTrack.classList.add('carousel__track', 'reel');
-  divCarouselTrack.style.overflowX = 'auto';
+  divCarouselTrack.style.overflowX = 'scroll';
   divCarouselTrack.setAttribute('data-scroll', 'snap');
 
   for (let i = 0; i < cardCount; i++) {
