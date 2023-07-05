@@ -44,6 +44,7 @@ const setup = async () => {
 
   const divCarouselTrack = document.createElement('div');
   divCarouselTrack.classList.add('carousel__track', 'reel');
+  divCarouselTrack.style.scrollBehavior = 'auto';
   divCarouselTrack.setAttribute('data-scroll', 'snap');
 
   for (let i = 0; i < cardCount; i++) {
@@ -95,11 +96,6 @@ describe('Carousel', function () {
 
     // Check if next moves forward
     nextButton.click();
-    await sleep();
-    await sleep();
-    await sleep();
-    await sleep();
-    await sleep();
     await sleep();
     console.log('BARRY3', carouselTrack.scrollLeft, previousScrollLeft);
     expect(carouselTrack.scrollLeft).to.be.above(previousScrollLeft);
