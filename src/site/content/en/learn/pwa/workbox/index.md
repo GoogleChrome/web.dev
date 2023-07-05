@@ -14,10 +14,10 @@ Some tasks that it can help with are matching caching strategies to paths (or ro
 
 Workbox can help you with managing your asset caching and serving needs. It's also the most used library for service workers; used by [54% of mobile sites](https://almanac.httparchive.org/en/2022/pwa#workbox-usage) and it is used in many build tools and CLIs, including the Angular CLI, Create-React-App, and Vue CLI. There are plugins to most other libraries and frameworks, too, such as Next.js.
 
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">54<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Mobile sites with service workers use the Workbox library</p>
+<div class="stats">
+  <div class="stat">
+    <p class="stat__figure">54<sub class="stat__sub">%</sub></p>
+    <p class="stat__desc">Mobile sites with service workers use the Workbox library</p>
   </div>
  </div>
 

@@ -16,8 +16,19 @@
 
 const cheerio = require('cheerio');
 const {html} = require('common-tags');
-const md = require('markdown-it')();
+const mdDefault = require('markdown-it')();
 const mdBlock = require('../../_filters/md-block');
+const md = require('markdown-it')({
+  html: true,
+  highlight: function (str, lang) {
+    // Some code snippets have line-highlights that are not supported on DevSite,
+    // they need to be removed.
+    const cleanLang = lang.split('/')[0];
+    return `<pre class="prettyprint lang-${cleanLang}">${
+      cleanLang === 'html' ? '{% htmlescape %}' : ''
+    }${str}${cleanLang === 'html' ? '{% endhtmlescape %}' : ''}</pre>`;
+  },
+});
 const fs = require('fs');
 const path = require('path');
 const yaml = require('js-yaml');
@@ -156,7 +167,7 @@ function responseTemplate(response) {
 
   return html`
     <web-response${typeSuffix} ${cardinalityAttr} ${correctAnswersAttr} ${columnsAttr} data-role="response">
-      <p data-role="stem">${md.renderInline(response.stem)}</p>
+      <p data-role="stem">${mdDefault.renderInline(response.stem)}</p>
       ${response.options.map(optionContentTemplate)}
       ${response.options.map(rationaleTemplate)}
     </web-response${typeSuffix}>
@@ -170,7 +181,7 @@ function optionContentTemplate(option) {
     return;
   }
   return html`
-    <span data-role="option">${md.renderInline(option.content)}</span>
+    <span data-role="option">${mdDefault.renderInline(option.content)}</span>
   `;
 }
 
@@ -181,18 +192,18 @@ function rationaleTemplate(option) {
     return;
   }
   return html`
-    <div data-role="rationale">${md.render(option.rationale)}</div>
+    <div data-role="rationale">${mdDefault.render(option.rationale)}</div>
   `;
 }
 
 /**
  * Gets the assessment object from the YAML file passed in the shortcode
  * and passes it to the template functions above.
- * @this {EleventyPage}
+ * @this {{env: Environment, ctx: Object}}
  * @param {TargetAssessment} targetAssessment
  * @returns
  */
-module.exports = function (targetAssessment) {
+function Assessment(targetAssessment) {
   if (!targetAssessment) {
     throw new Error(`
       Can't create Assessment component without a target assessment.
@@ -208,6 +219,41 @@ module.exports = function (targetAssessment) {
   );
   const data = fs.readFileSync(source, 'utf8');
   const assessment = yaml.safeLoad(data);
+
+  if (this.ctx.export) {
+    let html = `### Check your understanding {:.hide-from-toc}
+
+${assessment.setLeader}
+
+<div class="wd-assessment">`;
+    for (const question of assessment.questions) {
+      let questionBody = '';
+      if (question.stimulus) {
+        questionBody += `${question.stimulus}\n\n`;
+      }
+      questionBody += question.stem;
+      questionBody = md.render(questionBody);
+
+      const correctAnswers = question.correctAnswers.split(',').map(parseInt);
+
+      html += `<devsite-multiple-choice>\n`;
+      html += `   <div>${questionBody}</div>\n`;
+
+      for (let i = 0; i < question.options.length; i++) {
+        const option = question.options[i];
+        html += `<div${correctAnswers.includes(i) ? ' correct' : ''}>\n`;
+        html += `   <div>${md.renderInline(option.content)}</div>\n`;
+        html += `   <div>${md.renderInline(option.rationale)}</div>\n`;
+        html += `</div>\n`;
+      }
+
+      html += `</devsite-multiple-choice>\n`;
+    }
+
+    html += `</div>`;
+
+    return html;
+  }
 
   // prettier-ignore
   const content = html`
@@ -228,4 +274,6 @@ module.exports = function (targetAssessment) {
   });
 
   return html`${$.html()}`;
-};
+}
+
+module.exports = Assessment;

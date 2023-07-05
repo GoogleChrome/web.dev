@@ -30,7 +30,9 @@ const {finalizeExport} = require('./src/site/_utils/finalize-export');
 // Shortcodes used in prose
 const Aside = require('./src/site/_includes/components/Aside');
 const {Blockquote} = require('./src/site/_includes/components/Blockquote');
-const {BrowserCompat} = require('./src/site/_includes/components/BrowserCompat');
+const {
+  BrowserCompat,
+} = require('./src/site/_includes/components/BrowserCompat');
 const {Codepen} = require('./src/site/_includes/components/CodePen');
 const Compare = require('./src/site/_includes/components/Compare');
 const CompareCaption = require('./src/site/_includes/components/CompareCaption');

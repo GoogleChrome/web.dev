@@ -140,16 +140,31 @@ async function Export() {
   }
 
   const authors = page?.template?.frontMatter?.data.authors;
-  const frontMatter = [
-    'project_path: /_project.yaml',
-    'book_path: /_book.yaml',
-  ];
+  let frontMatter = {
+    project_path: '/_project.yaml',
+    book_path: '/_book.yaml',
+  };
 
   if (authors) {
-    frontMatter.push(`author_name: ${authorValues[authors[0]].title.en}`);
+    frontMatter.author_name = authorValues[authors[0]].title.en;
   }
 
-  const template = `${frontMatter.join('\n')}
+  const description = page?.template?.frontMatter?.data.description;
+  if (description) {
+    frontMatter.description = description;
+  }
+
+  // Assume everything under learn is a course page
+  if (this.ctx.page.url.startsWith('/learn')) {
+    frontMatter.page_type = 'course';
+  }
+
+  // Convert the front matter object into a string
+  frontMatter = Object.entries(frontMatter)
+    .map(([key, value]) => `${key}: ${value}`)
+    .join('\n');
+
+  const template = `${frontMatter}
 
 {% import "/_macros.html" as macros %}
 {% include "/_styles/style.md" %}
@@ -189,14 +204,14 @@ ${
     exportPath += 'case-studies/';
   } else if (tags.includes('new-to-the-web')) {
     exportPath += 'blog/';
-  } else {
-    // Put everything else from the blog the articles directory
+  } else if (exportPath === '/') {
+    // Put everything else that would otherwise be in the root into the articles folder
     exportPath += 'articles/';
   }
 
   // Add the export path to the exportUrls map, so we can construct a redirect map
-  exportUrls.set(this.ctx.page.url, `${exportPath}/${originalUrl.name}`);
-  console.log(this.ctx.page.url, `${exportPath}/${originalUrl.name}`);
+  exportUrls.set(this.ctx.page.url, `${exportPath}${originalUrl.name}`);
+  console.log(this.ctx.page.url, `${exportPath}${originalUrl.name}`);
 
   const ctx = Object.assign({}, this.ctx, {export: true, exportPath});
 

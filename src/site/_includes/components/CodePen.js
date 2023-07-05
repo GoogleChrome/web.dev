@@ -65,8 +65,7 @@ function Codepen(param) {
   const fallback = `See the Pen <a href="${url}">${title}</a>`;
 
   if (this.ctx.export) {
-    return `
-<div class="wd-embed" style="height: ${height}px; width: ${frameWidth}">
+    return `<div class="wd-embed" style="height: ${height}px; width: ${frameWidth}">
   ${iframe({src, title, allow: frameAllow, fallback})}
 </div>`;
   }

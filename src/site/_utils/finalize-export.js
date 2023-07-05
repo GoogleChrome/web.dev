@@ -46,7 +46,6 @@ function rewriteUrls() {
       return inputUrl;
     }
 
-    console.log('Rewriting URL:', inputUrl, exportUrls.get(url.pathname));
     return exportUrls.get(url.pathname) || inputUrl;
   }
 
@@ -99,9 +98,9 @@ function rewriteUrls() {
 /**
  */
 async function finalizeExport() {
-  await rewriteUrls();
+  // await rewriteUrls();
   // Also zip the export directory for download.
-  console.log('Zipping export directory...');
+  // console.log('Zipping export directory...');
   // zip.zipSync('dist/_export', 'export.zip');
   // console.log('Removing export directory...');
   // fse.remove('dist/_export');
