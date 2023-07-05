@@ -143,8 +143,14 @@ export class Carousel extends BaseElement {
         }
 
         const scrollTo = this._items[index];
-        console.log('BARRY._scroll', scrollTo.clientWidth, scrollTo.offsetLeft);
-        return this._carouselTrack.scrollTo(scrollTo.offsetLeft, 0);
+        console.log(
+          'BARRY2._scroll',
+          scrollTo.clientWidth,
+          scrollTo.offsetLeft,
+        );
+        this._carouselTrack.scrollTo(scrollTo.offsetLeft, 0);
+        console.log('BARRY3._scroll', this._carouselTrack.scrollLeft);
+        return this._carouselTrack;
       }
     }
   }
