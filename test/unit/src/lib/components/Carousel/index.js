@@ -44,11 +44,11 @@ const setup = async () => {
 
   const divCarouselTrack = document.createElement('div');
   divCarouselTrack.classList.add('carousel__track', 'reel');
-  divCarouselTrack.style.scrollBehavior = 'auto';
   divCarouselTrack.setAttribute('data-scroll', 'snap');
 
   for (let i = 0; i < cardCount; i++) {
     const cardDiv = document.createElement('div');
+    cardDiv.style.width = '100px';
     divCarouselTrack.append(cardDiv);
   }
 
