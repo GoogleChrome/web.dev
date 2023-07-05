@@ -20,11 +20,11 @@ require('../../../../../../src/lib/components/Carousel/index');
 
 const cardCount = 10;
 /**
- * Causes 600ms delay to allow UI changes, such as smooth scroll, to occur.
+ * Causes 1s delay to allow UI changes, such as smooth scroll, to occur.
  *
  * @returns Promise<void>
  */
-const sleep = () => new Promise((res) => setTimeout(res, 600));
+const sleep = () => new Promise((res) => setTimeout(res, 1000));
 
 /**
  * @returns {Promise<import('../../../../../../src/lib/components/Carousel/index').Carousel>}
