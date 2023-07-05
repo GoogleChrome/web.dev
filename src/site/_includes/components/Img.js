@@ -5,7 +5,7 @@ const {Img: BuildImgShortcode} = require('webdev-infra/shortcodes/Img');
 
 const {imgixDomain} = require('../../_data/site');
 const {exportFile} = require('../../_utils/export-file');
-const {getFile} = require('../../_utils/get-file');
+const {getImage} = require('../../_utils/get-file');
 
 /**
  * Takes an imgix url or path and generates an `<img>` element with `srcset`.
@@ -24,7 +24,7 @@ async function MetaImg(args) {
   }
 
   if (this.ctx?.export) {
-    const image = await getFile(generateImgixSrc(args.src, args.params));
+    const image = await getImage(generateImgixSrc(args.src, args.params));
 
     // And after it's cached we just copy it to the export directory.
     const parsedPath = path.parse(this.ctx.page.url);

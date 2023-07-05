@@ -18,7 +18,8 @@ const fse = require('fs-extra');
 const path = require('path');
 const fetch = require('node-fetch');
 
-const TMP_PATH = path.join(__dirname, '../../../..', '.tmp', 'img');
+const TMP_PATH = path.join(__dirname, '../../..', '.tmp', 'files');
+const TMP_PATH_IMAGE_MIN = path.join(__dirname, '../../..', '.tmp', 'images');
 
 /**
  * Downloads a file from the web or gets it from the cache
@@ -44,4 +45,40 @@ async function getFile(url) {
   return file;
 }
 
-module.exports = {getFile};
+async function imagemin(buffer) {
+  const imagemin = (await import('imagemin')).default;
+
+  const jpegRecompress = (await import('imagemin-jpeg-recompress')).default;
+  const pngquant = (await import('imagemin-pngquant')).default;
+
+  const image = await imagemin.buffer(buffer, {
+    plugins: [
+      jpegRecompress({
+        accurate: true,
+        quality: 'high',
+      }),
+      pngquant({quality: [0.7, 0.8]}),
+    ],
+  });
+
+  return image;
+}
+
+async function getImage(url) {
+  const parsedUrl = new URL(url);
+  const src = parsedUrl.pathname;
+  let file = null;
+  // Check if the file has already been downloaded and optimized,
+  // if not, download it and optimize it.
+  if (!fse.existsSync(path.join(TMP_PATH_IMAGE_MIN, src))) {
+    file = await getFile(url);
+    file = await imagemin(file);
+    await fse.outputFile(path.join(TMP_PATH_IMAGE_MIN, src), file);
+  } else {
+    file = await fse.readFile(path.join(TMP_PATH_IMAGE_MIN, src));
+  }
+
+  return file;
+}
+
+module.exports = {getFile, getImage};
