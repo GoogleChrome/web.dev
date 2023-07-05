@@ -1,14 +1,11 @@
-const fse = require('fs-extra');
 const path = require('path');
-const fetch = require('node-fetch');
 
 const {imgix: imgixFilter} = require('webdev-infra/filters/imgix');
 const {Img: BuildImgShortcode} = require('webdev-infra/shortcodes/Img');
 
 const {imgixDomain} = require('../../_data/site');
 const {exportFile} = require('../../_utils/export-file');
-
-const TMP_IMG_PATH = path.join(__dirname, '../../../..', '.tmp', 'img');
+const {getFile} = require('../../_utils/get-file');
 
 /**
  * Takes an imgix url or path and generates an `<img>` element with `srcset`.
@@ -27,25 +24,17 @@ async function MetaImg(args) {
   }
 
   if (this.ctx?.export) {
-    let image = null;
-    // For export we want to download the image, but only do so
-    // if it is not yet cached.
-    if (!fse.existsSync(path.join(TMP_IMG_PATH, args.src))) {
-      image = await fetch(generateImgixSrc(args.src, args.params));
-      image = await image.buffer();
-      await fse.outputFile(path.join(TMP_IMG_PATH, args.src), image);
-    }
-
-    if (!image) {
-      image = await fse.readFile(path.join(TMP_IMG_PATH, args.src));
-    }
+    const image = await getFile(generateImgixSrc(args.src, args.params));
 
     // And after it's cached we just copy it to the export directory.
     const parsedPath = path.parse(this.ctx.page.url);
-    await exportFile(this.ctx, image, path.join(this.ctx.exportPath, parsedPath.name, args.src));
+    await exportFile(
+      this.ctx,
+      image,
+      path.join(this.ctx.exportPath, parsedPath.name, args.src),
+    );
     // Instead of markdown img syntax we use HTML img syntax, to make sure
-    // that the image is rendered in <figures> and tables - height is omitted
-    // as the CMS does it's own thing with it.
+    // that the image is rendered in <figures> and tables
     return `<img src="${args.src}" alt="${args.alt}" width="${args.width}" height="${args.height}">`;
   }
 

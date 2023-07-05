@@ -23,6 +23,7 @@ const path = require('path');
 
 const {findByUrl} = require('../../_filters/find-by-url');
 const {exportFile} = require('../../_utils/export-file');
+const {getFile} = require('../../_utils/get-file');
 const {
   pluck,
   insert,
@@ -43,12 +44,61 @@ const NESTED_MULTI_LINE_CODE_PATTERN = new RegExp(
 const RAW_SHORTCODE_PATTERN = /{% raw %}(.*?){% endraw %}/gm;
 const RAW_PLACEHOLDER = 'RAW_PLACEHOLDER';
 
+const VIDEO_POSTER_PATTERN = /poster="(.*?)"/gm;
+const VIDEO_SOURCE_PATTERN = /<source\s+src=(?:'|")(.*?)(?:'|")\s/gm;
+
 /**
  * Used to keep track of old URLs and their potential new URLs.
  */
 const exportUrls = new Map();
 
-function transform(markdown) {
+/**
+ * Downloads video source files and poster images,
+ * and updates the markdown to point to the new files.
+ * @param {Object} ctx
+ * @param {String} markdown
+ * @param {RegExp} pattern
+ */
+async function transformVideoAssets(ctx, markdown, pattern, pathPrefix) {
+  let exportPath = path.join(ctx.exportPath, ctx.exportName);
+  if (pathPrefix) {
+    exportPath = path.join(exportPath, pathPrefix);
+  }
+
+  // Replace is sync, so we need to keep track of the promises outside
+  // of the replace
+  const downloads = [];
+
+  // Replace and download poster images
+  markdown = markdown.replace(pattern, (match, srcUrl) => {
+    // First check if the poster image points to a local file anyway,
+    // then just return the match and do nothing - that's the case for patterns
+    if (!srcUrl.startsWith('http')) {
+      return match;
+    }
+
+    const parsedSrcUrl = new URL(srcUrl);
+    let assetPath = parsedSrcUrl.pathname;
+    assetPath = assetPath.replace('/web-dev-uploads/video/', '');
+
+    downloads.push(
+      (async () => {
+        const posterImage = await getFile(srcUrl);
+        await exportFile(ctx, posterImage, path.join(exportPath, assetPath));
+      })(),
+    );
+
+    // Update the poster URL to point to the new location
+    return match.replace(srcUrl, `video/${assetPath}`);
+  });
+
+  // Await all open downloads and file writes
+  await Promise.all(downloads);
+
+  return markdown;
+}
+
+async function transform(ctx, markdown) {
   // Pluck out code snippets to not accidentally alter code examples
   const codeBlocks = [];
   markdown = pluck(
@@ -63,6 +113,16 @@ function transform(markdown) {
     INLINE_CODE_PATTERN,
     INLINE_CODE_PLACEHOLDER,
     markdown,
+  );
+
+  // Download video and poster sources - done here instead of on shortcode
+  // level as there are also a lot of literal video tags
+  markdown = await transformVideoAssets(ctx, markdown, VIDEO_POSTER_PATTERN);
+  markdown = await transformVideoAssets(
+    ctx,
+    markdown,
+    VIDEO_SOURCE_PATTERN,
+    'video',
   );
 
   // Remove the float-left and float-right classes as they are not used on web.dev
@@ -149,20 +209,18 @@ async function Export() {
     frontMatter.author_name = authorValues[authors[0]].title.en;
   }
 
-  const description = page?.template?.frontMatter?.data.description;
-  if (description) {
-    frontMatter.description = description;
-  }
-
   // Assume everything under learn is a course page
   if (this.ctx.page.url.startsWith('/learn')) {
     frontMatter.page_type = 'course';
   }
 
+  const description = page?.template?.frontMatter?.data.description;
+  if (description) {
+    frontMatter.description = description.trim();
+  }
+
   // Convert the front matter object into a string
-  frontMatter = Object.entries(frontMatter)
-    .map(([key, value]) => `${key}: ${value}`)
-    .join('\n');
+  frontMatter = yaml.dump(frontMatter, {noArrayIndent: true});
 
   const template = `${frontMatter}
 
@@ -211,9 +269,12 @@ ${
 
   // Add the export path to the exportUrls map, so we can construct a redirect map
   exportUrls.set(this.ctx.page.url, `${exportPath}${originalUrl.name}`);
-  console.log(this.ctx.page.url, `${exportPath}${originalUrl.name}`);
 
-  const ctx = Object.assign({}, this.ctx, {export: true, exportPath});
+  const ctx = Object.assign({}, this.ctx, {
+    export: true,
+    exportPath,
+    exportName: originalUrl.name,
+  });
 
   let markdown = await new Promise((resolve) => {
     console.log('Rendering template', pageUrl);
@@ -231,13 +292,14 @@ ${
   // to DevSite compatible `{% verbatim %}` tags in the transform method
   markdown = insert(rawShortcodes, RAW_PLACEHOLDER, markdown);
 
-  const transformedMarkdown = template + transform(markdown);
+  const transformedMarkdown = await transform(ctx, markdown);
+  const renderdPage = template + transformedMarkdown;
 
   // Note: the following lines can be altered to produce any directory scheme
   // that is convenient for the migration
-  await exportFile(ctx, transformedMarkdown);
+  await exportFile(ctx, renderdPage);
 
-  return transformedMarkdown;
+  return renderdPage;
 }
 
 module.exports = {Export, exportUrls, pluck, insert};
