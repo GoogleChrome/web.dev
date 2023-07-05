@@ -41,7 +41,8 @@ const setup = async () => {
   const backButton = document.createElement('button');
   backButton.setAttribute('data-direction', 'prev');
   divCarousel.append(backButton);
-  divCarousel.style.width = '500px';
+  divCarousel.style.minWidth = '500px';
+  divCarousel.style.maxWidth = '500px';
 
   const divCarouselTrack = document.createElement('div');
   divCarouselTrack.classList.add('carousel__track', 'reel');
@@ -50,7 +51,8 @@ const setup = async () => {
 
   for (let i = 0; i < cardCount; i++) {
     const cardDiv = document.createElement('div');
-    cardDiv.style.width = '100px';
+    cardDiv.style.minWidth = '100px';
+    cardDiv.style.maxWidth = '100px';
     divCarouselTrack.append(cardDiv);
   }
 
