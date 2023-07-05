@@ -20,11 +20,11 @@ require('../../../../../../src/lib/components/Carousel/index');
 
 const cardCount = 10;
 /**
- * Causes 1s delay to allow UI changes, such as smooth scroll, to occur.
+ * Causes 600ms delay to allow UI changes, such as smooth scroll, to occur.
  *
  * @returns Promise<void>
  */
-const sleep = () => new Promise((res) => setTimeout(res, 1000));
+const sleep = () => new Promise((res) => setTimeout(res, 600));
 
 /**
  * @returns {Promise<import('../../../../../../src/lib/components/Carousel/index').Carousel>}
@@ -90,10 +90,13 @@ describe('Carousel', function () {
     let previousScrollLeft = carouselTrack.scrollLeft + overflow;
     const nextButton = webCarousel._nextButton;
     const previousButton = webCarousel._previousButton;
+    console.log('BARRY', previousScrollLeft, overflow);
 
     // Check if next moves forward
     nextButton.click();
     await sleep();
+    const left = carouselTrack.scrollLeft;
+    console.log('BARRY', left, previousScrollLeft, overflow);
     expect(carouselTrack.scrollLeft).to.be.above(previousScrollLeft);
     previousScrollLeft = carouselTrack.scrollLeft + overflow; // Account for overflow
 
