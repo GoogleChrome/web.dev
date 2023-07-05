@@ -41,6 +41,7 @@ const setup = async () => {
   const backButton = document.createElement('button');
   backButton.setAttribute('data-direction', 'prev');
   divCarousel.append(backButton);
+  divCarousel.style.width = '500px';
 
   const divCarouselTrack = document.createElement('div');
   divCarouselTrack.classList.add('carousel__track', 'reel');
