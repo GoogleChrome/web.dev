@@ -29,7 +29,7 @@ const filterByLang = require('../../_filters/filter-by-lang');
 const feed = (items) => {
   const filteredFeed = [];
 
-  if (!['prod', 'staging'].includes(process.env.ELEVENTY_ENV)) {
+  if (!['prod', 'staging', 'test'].includes(process.env.ELEVENTY_ENV)) {
     return filteredFeed;
   }
 
