@@ -28,11 +28,22 @@ async function exportFile(ctx, data = undefined, customFilePath = undefined) {
   let filePath = customFilePath;
   if (!filePath) {
     filePath = ctx.exportPath;
-    // Assume we are only writing .md files - images are written into directories,
-    // so if one is present we need to add an index.md to the path.
+    // Assume we are only writing .md files, assets gets a forced customFilePath
+    // Always check if a .md file with the same name exists, and if it does,
+    // rename it and make it the folders index.md
     if (fse.existsSync(path.join(BASE_PATH, filePath, ctx.page.fileSlug))) {
       filePath = `${filePath}/${ctx.page.fileSlug}/index.md`;
     } else {
+      // Check if there is a {filePath}.md file and move it to {filePath}/index.md
+      // if that's the case
+      const filePathStub = filePath.replace(/\/$/, '');
+      if (fse.existsSync(`${path.join(BASE_PATH, filePathStub)}.md`)) {
+        await fse.move(
+          path.join(BASE_PATH, `${filePath}.md`),
+          path.join(BASE_PATH, `${filePath}/index.md`),
+        );
+      }
+
       filePath = `${filePath}/${ctx.page.fileSlug}.md`;
     }
   }

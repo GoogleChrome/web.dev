@@ -85,7 +85,7 @@ and other disabilities.
     * [Orca](https://wiki.gnome.org/Projects/Orca) (Linux)
     * [VoiceOver](https://www.apple.com/accessibility/vision/) (macOS)
 * Mobile
-    * [TalkBack](https://support.google.com/accessibility/android/answer/6283677?hl=en) (Android)
+    * [TalkBack](https://support.google.com/accessibility/android/answer/6283677) (Android)
     * [VoiceOver](https://www.apple.com/accessibility/vision/) (iOS)
 * [Screen Reader Keyboard Shortcuts and Gestures](https://dequeuniversity.com/screenreaders/)
 
