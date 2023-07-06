@@ -120,7 +120,7 @@ jobs:
 
       - name: Packing up built files
         run: |
-          tar cfj dist.tar.gz ./dist
+          cp firebase.json dist && tar cfj dist.tar.gz ./dist
 
       - name: Storing build artifacts
         uses: actions/upload-artifact@v3
@@ -168,7 +168,7 @@ jobs:
       - name: Unpacking built files
         if: ${{ steps.changes.outputs.frontend == 'true' }}
         run: |
-          tar xf dist.tar.gz
+          tar xf dist.tar.gz && mv ./dist/firebase.json .
 
       - name: Lighthouse
         if: ${{ steps.changes.outputs.frontend == 'true' }}
