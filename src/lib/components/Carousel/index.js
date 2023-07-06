@@ -72,7 +72,6 @@ export class Carousel extends BaseElement {
    * Event listener function for next button.
    */
   _next() {
-    console.log('BARRY - the button clicked!');
     this._scroll(true);
   }
 
@@ -124,21 +123,11 @@ export class Carousel extends BaseElement {
   }
 
   _scroll(forward = true) {
-    console.log('BARRY._scroll', this._items.length);
     for (let i = 0; i < this._items.length; i++) {
       const item = this._items[i];
       const overflow =
         this._carouselTrack.parentElement.clientWidth -
         this._carouselTrack.clientWidth;
-      console.log(
-        'BARRY1._scroll',
-        i,
-        this._carouselTrack.scrollLeft,
-        overflow,
-        item.clientWidth,
-        item.offsetLeft,
-        item.offsetWidth,
-      );
       if (
         this._carouselTrack.scrollLeft + overflow <=
         item.offsetLeft + item.offsetWidth
@@ -152,17 +141,7 @@ export class Carousel extends BaseElement {
         }
 
         const scrollTo = this._items[index];
-        console.log(
-          'BARRY2._scroll',
-          scrollTo.clientWidth,
-          scrollTo.offsetLeft,
-        );
-        this._carouselTrack.scrollTo({
-          left: scrollTo.offsetLeft,
-          top: 0,
-          behavior: 'instant',
-        });
-        console.log('BARRY3._scroll', this._carouselTrack.scrollLeft);
+        this._carouselTrack.scrollTo(scrollTo.offsetLeft, 0);
         return this._carouselTrack;
       }
     }

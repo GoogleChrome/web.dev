@@ -34,8 +34,6 @@ const setup = async () => {
     /** @type {import('../../../../../../src/lib/components/Carousel/index').Carousel} */ (
       document.createElement('web-carousel')
     );
-  webCarousel.style.minWidth = '500px';
-  webCarousel.style.maxWidth = '500px';
 
   const divCarousel = document.createElement('div');
   divCarousel.classList.add('carousel');
@@ -46,13 +44,10 @@ const setup = async () => {
 
   const divCarouselTrack = document.createElement('div');
   divCarouselTrack.classList.add('carousel__track', 'reel');
-  divCarouselTrack.style.overflowX = 'scroll';
   divCarouselTrack.setAttribute('data-scroll', 'snap');
 
   for (let i = 0; i < cardCount; i++) {
     const cardDiv = document.createElement('div');
-    cardDiv.style.minWidth = '100px';
-    cardDiv.style.maxWidth = '100px';
     divCarouselTrack.append(cardDiv);
   }
 
@@ -95,18 +90,10 @@ describe('Carousel', function () {
     let previousScrollLeft = carouselTrack.scrollLeft + overflow;
     const nextButton = webCarousel._nextButton;
     const previousButton = webCarousel._previousButton;
-    console.log(
-      'BARRY1',
-      webCarousel.clientWidth,
-      carouselTrack.parentElement.clientWidth,
-      carouselTrack.clientWidth,
-    );
-    console.log('BARRY2', nextButton);
 
     // Check if next moves forward
     nextButton.click();
     await sleep();
-    console.log('BARRY3', carouselTrack.scrollLeft, previousScrollLeft);
     expect(carouselTrack.scrollLeft).to.be.above(previousScrollLeft);
     previousScrollLeft = carouselTrack.scrollLeft + overflow; // Account for overflow
 
