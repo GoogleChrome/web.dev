@@ -181,7 +181,7 @@ or `<label>` either. While the HTML page will still render, nesting focusable an
 
 ## Links and JavaScript
 
-The `links` attribute returns an `HTMLCollection` matching `a` and `area` elements that have an `href` attribute.
+The `links` property returns an `HTMLCollection` matching `a` and `area` elements that have an `href` attribute.
 
 ```js
 let a = document.links[0]; // obtain the first link in the document
