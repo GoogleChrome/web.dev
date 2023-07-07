@@ -198,7 +198,7 @@ The impact of cached content does not just affect those using CDNs. Server infra
 
 ### Avoid multiple page redirects
 
-One common contributor to a high TTFB is [redirects](https://developer.mozilla.org/docs/Web/HTTP/Redirections). Redirects occur when a navigation request for a document receives a response that informs the browser that the resource exists at another location. One redirect can certainly add unwanted latency to a navigation request, but it can certainly get worse if that redirect points to another resource that results in _another_ redirect—and so on. This can particularly impact sites that receive high volumes of visitors from advertisements or newsletters, since they often redirect via analytics services for measurement purposes. Eliminating redirects under your direct control can help to achieve a good LCP.
+One common contributor to a high TTFB is [redirects](https://developer.mozilla.org/docs/Web/HTTP/Redirections). Redirects occur when a navigation request for a document receives a response that informs the browser that the resource exists at another location. One redirect can certainly add unwanted latency to a navigation request, but it can certainly get worse if that redirect points to another resource that results in _another_ redirect—and so on. This can particularly impact sites that receive high volumes of visitors from advertisements or newsletters, since they often redirect via analytics services for measurement purposes. Eliminating redirects under your direct control can help to achieve a good TTFB.
 
 There are two types of redirects:
 
