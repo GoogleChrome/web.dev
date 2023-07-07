@@ -33,7 +33,7 @@ Determining whether to eliminate unnecessary downloads often requires a lot of c
 
 ## Effects on Core Web Vitals
 
-The Core Web Vitals initative was introduced by Google to provide a set of metrics that accurately reflect what users are experiencing as they use the web. While there are many optimization strategies for Core Web Vitals, questioning whether to load a particular resource on a page may light a path for you to improve these metrics on your website. Below are a few examples—grouped by each Core Web Vital—that are worth your consideration. Though this isn't an exhaustive list of examples (and there are many!), reading them over may give you food for thought.
+The Core Web Vitals initative was introduced by Google to provide a set of metrics that reflect what users are experiencing as they use the web. While there are many optimization strategies for Core Web Vitals, questioning whether to load a particular resource on a page may light a path for you to improve these metrics on your website. Below are a few examples—grouped by each Core Web Vital—that are worth your consideration. Though this isn't an exhaustive list of examples (and there are many!), reading them over may give you food for thought.
 
 ### Largest Contentful Paint (LCP)
 
