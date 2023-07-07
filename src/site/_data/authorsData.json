@@ -1800,5 +1800,13 @@
   "ddworken": {
     "country": "US",
     "image": "image/udVScdcCFAdRjZwFdLk2jWAFQyr1/n7JbFJPZgqVm1n60t62o.jpeg"
+  },
+  "ramona": {
+    "country": "DE",
+    "image": "image/dPDCek3EhZgLQPGtEG3y0fTn4v82/hjHClXNZeQ3CvWUMMgIr.jpg",
+    "twitter": "leichteckig",
+    "github": "leichteckig",
+    "linkedin": "https://www.linkedin.com/in/ramona-schwering/",
+    "homepage": "https://www.ramona.codes/"
   }
 }
