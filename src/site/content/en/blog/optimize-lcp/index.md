@@ -93,7 +93,7 @@ A large delta between FCP and LCP indicates that the LCP resource is either not 
 
 The Lighthouse section of PageSpeed Insights offers some guidance to improving LCP, but first you should check if the LCP given is broadly inline with real user data provided by CrUX.
 
-If Lighthouse is showing no LCP issue, but the CrUX data is, then any Lighthouse suggestions may not be relevant. The opposite is also true—if Lighthouse is showing a really poor LCP time, but CrUX data is showing your users mostly have a good LCP, then it may not be necessary to further improve LCP. Just be sure to check that the CrUX data is for this page and not for the full origin as detailed above.
+If Lighthouse is showing no LCP issue, but the CrUX data is, then any Lighthouse suggestions may not be relevant. The opposite is also true—if Lighthouse is showing a really poor LCP time, but CrUX data is showing your users mostly have a good LCP, then you may wish to consider the priority of optimizing LCP further, or if time is better spent on other performance improvements. Also be sure to check that the CrUX data is for this page and not for the full origin as detailed above.
 
 If both sources of data are showing an LCP that should be improved than the Lighthouse section can provide valuable guidance on ways to improve LCP. Use the LCP filter to only show audits relevant to LCP:
 
