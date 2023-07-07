@@ -25,7 +25,7 @@ The fastest and best-optimized resource is a resource not sent. You should elimi
 Too often, pages contain resources that are unnecessary, or worse, that hinder page performance without delivering much value to the visitor or to the site they're hosted on. This applies equally to first-party and third-party resources and widgets:
 
 - Site A has decided to display a photo carousel on its homepage to allow the visitor to preview multiple photos with a quick click. All of the photos are loaded when the page is loaded, and the user advances through the photos.
-  - **Question:** Have you measured how many users view multiple photos in the carousel? You might be incurring high overhead by downloading resources that most visitors never view. This is a key scenario in which lazy loading—[images in this case](/browser-level-image-lazy-loading/)—can be used effectively to reduce overall load time and divert much needed bandwidth to other key resources on the page that the user is more likely to benefit from.
+  - **Question:** Have you measured how many users view multiple photos in the carousel? You might be incurring high overhead by downloading resources that most visitors never view.
 - Site B has decided to install a third-party widget to display related content, improve social engagement, or provide some other service.
   - **Question:** Have you tracked how many visitors use the widget or click-through on the content that the widget provides? Is the engagement that this widget generates enough to justify its overhead? Furthermore, is it feasible for you to use a loading strategy to ensure [the script isn't loaded until it's needed](/reduce-javascript-payloads-with-code-splitting/)?
 
