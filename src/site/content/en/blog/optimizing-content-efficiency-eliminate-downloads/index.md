@@ -37,7 +37,7 @@ The Core Web Vitals initative was introduced by Google to provide a set of metri
 
 ### Largest Contentful Paint (LCP)
 
-[Largest Contentful Paint (LCP)](/lcp/) measures when the largest text node, image, or video with a `poster` image loads. It's considered an important perceptual metric that gives the user the impression that a site is loading quickly.
+[Largest Contentful Paint (LCP)](/lcp/) measures when the largest content (for example a hero image, or a headline) is loaded. It's considered an important perceptual metric that gives the user the impression that a site is loading quickly.
 
 In general, downloading less resources means that the bandwidth the user does have will be allocated across less resources, and may translate to an improvement in LCP. A classic example is that of lazy loading, where images outside of the viewport during page load will not be downloaded until the browser has determined the user is more likely to see them. If you have a large thumbnail gallery of, say, 50 images, lazy loading all but the top ten of them means that the browser can make more efficient use of the bandwidth available to it, and the remaining images will load more quickly.
 
