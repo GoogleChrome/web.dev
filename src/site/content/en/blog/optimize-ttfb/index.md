@@ -53,14 +53,18 @@ Before you can optimize TTFB, you need to observe how it affects your website's 
 
 TTFB for real users is shown in the top **Discover what your real users are experiencing** section:
 
-{% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/enRFus2GE24gvchY9fdV.png", alt="PageSpeed Insights real user data", width="800", height="478" %}
+<figure>
+  {% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/enRFus2GE24gvchY9fdV.png", alt="PageSpeed Insights real user data", width="800", height="478" %}
+</figure>
 
-A subset of TTFB is shown in the [server respponse time audit](https://developer.chrome.com/docs/lighthouse/performance/server-response-time/):
+A subset of TTFB is shown in the [server response time audit](https://developer.chrome.com/docs/lighthouse/performance/server-response-time/):
 
-{% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/SYH4MlnwyQtWoeGNRmHh.png", alt="Server respponse time audit", width="800", height="213" %}
+<figure>
+  {% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/SYH4MlnwyQtWoeGNRmHh.png", alt="Server response time audit", width="800", height="213" %}
+</figure>
 
 {% Aside 'important' %}
-The server response time audit in Lighthouse excludes DNS lookup and redirect times so is only a subset of TTFB. A large difference between real user data and Lighthouse data can indicate issues not apparent during the lab run, such as redirects or network differences.
+The server response time audit in Lighthouse excludes DNS lookup and redirect times, so it only represents a subset of TTFB. A large difference between real user data and Lighthouse data can indicate issues not apparent during the lab run, such as redirects or network differences.
 {% endAside %}
 
 To find out more ways how to measure TTFB in both the field and the lab, [consult the TTFB metric page](/ttfb/#how-to-measure-ttfb).
@@ -182,32 +186,28 @@ While adopting a CDN involves a varying amount of effort from trivial to signifi
 
 ### Used cached content where possible
 
-CDNs allow content to be cached at edge nodes, closer to visitors, if the content is configured with the appropriate [`Cache-Control` HTTP headers](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control). While this is not appropriate for personalised content, requiring a trip all the way back to the origin can negate much of the value of a CDN.
+CDNs allow content to be cached at edge servers which are located physically closer to visitors, provided the content is configured with the appropriate [`Cache-Control` HTTP headers](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control). While this is not appropriate for personalized content, requiring a trip all the way back to the origin can negate much of the value of a CDN.
 
-For sites that frequently update their content, even a short caching time can result in noticable performance gains for busy sites as only the first visitor during that time pays the full price, while all other visitors can use the cached resource. Some CDNs allow cache invalidation on site releases allowing the best of both worlds—long cache times, but insteant updates when needed.
+For sites that frequently update their content, even a short caching time can result in noticable performance gains for busy sites, since only the first visitor during that time experiences the fully latency back to the origin server, while all other visitors can reuse the cached resource from the edge server. Some CDNs allow cache invalidation on site releases allowing the best of both worlds—long cache times, but instant updates when needed.
 
-Even where caching is correctly configured, this can be ignored through the use of unique query params for analytics measurement. These may look like different content to the CDN despite being the same, and so the cached version will not be used.
+Even where caching is correctly configured, this can be ignored through the use of unique query string parameters for analytics measurement. These may look like different content to the CDN despite being the same, and so the cached version will not be used.
 
-Older, or less visited content, may also not be cached which can result in higher TTFBs on some pages than others. Increasing caching times can reduce the impact of this.
+Older or less visited content may also not be cached, which can result in higher TTFB values on some pages than others. Increasing caching times can reduce the impact of this, but be aware that with increased caching times comes a greater possibility of serving potentially stale content.
 
-The impact of cached content does not just affect those using CDNs. Server infrastructure may need to generate content from costly database lookups when cached content cannot be reused. More frequently accessed data, or pre-cached pages can often perform better.
+The impact of cached content does not just affect those using CDNs. Server infrastructure may need to generate content from costly database lookups when cached content cannot be reused. More frequently accessed data or precached pages can often perform better.
 
 ### Avoid multiple page redirects
 
-One common contributor to a high TTFB is [redirects](https://developer.mozilla.org/docs/Web/HTTP/Redirections). Redirects occur when a navigation request for a document receives a response that informs the browser that the resource exists at another location. One redirect can certainly add unwanted latency to a navigation request, but it can certainly get worse if that redirect points to another resource that results in _another_ redirect—and so on.
-
-This can particularly impact sites that receive high volumes of visitors from advertisements or newsletters, since they often redirect via analytics services for measurement purposes.
-
-Redirect time, is a direct reduction in remaining time to achieve a good LCP.
+One common contributor to a high TTFB is [redirects](https://developer.mozilla.org/docs/Web/HTTP/Redirections). Redirects occur when a navigation request for a document receives a response that informs the browser that the resource exists at another location. One redirect can certainly add unwanted latency to a navigation request, but it can certainly get worse if that redirect points to another resource that results in _another_ redirect—and so on. This can particularly impact sites that receive high volumes of visitors from advertisements or newsletters, since they often redirect via analytics services for measurement purposes. Eliminating redirects under your direct control can help to achieve a good LCP.
 
 There are two types of redirects:
 
 - **Same-origin redirects**, where the redirect occurs entirely on your website.
 - **Cross-origin redirects**, where the redirect occurs initially on another origin—such as from a social media URL shortening service, for example—before arriving at your website.
 
-You want to focus on eliminating same-origin redirects, as this is something you will have direct control over. This would involve checking links on your website to see if any of them result in a 302 or 301 response code. Often this can be the result of not including the `https://` scheme (so browsers default to `http://` which then redirects) or because trailing slashes are not appropriately included or excluded in the URL (for example, visiting this page via [https://web.dev/optimize-ttfb](/optimize-ttfb) (without the final slash) works but requires a redirect to [https://web.dev/optimize-ttfb/](/optimize-ttfb/)) (with the final slash).
+You want to focus on eliminating same-origin redirects, as this is something you will have direct control over. This would involve checking links on your website to see if any of them result in a `302` or `301` response code. Often this can be the result of not including the `https://` scheme (so browsers default to `http://` which then redirects) or because trailing slashes are not appropriately included or excluded in the URL (for example, visiting this page via [https://web.dev/optimize-ttfb](/optimize-ttfb) (without the final slash) works but requires a redirect to [https://web.dev/optimize-ttfb/](/optimize-ttfb/)) (with the final slash).
 
-Cross-origin redirects are trickier as these are often outside of your control, but try to avoid multiple redirects where possible - for example, by using multiple link shorteners when sharing links. Ensure the URL provided to advertisers or newsletters is the correct final URL, so as not to add another redirect to the ones used by those services.
+Cross-origin redirects are trickier as these are often outside of your control, but try to avoid multiple redirects where possible—for example, by using multiple link shorteners when sharing links. Ensure the URL provided to advertisers or newsletters is the correct final URL, so as not to add another redirect to the ones used by those services.
 
 Another important source of redirect time can come from HTTP-to-HTTPS redirects. One way you can get around this is to use the [`Strict-Transport-Security` header](https://developer.mozilla.org/docs/Web/HTTP/Headers/Strict-Transport-Security) (HSTS), which will enforce HTTPS on the first visit to an origin, and then will tell the browser to immediately access the origin through the HTTPS scheme on future visits.
 
