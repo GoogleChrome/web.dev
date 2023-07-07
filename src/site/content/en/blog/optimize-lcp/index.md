@@ -6,7 +6,7 @@ authors:
   - philipwalton
   - tunetheweb
 date: 2020-05-05
-updated: 2023-07-06
+updated: 2023-07-07
 hero: image/admin/qqTKhxUFqdLXnST2OFWN.jpg
 alt: Optimize LCP banner
 description: |
