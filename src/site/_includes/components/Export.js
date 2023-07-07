@@ -209,6 +209,16 @@ async function Export() {
     frontMatter.author_name = authorValues[authors[0]].title.en;
   }
 
+  // Set the refresh
+  let updatedAt = page?.template?.frontMatter?.data.updated_at;
+  if (!updatedAt) {
+    updatedAt = page?.template?.frontMatter?.data.date;
+  }
+
+  if (updatedAt) {
+    frontMatter.refresh_date = new Date(updatedAt).toISOString().split('T')[0];
+  }
+
   // Assume everything under learn is a course page
   if (this.ctx.page.url.startsWith('/learn')) {
     frontMatter.page_type = 'course';
@@ -221,6 +231,12 @@ async function Export() {
 
   // Convert the front matter object into a string
   frontMatter = yaml.dump(frontMatter, {noArrayIndent: true});
+  // Why DevSite expects a string for refresh_date, it actually
+  // does not want it to be quoted in the front matter
+  frontMatter = frontMatter.replace(
+    /refresh_date: '(.*?)'/g,
+    'refresh_date: $1',
+  );
 
   const template = `${frontMatter}
 
@@ -293,13 +309,11 @@ ${
   markdown = insert(rawShortcodes, RAW_PLACEHOLDER, markdown);
 
   const transformedMarkdown = await transform(ctx, markdown);
-  const renderdPage = template + transformedMarkdown;
+  const renderedPage = template + transformedMarkdown;
 
-  // Note: the following lines can be altered to produce any directory scheme
-  // that is convenient for the migration
-  await exportFile(ctx, renderdPage);
+  await exportFile(ctx, renderedPage);
 
-  return renderdPage;
+  return renderedPage;
 }
 
 module.exports = {Export, exportUrls, pluck, insert};

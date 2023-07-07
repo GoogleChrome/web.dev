@@ -152,7 +152,7 @@ You'll learn more about updating in the [Update chapter](/learn/pwa/update).
 You can play with Workbox right away using the following code lab:
 
 {% Aside 'codelab' %}
-[Working With Workbox](https://developers.google.com/codelabs/pwa-training/pwa03--working-with-workbox?hl=pt#).
+[Working With Workbox](https://developers.google.com/codelabs/pwa-training/pwa03--working-with-workbox).
 {% endAside %}
 
 ## Resources

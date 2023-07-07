@@ -18,7 +18,7 @@ to get an overview of where your form may need improvements.
 
 After analytics is up and running for your site, 
 you can monitor 
-[bounce rate](https://support.google.com/analytics/answer/1009409?hl=en) 
+[bounce rate](https://support.google.com/analytics/answer/1009409) 
 and other metrics for every page with a form within your site. 
 If the bounce rate is high, users may be leaving your site without submitting the form. 
 There are many potential reasons why this happens: 
@@ -36,7 +36,7 @@ To get a clearer picture of a high bounce rate, you can define
 [goals](https://support.google.com/analytics/answer/1012040) 
 to identify in detail where users leave your form.
 
-A [goal funnel](https://support.google.com/analytics/answer/1012040?hl=en&ref_topic=6150889#funnels_for_destination_goals&zippy=%2Cin-this-article)
+A [goal funnel](https://support.google.com/analytics/answer/1012040?ref_topic=6150889#funnels_for_destination_goals&zippy=%2Cin-this-article)
  (or _conversion funnel_) is a series of interactions that lead to a goal such as a completed purchase (a _conversion_). 
  Each goal funnel consists of individual steps such as opening a shopping cart page or proceeding to a checkout page.
 
@@ -51,7 +51,7 @@ The goal funnel for your form might look like this:
 Goal funnels can give you an overview of where users leave your form, and where you need to improve it.
 
 As well as using analytics to track page metrics such as time-on-page or exit rates, 
-you can also monitor [events](https://support.google.com/analytics/answer/1033068?hl=en#zippy=%2Cin-this-article). 
+you can also monitor [events](https://support.google.com/analytics/answer/1033068#zippy=%2Cin-this-article). 
 These allow you to track individual interactions, 
 such as button clicks or interactions with form fields. 
 For example, you can set up a [custom event](https://developers.google.com/analytics/devguides/collection/analyticsjs/events), 
@@ -98,6 +98,6 @@ and get notified via email. This is a good way to monitor form usage.
 
 ## Resources
 
-- [Google Analytics: Bounce rates](https://support.google.com/analytics/answer/1009409?hl=en)
+- [Google Analytics: Bounce rates](https://support.google.com/analytics/answer/1009409)
 - [Google Analytics: Alerts](https://support.google.com/analytics/answer/1033021)
 - [Google Analytics: Event measuring](https://developers.google.com/analytics/devguides/collection/analyticsjs/events)

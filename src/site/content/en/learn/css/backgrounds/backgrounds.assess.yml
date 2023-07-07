@@ -44,16 +44,6 @@ questions:
         rationale: |
           This positions a background image to be at the very left of the box and centered vertically. When just one position of an axis is provided, the background image is centered in the opposite axis.
 
-  - type: think-and-check
-    stimulus: "![Demonstration of the use of CSS Clip](image/bMU6K5O6Yce7QrxAoaF3hsleaRM2/naRWTIMyG0eYo1LHwgSw.png)"
-    stem: What would be the steps to render a background like this against its content?
-    options:
-      - rationale: |
-          1. Use `background-clip: text`. [Check if the property is supported in the browsers you need to support](https://caniuse.com/background-clip-text).
-          1. Use `background-image: url(/texture.jpg)`.
-          1. Use `-webkit-text-fill-color: transparent` or semi-transparent for the background image to be seen within the text.
-
-
   - type: multiple-choice
     cardinarlity: "1"
     correctAnswers: "2"

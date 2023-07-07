@@ -95,7 +95,7 @@ Was it easier to use this time? Did they encounter any new issues?
 You tested your forms at home or in the office. 
 How can you test and monitor the experience of your end users? 
 Use analytics, and [real user measurement (RUM)](/user-centric-performance-metrics/). 
-Implement [goal funnels](https://support.google.com/analytics/answer/6180923?hl=en) 
+Implement [goal funnels](https://support.google.com/analytics/answer/6180923) 
 in analytics to check if changes reduce form abandonment and the time it takes for users to complete your form.
 
 ## Test different form designs with end users

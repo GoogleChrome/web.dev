@@ -30,6 +30,10 @@ function Author({
   showSocialMedia = false,
   showDescription = false,
 }) {
+  if (this.ctx.export) {
+    return `\n{{ macros.Authors(['${id}']) }}\n`;
+  }
+
   if (!author) {
     console.log(
       `Can't create Author component for "${id}" without author ` +

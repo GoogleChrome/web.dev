@@ -209,4 +209,4 @@ Try out a range of tools to find the best for your needs.
 - [Getting started with measuring Web Vitals](/vitals-measurement-getting-started/)
 - [Core Web Vitals](/vitals)
 - [Why lab and field data can be different](/lab-and-field-data-differences/)
-- [Google Analytics: About Events](https://support.google.com/analytics/answer/1033068?hl=en#zippy=%2Cin-this-article)
+- [Google Analytics: About Events](https://support.google.com/analytics/answer/1033068#zippy=%2Cin-this-article)

@@ -23,12 +23,14 @@ const copyGlobalImages = require('./gulp-tasks/copy-global-images.js');
 const copyMisc = require('./gulp-tasks/copy-misc.js');
 const sassTask = require('./gulp-tasks/sass.js');
 const writeVersion = require('./gulp-tasks/write-version.js');
+const getHeadlines = require('./gulp-tasks/get-headlines.js');
 
 gulp.task('convert-design-themes', convertDesignThemes);
 gulp.task('convert-design-tokens', convertDesignTokens);
 gulp.task('copy-misc', copyMisc);
 gulp.task('default-locale', copyDefaultLocale);
 gulp.task('sass', sassTask);
+gulp.task('getHeadlines', getHeadlines);
 
 gulp.task(
   'build',
