@@ -45,7 +45,7 @@ El navegador no puede responder a la mayoría de las entradas de los usuarios mi
 
 Si ya intentó reducir la cantidad de procesos en JavaScript que se cargan en una sola página, quizás resulte útil dividir el código de ejecución prolongada en **tareas asincrónicas más pequeñas**.
 
-Las [**tareas largas**](/custom-metrics/#long-tasks-api) son periodos de ejecución en JavaScript donde los usuarios pueden descubir que su interfaz de usuario no responde. Cualquier fragmento de código que bloquee el subproceso principal durante 50 ms o más se puede caracterizar como una tarea larga. Las tareas largas son una señal de que posiblemente JavaScript se esté utilizando en exceso (cargar y ejecutar más de lo que un usuario necesite en ese momento). Dividir las tareas largas podría reducir el retraso al entrar en su sitio.
+Las [**tareas largas**](/custom-metrics/#long-tasks-api) son periodos de ejecución en JavaScript donde los usuarios pueden descubrir que su interfaz de usuario no responde. Cualquier fragmento de código que bloquee el subproceso principal durante 50 ms o más se puede caracterizar como una tarea larga. Las tareas largas son una señal de que posiblemente JavaScript se esté utilizando en exceso (cargar y ejecutar más de lo que un usuario necesite en ese momento). Dividir las tareas largas podría reducir el retraso al entrar en su sitio.
 
 <figure>{% Img src="image/admin/THLKu0sOPhSghNr0XkP1.png", alt="Tareas largas en Chrome DevTools", width="800", height="132" %} <figcaption>Chrome DevTools <a href="https://developers.google.com/web/updates/2020/03/devtools#long-tasks">permite visualizar las tareas largas</a> en el panel de rendimiento</figcaption></figure>
 
