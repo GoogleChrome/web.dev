@@ -6,7 +6,7 @@ authors:
   - ilyagrigorik
   - jlwagner
 date: 2014-03-31
-updated: 2023-07-06
+updated: 2023-07-07
 ---
 
 The fastest and best-optimized resource is a resource not sent. You should eliminate unnecessary resources from your application. It's a good practice to question—and periodically revisit—the implicit and explicit assumptions with your team. Here are a few examples:
