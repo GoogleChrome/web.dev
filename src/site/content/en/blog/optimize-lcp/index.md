@@ -6,7 +6,7 @@ authors:
   - philipwalton
   - tunetheweb
 date: 2020-05-05
-updated: 2023-05-04
+updated: 2023-07-07
 hero: image/admin/qqTKhxUFqdLXnST2OFWN.jpg
 alt: Optimize LCP banner
 description: |
@@ -38,20 +38,81 @@ To provide a good user experience, **sites should strive to have an LCP of 2.5 s
   </picture>
 </figure>
 
-There are a number of factors that can affect how quickly the browser is able to
-load and render a web page, and blockage or delays across any of them can have a
-significant impact on LCP.
+
+There are a number of factors that can affect how quickly the browser is able to load and render a web page, and delays across any of them can have a significant impact on LCP.
 
 It's rare that a quick fix to a single part of a page will result in a meaningful improvement to LCP. To improve LCP you have to look at the entire loading process and make sure every step along the way is optimized.
 
-Optimizing for LCP is a complex task, and with complex tasks it's generally better to break them down into smaller, more manageable tasks and address each separately. This guide will present a methodology for how to break down LCP into its most critical sub-parts and then present specific recommendations and best practices for how to optimize each part.
+## Understanding your LCP metric
+
+Before optimizing LCP, developers should seek to understand if they even have an LCP issue, and the extent of any such issue.
+
+LCP can be measured in a number of tools and not all of these measure LCP in the same way. To understand LCP of real users, we should look at what real users are experiencing, rather than what a lab-based tool like [Lighthouse](https://developer.chrome.com/docs/lighthouse/) or local testing shows. These lab-based tools can give a wealth of information to explain and help you improve LCP, but be aware that lab tests alone may not be entirely representative of what your actual users experience.
+
+LCP data based on real users can be surfaced from Real User Monitoring (RUM) tools installed on a site, or via the [Chrome User Experience Report (CrUX)](https://developer.chrome.com/docs/crux/) which collect anonymous data from real Chrome users for millions of websites.
+
+### Using PageSpeed Insights CrUX LCP data
+
+[PageSpeed Insights](https://pagespeed.web.dev/) provides access to CrUX data in the top section labeled **Discover what your real users are experiencing**. More detailed lab-based data is available in the bottom section labeled **Diagnose performance issues**. If CrUX data is available for your website, always concentrate on the real user data first.
+
+{% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/enRFus2GE24gvchY9fdV.png", alt="CrUX data shown in PageSpeed Insights", width="800", height="478" %}
 
 {% Aside %}
-  For a visual overview of the context presented in this guide, see [A Deep Dive into Optimizing LCP](https://youtu.be/fWoI9DXmpdk) from Google I/O '22:
-  {% YouTube "fWoI9DXmpdk" %}
+Where CrUX does not provide data (for example, a page with insufficient traffic to get page-level data), CrUX should be supplemented with RUM data collected using JavaScript APIs running on the web page. This can also provide much more data than CrUX can expose as a public dataset. Later in this guide we will explain how to collect this data using JavaScript.
 {% endAside %}
 
+PageSpeed Insights shows up to four different CrUX data:
+- **Mobile** data for **This URL**
+- **Desktop** data for **This URL**
+- **Mobile** data for the whole **Origin**
+- **Desktop** data for the whole **Origin**
+
+These can be toggled in the controls at the top, and top right-hand side of this section. Be aware that where a URL does not have sufficient data to be shown at the URL level—but does have data for the origin—PageSpeed Insights will automatically show this.
+
+{% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/wWQxf1DbjElItJTcJsBn.png", alt="PageSpeed Insight's falling back to origin-level data where url-level data is not available", width="800", height="295" %}
+
+The LCP for the whole origin may be very different to an individual page's LCP depending on how the LCP is loaded on that page compared to other pages on that origin. It can also be affected by how visitors navigate to these pages. Home pages tend to be visted by new users and so may often be loaded "cold", without any cached content and so are often the slowest pages on a website.
+
+Looking at the four different categories of CrUX data can help you understand whether an LCP issue is specific to this page, or a more general site-wide issue. Similarly, it can show which device types have LCP issues.
+
+### Using PageSpeed Insights CrUX supplementary metrics
+
+Those looking to optimize LCP should also use the [First Contentful Paint (FCP)](/fcp/) and [Time to First Byte (TTFB)](/ttfb/) timings, which are good diagnostic metrics that can provide valuable insights into LCP.
+
+TTFB is the time when the visitor starting to navigate to a page (for example, clicking on a link), until the first bytes of the HTML document are received. A high TTFB can make achieving a 2.5 second LCP challenging, or even impossible.
+
+A high TTFB can be due to mutiple server redirects, visitors located far away from the nearest site server, visitors on poor network conditions, or an inability to use cached content due to query parameters.
+
+Once a page starts rendering, there may be an initial paint (for example, the background color), followed by some content appearing (for example, the site header). The appearance of the initial content is measured by FCP. The delta between FCP and other metrics can be very telling.
+
+A large delta between TTFB and FCP could indicate that the browser needs to download a lot of render-blocking assets. It can also be a sign it must complete a lot of work to render any meaningful content—a classic sign of a site that relies heavily on client-side rendering.
+
+A large delta between FCP and LCP indicates that the LCP resource is either not immediately available for the browser to prioritize (for example, text or images that are managed by JavaScript rather than being available in the initial HTML), or that the browser is completing other work before it can display the LCP content.
+
+### Using PageSpeed Insights Lighthouse data
+
+The Lighthouse section of PageSpeed Insights offers some guidance to improving LCP, but first you should check if the LCP given is broadly inline with real user data provided by CrUX.
+
+If Lighthouse is showing no LCP issue, but the CrUX data is, then any Lighthouse suggestions may not be relevant. The opposite is also true—if Lighthouse is showing a really poor LCP time, but CrUX data is showing your users mostly have a good LCP, then you may wish to consider the priority of optimizing LCP further, or if time is better spent on other performance improvements. Also be sure to check that the CrUX data is for this page and not for the full origin as detailed above.
+
+If both sources of data are showing an LCP that should be improved than the Lighthouse section can provide valuable guidance on ways to improve LCP. Use the LCP filter to only show audits relevant to LCP:
+
+{% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/himAvC1GMr7K0kcbvG4F.png", alt="Lighthouse LCP Opportunities and Diagnostics", width="800", height="498" %}
+
+As well as the **Opportunities** to improve, there is **Diagnostic** information that may provide more information to help diagnose the issue. The **Largest Contentful Paint element** diagnostic shows a useful breakdown of the various timings that made up the LCP:
+
+{% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/KhIuP2CNToNeGa33w48K.png", alt="Lighthouse LCP phases", width="800", height="474" %}
+
+We will delve into these sub-parts next.
+
 ## LCP breakdown
+
+Optimizing for LCP can be a more complex task when PageSpeed Insights does not give you the answer on how to improve this metric. With complex tasks it's generally better to break them down into smaller, more manageable tasks and address each separately. This guide will present a methodology for how to break down LCP into its most critical sub-parts and then present specific recommendations and best practices for how to optimize each part.
+
+{% Aside %}
+For a visual overview of the context presented in this section, see [A Deep Dive into Optimizing LCP](https://youtu.be/fWoI9DXmpdk) from Google I/O 2022:
+  {% YouTube "fWoI9DXmpdk" %}
+{% endAside %}
 
 Most page loads typically include a number of network requests, but for the purposes of identifying opportunities to improve LCP, you should start by looking at just two:
 
@@ -60,7 +121,7 @@ Most page loads typically include a number of network requests, but for the purp
 
 While other requests on the page can affect LCP, these two requests—specifically the times when the LCP resource begins and ends—reveal whether or not your page is optimized for LCP.
 
-To identify the LCP resource, you can use developer tools (such as [Chrome DevTools](https://developer.chrome.com/docs/devtools/) or [WebPageTest](https://webpagetest.org/)) to determine the [LCP element](/lcp/#what-elements-are-considered), and from there you can match the URL (again, if applicable) loaded by the element on a [network waterfall](https://developer.chrome.com/docs/devtools/network/reference/) of all resources loaded by the page.
+To identify the LCP resource, you can use developer tools (such as PageSpeed Insights discussed above, [Chrome DevTools](https://developer.chrome.com/docs/devtools/), or [WebPageTest](https://webpagetest.org/)) to determine the [LCP element](/lcp/#what-elements-are-considered). From there, you can match the URL (again, if applicable) loaded by the element on a [network waterfall](https://developer.chrome.com/docs/devtools/network/reference/) of all resources loaded by the page.
 
 For example, the following visualization shows these resources highlighted on a network waterfall diagram from a typical page load, where the LCP element requires an image request to render.
 
@@ -370,6 +431,10 @@ Finally, if your LCP resource is small, it may make sense to inline the resource
 ### 4. Reduce _time to first byte_
 
 The goal of this step is to deliver the initial HTML as quickly as possible. This step is listed last because it's often the one developers have the least control over. However, it's also one of the most important steps because it directly affects every step that comes after it. Nothing can happen on the frontend until the backend delivers that first byte of content, so anything you can do to speed up your TTFB will improve every other load metric as well.
+
+A common cause of a slow TTFB for an otherwise fast site is making visitors wade through several redirects before finally arriving at the final URL. This can happen when you have visitors from advertisements, or via URL shorteners. Always try to minimize the number of redirects a visitor must wait through.
+
+Another common cause is when cached content cannot be used from a CDN edge server, and all requests must be directed all the way back to the origin server. This can happen if unique URL parameters are used by visitors for analytics—even if they do not result in different pages.
 
 For specific guidance on this topic, see [Optimize TTFB](/optimize-ttfb/).
 
