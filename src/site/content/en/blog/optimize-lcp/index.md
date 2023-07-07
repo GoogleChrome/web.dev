@@ -99,7 +99,7 @@ If both sources of data are showing an LCP that should be improved than the Ligh
 
 {% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/himAvC1GMr7K0kcbvG4F.png", alt="Lighthouse LCP Opportunities and Diagnostics", width="800", height="498" %}
 
-As well as the Opportunities to improve, there is Diagnostic information that may provide more information to help diagnose the issue. The **Largest Contentful Paint element** diagnostic shows a useful breakdown of the various timings that made up the LCP:
+As well as the **Opportunities** to improve, there is **Diagnostic** information that may provide more information to help diagnose the issue. The **Largest Contentful Paint element** diagnostic shows a useful breakdown of the various timings that made up the LCP:
 
 {% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/KhIuP2CNToNeGa33w48K.png", alt="Lighthouse LCP phases", width="800", height="474" %}
 
