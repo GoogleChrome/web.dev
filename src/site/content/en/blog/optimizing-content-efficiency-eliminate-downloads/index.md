@@ -9,13 +9,6 @@ date: 2014-03-31
 updated: 2023-07-06
 ---
 
-## Summary
-
-- Inventory your own assets and third-party assets on your pages.
-- Measure the performance of each asset: its value and its technical performance.
-- Determine if the resources are providing sufficient value.
-- Understand the effect of unnecessary downloads on [Core Web Vitals](/vitals/) and supporting metrics.
-
 The fastest and best-optimized resource is a resource not sent. You should eliminate unnecessary resources from your application. It's a good practice to question—and periodically revisit—the implicit and explicit assumptions with your team. Here are a few examples:
 
 - You've always included resource X on your pages, but does the cost of downloading and displaying it offset the value it delivers to the user? Can you measure and prove its value?
@@ -60,3 +53,14 @@ INP and FID tend to be most affected by JavaScript, as JavaScript is what drives
 While there are strategies for reducing the _size_ of JavaScript resources downloaded during startup—such as code splitting and tree shaking—it's worth auditing the packages you use in your projects to see if they're necessary at all. For example, [lodash](https://lodash.com/) has many methods that are still useful today, but ships with methods that the browser provides out of the box, such as `Array`-specific functions for [mapping](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/map), [reducing](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce), and [filtering](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/filter), and [many others](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array).
 
 Progressive enhancement is also [a useful approach](/adaptive-serving-based-on-network-quality/) to JavaScript, as it enables you to serve a baseline (but still functional) experience for users that you can add to for users with more powerful devices and faster network connections. Whether you adhere to the principle of progressive enhancement or not, the point remains: Every JavaScript resource you can avoid downloading can result in an experience that responds faster to user interactions, which is a vital aspect of web performance.
+
+## Conclusion
+
+Auditing your website for unnecessary downloads may be just one aspect of delivering fast user experiences, but it's one that has the potential for high impact. To recap:
+
+- Inventory your own assets and third-party assets on your pages.
+- Measure the performance of each asset: its value and its technical performance.
+- Determine if the resources are providing sufficient value.
+- Understand the effect of unnecessary downloads on [Core Web Vitals](/vitals/) and supporting metrics.
+
+By optimizing content efficiency in this way, you're not only improving performance overall, you're also taking care not to waste users' bandwidth, as well as potentially improving user-centric metrics and delivering a better user experience.
