@@ -188,7 +188,7 @@ While adopting a CDN involves a varying amount of effort from trivial to signifi
 
 CDNs allow content to be cached at edge servers which are located physically closer to visitors, provided the content is configured with the appropriate [`Cache-Control` HTTP headers](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control). While this is not appropriate for personalized content, requiring a trip all the way back to the origin can negate much of the value of a CDN.
 
-For sites that frequently update their content, even a short caching time can result in noticable performance gains for busy sites, since only the first visitor during that time experiences the fully latency back to the origin server, while all other visitors can reuse the cached resource from the edge server. Some CDNs allow cache invalidation on site releases allowing the best of both worlds—long cache times, but instant updates when needed.
+For sites that frequently update their content, even a short caching time can result in noticeable performance gains for busy sites, since only the first visitor during that time experiences the fully latency back to the origin server, while all other visitors can reuse the cached resource from the edge server. Some CDNs allow cache invalidation on site releases allowing the best of both worlds—long cache times, but instant updates when needed.
 
 Even where caching is correctly configured, this can be ignored through the use of unique query string parameters for analytics measurement. These may look like different content to the CDN despite being the same, and so the cached version will not be used.
 
