@@ -224,19 +224,17 @@ async function Export() {
     frontMatter.page_type = 'course';
   }
 
-  const description = page?.template?.frontMatter?.data.description;
+  let description = page?.template?.frontMatter?.data.description;
   if (description) {
+    // Remove new lines in the description as it breaks DevSite's crude front matter parsing
+    description = description.replace(/\n/g, ' ');
     frontMatter.description = description.trim();
   }
 
   // Convert the front matter object into a string
-  frontMatter = yaml.dump(frontMatter, {noArrayIndent: true});
-  // Why DevSite expects a string for refresh_date, it actually
-  // does not want it to be quoted in the front matter
-  frontMatter = frontMatter.replace(
-    /refresh_date: '(.*?)'/g,
-    'refresh_date: $1',
-  );
+  frontMatter = Object.entries(frontMatter)
+    .map(([key, value]) => `${key}: ${value}`)
+    .join('\n');
 
   const template = `${frontMatter}
 
