@@ -1371,3 +1371,9 @@ webxr:
     pt: Nossas últimas notícias, atualizações e histórias sobre o WebXR.
     ru: Последние новости и статьи о WebXR.
     zh: 我们关于 WebXR 的最新资讯、动态和故事。
+
+test-automation:
+  title:
+    en: Test automation
+  description:
+    en: Test automation
