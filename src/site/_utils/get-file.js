@@ -36,6 +36,7 @@ async function getFile(url) {
   // if it is not yet cached.
   if (!fse.existsSync(path.join(TMP_PATH, src))) {
     file = await fetch(url);
+    console.log(`Downloading ${url}`);
     file = await file.buffer();
     await fse.outputFile(path.join(TMP_PATH, src), file);
   } else {
