@@ -241,7 +241,7 @@ async function Export() {
 {% import "/_macros.html" as macros %}
 {% include "/_styles/style.md" %}
 
-# ${this.ctx.title}
+# ${this.ctx.title}${this.ctx.subhead ? `\n\n${this.ctx.subhead}` : ''}
 ${
   authors
     ? `
