@@ -50,7 +50,7 @@ This series of guides will mostly focus on automated testing. However, a small b
 So, we have defined the general way we test. However, that’s not enough yet—we now need to get deeper into the details. To plan your testing strategies even more thoroughly, let’s take a look at testing procedures or modes. In both cases, no matter if you go for manual or automated testing, there's one more question to answer. Should you know how your application works under the hood, or is it more helpful to test without this knowledge, basically as a clean slate?
 
 - One procedure for deriving and selecting test cases is called **opaque box testing** (also known as black box testing). It is based on analyzing a component or system's functional or non-functional requirements (specifications) without considering its internal structure.
-- The second approach is the opposite: **clear box testing** (also called white box testing) is a procedure for deriving and selecting test cases while considering the internal structure of said box - in other words considering how your application works under the hood.
+- The second approach is the opposite: **clear box testing** (also called white box testing) is a procedure for deriving and selecting test cases while considering the internal structure of said box—in other words, considering how your application works under the hood.
 
 Both procedures can be applied to manual and automated testing alike. However, some testing types will focus more on one of the two—we'll cover that also. But before that, we should quickly define the exact test automation types.
 
