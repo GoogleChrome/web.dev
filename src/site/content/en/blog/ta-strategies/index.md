@@ -22,7 +22,7 @@ Welcome back! In the [last article](/ta-types), we laid down lots of groundwork 
 
 So next up, we will learn exactly that. This article will give an introduction on how to combine these testing types into a reasonable strategy that matches your project.
 
-I want to share some recommendations on which testing strategies might fit which size of project. Let’s begin with a short overview—an attempt to generalize based on my own experience, so it can naturally deviate from your use case. I hope this is a good starting point:
+I want to share some recommendations on which testing strategies might fit your project, depending on its size. Let’s begin with a short overview—an attempt to generalize based on my own experience, so it can naturally deviate from your use case. I hope this is a good starting point:
 
 <div class="table-wrapper scrollbar">
   <table>
@@ -86,9 +86,9 @@ I want to share some recommendations on which testing strategies might fit which
 How did I come to the conclusions pictured in this table? What are the testing strategies mentioned? Let’s take a closer look to discover the answers.
 
 
-## Determine testing goals: what do we want to achieve with these tests?
+## Determine testing goals: What do we want to achieve with these tests?
 
-Before we can start building a good strategy, we need to find out where we want to go. What is our goal with testing? When do we consider our application to be tested sufficiently?
+Before we can start building a good strategy, we need to find out where we want to go. What is our goal with testing? When do we consider that our application has been sufficiently tested?
 
 Achieving high test coverage is often viewed as the ultimate goal for developers when it comes to testing. But is it always the best approach? In my opinion, there's a more critical factor to consider when deciding a testing strategy—serving our users’ needs.
 
@@ -106,14 +106,14 @@ As well as our role as developers, we all also use many other applications and d
 And I think this nails it. He describes it as becoming more confident in our tests. The closer we get to the users via choosing the corresponding testing type, the more confident we can trust our tests to have valid results. Or in other words, the higher up we climb the pyramid, the more confident we get. But wait, what is the pyramid? Don’t worry: we’ll cover this next.
 
 
-## Determining test strategies: how to choose a testing strategy
+## Determining test strategies: How to choose a testing strategy
 
-Remember: as a first step, we want to determine which parts of our requirements need to be insured to be fulfilled, and how we want to achieve that. The goal behind that is to find out which types of testing to use, and then, with which granularity of testing we can reach the most confidence while also keeping an efficient cost structure. Many people approach this topic by using metaphors. Let’s take a deeper look at the most common ones, starting with the well-known classic.
+Remember, as a first step, we want to determine which parts of our requirements need to be insured to be fulfilled, and how we want to achieve that. The goal behind that is to find out which types of testing to use, and then, with which granularity of testing we can reach the most confidence while also keeping an efficient cost structure. Many people approach this topic by using metaphors. Let’s take a deeper look at the most common ones, starting with the well-known classic.
 
 {% Img src="image/dPDCek3EhZgLQPGtEG3y0fTn4v82/btUEUtD2bmqNwX2DcH4j.jpeg", alt="ALT_TEXT_HERE", width="800", height="450" %}
 
 
-### The classic: the test pyramid
+### The classic: The test pyramid
 
 You will probably encounter the test automation pyramid as your initial metaphor as soon as you look up testing strategies. Mike Cohn introduced this concept in his book *Succeeding with Agile*. Later, the concept was expanded upon as the "[Practical Test Pyramid](https://martinfowler.com/articles/practical-test-pyramid.html)" by Martin Fowler. The visual representation of this pyramid is as follows:
 
@@ -121,11 +121,11 @@ You will probably encounter the test automation pyramid as your initial metaphor
 
 As shown in this drawing, the test pyramid consists of three layers:
 
-1. **Unit**: You find these tests on the base layer of the pyramid because they are fast execution and simple to maintain. This is due to their isolation and targeting of the most minor units. See this as an example of a typical [unit test](https://github.com/leichteckig/phpmagazin-jest-example/blob/main/product.test.js) testing a very small product.
+1. **Unit**. You find these tests on the base layer of the pyramid because they are fast execution and simple to maintain. This is due to their isolation and targeting of the most minor units. See this as an example of a typical [unit test](https://github.com/leichteckig/phpmagazin-jest-example/blob/main/product.test.js) testing a very small product.
 
-1. **Integration**: This is in the middle of the pyramid, as it is still acceptable when it comes to speed in execution but brings you the confidence of being closer to the user than unit tests can be. An example of an integration type test is an [API test](https://github.com/cypress-io/cypress-realworld-app/blob/develop/cypress/tests/api/api-users.spec.ts); [component tests](https://github.com/leichteckig/nuxt-leichteckig/blob/main/test/components/MediaGrid.spec.js) can also be considered this type.
+1. **Integration**. This is in the middle of the pyramid, as it is still acceptable when it comes to speed in execution but brings you the confidence of being closer to the user than unit tests can be. An example of an integration type test is an [API test](https://github.com/cypress-io/cypress-realworld-app/blob/develop/cypress/tests/api/api-users.spec.ts); [component tests](https://github.com/leichteckig/nuxt-leichteckig/blob/main/test/components/MediaGrid.spec.js) can also be considered this type.
 
-1. **E2E tests** (also called **UI tests**): As we have seen, these tests simulate a genuine user and their interaction. These tests need more time to be executed and thus are more expensive—being placed at the top of the pyramid. 
+1. **E2E tests** (also called **UI tests**). As we have seen, these tests simulate a genuine user and their interaction. These tests need more time to be executed and thus are more expensive—being placed at the top of the pyramid. 
 
 
 ### Confidence versus resources
@@ -235,7 +235,7 @@ This testing strategy includes one more aspect: it should verify that our applic
 While being more costly, these two testing strategies have their place: for example, in smaller projects where fewer tests are needed, or less complexity needs to be covered. In this case, a full-blown testing strategy focusing on integration testing might be over-engineered.
 
 
-## Practical advice: let’s strategize!
+## Practical advice: Let’s strategize!
 
 So we have now learned about the most common testing strategies. We started with the classic—the test pyramid—and got to know its many adaptations. Now we need to evaluate them for our product and decide which might be the best for our use case. As I briefly mentioned at the beginning of this article, the answer to this question should start with everyone’s favorite response (although it’s no less accurate)—**It depends**.
 
