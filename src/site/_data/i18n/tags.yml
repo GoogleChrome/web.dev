@@ -1222,6 +1222,12 @@ testing:
     ru: Последние новости и статьи о тестировании.
     zh: 我们关于测试的最新资讯、动态和故事。
 
+test-automation:
+  title:
+    en: Test automation
+  description:
+    en: Test automation
+
 tools:
   title:
     en: Tools
