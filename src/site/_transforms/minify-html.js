@@ -37,6 +37,8 @@ const minifyHtml = (content, outputPath) => {
           do_not_minify_doctype: true,
           ensure_spec_compliant_unquoted_attribute_values: true,
           keep_spaces_between_attributes: true,
+          keep_html_and_head_opening_tags: true,
+          keep_closing_tags: true,
         })
         .toString('utf-8');
     } catch (err) {
