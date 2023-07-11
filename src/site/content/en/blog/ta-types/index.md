@@ -100,7 +100,7 @@ Possible tools include but aren't limited to:
 
 #### Visual UI testing
 
-An interesting subcategory of UI tests is visual tests. Those tests are extended end-to-end tests, providing a process of checking the visible output of an application by screenshot comparison: A screenshot of the change is compared with another screenshot containing the “status quo” - or in other words, a golden file -  and providing those results to a human reviewer to inspect and check. Put another way: it helps to find “visual bugs” in the appearance of a page, beyond purely functional bugs and outside the concept, not explicitly written down into assertions.
+An interesting subcategory of UI tests is visual tests. Those tests are extended end-to-end tests, providing a process of checking the visible output of an application by screenshot comparison: A screenshot of the change is compared with another screenshot containing the “status quo”—or in other words, a golden file—and providing those results to a human reviewer to inspect and check. Put another way: it helps find “visual bugs” in the appearance of a page, beyond purely functional bugs and outside the concept, not explicitly written down into assertions.
 
 ### Static analysis
 
