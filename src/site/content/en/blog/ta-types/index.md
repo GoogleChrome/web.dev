@@ -41,7 +41,7 @@ The first point to clarify in answering the question of how to test is very abst
 If you ask people to define testing, you'll probably encounter two answers:
 
 * **Manual testing**. This is the typical method of testing, done by actual people. That means a test will click through the application and check if it works and, at the same time, try to break it. Exploratory testing is the most common way: as the name implies, a tester expires the application, using their own knowledge to investigate the application under test with a predetermined path or any checklists.
-* **Automated testing**: This is the answer you might get from developers and testers. Monotonous checklist testing is, in particular, a primary candidate for automation. Thus a computer will do the testing for us.
+* **Automated testing**. This is the answer you might get from developers and testers. Monotonous checklist testing is, in particular, a primary candidate for automation. Thus a computer will do the testing for us.
 
 This series of guides will mostly focus on automated testing. However, a small but important disclaimer: you shouldn't focus on only one way of testing! Even if automation saves a lot of time and effort, humans and thus manual testing will always play a vital role. Rather, test automation should ensure that people can focus on what is important in manual testing, that is, the exploratory testing of the most important features: All test cases where our improvisation and creativity can shine, for example, in user experience or testing the business logic with high risk involved. In other words, automation has our back. ❤️
 
