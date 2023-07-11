@@ -90,7 +90,7 @@ These tests are often called UI tests, and this name explains their function eve
 They resemble a system test if you refer to the theory of quality assurance. Thus, these tests simulate a genuine user and their interaction. These tests take more time because they involve the whole system. More runtime also means more computing power is needed and developers spending more time on waiting for pipelines to finish. Consequently, this additional effort results in higher maintenance costs. 
 
 {% Aside %}
-Possible tools to include (but not limited to) are:
+Possible tools include but aren't limited to:
 * [WebdriverIO](https://webdriver.io/) 
 * [Cypress](https://www.cypress.io/)
 * [Playwright](https://playwright.dev/)
