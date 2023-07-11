@@ -107,6 +107,7 @@ There’s one more thing I want to introduce here: Static analysis is not a test
 
 {% Aside %}
 Tools include but aren't limited to:
+
 - [Eslint](https://eslint.org/)
 - [StyleLint](https://stylelint.io/)
 {% endAside %}
