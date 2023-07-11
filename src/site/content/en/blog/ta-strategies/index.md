@@ -18,7 +18,7 @@ tags:
 
 Welcome back! In the [last article](/ta-types), we laid down lots of groundwork about how to approach the different testing types and what they contain, and we clarified the testing type definitions. Remember our little meme image from before? We wondered how all those testing types we learned about could work together.
 
-{% Img src="image/dPDCek3EhZgLQPGtEG3y0fTn4v82/n3LPuwApNcCRT5S3zaoq.jpeg", alt="ALT_TEXT_HERE", width="800", height="450" %}
+{% Img src="image/dPDCek3EhZgLQPGtEG3y0fTn4v82/n3LPuwApNcCRT5S3zaoq.jpeg", alt="A cupboard with two drawers you can open at the same time.", width="800", height="450" %}
 
 So next up, we will learn exactly that. This article will give an introduction on how to combine these testing types into a reasonable strategy that matches your project.
 
@@ -110,14 +110,14 @@ And I think this nails it. He describes it as becoming more confident in our tes
 
 Remember, as a first step, we want to determine which parts of our requirements need to be insured to be fulfilled, and how we want to achieve that. The goal behind that is to find out which types of testing to use, and then, with which granularity of testing we can reach the most confidence while also keeping an efficient cost structure. Many people approach this topic by using metaphors. Let’s take a deeper look at the most common ones, starting with the well-known classic.
 
-{% Img src="image/dPDCek3EhZgLQPGtEG3y0fTn4v82/btUEUtD2bmqNwX2DcH4j.jpeg", alt="ALT_TEXT_HERE", width="800", height="450" %}
+{% Img src="image/dPDCek3EhZgLQPGtEG3y0fTn4v82/btUEUtD2bmqNwX2DcH4j.jpeg", alt="A lot of shapes like pyramid, diamonds, ice cone, honeycombs and a trophy; representing test strategies.", width="800", height="450" %}
 
 
 ### The classic: The test pyramid
 
 You will probably encounter the test automation pyramid as your initial metaphor as soon as you look up testing strategies. Mike Cohn introduced this concept in his book *Succeeding with Agile*. Later, the concept was expanded upon as the "[Practical Test Pyramid](https://martinfowler.com/articles/practical-test-pyramid.html)" by Martin Fowler. The visual representation of this pyramid is as follows:
 
-{% Img src="image/dPDCek3EhZgLQPGtEG3y0fTn4v82/iEtr9phjNjENxQlFfJYv.jpeg", alt="ALT_TEXT_HERE", width="800", height="450" %}
+{% Img src="image/dPDCek3EhZgLQPGtEG3y0fTn4v82/iEtr9phjNjENxQlFfJYv.jpeg", alt="The test pyramid.", width="800", height="450" %}
 
 As shown in this drawing, the test pyramid consists of three layers:
 
@@ -134,7 +134,7 @@ As briefly covered already, the order of the layers is no coincidence. They show
 
 As E2E tests, for example, are closest to our users, they give us the highest confidence that our application is working as intended. However, due to the complete application stack being present, and the computer simulation of a real user, they are potentially also the most expensive. So the confidence is in direct competition with the resources we need to execute the tests.
 
-{% Img src="image/dPDCek3EhZgLQPGtEG3y0fTn4v82/DT57buwCB4uDyJp61Rzb.jpeg", alt="ALT_TEXT_HERE", width="800", height="450" %}
+{% Img src="image/dPDCek3EhZgLQPGtEG3y0fTn4v82/DT57buwCB4uDyJp61Rzb.jpeg", alt="The test pyramid with arrows showing the direction of confidence and resources required for different testing types.", width="800", height="450" %}
 
 The pyramid tries to solve this competition by advising you to focus more on unit tests and strictly prioritize the cases covered by E2E tests: for example, your most crucial user journeys or the most vulnerable to defects. As Martin Fowler emphasizes, the two most essential points in Cohn’s pyramid are as follows:
 
@@ -171,7 +171,7 @@ The first adaptation I want to showcase tackles the over-emphasis on unit testin
 
 As a result, and together with the higher priority on integration testing, the following shape may arise:
 
-{% Img src="image/dPDCek3EhZgLQPGtEG3y0fTn4v82/vSFAkoSqbL4p984xf48k.jpeg", alt="ALT_TEXT_HERE", width="800", height="450" %}
+{% Img src="image/dPDCek3EhZgLQPGtEG3y0fTn4v82/vSFAkoSqbL4p984xf48k.jpeg", alt="The test diamond.", width="800", height="450" %}
 
 The shape of the test pyramid has evolved more into a diamond. You can see the three layers from before, but with a different size and—in the case of the unit layer—with a slightly different shape:
 
@@ -184,7 +184,7 @@ The shape of the test pyramid has evolved more into a diamond. You can see the t
 
 There is another adaptation similar to the test diamond but further specialized for microservices-based software systems. The testing honeycomb is another visual metaphor for the granularity/scope of and amounts of tests to write for a microservices-based software system. It's an adaptation of the traditional test pyramid specifically for [testing microservices](https://notes.paulswail.com/public/Testing+microservices), introduced by [Spotify](https://engineering.atspotify.com/2018/01/testing-of-microservices/). Due to their small size, the most considerable complexity in a microservice is not within the service itself, but in how it interacts with others. So a testing strategy for a microservice should primarily focus on integration tests.
 
-{% Img src="image/dPDCek3EhZgLQPGtEG3y0fTn4v82/mrM4QK1kEZgvRvltyiMn.jpeg", alt="ALT_TEXT_HERE", width="800", height="450" %}
+{% Img src="image/dPDCek3EhZgLQPGtEG3y0fTn4v82/mrM4QK1kEZgvRvltyiMn.jpeg", alt="The testing honeycomb.", width="800", height="450" %}
 
 This way, a shape is formed that reminds us of a honeycomb, thus the name. In it, the following layers are used:
 
@@ -199,7 +199,7 @@ If you want to find out more about this testing strategy, I advise you to read t
 
 Alright, we already see a particular focus on integration tests. However, another type we mentioned in the previous article is not testing in theory but is still an important aspect we should consider in a testing strategy. I’m talking about static analysis, which is missing in the test pyramid and in most of the adaptations we have seen until now. There’s one adaptation, though, which takes static analysis into account while maintaining the focus on integration tests. It’s called the testing trophy, originating from the earlier quote by Guillermo Rauch and developed by Kent C. Dodds:
 
-{% Img src="image/dPDCek3EhZgLQPGtEG3y0fTn4v82/ULNWIc7KY4jVjxPW5CdX.jpeg", alt="ALT_TEXT_HERE", width="800", height="450" %}
+{% Img src="image/dPDCek3EhZgLQPGtEG3y0fTn4v82/ULNWIc7KY4jVjxPW5CdX.jpeg", alt="The testing trophy.", width="800", height="450" %}
 
 The testing trophy is a metaphor depicting the granularity of tests in a slightly different way, distributing your tests into the following four testing types:
 
@@ -222,13 +222,13 @@ There are indeed two adaptations of the testing pyramid that focus more on these
 
 The first one—the test ice cone, also known as the testing pizza if you leave out the manual testing step—looks like the pyramid in reverse.
 
-{% Img src="image/dPDCek3EhZgLQPGtEG3y0fTn4v82/QdBKM36jvq93jrERrSCP.jpeg", alt="ALT_TEXT_HERE", width="800", height="450" %}
+{% Img src="image/dPDCek3EhZgLQPGtEG3y0fTn4v82/QdBKM36jvq93jrERrSCP.jpeg", alt="The testing ice cone.", width="800", height="450" %}
 
 As a result, the following layers will be showcased with the following granularity: the greater focus is on manual or UI testing, with the least focus on unit testing. It often happens with projects where the developers started work with only a few thoughts on testing. However, this testing strategy is considered an anti-pattern and rightfully so—because of its high costs in resources and manual work.
 
 Similar to the test ice cone, but with a more drawn-out focus on E2E and visual testing, is the testing crab:
 
-{% Img src="image/dPDCek3EhZgLQPGtEG3y0fTn4v82/uY4XiFIldA1JySM9ZbHD.jpeg", alt="ALT_TEXT_HERE", width="800", height="450" %}
+{% Img src="image/dPDCek3EhZgLQPGtEG3y0fTn4v82/uY4XiFIldA1JySM9ZbHD.jpeg", alt="The testing crab.", width="800", height="450" %}
 
 This testing strategy includes one more aspect: it should verify that our application functions and looks good. So this is the first testing strategy that highlights the importance of [visual testing](https://docs.cypress.io/guides/tooling/visual-testing), which we also briefly defined in the last article. Integration testing, divided into component and API testing, moves further into the background, and unit testing plays an even more minor role here. You can find further details on this testing strategy in this [article on the testing crab](https://changelog.com/posts/the-testing-pyramid-should-look-more-like-a-crab).
 
@@ -239,7 +239,7 @@ While being more costly, these two testing strategies have their place: for exam
 
 So we have now learned about the most common testing strategies. We started with the classic—the test pyramid—and got to know its many adaptations. Now we need to evaluate them for our product and decide which might be the best for our use case. As I briefly mentioned at the beginning of this article, the answer to this question should start with everyone’s favorite response (although it’s no less accurate)—**It depends**.
 
-{% Img src="image/dPDCek3EhZgLQPGtEG3y0fTn4v82/u1yCzUoUXkXAHUCgyrz2.jpeg", alt="ALT_TEXT_HERE", width="800", height="450" %}
+{% Img src="image/dPDCek3EhZgLQPGtEG3y0fTn4v82/u1yCzUoUXkXAHUCgyrz2.jpeg", alt="It depends.", width="800", height="450" %}
 
 Choosing the most suitable testing strategy from the ones described—and even the ones we have left out—depends on your application. It needs to suit your architecture, your requirements, and last but not least, your users and their requirements. And this might differ from application to application. That’s totally fine: remember—our most important goal is to serve our users, not a textbook definition.
 
