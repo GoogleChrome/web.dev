@@ -106,7 +106,7 @@ An interesting subcategory of UI tests is visual tests. Those tests are extended
 There’s one more thing I want to introduce here: Static analysis is not a testing type in the textbook way. However, we’ll include it here as it will be an essential aspect in quality assurance  strategies later on. You can imagine it working like a spell check function: it scans your code for more significant defects and syntax errors without running the program, thus detecting code style issues. This simple measure can prevent many bugs. This is a good starting point to learn about Static Analysis if you want to get to know it in more detail.
 
 {% Aside %}
-Tools to include (but not limited to) are:
+Tools include but aren't limited to:
 - [Eslint](https://eslint.org/)
 - [StyleLint](https://stylelint.io/)
 {% endAside %}
