@@ -67,7 +67,7 @@ Unit testing is a testing type in which minor testable parts or units of an appl
 {% Img src="image/dPDCek3EhZgLQPGtEG3y0fTn4v82/kVCbDIZN23OUGwOdpJmm.jpeg", alt="A simplified depiction of unit testing showing input and output.", width="800", height="450" %}
 
 {% Aside %}
-Possible tools to include (but not limited to) are [Vitest](https://vitest.dev/) and [Jest](https://jestjs.io/).
+Possible tools include but aren't limited to [Vitest](https://vitest.dev/) and [Jest](https://jestjs.io/).
 {% endAside %}
 
 
