@@ -23,7 +23,7 @@ This meme sums it up quite nicely: each drawer works perfectly well individually
 
 {% Img src="image/dPDCek3EhZgLQPGtEG3y0fTn4v82/2PY6rfmGkB26vX3qIbsj.jpeg", alt="The same cupboard but with two drawers you can open at the same time.", width="800", height="450" %}
 
-Apply this to web development: we wrote some tests, maybe even achieved 100% test coverage, but our application still needs to perform as soon as other parts come into place. The units are working perfectly well but not in relation to each other. Consequently, writing some tests is crucial, but only one part of finding the ideal test setup for your project. As a very first step, we need to determine which parts of the quality of my application need to be ensured and how we want to achieve that. 
+Apply this to web development: we wrote some tests, maybe even achieved 100% test coverage, but our application still needs to perform as soon as other parts come into place. The units are working perfectly well but not in relation to each other. Consequently, writing some tests is crucial, but only one part of finding the ideal test setup for your project. As a very first step, we need to determine which parts of the quality of our application need to be ensured and how we want to achieve that. 
 
 Simply put, we want to have a plan before starting to write actual test code. Therefore, we will answer two basic questions in approaching the topic of how to test practically:
 
