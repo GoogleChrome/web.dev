@@ -32,7 +32,7 @@ Simply put, we want to have a plan before starting to write actual test code. Th
 
 This particular article focuses on the first question. Our main goal is to plan the right strategy for testing, but we’ll cover the very first steps here: Let’s discover which testing types can be used to start from a common ground. In later articles we’ll combine them and thus find the testing strategies which fit our project best—based on the groundwork we learn here. Let's go! 🙌
 
-## Let's start with the basics: general testing modes
+## Let's start with the basics: General testing modes
 
 The first point to clarify in answering the question of how to test is very abstract. We need to roughly define the way we want to test—should we do it ourselves or should a computer take over? Tiny spoiler alert: we need to avoid falling into binary thinking here. But let's dive into the basics first.
 
