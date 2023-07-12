@@ -2,7 +2,6 @@
 layout: post
 title: 3 common types of test automation 
 date: 2023-07-12
-scheduled: true
 subhead: >
   Let's start with the basics! Exploring the 2 general testing modes and 3 common types of test automation.
 description: >
