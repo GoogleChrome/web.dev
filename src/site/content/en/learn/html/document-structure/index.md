@@ -285,7 +285,7 @@ The code now looks like this:
     <meta charset="utf-8" />
     <title>Machine Learning Workshop</title>
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" src="css/styles.css" />
+    <link rel="stylesheet" href="css/styles.css" />
     <link rel="icon" type="image/png" href="/images/favicon.png" />
     <link rel="alternate" href="https://www.machinelearningworkshop.com/fr/" hreflang="fr-FR" />
     <link rel="alternate" href="https://www.machinelearningworkshop.com/pt/" hreflang="pt-BR" />
