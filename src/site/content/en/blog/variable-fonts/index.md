@@ -705,7 +705,7 @@ variable fonts as progressive enhancement:
 @supports (font-variation-settings: normal) {
   @font-face {
     font-family: 'Roboto';
-    src: url('RobotoFlex-VF.woff2') format('woff2 supports variations'),
+    src: url('RobotoFlex-VF.woff2') format('woff2') tech('variations'),
          url('RobotoFlex-VF.woff2') format('woff2-variations');
     font-weight: 100 1000;
     font-stretch: 25% 151%;
