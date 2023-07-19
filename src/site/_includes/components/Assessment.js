@@ -227,6 +227,10 @@ ${assessment.setLeader}
 
 <div class="wd-assessment">`;
     for (const question of assessment.questions) {
+      if (question.type === 'think-and-check') {
+        return `TODO: DevSite - Think and Check assessment`;
+      }
+
       let questionBody = '';
       if (question.stimulus) {
         questionBody += `${question.stimulus}\n\n`;
