@@ -28,14 +28,14 @@ const TMP_PATH_IMAGE_MIN = path.join(__dirname, '../../..', '.tmp', 'images');
  * @returns
  */
 async function getFile(url) {
-  const parsedUrl = new URL(url);
+  const parsedUrl = new URL(url, 'https://web-dev.imgix.net/');
   const src = parsedUrl.pathname;
 
   let file = null;
   // For export we want to download the image, but only do so
   // if it is not yet cached.
   if (!fse.existsSync(path.join(TMP_PATH, src))) {
-    file = await fetch(url);
+    file = await fetch(parsedUrl.toString());
     console.log(`Downloading ${url}`);
     file = await file.buffer();
     await fse.outputFile(path.join(TMP_PATH, src), file);

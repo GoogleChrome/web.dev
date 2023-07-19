@@ -47,10 +47,87 @@ const RAW_PLACEHOLDER = 'RAW_PLACEHOLDER';
 const VIDEO_POSTER_PATTERN = /poster="(.*?)"/gm;
 const VIDEO_SOURCE_PATTERN = /<source\s+src=(?:'|")(.*?)(?:'|")\s/gm;
 
+const EXPLORE_PATHS = Object.values(require('../../_data/paths')).flat();
+
 /**
  * Used to keep track of old URLs and their potential new URLs.
  */
 const exportUrls = new Map();
+
+const topicPaths = new Map();
+
+/**
+ * Certain articles can be grouped into various buckets.
+ * @param {String} url
+ * @returns
+ */
+function getTopicPath(url) {
+  // If an URL has already been mapped, just return it.
+  if (topicPaths.has(url)) {
+    return topicPaths.get(url);
+  }
+
+  let topicPath = [undefined, false];
+  if (url.startsWith('/building-')) {
+    topicPath = ['building', 'articles/building/'];
+  } else if (url.startsWith('/critical-rendering-path-')) {
+    topicPath = [
+      'critical-rendering-path',
+      'articles/critical-rendering-path/',
+    ];
+  } else if (url.startsWith('/gde-focus-')) {
+    topicPath = ['gde-focus', 'articles/gde-focus/'];
+  } else if (url.startsWith('/community-highlight-')) {
+    topicPath = ['community-highlight', 'articles/community-highlights/'];
+  } else if (url.startsWith('/mini-app-')) {
+    topicPath = ['mini-app', 'explore/mini-apps/'];
+  } else {
+    for (const mainTopic of EXPLORE_PATHS) {
+      for (const topic of mainTopic.topics) {
+        for (const pathItem of topic.pathItems) {
+          if (url.endsWith(`${pathItem}/`)) {
+            topicPath = [mainTopic.slug, `explore/${mainTopic.slug}/`];
+          }
+        }
+      }
+    }
+  }
+
+  topicPaths.set(url, topicPath);
+  return topicPath;
+}
+
+function getExportDetails(url, tags = []) {
+  // Determine a export path for the page, to dissolve the flat-file structure that
+  // is currently used for web.dev
+  const originalUrl = path.parse(url);
+  let articleName = originalUrl.name;
+  let exportPath = originalUrl.dir;
+  // Make sure exportPath has a trailing slash, to safely append path segments
+  if (!exportPath.endsWith('/')) {
+    exportPath = `${exportPath}/`;
+  }
+
+  const [topic, topicPath] = getTopicPath(url);
+  if (topicPath) {
+    // If there is a topic path, check if the topic name is duplicated in the article name
+    // and remove it if so. That makes animations/animations-examples just animations/examples
+    if (articleName.startsWith(topic)) {
+      articleName = articleName.replace(`${topic}-`, '');
+    }
+
+    exportPath += topicPath;
+  } else if (tags.includes('case-study')) {
+    exportPath += 'case-studies/';
+  } else if (tags.includes('new-to-the-web') || tags.includes('news')) {
+    exportPath += 'blog/';
+  } else if (exportPath === '/') {
+    // Put everything else that would otherwise be in the root into the articles folder
+    exportPath += 'articles/';
+  }
+
+  return {articleName, exportPath};
+}
 
 /**
  * Downloads video source files and poster images,
@@ -154,7 +231,7 @@ async function transform(ctx, markdown) {
   markdown = markdown.replace(NESTED_MULTI_LINE_CODE_PATTERN, (match) => {
     return match.replace(
       new RegExp(`${MULTI_LINE_CODE_PLACEHOLDER}_(\\d+)`, 'g'),
-      (match, index) => {
+      (_, index) => {
         let codeBlock = codeBlocks[index];
         codeBlock = codeBlock.replace(
           /```(.*?)$\n/gm,
@@ -231,6 +308,58 @@ async function Export() {
     frontMatter.description = description.trim();
   }
 
+  let transformedSource = source;
+  // Raw shortcodes gone from the rendered template, but their content would still infer with DevSite.
+  // Hence we need to pluck them out and re-insert them too.
+  const rawShortcodes = [];
+  transformedSource = pluck(
+    rawShortcodes,
+    RAW_SHORTCODE_PATTERN,
+    RAW_PLACEHOLDER,
+    transformedSource,
+  );
+
+  const tags = page?.template?.frontMatter?.data?.tags || [];
+  const {exportPath, articleName} = getExportDetails(this.ctx.page.url, tags);
+  // Add the export path to the exportUrls map, so we can construct a redirect map
+  exportUrls.set(this.ctx.page.url, `${exportPath}${articleName}`);
+
+  const ctx = Object.assign({}, this.ctx, {
+    export: true,
+    exportPath,
+    exportName: articleName,
+  });
+
+  let thumbnail = page?.template?.frontMatter?.data.thumbnail;
+  if (thumbnail) {
+    const thumbnailType = thumbnail.split('.').pop();
+    thumbnail = await getFile(thumbnail);
+    await exportFile(
+      ctx,
+      thumbnail,
+      path.join(exportPath, `${articleName}/image/thumbnail.${thumbnailType}`),
+    );
+    frontMatter.image_path = `image/thumbnail.${thumbnailType}`;
+  }
+
+  let markdown = await new Promise((resolve) => {
+    console.log('Rendering template', pageUrl);
+    njkEnv.renderString(transformedSource, ctx, (err, result) => {
+      if (err) {
+        resolve('Could not render template: ' + err);
+        return;
+      }
+
+      resolve(result);
+    });
+  });
+
+  // Put raw shortcodes back into the transformed content, they get then rewritten
+  // to DevSite compatible `{% verbatim %}` tags in the transform method
+  markdown = insert(rawShortcodes, RAW_PLACEHOLDER, markdown);
+
+  const transformedMarkdown = await transform(ctx, markdown);
+
   // Convert the front matter object into a string
   frontMatter = Object.entries(frontMatter)
     .map(([key, value]) => `${key}: ${value}`)
@@ -250,63 +379,6 @@ ${
     : ''
 }`;
 
-  let transformedSource = source;
-  // Raw shortcodes gone from the rendered template, but their content would still infer with DevSite.
-  // Hence we need to pluck them out and re-insert them too.
-  const rawShortcodes = [];
-  transformedSource = pluck(
-    rawShortcodes,
-    RAW_SHORTCODE_PATTERN,
-    RAW_PLACEHOLDER,
-    transformedSource,
-  );
-
-  const tags = page?.template?.frontMatter?.data?.tags || [];
-
-  // Determine a export path for the page, to dissolve the flat-file structure that
-  // is currently used for web.dev
-  const originalUrl = path.parse(this.ctx.page.url);
-  let exportPath = originalUrl.dir;
-  // Make sure exportPath has a trailing slash, to safely append path segments
-  if (!exportPath.endsWith('/')) {
-    exportPath = `${exportPath}/`;
-  }
-
-  if (tags.includes('case-study')) {
-    exportPath += 'case-studies/';
-  } else if (tags.includes('new-to-the-web')) {
-    exportPath += 'blog/';
-  } else if (exportPath === '/') {
-    // Put everything else that would otherwise be in the root into the articles folder
-    exportPath += 'articles/';
-  }
-
-  // Add the export path to the exportUrls map, so we can construct a redirect map
-  exportUrls.set(this.ctx.page.url, `${exportPath}${originalUrl.name}`);
-
-  const ctx = Object.assign({}, this.ctx, {
-    export: true,
-    exportPath,
-    exportName: originalUrl.name,
-  });
-
-  let markdown = await new Promise((resolve) => {
-    console.log('Rendering template', pageUrl);
-    njkEnv.renderString(transformedSource, ctx, (err, result) => {
-      if (err) {
-        resolve('Could not render template: ' + err);
-        return;
-      }
-
-      resolve(result);
-    });
-  });
-
-  // Put raw shortcodes back into the transformed content, they get then rewritten
-  // to DevSite compatible `{% verbatim %}` tags in the transform method
-  markdown = insert(rawShortcodes, RAW_PLACEHOLDER, markdown);
-
-  const transformedMarkdown = await transform(ctx, markdown);
   const renderedPage = template + transformedMarkdown;
 
   await exportFile(ctx, renderedPage);
@@ -314,4 +386,11 @@ ${
   return renderedPage;
 }
 
-module.exports = {Export, exportUrls, pluck, insert};
+module.exports = {
+  Export,
+  exportUrls,
+  pluck,
+  insert,
+  getExportDetails,
+  EXPLORE_PATHS,
+};

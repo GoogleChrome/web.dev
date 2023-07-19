@@ -26,6 +26,7 @@ const patterns = require('./src/lib/patterns').patterns();
 const markdown = require('./src/site/_plugins/markdown');
 const {exportFile} = require('./src/site/_utils/export-file');
 const {finalizeExport} = require('./src/site/_utils/finalize-export');
+const {buildLandingPages} = require('./src/site/_utils/build-landing-pages');
 
 // Shortcodes used in prose
 const Aside = require('./src/site/_includes/components/Aside');
@@ -249,6 +250,7 @@ module.exports = function (config) {
   }
 
   config.on('afterBuild', finalizeExport);
+  config.on('afterBuild', buildLandingPages);
 
   // Because eleventy's passthroughFileCopy does not work with permalinks
   // we need to manually copy general assets ourselves using gulp.
@@ -300,6 +302,20 @@ module.exports = function (config) {
             };
           }
         });
+
+        // Build a includable contents file for each course
+        const contents = activities.map((activity) => {
+          return {
+            title: activity?.step_title,
+            path: activity?.devsite_path?.serve_path,
+          };
+        });
+        await exportFile(
+          null,
+          yaml.dump(contents, {noArrayIndent: true}),
+          path.join('learn', course.data.projectKey, '_toc.yaml'),
+        );
+
         const courseJson = {
           project_path: '/_project.yaml',
           book_path: '/_book.yaml',
