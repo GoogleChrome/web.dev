@@ -30,7 +30,7 @@
         "loading-wasm",
         "asyncify",
         {
-          "title": "Using WebGPU with WebAssembly",
+          "title": "Using WebGPU with Emscripten",
           "url": "https://developer.chrome.com/blog/webgpu-cross-platform/"
         }
       ]
