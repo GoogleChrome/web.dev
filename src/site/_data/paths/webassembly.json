@@ -28,7 +28,11 @@
         "webassembly-threads",
         "webassembly-feature-detection",
         "loading-wasm",
-        "asyncify"
+        "asyncify",
+        {
+          "title": "Using WebGPU with Emscripten",
+          "url": "https://developer.chrome.com/blog/webgpu-cross-platform/"
+        }
       ]
     },
     {
