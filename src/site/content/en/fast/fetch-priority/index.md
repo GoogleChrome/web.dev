@@ -187,7 +187,7 @@ The following table considers such factors to show how most resources are curren
 </div>
 
 {% Aside %}
-\* Preload using `"as"` or fetch using `"type"` use the priority of the type they are requesting (e.g., preload `as="stylesheet"` will use Highest priority). With no `"as"`, they will behave like an XHR.<br>
+\* Preload using `"as"` or fetch using `"type"` use the priority of the type they are requesting (e.g., preload `as="style"` will use Highest priority). With no `"as"`, they will behave like an XHR.<br>
 \*\* "Early" is defined as being requested before any non-preloaded images have been requested ("late" is after).<br>
 \*\*\* CSS where the media type doesn't match is not fetched by the preload scanner and is only processed when the main parser reaches it, which usually means it will be fetched very late and with a "late" priority.
 {% endAside %}
@@ -438,7 +438,7 @@ You can apply the `fetchpriority` attribute to different resources as shown in t
 </div>
 
 {% Aside %}
-\* Preload using `"as"` or fetch using `"type"` use the priority of the type they are requesting (e.g., preload `as="stylesheet"` will use Highest priority). With no `"as"`, they will behave like an XHR.<br>
+\* Preload using `"as"` or fetch using `"type"` use the priority of the type they are requesting (e.g., preload `as="style"` will use Highest priority). With no `"as"`, they will behave like an XHR.<br>
 \*\* "Early" is defined as being requested before any non-preloaded images have been requested ("late" is after).<br>
 \*\*\* CSS where the media type doesn't match is not fetched by the preload scanner and is only processed when the main parser reaches it, which usually means it will be fetched very late and with a "late" priority.<br>
 ◉: `fetchpriority="auto"`<br>
