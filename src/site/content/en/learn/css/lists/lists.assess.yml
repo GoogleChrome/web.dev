@@ -33,7 +33,7 @@ questions:
         rationale: "Try again."
   - type: multiple-choice
     cardinality: "1+"
-    correctAnswers: "0,2,4"
+    correctAnswers: "0,2"
     stem: "Which two styles in this list will apply styles to a ::marker?"
     options:
       - content: "`transition`"
