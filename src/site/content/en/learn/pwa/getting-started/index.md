@@ -110,7 +110,7 @@ Users should be able to switch between input types while using your application 
 
 #### Provides context for permission requests
 
-Only trigger prompts for permissions like notifications, geolocation, and credentials, after providing in-context rationale to improve chances of accepting the prompts from the user.
+Only trigger prompts for permissions like notifications, geolocation, and credentials, after providing in-context rationale to improve chances of the user accepting the prompts.
 
 #### Follows best practices for healthy code
 
