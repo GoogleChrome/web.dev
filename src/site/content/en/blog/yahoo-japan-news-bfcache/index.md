@@ -82,7 +82,7 @@ Here's a video comparing the website with bfcache and without bfcache. You can s
   {% Video src="video/jL3OLOhcWUQDnR4XjewLBx4e3PC3/2qqiTs9XuedWvtjfKuMu.mp4", autoplay="true", loop="true", width="800", height="800", muted="true" %}
 </figure>
 
-What’s really promising is that the group with bfcache enabled had a **significant increase in page views and ads revenue**, especially on mobile devices.
+What's really promising is that the group with bfcache enabled had a **significant increase in page views and ads revenue**, especially on mobile devices.
 
 Here are details about the impact observed by Yahoo! JAPAN News with their bfcache A/B test. (Further information can be found in [their case study article](https://techblog.yahoo.co.jp/entry/2023072430429932/)).
 
