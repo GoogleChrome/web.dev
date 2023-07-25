@@ -6,7 +6,7 @@ authors:
   - mitchgalavan
   - cjacinic
   - silviaconvento
-date: 2023-07-26
+date: 2023-07-27
 hero: image/YLflGBAPWecgtKJLqCJHSzHqe2J2/y1JgqDiKp5XDnXFjiv7M.png
 description: |
   Passkeys make a website's user accounts safer, simpler, easier to use and passwordless. This article discusses Google designed the user experience of passkeys for Google accounts.
