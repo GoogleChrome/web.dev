@@ -17,7 +17,9 @@ tags:
   - case-study
 ---
 
+{% Blockquote 'web.dev bfcache article' %}
 [Back/forward cache](/bfcache/) (or bfcache) is a browser optimization that enables instant back and forward navigation. It significantly improves the browsing experience for users, especially for websites that involve many back and forth navigations.
+{% endBlockquote %}
 
 Yahoo! JAPAN News, one of the most popular news platforms in Japan, drove a concerted effort to improve their bfcache hit-rate and saw significant user experience and business improvements as a result. Specifically, the results of the A/B test they conducted showed that pages that use bfcache had a **9% increase in ads revenue**.
 
