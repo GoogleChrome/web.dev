@@ -1413,7 +1413,6 @@
   },
   "jlwagner": {
     "github": "malchata",
-    "twitter": "malchata",
     "linkedin": "https://www.linkedin.com/in/malchata/",
     "homepage": "https://jlwagner.net/",
     "country": "US",
@@ -1808,5 +1807,10 @@
     "github": "leichteckig",
     "linkedin": "https://www.linkedin.com/in/ramona-schwering/",
     "homepage": "https://www.ramona.codes/"
+  },
+  "yurikohirota": {
+    "country": "JP",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/gWQBNNc7xafsHz7KBrE1.jpg",
+    "twitter": "yuriko_fuuu"
   }
 }
