@@ -1,15 +1,15 @@
 ---
 layout: post
 title: Designing the user experience of passkeys on Google accounts
-subhead: Learn how Google designed the user experience of passkeys for Google accounts.
+subhead: Bringing better security and a better user experience to Google accounts.
 authors:
   - mitchgalavan
   - cjacinic
   - silviaconvento
-date: 2023-07-27
+date: 2023-07-26
 hero: image/YLflGBAPWecgtKJLqCJHSzHqe2J2/y1JgqDiKp5XDnXFjiv7M.png
 description: |
-  Passkeys make a website's user accounts safer, simpler, easier to use and passwordless. This article discusses Google designed the user experience of passkeys for Google accounts.
+  Passkeys make user accounts safer, simpler, and easier to use. This article explains Google designed the user experience of passkeys for Google accounts.
 tags:
   - identity
   - ux
@@ -61,7 +61,7 @@ authentication process: ease of use and security.
 {% Img
   src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/UI5EioUkpDiMtUAdARnw.png",
   alt="For most users, this will be the first time they see passkeys", width="800", height="600" %}
-  <figcaption>For most users, this will be the first time they see passkeys</figcaption>
+  <figcaption>For most users, this will be the first time they see passkeys.</figcaption>
 </figure>
 
 The first passkey screen users see is light and easy-to-digest.  The header is
@@ -79,7 +79,7 @@ proceeding.
 
 We explored many iterations of the pages used to introduce users to passkeys
 during sign in. This included trying content that emphasized the security,
-technology, and other aspects of passkeys  - yet convenience was really what
+technology, and other aspects of passkeys—yet convenience was really what
 resonated most. Google's content strategy, illustration, and interaction design
 demonstrates this core principle for our implementation of passkeys.
 
@@ -158,7 +158,7 @@ passkey icon is never presented without context or supporting material.
 {% Img
   src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/kPbCZqaBDx5AFTZyi54a.png",
   alt="When users create their passkey, they'll see this page", width="800", height="600" %}
-  <figcaption>When users create their passkey, they'll see this page</figcaption>
+  <figcaption>When users create their passkey, they'll see this page.</figcaption>
 </figure>
 
 Above, we outlined how the user and the platform work together to create a
@@ -173,7 +173,7 @@ and closure at this step of the process.
 {% Img
   src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/sNqODRG8qqaGQc8ygbjO.png",
   alt="Once the passkey has been created, users will see this page", width="800", height="600" %}
-  <figcaption>Once the passkey has been created, users will see this page</figcaption>
+  <figcaption>Once the passkey has been created, users will see this page.</figcaption>
 </figure>
 
 The confirmation screen is a deliberate ‘pause' to bookend the journey of
@@ -190,7 +190,7 @@ Once the user clicks "Continue" here, they're brought to their destination.
 {% Img
   src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/u7ugXsWYbGcylhCWZ21M.png",
   alt="When users sign in again, they'll likely see this page", width="800", height="600" %}
-  <figcaption>When users sign in again, they'll likely see this page</figcaption>
+  <figcaption>When users sign in again, they'll likely see this page.</figcaption>
 </figure>
 
 ## Signing in
@@ -205,7 +205,7 @@ they need to take to sign in.
 {% Img
   src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/kPbCZqaBDx5AFTZyi54a.png",
   alt="The user will use this WebAuthn UI to sign in", width="800", height="600" %}
-  <figcaption>The user will use this WebAuthn UI to sign in</figcaption>
+  <figcaption>The user will use this WebAuthn UI to sign in.</figcaption>
 </figure>
 
 The same principle of familiarity applies here. Intentionally, this uses the
@@ -228,7 +228,7 @@ Google Account.
   src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/C0xuS6j8vd98Y17jckE3.png",
   alt="Passkeys management page in the Google Account", width="800", height="655"
 %}
-  <figcaption>Passkeys management page in the Google Account</figcaption>
+  <figcaption>Passkeys management page in the Google Account.</figcaption>
 </figure>
 
 ### Describe passkeys by ecosystem
@@ -286,10 +286,10 @@ Google Account in traditional ways.
 We are still in the early days of passkeys, so when designing the user
 experience keep a few principles in mind:
 
-* Introduce passkeys when it's relevant to the user    
-* Highlight the benefits of passkeys
-* Use opportunities to build familiarity the concept of passkeys
-* Position passkeys as an alternative to passwords and not a replacement
+* Introduce passkeys when it's relevant to the user.    
+* Highlight the benefits of passkeys.
+* Use opportunities to build familiarity the concept of passkeys.
+* Position passkeys as an alternative to passwords and not a replacement.
 
 The choices we made for passkeys for Google Accounts were informed by best
 practices and internal research and we'll continue to evolve the user experience
