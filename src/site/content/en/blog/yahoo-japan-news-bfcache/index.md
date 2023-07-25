@@ -4,7 +4,7 @@ title: How Back/forward Cache Helped Yahoo! JAPAN News Increase Revenue by 9% on
 subhead: |
   Instant page loading by Back/forward Cache provides users with seamless experience
 description: |
-  Yahoo! JAPAN News, one of the most popular news platforms in Japan, drove a concerted effort to improve their bfcache hit-rate and saw significant user experience and business improvements as a result. Specifically, the results of the A/B test they conducted showed that pages that use bfcache had a 9% increase in ads revenue.
+  Yahoo! JAPAN News, one of the most popular news platforms in Japan, drove a concerted effort to improve their bfcache hit rate and saw significant user experience and business improvements as a result. Specifically, the results of the A/B test they conducted showed that pages that use bfcache had a 9% increase in ads revenue.
 hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/iyoxhI76AJ7l8sH6OtUe.png
 thumbnail: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/stTQH6TS9oLBON1LvoKG.png
 alt: A hero image displaying the Yahoo JAPAN News logo at left. At right is a comparison of two filmstrips showing the benefits of bfcache (page loads in 0.3 seconds) versus without (page loads in 3.3 seconds).
@@ -17,11 +17,11 @@ tags:
   - case-study
 ---
 
-{% Blockquote 'web.dev bfcache article' %}
+{% Blockquote 'web.dev article on bfcache ' %}
 [Back/forward cache](/bfcache/) (or bfcache) is a browser optimization that enables instant back and forward navigation. It significantly improves the browsing experience for users, especially for websites that involve many back and forth navigations.
 {% endBlockquote %}
 
-Yahoo! JAPAN News, one of the most popular news platforms in Japan, drove a concerted effort to improve their bfcache hit-rate and saw significant user experience and business improvements as a result. Specifically, the results of the A/B test they conducted showed that pages that use bfcache had a **9% increase in ads revenue**.
+Yahoo! JAPAN News, one of the most popular news platforms in Japan, drove a concerted effort to improve their bfcache hit rate and saw significant user experience and business improvements as a result. Specifically, the results of the A/B test they conducted showed that pages that use bfcache had a **9% increase in ads revenue**.
 
 This case study will explain how Yahoo! JAPAN News removed the blockers for bfcache, and how bfcache drastically improved the user experience.
 
@@ -32,15 +32,14 @@ bfcache has been available since Chrome 86, and is also available on all modern 
 1. Use of `unload` handlers
 2. Use of the [`no-store` directive](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control#no-store) on `Cache-control` headers
 
-You can check what major blockers there are for your website by going to **Chrome Dev Tools > Applications > Back/forward Cache** ([more details](/bfcache/#test-to-ensure-your-pages-are-cacheable)), or by calling [`notRestoredReasons` API](https://developer.chrome.com/docs/web-platform/bfcache-notrestoredreasons/) for a more comprehensive view of blockers based on actual usage in the wild.
+You can check what major blockers there are for your website by going to **Chrome Dev Tools > Applications > Back/forward Cache** ([more details](/bfcache/#test-to-ensure-your-pages-are-cacheable)), or by using the [`notRestoredReasons` API](https://developer.chrome.com/docs/web-platform/bfcache-notrestoredreasons/) to get a more comprehensive view of blockers based on actual usage in the field.
 
 Here's how Yahoo! JAPAN News has removed their blockers:
 
-- **Unload Handlers:** Use the `pagehide` event instead of `unload` event, as the `unload` event is [very unreliable](/bfcache/#never-use-the-unload-event). Also, `permission-policy: unload` was [launched in Chrome 115](https://chromestatus.com/feature/5579556305502208) so that the websites can reliably remove `unload` handlers for specific origins. Chrome is also planning to [gradually deprecate `unload` handlers](https://github.com/fergald/docs/blob/master/explainers/permissions-policy-deprecate-unload.md#logistics-of-deprecation).  
-  
+- **Unload Handlers:** Use the `pagehide` event instead of `unload` event, as the `unload` event is [very unreliable](/bfcache/#never-use-the-unload-event). Also, `permission-policy: unload` was [launched in Chrome 115](https://chromestatus.com/feature/5579556305502208) so that the websites can reliably remove `unload` handlers for specific origins. Chrome is also planning to [gradually deprecate `unload` handlers](https://github.com/fergald/docs/blob/master/explainers/permissions-policy-deprecate-unload.md#logistics-of-deprecation).
 - **`Cache-control: no-store`** (or CCNS for short): Changing the `Cache-control` header from **`no-store`** to **`no-cache`** can enable bfcache. Chrome is also planning to start [caching for bfcache even with a `no-store` header in certain circumstances](https://chromestatus.com/feature/6705326844805120).
 
-CCNS is intended for pages that should never be cached, under any circumstance. This comes with an obvious caveat—the page with CCNS will not be able to benefit from any caching technology, including CDN edge servers and local caches.
+CCNS is intended for pages that should never be cached under any circumstances. This comes with the caveat that any page with CCNS will not be able to benefit from any caching technology, including CDN edge servers and local caches.
 
 If you have a CCNS header, this is a great opportunity to discuss what the right `Cache-control` strategies are for your website. Here are the main differences between `no-store` and `no-cache`.
 
@@ -76,12 +75,17 @@ If you are interested in learning more about `Cache-control` options, [this flow
 
 ## Impact of bfcache in numbers
 
-To measure the impact of bfcache, Yahoo! JAPAN News conducted an A/B test for 2 weeks, where they served a version of their pages with their bfcache fixes to one group, and a version without bfcache to another. They picked the URL paths with a significant amount of traffic so that the test could achieve meaningful results. There was no visual or functional difference between the 2 versions.
+To measure the impact of bfcache, Yahoo! JAPAN News conducted an A/B test for 2 weeks, where they served a version of their pages with their bfcache fixes to one group, and a version with pages ineligible for bfcache to another. They picked the URL paths with a significant amount of traffic so that the test could achieve meaningful results. There were no other visual or functional difference between the 2 versions.
 
 Here's a video comparing the website with bfcache and without bfcache. You can see that the website with bfcache enabled loads significantly faster during a back or forward navigation.
 
-<figure>
-  {% Video src="video/jL3OLOhcWUQDnR4XjewLBx4e3PC3/2qqiTs9XuedWvtjfKuMu.mp4", autoplay="true", loop="true", width="800", height="800", muted="true" %}
+<style>
+  .bfcache-video video {
+    height: auto;
+  }
+</style>
+<figure class="bfcache-video">
+  {% Video src="video/jL3OLOhcWUQDnR4XjewLBx4e3PC3/2qqiTs9XuedWvtjfKuMu.mp4", controls="true", autoplay="true", loop="true", width="800", height="800", muted="true" %}
 </figure>
 
 What's really promising is that the group with bfcache enabled had a **significant increase in page views and ads revenue**, especially on mobile devices.
@@ -127,11 +131,11 @@ Here are details about the impact observed by Yahoo! JAPAN News with their bfcac
   </table>
 </div>
 
-When web pages become instant with bfcache, the users tend to stay on page longer, thus increasing the views on ads, leading to the increase of ads revenue.
+When back/forward navigations between pages become instantaneous with bfcache, users tend to stay on pages longer, thus increasing ad views, leading to an increase of ad revenue.
 
 ## bfcache enhances seamless user experience on the website
 
-When the pages are instant, **the website navigation feels more seamless.**
+When pages load instantly, **navigations feel more seamless.**
 
 In Yahoo! JAPAN News, one of the major user journey is as follows:
 
@@ -140,7 +144,7 @@ In Yahoo! JAPAN News, one of the major user journey is as follows:
 3. Go back to the article list
 4. Click on another article to read
 
-Before bfcache, when users finished reading an article in (step 2), they had to wait for the article list page to load again. This could be a friction factor for users who just want to go back to the article list to pick out another article to read.
+Before bfcache, when users finished reading an article (step 2), they had to wait for the article list page to load again. This could be a friction factor for users who just want to go back to the article list to pick out another article to read.
 
 Another source of friction during backward navigation was the scroll position. In practice, the browser tries to restore the scroll position when a backward navigation happens. However, because of dynamically-added ads or other layout changes, the scroll position often gets incorrectly restored, which could cause users to lose their bearings or even leave the page. This is never an issue when a backward navigation is powered by bfcache: the scroll position is immediately and correctly restored.
 
@@ -148,7 +152,7 @@ Another source of friction during backward navigation was the scroll position. I
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/WlJn1GZnDrSLpEPPHWAn.png", alt="Two filmstrips of a backward navigation from an article to the article listing page. The top is a filmstrip of the process being handled with bfcache which takes 0.3 seconds, whereas the bottom is of the same process being handled without bfcache, which takes 3.3 seconds.", width="800", height="343" %}
 </figure>
 
-Now with bfcache, the friction in the user journey is gone—the users can seamlessly go back to the article list page and pick another article to read instantly.
+Now with bfcache, the friction in the user journey is gone—users can instantly navigate back to the article list page and pick another article to read without having to wait for the article list page to load.
 
 The same thing happens when users browse from one article directly to another and back:
 
@@ -158,11 +162,11 @@ The same thing happens when users browse from one article directly to another an
 
 In a nutshell, the benefits of using bfcache for Yahoo! JAPAN News includes:
 
-- Increased page view: Users were more likely to navigate within the website when pages were cached with bfcache.
-- Increased revenue: As a result of increased page view per session, the ads impression increased, leading to +9% increase in revenue on mobile compared with the test group without bfcache.
+- Increased pageviews: Users were more likely to navigate within the website when pages were cached with bfcache.
+- Increased revenue: As a result of increased pageviews per session, ads impression increased, which resulted in a 9% increase in revenue on mobile compared with the test group without bfcache.
 
 ## Conclusion
 
 In short, bfcache not only makes your website instant, but can also reduce friction in overall user experience and increase engagement within your website.
 
-The Chrome team is continually looking at bfcache blockers—especially the two reasons listed here as they are common reasons bfcache is not used. In future these may not prevent bfcache usage, but there's no need to wait until then. You can benefit from bfcache by looking at your bfcache blockers and avoiding these common, and other less common, patterns.
+The Chrome team is continually looking at bfcache blockers—especially the two reasons listed in this article as they are common reasons bfcache is not used. In the future, these may not prevent bfcache usage, but there's no need to wait until then. You can benefit from bfcache by looking at your bfcache blockers and avoiding these common, and other less common, patterns.
