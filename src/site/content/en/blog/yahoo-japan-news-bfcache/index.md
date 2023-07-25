@@ -9,7 +9,7 @@ hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/iyoxhI76AJ7l8sH6OtUe.png
 thumbnail: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/stTQH6TS9oLBON1LvoKG.png
 alt: A hero image displaying the Yahoo JAPAN News logo at left. At right is a comparison of two filmstrips showing the benefits of bfcache (page loads in 0.3 seconds) versus without (page loads in 3.3 seconds).
 authors:
-  - jlwagner
+  - yurikohirota
 date: 2023-07-25
 tags:
   - blog
