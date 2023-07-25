@@ -62,7 +62,7 @@ If you have a CCNS header, this is a great opportunity to discuss what the right
         <td>
           <ul>
             <li>The response is allowed to be stored in caches as long as it's revalidated with the server before each use.</li>
-            <li>This should be public responses you want revalidated every time (for example, the home page of a news website - though event then a very short caching time can can improve performance and offload work from the main servers).</li>
+            <li>This should be public responses you want revalidated every time (for example, the home page of a news website - though even then a very short caching time can improve performance and offload work from the main servers).</li>
           </ul>
         </td>
       </tr>
