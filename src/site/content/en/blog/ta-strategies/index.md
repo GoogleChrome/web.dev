@@ -2,7 +2,6 @@
 layout: post
 title: Pyramid or Crab? Find a testing strategy that fits 
 date: 2023-07-26
-scheduled: true
 subhead: >
   Discover how to combine different testing types into a reasonable strategy that matches your project.
 description: >
