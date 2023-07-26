@@ -7,7 +7,7 @@ authors:
   - cjacinic
   - silviaconvento
 date: 2023-07-26
-hero: image/YLflGBAPWecgtKJLqCJHSzHqe2J2/y1JgqDiKp5XDnXFjiv7M.png
+hero: image/YLflGBAPWecgtKJLqCJHSzHqe2J2/O5dR5r4CvlcxNg7mYdDu.png
 description: |
   Passkeys make user accounts safer, simpler, and easier to use. This article explains Google designed the user experience of passkeys for Google accounts.
 tags:
