@@ -1413,7 +1413,6 @@
   },
   "jlwagner": {
     "github": "malchata",
-    "twitter": "malchata",
     "linkedin": "https://www.linkedin.com/in/malchata/",
     "homepage": "https://jlwagner.net/",
     "country": "US",
@@ -1822,5 +1821,10 @@
   "silviaconvento": {
     "country": "US",
     "image": "image/YLflGBAPWecgtKJLqCJHSzHqe2J2/D7aLMO2nHDOmZ3xFctGX.jpg"
+  },
+  "yurikohirota": {
+    "country": "JP",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/gWQBNNc7xafsHz7KBrE1.jpg",
+    "twitter": "yuriko_fuuu"
   }
 }

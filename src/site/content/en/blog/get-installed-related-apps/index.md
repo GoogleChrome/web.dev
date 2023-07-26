@@ -313,7 +313,8 @@ First, you'll need to add digital asset links to the server where your PWA is
 served from. This will help define the relationship between your website and
 your PWA, and ensures that only your website can check if your PWA is installed.
 
-Add an `assetlinks.json` file to the [`/.well-known/`][well-known] directory
+Add an [`assetlinks.json`](https://developers.google.com/digital-asset-links/v1/getting-started)
+file to the [`/.well-known/`][well-known] directory
 of the domain where the PWA lives, for example `app.example.com`. In the `site`
 property, provide the full path to the web app manifest that will perform
 the check (not the web app manifest of your PWA).
