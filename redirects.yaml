@@ -192,6 +192,9 @@ redirects:
   - source: /wasm
     destination: /webassembly/
 
+  - source: /opfs
+    destination: /origin-private-file-system/
+
   - source: /pwa
     destination: /progressive-web-apps/
 
