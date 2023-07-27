@@ -53,7 +53,7 @@ in particular elements for text entry: `<input>` and `<textarea>`.
 
 So, are you ready to learn about forms? [Let's get started](/learn/forms/form-element/).
 
-{% Aside %}  
+{% Aside %}
 This course is written and edited by forms community experts: 
 [Michael Scharnagl](https://twitter.com/justmarkup), 
 [Sam Dutton](https://twitter.com/sw12), 
