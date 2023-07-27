@@ -5,7 +5,7 @@ subhead: A method to adapt a font to your users' preferences, so they're maximal
 authors:
   - adamargyle
 description: A method to adapt a font to your users' preferences, so they're maximally comfortable reading your content.
-date: 2023-07-24
+date: 2023-07-27
 hero: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/JQ2Vv49WINKpelsnpIZJ.png
 thumbthumbnail: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/MIeIToUHSwhwTfrmqJbL.png
 alt: Three font weights are shown for a headline and paragraph across two color schemes, each labeled above them with the user preference.
@@ -107,7 +107,8 @@ will tailor these axes to match the user's desired preference.
 {% Aside %}
 A variable font is not required to achieve this user experience that matches
 preferences, however, using one achieves the effect without loading multiple
-weights or versions of a font.
+weights or versions of a font. See [this demo](https://codepen.io/web-dot-dev/pen/zYMmevQ)
+for an example of this UX without a dependency on a variable font.
 {% endAside %}
 
 Load the variable font using the `@font-face` API of CSS:
