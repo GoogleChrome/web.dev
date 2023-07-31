@@ -91,10 +91,10 @@ They resemble a system test if you refer to the theory of quality assurance. The
 {% Aside %}
 The tools you might use for end-to-end testing include but aren't limited to:
 
-* [WebdriverIO](https://webdriver.io/) 
-* [Cypress](https://www.cypress.io/)
-* [Playwright](https://playwright.dev/)
-* [Selenium](https://www.selenium.dev/)
+- [WebdriverIO](https://webdriver.io/) 
+- [Cypress](https://www.cypress.io/)
+- [Playwright](https://playwright.dev/)
+- [Selenium](https://www.selenium.dev/)
 {% endAside %}
 
 #### Visual UI testing
