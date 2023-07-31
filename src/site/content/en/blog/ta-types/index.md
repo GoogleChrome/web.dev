@@ -99,7 +99,7 @@ The tools you might use for end-to-end testing include but aren't limited to:
 
 #### Visual UI testing
 
-An interesting subcategory of UI tests is visual tests. These tests are extended end-to-end tests that provide a means to verify the visible output of an application. Such a test takes a screenshot after change and another screenshot containing the “status quo” (or golden file), then provides those results to a human reviewer to inspect and check. In other words, it helps find “visual bugs” in the appearance of a page, beyond purely functional bugs and not explicitly written down into assertions.
+An interesting subcategory of UI tests is visual tests. These tests are extended end-to-end tests that provide a means to verify the visible output of an application. Such a test takes a screenshot after a change and another screenshot containing the “status quo” (or golden file), then provides those results to a human reviewer to inspect and check. In other words, it helps find “visual bugs” in the appearance of a page, beyond purely functional bugs and not explicitly written down into assertions.
 
 ### Static analysis
 
