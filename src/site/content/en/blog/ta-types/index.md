@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Three common types of test automation 
+title: Three common types of test automation
 date: 2023-07-12
 subhead: >
   Let's start with the basics! Exploring the two general testing modes and three common types of test automation.
@@ -30,7 +30,7 @@ Simply put, we need a plan before we start writing the actual test code. To appr
 - How do we want to test?
 - What do we want to test?
 
-This article focuses on the general things you need to know to answer the first question. To start from a common ground, let's discover which testing modes and types there are. In later articles, we will answer the second question, combine the answers, and find the testing strategy that works best for your project—based on the what we will learn here. Let's go! 🙌
+This article focuses on the general things you need to know to answer the first question. To start from a common ground, let's first learn what testing modes exist and then focus on the common types of testing. In later articles, we will answer the second question, combine the answers, and find the testing strategy that works best for your project. Let's go! 🙌
 
 ## Start with the basics: General testing modes
 
@@ -58,7 +58,7 @@ Both procedures can be applied to manual and automated testing. However, some as
 
 As we get closer to answering the "how" question, we've already decided to do some manual testing. However, choosing and applying test automation types is a bit more challenging, though. The types of automation testing are closely related to the metrics we want to create in our projects. So let's take a closer look at the most important ones.
 
-As illustrated in the meme mentioned earlier, we have already come across two types—unit testing and integration testing but there are even more types to consider.
+As illustrated in the meme mentioned earlier, we have already come across two types: unit testing and integration testing. End-to-end testing is the third important one to consider. But that isn't all of them still. Let's take a closer look.
 
 ### Unit testing
 
