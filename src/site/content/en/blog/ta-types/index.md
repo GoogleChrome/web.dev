@@ -56,7 +56,7 @@ Both procedures can be applied to manual and automated testing. However, some as
 
 ## Test automation types: How do you want to test?
 
-As you get closer to answering the "how" question, you have already decided to do some manual testing. However, choosing and applying test automation types is a bit more challenging, though. The types of automation testing are closely related to the metrics you want to create in your projects. So let's take a closer look at the most important ones.
+As you get closer to answering the "how" question, you have already decided to do some manual testing. However, choosing and applying test automation types is a bit more challenging. The types of automation testing are closely related to the metrics you want to create in your projects. So let's take a closer look at the most important ones.
 
 As illustrated in the meme mentioned earlier, you have already come across two types: unit testing and integration testing. End-to-end testing is the third important one to consider. But that isn't all of them still. Let's take a closer look.
 
