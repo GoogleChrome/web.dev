@@ -95,6 +95,7 @@ The tools you might use for end-to-end testing include but aren't limited to:
 - [Cypress](https://www.cypress.io/)
 - [Playwright](https://playwright.dev/)
 - [Selenium](https://www.selenium.dev/)
+
 {% endAside %}
 
 #### Visual UI testing
@@ -110,6 +111,7 @@ The tools you might use for static analysis include but aren't limited to:
 
 - [Eslint](https://eslint.org/)
 - [StyleLint](https://stylelint.io/)
+
 {% endAside %}
 
 ## Testing in all shapes: How does this all work together?
