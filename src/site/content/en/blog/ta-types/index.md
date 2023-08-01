@@ -89,13 +89,7 @@ These tests are often called UI tests and this name explains their function even
 They resemble a system test if you refer to the theory of quality assurance. These tests simulate a genuine user and their interactions. End-to-end tests take more runtime because they involve the whole system and more runtime requires more computing power. As a result, this additional effort results in higher maintenance costs. 
 
 {% Aside %}
-The tools you might use for end-to-end testing include but aren't limited to:
-
-- [WebdriverIO](https://webdriver.io/) 
-- [Cypress](https://www.cypress.io/)
-- [Playwright](https://playwright.dev/)
-- [Selenium](https://www.selenium.dev/)
-
+The tools you might use for end-to-end testing include but aren't limited to [WebdriverIO](https://webdriver.io/), [Cypress](https://www.cypress.io/), [Playwright](https://playwright.dev/), [Selenium](https://www.selenium.dev/).
 {% endAside %}
 
 #### Visual UI testing
@@ -107,10 +101,7 @@ An interesting subcategory of UI tests is visual tests. These tests are extended
 There's one more thing to introduce here: static analysis. It isn't a testing type in the textbook sense. However, it will be an essential aspect in quality assurance strategies later on. You can imagine it working like a spell check function: it scans your code for more significant defects and syntax errors without running the program, thus detecting code style issues. This simple measure can prevent many bugs. This is a good point to learn about Static Analysis if you want to get to know it in more detail.
 
 {% Aside %}
-The tools you might use for static analysis include but aren't limited to:
-
-- [Eslint](https://eslint.org/)
-- [StyleLint](https://stylelint.io/)
+The tools you might use for static analysis include but aren't limited to [Eslint](https://eslint.org/) and [StyleLint](https://stylelint.io/).
 
 {% endAside %}
 
