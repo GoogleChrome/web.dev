@@ -19,22 +19,22 @@ tags:
 We've all been there: what is a recurring coding meme that happens all too often in real life?
 {% Img src="image/dPDCek3EhZgLQPGtEG3y0fTn4v82/yl1OSGuWVIOsgLO6odFZ.jpeg", alt="A cupboard with two drawers you cannot open at the same time.", width="800", height="450" %}
 
-This meme sums it up quite nicely: each drawer works perfectly well individually, but in combination with the other drawer, they block each other and fail to function. We want both drawers to work well with each other and be operable at the same time.
+This meme sums it up quite nicely: each drawer works perfectly well individually, but in combination with the other drawer, they block each other and fail to function. You want both drawers to work well with each other and be operable at the same time.
 
 {% Img src="image/dPDCek3EhZgLQPGtEG3y0fTn4v82/2PY6rfmGkB26vX3qIbsj.jpeg", alt="The same cupboard but with two drawers you can open at the same time.", width="800", height="450" %}
 
-Apply this to web development: we wrote some tests, maybe even achieved 100% test coverage, but our application still needs to work once other parts fall into place. The units may work well on their own but not in relation to each other. Writing some tests is crucial but it's only one part of the ideal test setup for our project. As a very first step, we need to determine what parts of the application quality we need to ensure and how we can achieve that.
+Apply this to web development: you wrote some tests, maybe even achieved 100% test coverage, but your application still needs to work once other parts fall into place. The units may work well on their own but not in relation to each other. Writing some tests is crucial but it's only one part of the ideal test setup for your project. As a very first step, you need to determine what parts of the application quality you need to ensure and how you can achieve that.
 
-Simply put, we need a plan before we start writing the actual test code. To approach the topic of how to test practically, let's start with a clean slate and answer two basic questions:
+Simply put, you need a plan before you start writing the actual test code. To approach the topic of how to test practically, let's start with a clean slate and answer two basic questions:
 
-- How do we want to test?
-- What do we want to test?
+- How do you want to test?
+- What do you want to test?
 
 This article focuses on the general things you need to know to answer the first question. To start from a common ground, let's first learn what testing modes exist and then focus on the common types of testing. In later articles, we will answer the second question, combine the answers, and find the testing strategy that works best for your project. Let's go! 🙌
 
 ## Start with the basics: General testing modes
 
-When answering the question of how to test, the first point to clarify is very abstract. Should we test manually or let a computer take over? It's important, however, not to fall into binary thinking here.
+When answering the question of how to test, the first point to clarify is very abstract. Should you test manually or let a computer take over? It's important, however, not to fall into binary thinking here.
 
 ### Manual testing versus automated testing
 
@@ -43,22 +43,22 @@ If you ask quality assurance engineers to define testing, they will probably bre
 * **Manual testing**. This is a typical testing method conducted by actual people. A quality assurance engineer click through the application, check if it works and, at the same time, try to break it. The most common way is exploratory testing, where the engineer investigates the application using their knowledge of the application against a predefined path or checklist.
 * **Automated testing**. This is a type of testing conducted by a computer. Quality assurance engineers implement it to automate away repetitive and monotonous tests.
 
-This series of guides will mostly focus on automated testing. However, you shouldn't focus on only one way of testing. Even if automation saves a lot of time and effort, humans and manual testing will always play a vital role. Rather, test automation should help people focus on what is important in manual testing, that is, the exploratory testing of the most important features: all test cases where our improvisation and creativity can shine. For example, in ensuring the quality of user experiences or protecting the high-risk business logic. In other words, automation has our back. ❤️
+This series of guides will mostly focus on automated testing. However, you shouldn't focus on only one way of testing. Even if automation saves a lot of time and effort, humans and manual testing will always play a vital role. Rather, test automation should free up people to focus on exploratory testing and creative problem-solving. For example, ensuring the quality of user experiences or protecting the high-risk business logic. In other words, automation has your back. ❤️
 
 ### Opaque box versus clear box
 
-So, we have defined the general modes of testing. However, that's not enough yet. To plan the testing strategy, there is one more question to answer: should you know how your application works under the hood or is it better to test without this knowledge? Depending on the answer, there are two procedures to choose from for deriving and selecting test cases:
+So, you have defined the general modes of testing. However, that's not enough yet. To plan the testing strategy, there is one more question to answer: should you know how your application works under the hood or is it better to test without this knowledge? Depending on the answer, there are two procedures to choose from for deriving and selecting test cases:
 
 - **Opaque box testing** (or black box testing). It is based on analyzing a component or system's functional or non-functional requirements (specifications) without considering its internal structure.
 - **Clear box testing** (or white box testing) is a procedure that takes into account the internal structure of said box. In other words, how your application works under the hood.
 
 Both procedures can be applied to manual and automated testing. However, some aspects of general testing modes may focus more on one of the two—we will cover that later. For now, let's further break down test automation into types.
 
-## Test automation types: How do we want to test?
+## Test automation types: How do you want to test?
 
-As we get closer to answering the "how" question, we've already decided to do some manual testing. However, choosing and applying test automation types is a bit more challenging, though. The types of automation testing are closely related to the metrics we want to create in our projects. So let's take a closer look at the most important ones.
+As you get closer to answering the "how" question, you have already decided to do some manual testing. However, choosing and applying test automation types is a bit more challenging, though. The types of automation testing are closely related to the metrics you want to create in your projects. So let's take a closer look at the most important ones.
 
-As illustrated in the meme mentioned earlier, we have already come across two types: unit testing and integration testing. End-to-end testing is the third important one to consider. But that isn't all of them still. Let's take a closer look.
+As illustrated in the meme mentioned earlier, you have already come across two types: unit testing and integration testing. End-to-end testing is the third important one to consider. But that isn't all of them still. Let's take a closer look.
 
 ### Unit testing
 
@@ -126,7 +126,7 @@ The following five strategies depicted in this image are the most common ones:
 - Test Honeycomb
 - Test Trophy
 
-This is truly a lot of information to process. How should we decide on a matching test strategy based on all this? Don't worry, we've got you covered. In the next article, we will discuss these different strategies in more detail and explain how to choose the best fit for your project. Stay tuned! 🔥
+This is truly a lot of information to process. How should you decide on a matching test strategy based on all this? Don't worry, we've got you covered. In the next article, we will discuss these different strategies in more detail and explain how to choose the best fit for your project. Stay tuned! 🔥
 
 {% Aside %}
 This blog post was written by Ramona, with input and review from
