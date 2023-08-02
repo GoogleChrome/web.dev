@@ -16,13 +16,13 @@ tags:
   - testing
 ---
 
-Welcome back! In the [last article](/ta-types), we laid down lots of groundwork about how to approach the different testing types and what they contain, and we clarified the testing type definitions. Remember our little meme image from before? We wondered how all those testing types we learned about could work together.
+Welcome back! The [last article](/ta-types) laid down lots of groundwork about how to approach the different testing types and what they contain, and clarified the testing type definitions. Remember this [little meme image](/ta-types/#testing-in-all-shapes-how-does-this-all-work-together)? You might have wondered how all those testing types you learned about could work together.
 
 {% Img src="image/dPDCek3EhZgLQPGtEG3y0fTn4v82/n3LPuwApNcCRT5S3zaoq.jpeg", alt="A cupboard with two drawers you can open at the same time.", width="800", height="450" %}
 
-So next up, we will learn exactly that. This article will give an introduction on how to combine these testing types into a reasonable strategy that matches your project.
+Next, you will learn exactly that. This article gives an introduction on how to combine these testing types into reasonable strategies and choose one that matches your project.
 
-I want to share some recommendations on which testing strategies might fit your project, depending on its size. Let’s begin with a short overview—an attempt to generalize based on my own experience, so it can naturally deviate from your use case. I hope this is a good starting point:
+You can compare the strategies to a number of shapes to better grasp their meaning. Here's a list of strategies with respective sizes and development scopes.
 
 <div class="table-wrapper scrollbar">
   <table>
@@ -51,8 +51,8 @@ I want to share some recommendations on which testing strategies might fit your 
       </tr>
       <tr>
         <td>Small</td>
-        <td>High</td>
         <td>Developers & QA engineers</td>
+        <td>High</td>
         <td>Testing Ice Cone<br>Testing Crab</td>
       </tr>
       <tr>
@@ -83,16 +83,15 @@ I want to share some recommendations on which testing strategies might fit your 
   </table>
 </div>
 
-How did I come to the conclusions pictured in this table? What are the testing strategies mentioned? Let’s take a closer look to discover the answers.
+Let's take a closer look at the strategies and learn the meaning behind their names.
 
+## Determine testing goals: What do you want to achieve with these tests?
 
-## Determine testing goals: What do we want to achieve with these tests?
+Before you can start building a good strategy, figure out your testing goal. When do you consider that your application has been sufficiently tested?
 
-Before we can start building a good strategy, we need to find out where we want to go. What is our goal with testing? When do we consider that our application has been sufficiently tested?
+Achieving high test coverage is often viewed as the ultimate goal for developers when it comes to testing. But is it always the best approach? There might be another critical factor to consider when deciding on a testing strategy—serving our users’ needs.
 
-Achieving high test coverage is often viewed as the ultimate goal for developers when it comes to testing. But is it always the best approach? In my opinion, there's a more critical factor to consider when deciding a testing strategy—serving our users’ needs.
-
-As well as our role as developers, we all also use many other applications and devices. In this respect, we are the users and rely on all these systems to “just work”—that means we rely on countless developers to do their best to make their applications work. To turn this back around, as developers, we want to live up to this trust. So our first goal—whatever the project size—should always be to ship working software and thus serve our users. This means we must focus on our users' needs, especially in our tests. [Kent C. Dodds](https://kentcdodds.com/about) sums it up very well in [his post](https://kentcdodds.com/blog/static-vs-unit-vs-integration-vs-e2e-tests):
+As a developer, you also use many other applications and devices. In this respect, you are the user who relies on all these systems to “just work”. In turn, you rely on countless developers to do their best to make their applications and devices work. To turn this back around, as a developer, you also strive to live up to this trust. So your first goal should always be to ship working software and serve your users. This extends to the tests you write to ensure application quality. [Kent C. Dodds](https://kentcdodds.com/about) sums it up very well in his [Static vs Unit vs Integration vs E2E Testing for Frontend Apps](https://kentcdodds.com/blog/static-vs-unit-vs-integration-vs-e2e-tests) post:
 
 <blockquote>
   <p>
@@ -103,15 +102,13 @@ As well as our role as developers, we all also use many other applications and d
   </cite>
 </blockquote>
 
-And I think this nails it. He describes it as becoming more confident in our tests. The closer we get to the users via choosing the corresponding testing type, the more confident we can trust our tests to have valid results. Or in other words, the higher up we climb the pyramid, the more confident we get. But wait, what is the pyramid? Don’t worry: we’ll cover this next.
-
+Kent describes it as gaining confidence in tests. The closer you get to the users by choosing a testing type that fits, the more you can trust your tests to have valid results. In other words, the higher up you climb the pyramid, the more confident you get. But wait, what is the pyramid?
 
 ## Determining test strategies: How to choose a testing strategy
 
-Remember, as a first step, we want to determine which parts of our requirements need to be insured to be fulfilled, and how we want to achieve that. The goal behind that is to find out which types of testing to use, and then, with which granularity of testing we can reach the most confidence while also keeping an efficient cost structure. Many people approach this topic by using metaphors. Let’s take a deeper look at the most common ones, starting with the well-known classic.
+As a first step, determine which parts of the requirements you need to check to make sure they are met. Find out what test types to use and at what level of detail you can achieve the most confidence while maintaining an efficient cost structure. Many developers approach this topic by using analogies. Here are the most common ones, starting with the well-known classic.
 
 {% Img src="image/dPDCek3EhZgLQPGtEG3y0fTn4v82/btUEUtD2bmqNwX2DcH4j.jpeg", alt="A lot of shapes like pyramid, diamonds, ice cone, honeycombs and a trophy; representing test strategies.", width="800", height="450" %}
-
 
 ### The classic: The test pyramid
 
@@ -260,7 +257,7 @@ Focus on the tests that report actual errors which a user might encounter, and d
 {% Aside %}
 This blog post was written by Ramona, with input and review from
 [Jecelyn Yeen](/authors/jecelynyeen/)
-([Twitter](https://twitter.com/jecfish)), and
+([Twitter](https://twitter.com/jecfish)),
 [Michael Hablich](https://www.linkedin.com/in/michael-hablich-2128646/)
-([Twitter](https://twitter.com/MHablich)). Special thanks to [Sofia Emelianova](https://www.linkedin.com/in/sofia-yemelianova/) for supporting the publication process.
+([Twitter](https://twitter.com/MHablich)), and [Sofia Emelianova](https://www.linkedin.com/in/sofia-yemelianova/).
 {% endAside %}
