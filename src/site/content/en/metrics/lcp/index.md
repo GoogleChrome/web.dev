@@ -5,7 +5,7 @@ authors:
   - philipwalton
   - tunetheweb
 date: 2019-08-08
-updated: 2023-04-12
+updated: 2023-08-04
 description: |
   This post introduces the Largest Contentful Paint (LCP) metric and explains
   how to measure it
@@ -102,9 +102,10 @@ considered for Largest Contentful Paint are:
 - [Block-level](https://developer.mozilla.org/docs/Web/HTML/Block-level_elements)
   elements containing text nodes or other inline-level text elements children.
 
-Note, restricting the elements to this limited set was intentional in order to
-keep things simple in the beginning. Additional elements (like the full `<svg>` support or
-`<video>` elements without poster images) may be added in the future as more research is conducted.
+Additionally, the following elements will be considered for a limited set of users as of version 116 of Chrome, but will be considered for all users as of version 117:
+
+- The first frame painted for `<video>` elements, negating the need for the `poster` attribute to used for autoplaying video
+- The first frame of an animated image format, such as animated GIFs
 
 As well as only considering some elements, certain heurisitics are applied to exclude certain elements that are likely to be seen as "non-contentful" to users. For Chromium-based browsers, these include:
 
