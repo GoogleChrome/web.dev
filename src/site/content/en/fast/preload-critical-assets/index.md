@@ -68,13 +68,6 @@ Unused preloads trigger a Console warning in Chrome, approximately 3 seconds aft
 
 ## Use cases
 
-{% Aside 'caution' %}
-At the time of writing, Chrome has an open
-[bug](https://bugs.chromium.org/p/chromium/issues/detail?id=788757) for preloaded requests that are
-fetched sooner than other higher priority resources. Until this is resolved, be wary of how
-preloaded resources can "jump the queue" and be requested sooner than they should.
-{% endAside %}
-
 ### Preloading resources defined in CSS
 
 Fonts defined with [`@font-face`](/reduce-webfont-size/#defining-a-font-family-with-@font-face) rules or background images defined in CSS files aren't discovered until the browser downloads and parses those CSS files. Preloading these resources ensures they are fetched before the CSS files have downloaded.
