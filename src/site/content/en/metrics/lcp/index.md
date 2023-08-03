@@ -101,11 +101,8 @@ considered for Largest Contentful Paint are:
   [CSS gradient](https://developer.mozilla.org/docs/Web/CSS/CSS_Images/Using_CSS_gradients))
 - [Block-level](https://developer.mozilla.org/docs/Web/HTML/Block-level_elements)
   elements containing text nodes or other inline-level text elements children.
-
-Additionally, the following elements will be considered for a limited set of users as of version 116 of Chrome, but will be considered for all users as of version 117:
-
-- The first frame painted for `<video>` elements, negating the need for the `poster` attribute to used for autoplaying video
-- The first frame of an animated image format, such as animated GIFs
+- The first frame painted for `<video>` elements, negating the need for the `poster` attribute to used for autoplaying video as of [August 2023](https://chromium.googlesource.com/chromium/src/+/refs/heads/main/docs/speed/metrics_changelog/lcp.md)
+- The first frame of an animated image format, such as animated GIFs as of [August 2023](https://chromium.googlesource.com/chromium/src/+/refs/heads/main/docs/speed/metrics_changelog/lcp.md)
 
 As well as only considering some elements, certain heurisitics are applied to exclude certain elements that are likely to be seen as "non-contentful" to users. For Chromium-based browsers, these include:
 
