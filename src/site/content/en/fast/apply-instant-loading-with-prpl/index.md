@@ -38,7 +38,7 @@ For more information, see [Discover performance opportunities with Lighthouse](/
 
 ## Preload critical resources
 
-Lighthouse shows the following failed audit if a late-discoered resource is parsed and
+Lighthouse shows the following failed audit if a late-discovered resource is parsed and
 fetched late:
 
 {% Img src="image/admin/tgcMfl3HJLmdoERFn7Ji.png", alt="Lighthouse: Preload key requests audit", width="745", height="97" %}
