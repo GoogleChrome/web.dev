@@ -17,7 +17,7 @@ tags:
 PRPL is an acronym that describes a pattern used to make web pages load and
 become interactive, faster:
 
-+  **Preload** the most important resources.
++  **Preload** late-discovered resources.
 +  **Render** the initial route as soon as possible.
 +  **Pre-cache** remaining assets.
 +  **Lazy load** other routes and non-critical assets.
@@ -38,25 +38,27 @@ For more information, see [Discover performance opportunities with Lighthouse](/
 
 ## Preload critical resources
 
-Lighthouse shows the following failed audit if a certain resource is parsed and
+Lighthouse shows the following failed audit if a late-discoered resource is parsed and
 fetched late:
 
 {% Img src="image/admin/tgcMfl3HJLmdoERFn7Ji.png", alt="Lighthouse: Preload key requests audit", width="745", height="97" %}
 
 [**Preload**](https://developer.mozilla.org/docs/Web/HTML/Preloading_content)
-is a declarative fetch request that tells the browser to request a resource as
-soon as possible. Preload critical resources by adding a `<link>` tag with
+is a declarative fetch request that tells the browser to request a resource that is otherwise not discoverable by the browser's [preload scanner](/preload-scanner/), such as an image referenced by the [`background-image` property](https://developer.mozilla.org/en-US/docs/Web/CSS/background-image). Preload late-discovered resources by adding a `<link>` tag with
 `rel="preload"` to the head of your HTML document:
 
 ```html
-<link rel="preload" as="style" href="css/style.css">
+<link rel="preload" as="image" href="hero-image.jpg">
 ```
 
-The browser sets a more appropriate priority level for the resource in order to
-try to download it sooner while not delaying the `window.onload` event.
+Adding a `<link rel="preload">` directive will initiate a request for that resource and store it in the cache. The browser is then able to retrieve it immediately when needed.
 
 For more information about preloading critical resources, refer to the
 [Preload critical assets](/preload-critical-assets) guide.
+
+{% Aside %}
+`<link rel="preload">` does not change the request's priority. To increase the priority of a resource use the [Fetch Priority API](/fetch-priority/).
+{% endAside %}
 
 ## Render the initial route as soon as possible
 
