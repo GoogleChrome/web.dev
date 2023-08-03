@@ -8,7 +8,7 @@ description: |
 authors:
   - philipwalton
 date: 2021-08-17
-updated: 2022-07-18
+updated: 2023-08-04
 hero: image/eqprBhZUGfb8WYnumQ9ljAxRrA72/OKW9sizk0a8UloNOFx9g.jpeg
 alt: Users on their phones
 tags:
@@ -183,6 +183,7 @@ element being determined for the same page:
   [text fragment](/text-fragments/#text-fragments), so the LCP element may
   actually be from the middle or bottom of the page (rather than "above the
   fold").
+* Whether a `<video>` element's first frame (not the same as a `poster` image) may be considered an LCP candidate in CrUX, but not in RUM data. The reason for this is that CrUX is not blocked from attributing a page's LCP to a `<video>` embedded in an `<iframe>`—such as with YouTube embeds, for example. RUM data, on the other hand, is gathered through JavaScript, which is unable to access `<iframe>` elements, regardless of whether they are cross-origin or same-origin.
 
 Since LCP in the field is calculated as the 75th percentile of all user visits
 to a page, if a large percentage of those users had an LCP element that loaded
