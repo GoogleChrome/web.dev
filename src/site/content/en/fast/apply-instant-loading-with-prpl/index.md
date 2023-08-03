@@ -44,7 +44,7 @@ fetched late:
 {% Img src="image/admin/tgcMfl3HJLmdoERFn7Ji.png", alt="Lighthouse: Preload key requests audit", width="745", height="97" %}
 
 [**Preload**](https://developer.mozilla.org/docs/Web/HTML/Preloading_content)
-is a declarative fetch request that tells the browser to request a resource that is otherwise not discoverable by the browser's [preload scanner](/preload-scanner/), such as an image referenced by the [`background-image` property](https://developer.mozilla.org/en-US/docs/Web/CSS/background-image). Preload late-discovered resources by adding a `<link>` tag with
+is a declarative fetch request that tells the browser to request a resource that is otherwise not discoverable by the browser's [preload scanner](/preload-scanner/), such as an image referenced by the [`background-image` property](https://developer.mozilla.org/docs/Web/CSS/background-image). Preload late-discovered resources by adding a `<link>` tag with
 `rel="preload"` to the head of your HTML document:
 
 ```html
