@@ -8,7 +8,7 @@ description: |
 authors:
   - tunetheweb
 date: 2022-08-15
-updated: 2023-02-10
+updated: 2023-08-04
 hero: image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/Q7jtkHwdv8dmhz1KhaiD.jpg
 alt: Runnings racing each other on a track
 tags:
@@ -175,6 +175,8 @@ CrUX considers [Back/forward cache](/bfcache/) (or bfcache) restores as page nav
 For security and privacy reasons, top-level pages do not have access to content within iframes (not even same-origin iframes). This means performance metrics for content in those can only be measured by the iframe itself, and not through the Web APIs on the framing page. If the iframe content includes the LCP element, or content that impacts the CLS, FID or INP experienced by the user, this will not be available to RUM solutions ([including the Google web-vitals JavaScript library](https://github.com/GoogleChrome/web-vitals#limitations)).
 
 CrUX however, being measured by the Chrome browser itself rather than the page, does not have these limitations and so does measure metrics within iframes when reporting Core Web Vitals. This more accurately reflects what the user experiences, but can be another reason for differences for sites making use of iframes.
+
+One concrete example of how this can lead to differences between LCP data in CrUX and RUM is embedded `<video>`. An autoplaying `<video>` element's first painted frame can count as an LCP candidate, but embeds for popular video streaming services—such as YouTube, for example—place these elements in an `<iframe>`. As of [August 2023](https://chromium.googlesource.com/chromium/src/+/refs/heads/main/docs/speed/metrics_changelog/lcp.md), CrUX can account for this, as it can access `<iframe>` contents, but RUM solutions cannot.
 
 #### Cross-origin resources
 
