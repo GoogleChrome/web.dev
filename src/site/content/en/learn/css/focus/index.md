@@ -63,7 +63,7 @@ these are elements that accept interaction and input, such as `<a>`,
 In short, all form elements, buttons and links.
 You can typically navigate a website's focusable elements using the *tab* key to move forward on the page, and *shift* + *tab* to move backward.
 
-There is also a HTML attribute called `tabindex` which allows you to change the tabbing index—which is
+There is also a HTML attribute called `tabindex` which allows you to change the tabbing index—which is the 
 order in which elements are focused—every time someone presses their <kbd>tab</kbd> key,
 or focus is shifted with a hash change in the URL or by a JavaScript event.
 If `tabindex` on a HTML element is set to `0`,
