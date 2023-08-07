@@ -108,6 +108,16 @@ attractive and professional. In general, the web.dev team doesn't have resources
 to create custom hero images for you. See [Hero images](/handbook/markup-media/#hero)
 for dimension requirements.
 
+## Cross-posting {: #crossposting }
+
+If your case study has already been published on another site and you'd like to mirror it on web.dev, then whether your case study gets published here becomes more complicated.
+
+In particular, requesting to cross-post articles that have already been posted on self-publishing outlets such as personal blogs are problematic, as the web.dev editorial team has a rigorous editorial process. This means that the final version of your proposed case study will likely be significantly different than what you have already published.
+
+There is also the concern of what version is canonical. While the web.dev team wants to publish compelling case studies, canonicity is important, as it can raise issues when it comes to how your article is indexed if you don't take care to mark [which version is canonical](https://developer.mozilla.org/docs/Web/HTML/Attributes/rel#canonical).
+
+Generally speaking, you should avoid proposing case studies which have already been published elsewhere. While there may be exceptions to this rule, they are few and far between, and must be cases in which the original version has not been self-published, and is already marked as the canonical version.
+
 ## Examples {: #examples }
 
 The [Scale on web case studies](/tags/scale-on-web/) case studies are the best case studies
