@@ -51,8 +51,8 @@ I want to share some recommendations on which testing strategies might fit your 
       </tr>
       <tr>
         <td>Small</td>
-        <td>High</td>
         <td>Developers & QA engineers</td>
+        <td>High</td>
         <td>Testing Ice Cone<br>Testing Crab</td>
       </tr>
       <tr>
