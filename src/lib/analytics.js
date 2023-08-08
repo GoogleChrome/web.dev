@@ -106,12 +106,36 @@ function sendToGoogleAnalytics({
       };
       break;
     case 'FID':
+      overrides = {
+        debug_event: attribution.eventType,
+        debug_time: attribution.eventTime,
+        debug_load_state: attribution.loadState,
+        debug_target: attribution.eventTarget || '(not set)',
+      };
+      break;
     case 'INP':
       overrides = {
         debug_event: attribution.eventType,
         debug_time: attribution.eventTime,
         debug_load_state: attribution.loadState,
         debug_target: attribution.eventTarget || '(not set)',
+        debug_input_delay: Math.round(
+          attribution.eventEntry.processingStart -
+            attribution.eventEntry.startTime,
+        ),
+        debug_processing_time: Math.round(
+          attribution.eventEntry.processingEnd -
+            attribution.eventEntry.processingStart,
+        ),
+        debug_presentation_delay: Math.round(
+          // RenderTime is an estimate, because duration is rounded, and may get rounded down.
+          // In rare cases it can be less than processingEnd and that breaks performance.measure().
+          // Lets make sure its at least 4ms in those cases so you can just barely see it.
+          Math.max(
+            attribution.eventEntry.processingEnd + 4,
+            attribution.eventEntry.startTime + attribution.eventEntry.duration,
+          ) - attribution.eventEntry.processingEnd,
+        ),
       };
       break;
     case 'LCP':
