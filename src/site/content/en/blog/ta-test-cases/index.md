@@ -9,7 +9,7 @@ description: >
   Determine what to test, define your test cases, and prioritize.
 authors:
   - ramona
-hero: image/NJdAV9UgKuN8AhoaPBquL7giZQo1/eVRJ3GRUx8h4MFaBATut.jpg
+hero: image/dPDCek3EhZgLQPGtEG3y0fTn4v82/reTqGo078zXM3UQ9wgHf.jpg
 alt: 
 tags:
   - blog
