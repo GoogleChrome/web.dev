@@ -2,7 +2,6 @@
 layout: post
 title: Defining test cases and priorities
 date: 2023-08-09
-scheduled: true
 subhead: >
   Determine what to test, define your test cases, and prioritize.
 description: >
