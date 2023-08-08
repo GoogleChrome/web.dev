@@ -16,13 +16,13 @@ tags:
   - testing
 ---
 
-Welcome back! In the [last article](/ta-types), we laid down lots of groundwork about how to approach the different testing types and what they contain, and we clarified the testing type definitions. Remember our little meme image from before? We wondered how all those testing types we learned about could work together.
+Welcome back! The [last article](/ta-types) laid down lots of groundwork about how to approach the different testing types and what they contain, and clarified the testing type definitions. Remember this [little meme image](/ta-types/#testing-in-all-shapes-how-does-this-all-work-together)? You might have wondered how all those testing types you learned about could work together.
 
 {% Img src="image/dPDCek3EhZgLQPGtEG3y0fTn4v82/n3LPuwApNcCRT5S3zaoq.jpeg", alt="A cupboard with two drawers you can open at the same time.", width="800", height="450" %}
 
-So next up, we will learn exactly that. This article will give an introduction on how to combine these testing types into a reasonable strategy that matches your project.
+Next, you will learn exactly that. This article gives an introduction on how to combine these testing types into reasonable strategies and choose one that matches your project.
 
-I want to share some recommendations on which testing strategies might fit your project, depending on its size. Let’s begin with a short overview—an attempt to generalize based on my own experience, so it can naturally deviate from your use case. I hope this is a good starting point:
+You can compare the strategies to a number of shapes to better grasp their meaning. Here's a list of strategies with respective sizes and development scopes.
 
 <div class="table-wrapper scrollbar">
   <table>
@@ -83,16 +83,15 @@ I want to share some recommendations on which testing strategies might fit your 
   </table>
 </div>
 
-How did I come to the conclusions pictured in this table? What are the testing strategies mentioned? Let’s take a closer look to discover the answers.
+Let's take a closer look at the strategies and learn the meaning behind their names.
 
+## Determine testing goals: What do you want to achieve with these tests?
 
-## Determine testing goals: What do we want to achieve with these tests?
+Before you can start building a good strategy, figure out your testing goal. When do you consider that your application has been sufficiently tested?
 
-Before we can start building a good strategy, we need to find out where we want to go. What is our goal with testing? When do we consider that our application has been sufficiently tested?
+Achieving high test coverage is often viewed as the ultimate goal for developers when it comes to testing. But is it always the best approach? There might be another critical factor to consider when deciding on a testing strategy—serving your users' needs.
 
-Achieving high test coverage is often viewed as the ultimate goal for developers when it comes to testing. But is it always the best approach? In my opinion, there's a more critical factor to consider when deciding a testing strategy—serving our users’ needs.
-
-As well as our role as developers, we all also use many other applications and devices. In this respect, we are the users and rely on all these systems to “just work”—that means we rely on countless developers to do their best to make their applications work. To turn this back around, as developers, we want to live up to this trust. So our first goal—whatever the project size—should always be to ship working software and thus serve our users. This means we must focus on our users' needs, especially in our tests. [Kent C. Dodds](https://kentcdodds.com/about) sums it up very well in [his post](https://kentcdodds.com/blog/static-vs-unit-vs-integration-vs-e2e-tests):
+As a developer, you also use many other applications and devices. In this respect, you are the user who relies on all these systems to “just work”. In turn, you rely on countless developers to do their best to make their applications and devices work. To turn this back around, as a developer, you also strive to live up to this trust. So your first goal should always be to ship working software and serve your users. This extends to the tests you write to ensure application quality. [Kent C. Dodds](https://kentcdodds.com/about) sums it up very well in his [Static vs Unit vs Integration vs E2E Testing for Frontend Apps](https://kentcdodds.com/blog/static-vs-unit-vs-integration-vs-e2e-tests) post:
 
 <blockquote>
   <p>
@@ -103,49 +102,45 @@ As well as our role as developers, we all also use many other applications and d
   </cite>
 </blockquote>
 
-And I think this nails it. He describes it as becoming more confident in our tests. The closer we get to the users via choosing the corresponding testing type, the more confident we can trust our tests to have valid results. Or in other words, the higher up we climb the pyramid, the more confident we get. But wait, what is the pyramid? Don’t worry: we’ll cover this next.
-
+Kent describes it as gaining confidence in tests. The closer you get to the users by choosing a testing type that fits, the more you can trust your tests to have valid results. In other words, the higher up you climb the pyramid, the more confident you get. But wait, what is the pyramid?
 
 ## Determining test strategies: How to choose a testing strategy
 
-Remember, as a first step, we want to determine which parts of our requirements need to be insured to be fulfilled, and how we want to achieve that. The goal behind that is to find out which types of testing to use, and then, with which granularity of testing we can reach the most confidence while also keeping an efficient cost structure. Many people approach this topic by using metaphors. Let’s take a deeper look at the most common ones, starting with the well-known classic.
+As a first step, determine which parts of the requirements you need to check to make sure they are met. Find out what test types to use and at what level of detail you can achieve the most confidence while maintaining an efficient cost structure. Many developers approach this topic by using analogies. Here are the most common ones, starting with the well-known classic.
 
 {% Img src="image/dPDCek3EhZgLQPGtEG3y0fTn4v82/btUEUtD2bmqNwX2DcH4j.jpeg", alt="A lot of shapes like pyramid, diamonds, ice cone, honeycombs and a trophy; representing test strategies.", width="800", height="450" %}
 
-
 ### The classic: The test pyramid
 
-You will probably encounter the test automation pyramid as your initial metaphor as soon as you look up testing strategies. Mike Cohn introduced this concept in his book *Succeeding with Agile*. Later, the concept was expanded upon as the "[Practical Test Pyramid](https://martinfowler.com/articles/practical-test-pyramid.html)" by Martin Fowler. The visual representation of this pyramid is as follows:
+As soon as you start looking for test strategies, you will probably come across the test automation pyramid as the first analogy. Mike Cohn introduced this concept in his book "Succeeding with Agile". Later, Martin Fowler expanded upon the concept in his [Practical Test Pyramid](https://martinfowler.com/articles/practical-test-pyramid.html) article. You can represent the pyramid visually as the following:
 
 {% Img src="image/dPDCek3EhZgLQPGtEG3y0fTn4v82/iEtr9phjNjENxQlFfJYv.jpeg", alt="The test pyramid.", width="800", height="450" %}
 
 As shown in this drawing, the test pyramid consists of three layers:
 
-1. **Unit**. You find these tests on the base layer of the pyramid because they are fast execution and simple to maintain. This is due to their isolation and targeting of the most minor units. See this as an example of a typical [unit test](https://github.com/leichteckig/phpmagazin-jest-example/blob/main/product.test.js) testing a very small product.
+1. **Unit**. You find these tests at the base layer of the pyramid because they are fast to execute and simple to maintain. They are isolated and target the most minor test units. For example, see a typical [unit test](https://github.com/leichteckig/phpmagazin-jest-example/blob/main/product.test.js) for a very small product.
 
-1. **Integration**. This is in the middle of the pyramid, as it is still acceptable when it comes to speed in execution but brings you the confidence of being closer to the user than unit tests can be. An example of an integration type test is an [API test](https://github.com/cypress-io/cypress-realworld-app/blob/develop/cypress/tests/api/api-users.spec.ts); [component tests](https://github.com/leichteckig/nuxt-leichteckig/blob/main/test/components/MediaGrid.spec.js) can also be considered this type.
+1. **Integration**. These tests are in the middle of the pyramid, because they have an acceptable execution speed but bring you closer to the user than the unit tests can. An example of an integration test is an [API test](https://github.com/cypress-io/cypress-realworld-app/blob/develop/cypress/tests/api/api-users.spec.ts). You can also classify [component tests](https://github.com/leichteckig/nuxt-leichteckig/blob/main/test/components/MediaGrid.spec.js) as this type.
 
-1. **E2E tests** (also called **UI tests**). As we have seen, these tests simulate a genuine user and their interaction. These tests need more time to be executed and thus are more expensive—being placed at the top of the pyramid. 
-
+1. **E2E tests** (also called **UI tests**). These tests simulate a genuine user and their interaction. Such tests need more time to execute and thus are more expensive. They are at at the top of the pyramid.
 
 ### Confidence versus resources
 
-As briefly covered already, the order of the layers is no coincidence. They show the priorities and the corresponding costs of the layers—thus giving you a clear picture of how many tests you should write from each layer. We have already seen this in the definition of the testing types. 
+As briefly covered before, the order of the layers is no coincidence. They show the priorities and the corresponding costs. This gives you a clear picture of how many tests you should write for each layer. You have already seen this in the definition of the testing types.
 
-As E2E tests, for example, are closest to our users, they give us the highest confidence that our application is working as intended. However, due to the complete application stack being present, and the computer simulation of a real user, they are potentially also the most expensive. So the confidence is in direct competition with the resources we need to execute the tests.
+Because E2E tests are closest to your users, they give you the most confidence that you application is working as intended. However, they require a complete application stack and a simulated user, therefore, they are also potentially the most expensive. So the confidence is in direct competition with the resources you need to execute the tests.
 
 {% Img src="image/dPDCek3EhZgLQPGtEG3y0fTn4v82/DT57buwCB4uDyJp61Rzb.jpeg", alt="The test pyramid with arrows showing the direction of confidence and resources required for different testing types.", width="800", height="450" %}
 
-The pyramid tries to solve this competition by advising you to focus more on unit tests and strictly prioritize the cases covered by E2E tests: for example, your most crucial user journeys or the most vulnerable to defects. As Martin Fowler emphasizes, the two most essential points in Cohn’s pyramid are as follows:
+The pyramid tries to solve this problem by making you focus more on unit tests and strictly prioritize the cases covered by E2E tests. For example, your most crucial user journeys or the places most vulnerable to defects. As Martin Fowler emphasizes, the two most essential points in Cohn's pyramid are as follows:
 
 1. Write tests with different granularity.
 1. The more high level you get, the fewer tests you should have.
 
-
 ## Pyramid evolved! Adaptations of the test pyramids
 
-For some years, discussions have revolved around the pyramid. The pyramid seems to oversimplify testing strategies, leaves out a lot of testing types, and no longer fits all real-world projects. Consequently, it may mislead us. So, has the pyramid fallen out of shape?
-To answer this question, let’s take a look at the following [quote](https://twitter.com/rauchg/status/807626710350839808) from [Guillermo Rauch](https://rauchg.com/about):
+For several years, discussions have revolved around the pyramid. The pyramid seems to oversimplify testing strategies, leaves out a lot of testing types, and no longer fits all the real-world projects. Therefore, it may be misleading. Has the pyramid fallen out of shape?
+[Guillermo Rauch](https://rauchg.com/about) has an opinion about it:
 
 <blockquote>
   <p>
@@ -156,94 +151,95 @@ To answer this question, let’s take a look at the following [quote](https://tw
   </cite>
 </blockquote>
 
-It’s one of the most commonly cited quotes on this subject, so let’s break it down:
+It's one of the most commonly cited quotes on this subject, so let's break it down:
 
-- Write tests: Not only because it builds trust, but also because it saves time in maintenance.
-- Not too many: 100% coverage is not always good, because then your testing is unprioritized and there will be a lot of maintenance.
-- Mostly integration: Here again the emphasis is on integration tests: they have the most business value by giving you a daily high confidence level while maintaining a reasonable execution time.
+- "Write tests". Not only because it builds trust, but also because it saves time in maintenance.
+- "Not too many". 100% coverage is not always good because then your testing isn't prioritized and there will be a lot of maintenance.
+- "Mostly integration". Here again the emphasis is on integration tests: they have the most business value by giving you a daily high confidence level while maintaining a reasonable execution time.
 
-This leads us to overthink the testing pyramid and shift our focus to integration testing. Over the last few years, many adaptations have been raised, so let’s look at the most common ones.
-
+This makes you think again about the testing pyramid and shift your focus to integration testing. Over the last few years, many adaptations have been proposed, so let's look at the most common ones.
 
 ### Test diamond
 
-The first adaptation I want to showcase tackles the over-emphasis on unit testing, as seen in the test pyramid. Imagine this situation: you have reached 100% coverage on unit tests. However, in the next refactoring, many of these unit tests will need to be updated, and you might be tempted to skip them. So they erode.
+The first adaptation removes the overemphasis on unit testing, as seen in the test pyramid. Imagine that you have reached 100% coverage on unit tests. However, the next time you refactor, you will have to update many of these unit tests and you might be tempted to skip them. So they erode.
 
-As a result, and together with the higher priority on integration testing, the following shape may arise:
+As a result, and together with the higher focus on integration testing, the following shape may arise:
 
 {% Img src="image/dPDCek3EhZgLQPGtEG3y0fTn4v82/vSFAkoSqbL4p984xf48k.jpeg", alt="The test diamond.", width="800", height="450" %}
 
-The shape of the test pyramid has evolved more into a diamond. You can see the three layers from before, but with a different size and—in the case of the unit layer—with a slightly different shape:
+A pyramid evolves into a diamond. You can see the previous three layers, but with a different size, and the unit layer has been cut:
 
-- Unit: Write unit tests the way we defined them before. However, we’ll consider that they erode, so we’ll prioritize and cover the most critical cases here.
-- Integration: The integration tests we know, testing the combination of single units.
-- E2E: This layer handles the UI tests similar to the test pyramid. Take care to only write E2E tests for the most critical test cases.
+- **Unit**. Write unit tests the way you defined them before. However, because they tend to erode, prioritize and cover only the most critical cases.
+- **Integration**. The integration tests you know, testing the combination of single units.
+- **E2E**. This layer handles the UI tests similar to the test pyramid. Take care to only write E2E tests for the most critical test cases.
 
 
 ### Testing honeycomb
 
-There is another adaptation similar to the test diamond but further specialized for microservices-based software systems. The testing honeycomb is another visual metaphor for the granularity/scope of and amounts of tests to write for a microservices-based software system. It's an adaptation of the traditional test pyramid specifically for [testing microservices](https://notes.paulswail.com/public/Testing+microservices), introduced by [Spotify](https://engineering.atspotify.com/2018/01/testing-of-microservices/). Due to their small size, the most considerable complexity in a microservice is not within the service itself, but in how it interacts with others. So a testing strategy for a microservice should primarily focus on integration tests.
+There is another adaptation, introduced by [Spotify](https://engineering.atspotify.com/2018/01/testing-of-microservices/), that is similar to the test diamond but further specialized for microservices-based software systems. The testing honeycomb is another visual analogy for the granularity, scope, and number of tests to write for a [microservices-based software system](https://notes.paulswail.com/public/Testing+microservices). Due to their small size, the most considerable complexity in a microservice is not within the service itself, but in how it interacts with others. So a testing strategy for a microservice should primarily focus on integration tests.
 
 {% Img src="image/dPDCek3EhZgLQPGtEG3y0fTn4v82/mrM4QK1kEZgvRvltyiMn.jpeg", alt="The testing honeycomb.", width="800", height="450" %}
 
-This way, a shape is formed that reminds us of a honeycomb, thus the name. In it, the following layers are used:
+This shape reminds us of a honeycomb, thus the name. It has the following layers:
 
-- Integrated tests: The article by Spotify uses a quote from [J. B. Rainsberger](https://blog.thecodewhisperer.com/permalink/integrated-tests-are-a-scam) to define this layer: “A test that will pass or fail based on the correctness of another system.” This means these tests have external dependencies that we need to consider, and vice versa—we could break the tests of other systems. Similar to E2E tests in other metaphors, we should use them carefully for the most essential cases only.
-- Integration tests: Similar to other adaptations, we should focus on this layer—containing tests to verify the correctness of our service in a more isolated fashion, but still in combination with other services. That means the tests will include some other systems too: focusing on the interaction points, for example, via API tests. 
-- Tests on implementation details: These tests can resemble unit tests—this means on parts of the code that are naturally isolated and thus have their own internal complexity.
+- **Integrated tests**. The article by Spotify uses a quote from [J. B. Rainsberger](https://blog.thecodewhisperer.com/permalink/integrated-tests-are-a-scam) to define this layer: “A test that will pass or fail based on the correctness of another system.” Such tests have external dependencies that you need to consider, and on the contrary, your system might be a dependency that breaks other systems. Similar to E2E tests in other analogies, use these tests carefully, only for the most essential cases.
+- **Integration tests**. Similar to other adaptations, you should focus on this layer. It contains tests that verify the correctness of your service in a more isolated fashion, but still in combination with other services. That means the tests will include some other systems too and focus on the interaction points, for example, via API tests. 
+- **Tests on implementation details**. These tests resemble unit tests—tests that focus on parts of the code that are naturally isolated and thus have their own internal complexity.
 
-If you want to find out more about this testing strategy, I advise you to read the post [comparing the test pyramid to the honeycomb](https://martinfowler.com/articles/2021-test-shapes.html) by Martin Fowler, alongside the [original article from Spotify](https://engineering.atspotify.com/2018/01/testing-of-microservices/).
+If you want to find out more about this testing strategy, see the [post that compares the test pyramid to the honeycomb](https://martinfowler.com/articles/2021-test-shapes.html) by Martin Fowler and the [original article from Spotify](https://engineering.atspotify.com/2018/01/testing-of-microservices/).
 
 
 ### Testing trophy
 
-Alright, we already see a particular focus on integration tests. However, another type we mentioned in the previous article is not testing in theory but is still an important aspect we should consider in a testing strategy. I’m talking about static analysis, which is missing in the test pyramid and in most of the adaptations we have seen until now. There’s one adaptation, though, which takes static analysis into account while maintaining the focus on integration tests. It’s called the testing trophy, originating from the earlier quote by Guillermo Rauch and developed by Kent C. Dodds:
+You can already see a repeating focus on integration tests. However, another type you came across in the previous article is not testing in theory but is still an important aspect you should consider in a testing strategy. Static analysis is missing from the test pyramid and in most of the adaptations you have seen so far. There's the testing trophy adaptation that takes static analysis into account while maintaining the focus on integration tests. The testing trophy originated from the earlier quote by Guillermo Rauch and was developed by Kent C. Dodds:
 
 {% Img src="image/dPDCek3EhZgLQPGtEG3y0fTn4v82/ULNWIc7KY4jVjxPW5CdX.jpeg", alt="The testing trophy.", width="800", height="450" %}
 
-The testing trophy is a metaphor depicting the granularity of tests in a slightly different way, distributing your tests into the following four testing types:
+The testing trophy is an analogy depicting the granularity of tests in a slightly different way. It has four layers:
 
-- **Static analysis** plays a vital role in this metaphor. This way, you will catch typos, type errors, and other bugs by merely running the debugging steps already outlined.
-- **Unit tests** should ensure that your smallest unit is appropriately tested, but the testing trophy won’t emphasize them to the same extent as the test pyramid.
-- **Integration** is the main focus as it balances out the cost and the higher confidence in the best way, as with other adaptations.
-- **UI tests**, including E2E and visual tests, are at the top of the testing trophy, similar to their role in the test pyramid.
+- **Static analysis**. It plays a vital role in this analogy and lets you catch typos, style mistakes, and other bugs by merely running the debugging steps already outlined.
+- **Unit tests**. They ensure that your smallest unit is appropriately tested, but the testing trophy won't emphasize them to the same extent as the test pyramid.
+- **Integration**. This is the main focus as it balances the cost and the higher confidence in the best way, as with other adaptations.
+- **UI tests**. Including E2E and visual tests, they are at the top of the testing trophy, similar to their role in the test pyramid.
 
-To read more about the testing trophy, I can highly recommend the [blog post by Kent C. Dodds](https://kentcdodds.com/blog/static-vs-unit-vs-integration-vs-e2e-tests) on this subject.
+To read more about the testing trophy, see the [blog post by Kent C. Dodds](https://kentcdodds.com/blog/static-vs-unit-vs-integration-vs-e2e-tests) on this subject.
 
 
 ## Some more UI-focused approaches
 
-That’s all well and good. However, no matter if we call our strategy a “pyramid”, “honeycomb,” or “diamond”, there’s still something missing. While test automation is valuable, it's important to remember that manual testing is still essential. Automated testing should alleviate routine tasks, freeing testers to concentrate on crucial areas. Rather than replace manual testing, automation should complement it. Is there a way to integrate manual testing with automation for optimal results?
+That's all well and good but no matter how you call your strategy, a “pyramid”, “honeycomb,” or “diamond”, there's still something missing. While test automation is valuable, it's important to remember that manual testing is still essential. Automated testing should alleviate routine tasks and free the quality assurance engineers to focus on crucial areas. Instead of replacing manual testing, automation should complement it. Is there a way to integrate manual testing with automation for optimal results?
 
 
 ### Testing ice cone and testing crab
 
-There are indeed two adaptations of the testing pyramid that focus more on these UI-focused ways of testing. Both share the advantage of high confidence, but naturally—due to the slower test execution—they are more costly.
+There are indeed two adaptations of the testing pyramid that focus more on these UI-focused ways of testing. Both have the advantage of high confidence, but are naturally more costly due to slower test execution.
 
-The first one—the test ice cone, also known as the testing pizza if you leave out the manual testing step—looks like the pyramid in reverse.
+The first one, the test ice cone, looks like the pyramid in reverse. Without the manual testing step, it is also known as the testing pizza.
 
 {% Img src="image/dPDCek3EhZgLQPGtEG3y0fTn4v82/QdBKM36jvq93jrERrSCP.jpeg", alt="The testing ice cone.", width="800", height="450" %}
 
-As a result, the following layers will be showcased with the following granularity: the greater focus is on manual or UI testing, with the least focus on unit testing. It often happens with projects where the developers started work with only a few thoughts on testing. However, this testing strategy is considered an anti-pattern and rightfully so—because of its high costs in resources and manual work.
+The ice cone has bigger focus on manual or UI testing and the least focus on unit testing. It often takes shape in projects where developers started work with only a few thoughts on the testing strategy. The ice code is considered an anti-pattern and rightfully so. It is costly in terms of resources and manual work.
 
-Similar to the test ice cone, but with a more drawn-out focus on E2E and visual testing, is the testing crab:
+The test crab is similar to the test ice cone, but with more emphasis on E2E and visual testing:
 
 {% Img src="image/dPDCek3EhZgLQPGtEG3y0fTn4v82/uY4XiFIldA1JySM9ZbHD.jpeg", alt="The testing crab.", width="800", height="450" %}
 
-This testing strategy includes one more aspect: it should verify that our application functions and looks good. So this is the first testing strategy that highlights the importance of [visual testing](https://docs.cypress.io/guides/tooling/visual-testing), which we also briefly defined in the last article. Integration testing, divided into component and API testing, moves further into the background, and unit testing plays an even more minor role here. You can find further details on this testing strategy in this [article on the testing crab](https://changelog.com/posts/the-testing-pyramid-should-look-more-like-a-crab).
+This testing strategy includes one more aspect: it verifies that your application functions and looks good. The testing crab highlights the importance of [visual testing](https://docs.cypress.io/guides/tooling/visual-testing), defined in the [previous article](/ta-types/#visual-ui-testing). Integration testing, divided into component and API testing, moves further into the background, and unit testing plays an even more secondary role here. You can find further details on this testing strategy in this [article on the testing crab](https://changelog.com/posts/the-testing-pyramid-should-look-more-like-a-crab).
 
 While being more costly, these two testing strategies have their place: for example, in smaller projects where fewer tests are needed, or less complexity needs to be covered. In this case, a full-blown testing strategy focusing on integration testing might be over-engineered.
 
+Although these two testing strategies are more costly, they have their place, for example, in smaller projects that require fewer tests and don't need to cover a lot of complexity. In this case, a full scale testing strategy focused on integration testing may be unnecessarily complex.
 
-## Practical advice: Let’s strategize!
 
-So we have now learned about the most common testing strategies. We started with the classic—the test pyramid—and got to know its many adaptations. Now we need to evaluate them for our product and decide which might be the best for our use case. As I briefly mentioned at the beginning of this article, the answer to this question should start with everyone’s favorite response (although it’s no less accurate)—**It depends**.
+## Practical advice: Let's strategize!
+
+You have now learned about the most common testing strategies. You started with the classic—the test pyramid—and got to know its many adaptations. Now you need to evaluate them for your product and decide which is be the best for your project. The answer to this question should start with everyone's favorite "**It depends**". That doesn't make it any less accurate though.
 
 {% Img src="image/dPDCek3EhZgLQPGtEG3y0fTn4v82/u1yCzUoUXkXAHUCgyrz2.jpeg", alt="It depends.", width="800", height="450" %}
 
-Choosing the most suitable testing strategy from the ones described—and even the ones we have left out—depends on your application. It needs to suit your architecture, your requirements, and last but not least, your users and their requirements. And this might differ from application to application. That’s totally fine: remember—our most important goal is to serve our users, not a textbook definition.
+The choice of the most appropriate testing strategy from those described—and even the ones left out—depends on your application. It should fir your architecture, your requirements, and last but not least, your users and their requirements. All this might differ from application to application. That's completely normal. Remember that your most important goal is to serve your users, not a textbook definition.
 
-In reality, you can see this very clearly, as teams sometimes need to stop sticking to the textbook definitions of these strategies. Tests themselves are sometimes really difficult to separate out and define individually. Even Martin Fowler himself emphasizes the [positive aspect of differing definitions](https://martinfowler.com/articles/2021-test-shapes.html), such as in the case of unit tests. As [Justin Searls](https://justin.searls.co/about/) states correctly in [his tweet](https://twitter.com/searls/status/1393385209089990659):
+More often than not, real-world tests are difficult to separate and define individually. Even Martin Fowler himself emphasizes the [positive aspect of differing definitions](https://martinfowler.com/articles/2021-test-shapes.html), such as in the case of unit tests. As [Justin Searls](https://justin.searls.co/about/) states correctly in [his tweet](https://twitter.com/searls/status/1393385209089990659):
 
 <blockquote>
   <p>
@@ -254,13 +250,15 @@ In reality, you can see this very clearly, as teams sometimes need to stop stick
   </cite>
 </blockquote>
 
-Focus on the tests that report actual errors which a user might encounter, and don’t get distracted from your goal. Tests should be designed to benefit the user, not just provide 100% coverage or to debate which percentage of which testing type to write.
+Focus on the tests that report actual errors that the users might encounter, and don't get distracted from your goal. Tests should be designed to benefit the user, not just provide 100% coverage or to debate which percentage of which testing type to write.
+
+Focus on tests that report real-life errors that your users might encounter and don't get distracted from your goal. Tests should be designed to benefit the user, not just provide 100% coverage or spark debates on what percentage of a particular testing type you should write.
 
 
 {% Aside %}
 This blog post was written by Ramona, with input and review from
 [Jecelyn Yeen](/authors/jecelynyeen/)
-([Twitter](https://twitter.com/jecfish)), and
+([Twitter](https://twitter.com/jecfish)),
 [Michael Hablich](https://www.linkedin.com/in/michael-hablich-2128646/)
-([Twitter](https://twitter.com/MHablich)). Special thanks to [Sofia Emelianova](https://www.linkedin.com/in/sofia-yemelianova/) for supporting the publication process.
+([Twitter](https://twitter.com/MHablich)), and [Sofia Emelianova](https://www.linkedin.com/in/sofia-yemelianova/).
 {% endAside %}
