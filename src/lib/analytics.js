@@ -341,6 +341,14 @@ function setConfig() {
       ? 'dark'
       : 'light',
   });
+  if (navigator.deviceMemory) {
+    window.dataLayer.push({device_memory: navigator.deviceMemory});
+  }
+  if (navigator.connection && navigator.connection.effectiveType) {
+    window.dataLayer.push({
+      effective_connection_type: navigator.connection.effectiveType,
+    });
+  }
   if (location.hostname === 'localhost') {
     window.dataLayer.push({debug_mode: true});
   }
