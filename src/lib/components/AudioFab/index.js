@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-import 'wicg-inert';
 import {BaseElement} from '../BaseElement';
 
 /**

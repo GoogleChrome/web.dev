@@ -42,8 +42,8 @@
     "stage:up": "firebase hosting:channel:deploy staging",
     "stage:down": "firebase hosting:channel:delete staging",
     "start": "firebase emulators:start",
-    "test:integration": "mocha ./test/integration",
-    "test:lib": "npx gulp sass && ELEVENTY_ENV=test npm-run-all rollup karma",
+    "test:integration": "NODE_OPTIONS='--max-old-space-size=8192' ELEVENTY_ENV=staging npm-run-all build && mocha ./test/integration",
+    "test:lib": "ELEVENTY_ENV=test npm-run-all gulp rollup karma",
     "test:unit": "mocha ./test/unit",
     "test": "npm-run-all test:unit test:lib test:integration",
     "translated": "node ./tools/update-translated/index.js",
@@ -114,7 +114,6 @@
     "unistore": "^3.4.1",
     "web-vitals": "^3.1.1",
     "webdev-infra": "1.0.54",
-    "wicg-inert": "^3.1.2",
     "yaml-front-matter": "^4.0.0",
     "@mdn/browser-compat-data": "5.2.57"
   },
