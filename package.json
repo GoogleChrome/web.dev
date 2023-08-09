@@ -115,7 +115,6 @@
     "unistore": "^3.4.1",
     "web-vitals": "^3.4.0",
     "webdev-infra": "1.0.54",
-    "wicg-inert": "^3.1.2",
     "yaml-front-matter": "^4.0.0"
   },
   "devDependencies": {

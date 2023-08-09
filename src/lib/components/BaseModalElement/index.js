@@ -15,7 +15,6 @@
  */
 
 import {BaseElement} from '../BaseElement';
-import 'wicg-inert';
 import {checkOverflow} from '../../utils/check-overflow';
 import {openModal} from '../../actions';
 import {closeModal} from '../../actions';
