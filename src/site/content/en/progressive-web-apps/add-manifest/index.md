@@ -5,8 +5,9 @@ authors:
   - petelepage
   - beaufortfrancois
   - thomassteiner
+  - alexeyrodionov
 date: 2018-11-05
-updated: 2022-09-14
+updated: 2023-08-11
 description: |
   The web app manifest is a simple JSON file that tells the browser about your
   web application and how it should behave when installed on the user's mobile
@@ -326,14 +327,17 @@ is a dictionary that contains at least a `name` and a `url`.
 
 The `description` property describes the purpose of your app.
 
+In Chrome, the maximum description length is limited to 300 characters on all
+platforms. If description goes longer than that, it will be truncated and
+ellipsis appended. On Android, there is an additional limit of at most 7 lines.
+
 #### `screenshots` {: #screenshots }
 
 The `screenshots` property is an array of image objects representing your app
 in common usage scenarios. Each object must include the `src`, a `sizes`
 property, and the `type` of image.  The `form_factor` property is optional.
 You can set it either to `"wide"` for screenshots applicable to wide screens
-only or `"narrow"` for narrow screenshots. You should only use it when the
-layout varies by screen size.
+only or `"narrow"` for narrow screenshots.
 
 In Chrome, the image must respond to certain criteria:
 
@@ -342,6 +346,18 @@ In Chrome, the image must respond to certain criteria:
   dimension.
 * All screenshots matching the appropriate form factor must have the same
   aspect ratio.
+* As of Chromium 109, only screenshots with the `form_factor` set to `"wide"`
+are displayed on the desktop.
+* As of Chromium 109, screenshots with the `form_factor` set to `"wide"` are
+ignored on Android. Screenshots without `form_factor` are still displayed for
+backwards compatibility. In the future this will be changed to only display
+screenshots with the `form_factor` set to `"narrow"`.
+
+Chrome on desktop displays at least 1 and at most 8 screenshots that meet the
+criteria above. The rest will be ignored.
+
+Chrome on Android displays at least 1 and at most 5 screenshots that meet the
+criteria above. The rest will be ignored.
 
 <figure>
   {% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/5SlCnibmZHqkXdGVgPZY.jpeg", alt="Screenshots of richer installation UI on desktop and mobile", width="800", height="386" %}
