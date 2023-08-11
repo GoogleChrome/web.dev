@@ -71,7 +71,7 @@ After installing an app on the desktop, users can navigate to `about:apps`, righ
 
 ### iOS and iPadOS installation
 
-A browser prompt to install your PWA doesn't exit On iOS and iPadOS. In these platforms PWAs are also known as *home screen web apps*. These apps have to be added manually to the home screen via a menu that is available only in Safari. It is recommended that you add the tag [`apple-touch-icon`](https://developer.chrome.com/docs/lighthouse/pwa/apple-touch-icon/) to your html.
+A browser prompt to install your PWA doesn't exist On iOS and iPadOS. In these platforms PWAs are also known as *home screen web apps*. These apps have to be added manually to the home screen via a menu that is available only in Safari. It is recommended that you add the tag [`apple-touch-icon`](https://developer.chrome.com/docs/lighthouse/pwa/apple-touch-icon/) to your html.
 To define the icon, include the path to your icon to your HTML `<head>` section, like this:
 
 ```html
