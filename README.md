@@ -7,7 +7,9 @@ business.
 
 ## Found a bug? 👷‍♀️
 
-Thanks for letting us know! Please [file an issue](https://github.com/GoogleChrome/web.dev/issues/new?assignees=&labels=bug&template=bug_report.md&title=) and a team member should reply shortly.
+Thanks for letting us know! Please [file an issue](https://issuetracker.google.com/issues/new?component=1400680&pli=1&template=1857359) and a team member should reply shortly.
+
+**Note:** Due to an upcoming migration of this site to a new platform, **we will not be merging new pull requests**. Please raise content issues in the new [issue tracker](https://issuetracker.google.com/issues/new?component=1400680&pli=1&template=1857359).
 
 ## Authoring content ✍️
 
