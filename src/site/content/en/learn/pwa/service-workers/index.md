@@ -25,7 +25,7 @@ Not all browsers support service workers. Even when present your service worker 
 
 ## Registering a service worker
 
-Before a service worker takes control of your page, it  must be registered for your PWA. That means the first time a user comes to your PWA, network requests will not go directly to your server because the service worker is not yet in control of your pages.
+Before a service worker takes control of your page, it  must be registered for your PWA. That means the first time a user comes to your PWA, network requests will go directly to your server because the service worker is not yet in control of your pages.
 
 After checking if the browser supports the Service Worker API, your PWA can register a service worker. When loaded, the service worker sets up shop between your PWA and the network, intercepting requests and serving the corresponding responses.
 
