@@ -40,6 +40,22 @@ declare global {
     type: string;
   }
 
+  interface NotRestoredReasons {
+    url: string;
+    src: string;
+    id: string;
+    name: string;
+    blocked: boolean;
+    reasons: [string];
+    children: [NotRestoredReasons];
+  }
+
+  interface PerformanceNavigationTiming {
+    deliveryType: string;
+    activationStart: number;
+    notRestoredReasons: NotRestoredReasons
+  }
+
   var WebComponents: WebComponentsType;
   var firebase: firebase.app.App;
 }

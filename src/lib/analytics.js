@@ -274,7 +274,7 @@ function getNavigationType() {
  * value returned by the Navigation Timing API (normalized to use kebab case),
  * but in addition to this it also captures pages that were prerendered
  * as well as page that were restored after a discard.
- * @returns {string}
+ * @returns {string|undefined}
  */
 function getBackForwardNotRestoreReasons() {
   const navEntry =
@@ -287,7 +287,7 @@ function getBackForwardNotRestoreReasons() {
       return navEntry.notRestoredReasons.reasons.toString();
     }
   }
-  return '(not set)';
+  return;
 }
 
 /**
