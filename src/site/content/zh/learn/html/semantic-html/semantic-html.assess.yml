@@ -5,9 +5,10 @@ questions:
   - type: multiple-choice
     cardinality: "1"
     correctAnswers: "0"
-    stem: 'You should always add `role="button"` to a `<button>` element.'
+    stem: |
+      你应该始终在 `<button>` 元素上添加 `role="button"` 属性。
     options:
-      - content: "False."
-        rationale: "Correct! The `<button>` element already has this role."
-      - content: "True."
-        rationale: "Try again."
+      - content: "错误"
+        rationale: "正确！`<button>` 元素已经自带这个属性了！"
+      - content: "正确"
+        rationale: "再试一试。"
