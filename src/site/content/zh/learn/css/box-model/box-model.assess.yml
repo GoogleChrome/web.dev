@@ -13,14 +13,11 @@ questions:
       ```
     cardinality: "1"
     correctAnswers: "1"
-    stem: How wide do you think `.my-box` will be?
+    stem: 你认为 `.my-box` 的宽度是多少？
     options:
       - content: 200px
         rationale: |
-          Since the default value for box-sizing is content-box, padding and
-          borders will be added to the width. `200px` would be correct if the 
-          box had `box-sizing: border-box`.
+          由于 `box-sizing` 的默认值是 `content-box`，所以内边距和边框会添加到宽度上。因此，当盒子具有 `box-sizing: border-box` 属性时，`200px` 才是正确的。
       - content: 260px
         rationale: |
-          The default box sizing is content-box, which means padding and 
-          borders are added to the overall box.
+          默认的盒模型尺寸为 `content-box`，这意味着内边距和边框将会添加到整个盒子的尺寸中。

@@ -1,8 +1,8 @@
 ---
-title: 方框模型
-description: CSS 显示的所有对象都是方框。因此，了解 CSS 方框模型的工作原理是 CSS 的核心基础。
+title: 盒模型
+description: CSS 显示的所有对象都是盒子。因此，了解 CSS 盒模型的工作原理是 CSS 的核心基础。
 audio:
-  title: CSS 播客   - 001：方框模型
+  title: CSS 播客   - 001：盒模型
   src: "https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast__Episode_001_v2.0.mp3?dest-id=1891556"
   thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
@@ -27,7 +27,7 @@ p {
 }
 ```
 
-那么，内容可能会超出您的元素，并且它的宽度为 142 像素，而不是 100 像素。这是为什么？方框模型是 CSS 的核心基础，您要理解它的工作原理以及 CSS 的其他方面会对其产生哪些影响，重要的是，如何控制它来帮助您编写更容易预测的 CSS。
+那么，内容可能会超出您的元素，并且它的宽度为 142 像素，而不是 100 像素。这是为什么？盒模型是 CSS 的核心基础，您要理解它的工作原理以及 CSS 的其他方面会对其产生哪些影响，重要的是，如何控制它来帮助您编写更容易预测的 CSS。
 
 <figure>{% Codepen { user: 'web-dot-dev', id: 'WNRemxN', height: 300 } %}</figure>
 
@@ -57,11 +57,11 @@ p {
 
 切换到 intrinsic sizing 时，浏览器就会根据方框的内容大小做出决定。使用 intrinsic sizing 时，发生溢出的可能性要小得多，因为方框会根据内容调整自己的大小，而不是尝试调整内容的大小。务必记住，这是浏览器默认的灵活行为。尽管 extrinsic sizing 可以更好地控制表面，但是，在大多数情况下，intrinsic sizing 可以提供最大的灵活性。
 
-## 方框模型的区域
+## 盒模型的区域
 
-方框由不同的方框模型区域组成，这些区域都会执行特定的工作。
+方框由不同的盒模型区域组成，这些区域都会执行特定的工作。
 
-<figure>{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/ECuEOJEGnudhXW5JEFih.svg", alt="显示方框模型四个主要区域的图表 - 内容框、填充框、边框和边距框", width="800", height ="547" %}<figcaption>方框模型的四个主要区域：内容框、填充框、边框和边距框。</figcaption></figure>
+<figure>{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/ECuEOJEGnudhXW5JEFih.svg", alt="显示盒模型四个主要区域的图表 - 内容框、填充框、边框和边距框", width="800", height ="547" %}<figcaption>盒模型的四个主要区域：内容框、填充框、边框和边距框。</figcaption></figure>
 
 首先是**内容框**，它是内容所在的区域。正如之前所学：这种内容可以控制父级的大小，因此，它通常是大小最容易发生变化的区域。
 
@@ -77,11 +77,11 @@ p {
 
 ## 类比解析
 
-方框模型难以理解，所以，我们使用一个类比来回顾一下所学内容。
+盒模型难以理解，所以，我们使用一个类比来回顾一下所学内容。
 
 <figure>{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/FBaaJXdnuSkvOx1nB0CB.jpg", alt="三个画框", width="800", height="562" %}</figure>
 
-该图中有三个并排安装在墙上的画框。该图包含关联框架元素和方框模型的标签。
+该图中有三个并排安装在墙上的画框。该图包含关联框架元素和盒模型的标签。
 
 解析一下这个类比：
 
@@ -91,21 +91,21 @@ p {
 - 边距框是每个画框之间的空间。
 - 阴影与边距框占据相同的空间。
 
-## 调试方框模型
+## 调试盒模型
 
-浏览器 DevTools 为所选方框的方框模型计算提供可视化界面，从而帮助您了解方框模型的工作原理，重要的是，了解它如何影响正在处理的网站。
+浏览器 DevTools 为所选方框的盒模型计算提供可视化界面，从而帮助您了解盒模型的工作原理，重要的是，了解它如何影响正在处理的网站。
 
 继续并在浏览器中尝试执行以下操作：
 
 1. [打开 DevTools](https://developer.chrome.com/docs/devtools/open/)
 2. [选择一个元素](https://developer.chrome.com/docs/devtools/css/reference/#select)
-3. 显示方框模型调试器
+3. 显示盒模型调试器
 
 <figure>{% Video src="video/VbAJIREinuYvovrBzzvEyZOpw5w1/sKdHrAfqahgWfDVQEBBT.mp4", controls=true %}</figure>
 
-## 控制方框模型
+## 控制盒模型
 
-要了解如何控制方框模型，首先，您需要了解浏览器中发生的活动。
+要了解如何控制盒模型，首先，您需要了解浏览器中发生的活动。
 
 每个浏览器都会将用户代理样式表应用到 HTML 文档。使用的 CSS 因浏览器而异，但它们会提供合理的默认值，从而使内容更易于阅读。如果没有定义 CSS，那么，它们会定义元素的外观和行为。用户代理样式中也会设置方框的默认 `display`。例如，如果是在正常流程中，`<div>` 元素的默认 `display` 值是 `block` ，`<li>` 的默认 `display` 值是 `list-item`，而`<span>` 的默认 `display` 值是`inline`。
 
@@ -119,7 +119,7 @@ p {
 
 该方框的实际宽度为 260 像素。由于 CSS 使用默认的 `box-sizing: content-box`，因此，应用的宽度就是内容的宽度，而且会加上两边的 `padding` 和 `border` 值。也就是内容的 200 像素 + 填充的 40 像素 + 边框的 20 像素，从而得到 260 像素的总可见宽度。
 
-不过，您*可以*执行以下修改，使用替代方框模型 `border-box` 来控制这一点：
+不过，您*可以*执行以下修改，使用替代盒模型 `border-box` 来控制这一点：
 
 ```css/1
 .my-box {
@@ -130,7 +130,7 @@ p {
 }
 ```
 
-上述替代方框模型会告诉 CSS 将 `width` 应用到边框（而不是内容框）。这意味着我们的 `border` 和 `padding` 将被*推入*，因此，当您将 `.my-box` 设置为 `200px` 宽度时：它最终就会以 `200px` 的宽度进行渲染。
+上述替代盒模型会告诉 CSS 将 `width` 应用到边框（而不是内容框）。这意味着我们的 `border` 和 `padding` 将被*推入*，因此，当您将 `.my-box` 设置为 `200px` 宽度时：它最终就会以 `200px` 的宽度进行渲染。
 
 通过以下交互式演示了解其工作原理。请注意，当您切换 `box-sizing` 值时，它会通过蓝色背景显示方框*内部*应用的 CSS。
 
@@ -144,13 +144,13 @@ p {
 }
 ```
 
-该 CSS 规则选择文档中的每个元素以及每个 `::before` 和 `::after` 伪元素，同时应用 `box-sizing: border-box`。这意味着每个元素现在都有该替代方框模型。
+该 CSS 规则选择文档中的每个元素以及每个 `::before` 和 `::after` 伪元素，同时应用 `box-sizing: border-box`。这意味着每个元素现在都有该替代盒模型。
 
-由于替代方框模型更容易预测，因此，开发人员通常会将此规则添加到重置和归一化器中，如[本文中介绍的示例](https://piccalil.li/blog/a-modern-css-reset)。
+由于替代盒模型更容易预测，因此，开发人员通常会将此规则添加到重置和归一化器中，如[本文中介绍的示例](https://piccalil.li/blog/a-modern-css-reset)。
 
 ## 资源
 
-- [方框模型简介](https://developer.mozilla.org/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
+- [盒模型简介](https://developer.mozilla.org/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
 - [什么是浏览器开发人员工具？](https://developer.mozilla.org/docs/Learn/Common_questions/What_are_browser_developer_tools)
 
 ### 用户代理样式表
