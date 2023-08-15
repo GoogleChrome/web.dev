@@ -26,6 +26,34 @@ declare global {
     inert: boolean;
     recaptchaLoadCallback?: () => void;
     loadScript?: (url: string, type?: string) => void;
+    dataLayer?: Array;
+  }
+
+  interface Navigator {
+    connection: NetworkInformation;
+    deviceMemory: number;
+  }
+
+  interface PerformanceEntry {
+    deliveryType: string;
+    activationStart: number;
+    type: string;
+  }
+
+  interface NotRestoredReasons {
+    url: string;
+    src: string;
+    id: string;
+    name: string;
+    blocked: boolean;
+    reasons: [string];
+    children: [NotRestoredReasons];
+  }
+
+  interface PerformanceNavigationTiming {
+    deliveryType: string;
+    activationStart: number;
+    notRestoredReasons: NotRestoredReasons
   }
 
   var WebComponents: WebComponentsType;
