@@ -329,7 +329,7 @@ The `description` property describes the purpose of your app.
 
 In Chrome, the maximum description length is limited to 300 characters on all
 platforms. If the description is longer than that, it will be truncated with
-ellipsis appended. On Android, there is an additional limit of at most 7 lines.
+an ellipsis character. On Android, there is an additional limit of at most 7 lines.
 
 #### `screenshots` {: #screenshots }
 
