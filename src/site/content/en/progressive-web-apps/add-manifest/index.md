@@ -350,8 +350,7 @@ In Chrome, the image must respond to certain criteria:
 are displayed on desktop.
 * As of Chrome&nbsp;109, screenshots with the `form_factor` set to `"wide"` are
 ignored on Android. Screenshots without `form_factor` are still displayed for
-backwards compatibility. In the future this will be changed to only display
-screenshots with the `form_factor` set to `"narrow"`.
+backwards compatibility.
 
 Chrome on desktop displays at least 1 and at most 8 screenshots that meet the
 criteria above. The rest will be ignored.
