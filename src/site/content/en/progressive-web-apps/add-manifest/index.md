@@ -346,7 +346,7 @@ In Chrome, the image must respond to certain criteria:
   dimension.
 * All screenshots matching the appropriate form factor must have the same
   aspect ratio.
-* As of Chromium 109, only screenshots with the `form_factor` set to `"wide"`
+* As of Chrome&nbsp;109, only screenshots with the `form_factor` set to `"wide"`
 are displayed on the desktop.
 * As of Chrome&nbsp;109, screenshots with the `form_factor` set to `"wide"` are
 ignored on Android. Screenshots without `form_factor` are still displayed for
