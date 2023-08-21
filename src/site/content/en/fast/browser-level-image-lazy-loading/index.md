@@ -209,7 +209,7 @@ It is safer to avoid putting `loading=lazy` on above-the-fold images, as Chrome 
 
 ### How does the `loading` attribute work with images that are in the viewport but not immediately visible (for example: behind a carousel, or hidden by CSS for certain screen sizes)?
 
-Using `loading="lazy"` _may_ prevent them being loaded when they are not visible but within the [calculated-distance](#distance-from-viewport-thresholds). For example, Chrome, Safari and Firefox do not load images using `display: none;` styling—either on the image element or on a parent element. However, other techniques to hide images—such as using `opacity:0` styling—will still result in the images being loaded. Always test your implementation thoroughly to ensure it's acting as intended.
+Using `loading="lazy"` _may_ prevent them being loaded when they are not visible but within the [calculated-distance](#distance-from-viewport-thresholds). For example, Chrome, Safari and Firefox do not load background-url images using `display: none;` styling—either on the image element or on a parent element. However, other techniques to hide images—such as using `opacity:0` styling—will still result in the images being loaded. Always test your implementation thoroughly to ensure it's acting as intended.
 
 ### What if I'm already using a third-party library or a script to lazy-load images?
 
