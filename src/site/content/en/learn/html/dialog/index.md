@@ -53,7 +53,7 @@ open a dialog not based on user action, reconsider. If you must, ensure that foc
 especially if the user dismisses the dialog without interacting with it.
 
 There is a global [`inert`](/learn/html/focus/#the-inert-attribute) attribute that can be used to disable an element and all of its descendants, other than any active
-dialog. When a modal dialog is opened using `openModal()`, the inertness or deactivation comes for free; the attribute
+dialog. When a modal dialog is opened using `showModal()`, the inertness or deactivation comes for free; the attribute
 isn’t explicitly set.
 
 The backdrop that obscures everything other than the dialog can be styled using the [`::backdrop`](https://developer.mozilla.org/docs/Web/CSS/::backdrop)
