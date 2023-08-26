@@ -349,7 +349,7 @@ This is a simplistic example of how `postTask()` can be used. It's possible to i
 [`postTask()` is not supported in all browsers](https://caniuse.com/mdn-api_scheduler_posttask). You can use feature detection to see if it's available, or consider using [a polyfill](https://www.npmjs.com/package/scheduler-polyfill).
 {% endAside %}
 
-### Built-in yield with continuation with `scheduler.yield`
+### Built-in yield with continuation via `scheduler.yield`
 
 {% Aside 'important' %}
 For a more detailed explanation on `scheduler.yield`, read [this post about its origin trial](https://developer.chrome.com/blog/introducing-scheduler-yield-origin-trial/), as well as [its explainer](https://github.com/WICG/scheduling-apis/blob/main/explainers/yield-and-continuation.md).
