@@ -6,7 +6,7 @@ subhead: |
 authors:
   - jlwagner
 date: 2022-09-30
-updated: 2022-10-03
+updated: 2023-08-28
 hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/MpP0GrDpLMztUsdMocP9.jpg
 thumbnail: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Eup7oLu7L0bglCH4YPGq.jpg
 alt: A photograph of a spool of purple thread unraveling to the right until it goes out of the frame.
