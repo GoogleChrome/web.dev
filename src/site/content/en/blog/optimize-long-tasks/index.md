@@ -6,7 +6,7 @@ subhead: |
 authors:
   - jlwagner
 date: 2022-09-30
-updated: 2022-10-03
+updated: 2023-08-28
 hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/MpP0GrDpLMztUsdMocP9.jpg
 thumbnail: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Eup7oLu7L0bglCH4YPGq.jpg
 alt: A photograph of a spool of purple thread unraveling to the right until it goes out of the frame.
@@ -349,9 +349,13 @@ This is a simplistic example of how `postTask()` can be used. It's possible to i
 [`postTask()` is not supported in all browsers](https://caniuse.com/mdn-api_scheduler_posttask). You can use feature detection to see if it's available, or consider using [a polyfill](https://www.npmjs.com/package/scheduler-polyfill).
 {% endAside %}
 
-### Built-in yield with continuation
+### Built-in yield with continuation via `scheduler.yield`
 
-One proposed part of the scheduler API that's not currently implemented in any browser is a built-in yielding mechanism. Its use resembles the `yieldToMain()` function demonstrated earlier in this article:
+{% Aside 'important' %}
+For a more detailed explanation on `scheduler.yield`, read [this post about its origin trial](https://developer.chrome.com/blog/introducing-scheduler-yield-origin-trial/), as well as [its explainer](https://github.com/WICG/scheduling-apis/blob/main/explainers/yield-and-continuation.md).
+{% endAside %}
+
+One proposed part of the scheduler API is `scheduler.yield`, an API specifically designed for yielding to the main thread in the browser [which is currently available to try as an origin trial](https://developer.chrome.com/origintrials/#/view_trial/836543630784069633). Its use resembles the `yieldToMain()` function demonstrated earlier in this article:
 
 ```js
 async function saveSettings () {
