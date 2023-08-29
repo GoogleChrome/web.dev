@@ -218,7 +218,7 @@ The first one, the test ice cone, looks like the pyramid in reverse. Without the
 
 {% Img src="image/dPDCek3EhZgLQPGtEG3y0fTn4v82/QdBKM36jvq93jrERrSCP.jpeg", alt="The testing ice cone.", width="800", height="450" %}
 
-The ice cone has bigger focus on manual or UI testing and the least focus on unit testing. It often takes shape in projects where developers started work with only a few thoughts on the testing strategy. The ice code is considered an anti-pattern and rightfully so. It is costly in terms of resources and manual work.
+The ice cone has bigger focus on manual or UI testing and the least focus on unit testing. It often takes shape in projects where developers started work with only a few thoughts on the testing strategy. The ice cone is considered an anti-pattern and rightfully so. It is costly in terms of resources and manual work.
 
 The test crab is similar to the test ice cone, but with more emphasis on E2E and visual testing:
 
@@ -237,7 +237,7 @@ You have now learned about the most common testing strategies. You started with 
 
 {% Img src="image/dPDCek3EhZgLQPGtEG3y0fTn4v82/u1yCzUoUXkXAHUCgyrz2.jpeg", alt="It depends.", width="800", height="450" %}
 
-The choice of the most appropriate testing strategy from those described—and even the ones left out—depends on your application. It should fir your architecture, your requirements, and last but not least, your users and their requirements. All this might differ from application to application. That's completely normal. Remember that your most important goal is to serve your users, not a textbook definition.
+The choice of the most appropriate testing strategy from those described—and even the ones left out—depends on your application. It should fit your architecture, your requirements, and, last but not least, your users and their requirements. All this might differ from application to application. That's completely normal. Remember that your most important goal is to serve your users, not a textbook definition.
 
 More often than not, real-world tests are difficult to separate and define individually. Even Martin Fowler himself emphasizes the [positive aspect of differing definitions](https://martinfowler.com/articles/2021-test-shapes.html), such as in the case of unit tests. As [Justin Searls](https://justin.searls.co/about/) states correctly in [his tweet](https://twitter.com/searls/status/1393385209089990659):
 
@@ -251,9 +251,6 @@ More often than not, real-world tests are difficult to separate and define indiv
 </blockquote>
 
 Focus on the tests that report actual errors that the users might encounter, and don't get distracted from your goal. Tests should be designed to benefit the user, not just provide 100% coverage or to debate which percentage of which testing type to write.
-
-Focus on tests that report real-life errors that your users might encounter and don't get distracted from your goal. Tests should be designed to benefit the user, not just provide 100% coverage or spark debates on what percentage of a particular testing type you should write.
-
 
 {% Aside %}
 This blog post was written by Ramona, with input and review from
