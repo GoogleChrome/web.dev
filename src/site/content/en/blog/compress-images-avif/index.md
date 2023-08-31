@@ -4,6 +4,7 @@ title: Using AVIF to compress images on your site
 authors:
   - jaikk
   - wtc
+  - jlwagner
 hero: image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/0jtMLyN4T7C7UazJCYEH.jpg
 alt: The AVIF logo
 description: |
@@ -11,6 +12,7 @@ description: |
   needed. Instead of a "one-size-fits-all" approach to images, serve different
   image sizes to different devices.
 date: 2021-06-07
+updated: 2023-08-31
 tags:
   - performance
   - blog
@@ -342,6 +344,18 @@ Try running this at the command line.
 
 This tells avifenc to use 8 threads when creating the AVIF image,
 which speeds up AVIF encoding by roughly 5x.
+
+## Effects on Largest Contentful Paint (LCP)
+
+Images are a common candidate for the [Largest Contentful Paint (LCP) metric](/lcp/). One common recommendation for improving the loading speed of LCP images is to ensure that an image is optimized. By reducing a resource's transfer size, you're improving its _resource load time_, which is [one of the four key phases](/optimize-lcp/#3-reduce-resource-load-time) to target when dealing with LCP candidates that are images.
+
+[Using an image CDN](/image-cdns/) is strongly recommended when optimizing images, as it requires much less effort than setting up image optimization pipelines in your website's build process or manually using encoder binaries to optimize images by hand. However, image CDNs may be cost-prohibitive for some projects. If this is the case for you, consider the following when optimizing with the avifenc encoder:
+
+- Familiarize yourself with [the options the encoder offers](https://github.com/AOMediaCodec/libavif/blob/main/doc/avifenc.1.md). You may find additional savings while still retaining sufficient image quality by experimenting with some of AVIF's available encoding features.
+- AVIF provides both lossy and lossless encoding. Depending on an image's contents, one type of encoding may perform better than another. For example, photographs which are normally served as JPEGs will probably do best with lossy encoding, whereas lossless encoding is likely best for images containing simple details or line art normally served as PNG.
+- If using a bundler with community support for imagemin, consider using the [imagemin-avif](https://www.npmjs.com/package/imagemin-avif) package to enable your bundler to output AVIF image variants.
+
+By experimenting with AVIF, you may be able to realize an improvement for your website's LCP times in cases where the LCP candidate is an image. For more information on optimizing LCP, read [the guide on optimizing LCP](/optimize-lcp/).
 
 ## Conclusion
 
