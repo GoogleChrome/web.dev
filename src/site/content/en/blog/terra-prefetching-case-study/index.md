@@ -140,7 +140,7 @@ const idleCallback = window.requestIdleCallback || function (cb) {
 }
 
 idleCallback(function () {
-  prefetch(nodeLists, minConnectionType)
+  prefetch(nodeLists)
 })
 ```
 
