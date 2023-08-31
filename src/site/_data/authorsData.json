@@ -1826,5 +1826,19 @@
     "country": "JP",
     "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/gWQBNNc7xafsHz7KBrE1.jpg",
     "twitter": "yuriko_fuuu"
+  },
+  "thiernothiam": {
+    "country": "UK",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/G39Wqf36XLYM27LOrexr.jpg",
+    "twitter": "localhost_droid",
+    "github": "thierhost",
+    "linkedin": "https://www.linkedin.com/in/thierno-thiam-9753489b/"
+  },
+  "guilhermems": {
+    "country": "BR",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/WM20YjI0H9jhcAPlwzoZ.jpg",
+    "twitter": "mobtec",
+    "github": "gui-poa",
+    "linkedin": "https://www.linkedin.com/in/guilhermems/"
   }
 }
