@@ -86,40 +86,25 @@ Prefetching—when used with care—greatly improves page load time, increases a
 
 ## Technical details
 
-Prefetching can be achieved through the use of resource hints such as [`rel=prefetch`](https://developer.mozilla.org/docs/Glossary/Prefetch) or [`rel=preload`](https://developer.mozilla.org/docs/Web/HTML/Attributes/rel/preload) via libraries such as [quicklink](https://github.com/GoogleChromeLabs/quicklink) or [Guess.js](https://github.com/guess-js), or the newer Speculation Rules API. Terra has chosen to implement this by using the [fetch API](https://developer.mozilla.org/docs/Web/API/Fetch_API) with a [low priority](https://developer.mozilla.org/docs/Web/API/fetch#:~:text=priority) in combination with an Intersection Observer instance. Terra made this choice as it allows them to support Safari, which doesn't yet support other prefetching methods like `rel=prefetch` or the Speculation Rules API, and a full-featured JavaScript library wasn't necessary for Terra's needs.
+Prefetching can be achieved through the use of resource hints such as [`rel=prefetch`](https://developer.mozilla.org/docs/Glossary/Prefetch) or [`rel=preload`](https://developer.mozilla.org/docs/Web/HTML/Attributes/rel/preload), via libraries such as [quicklink](https://github.com/GoogleChromeLabs/quicklink) or [Guess.js](https://github.com/guess-js), or using the newer Speculation Rules API. Terra has chosen to implement this by using the [fetch API](https://developer.mozilla.org/docs/Web/API/Fetch_API) with a [low priority](https://developer.mozilla.org/docs/Web/API/fetch#:~:text=priority) in combination with an Intersection Observer instance. Terra made this choice as it allows them to support Safari, which doesn't yet support other prefetching methods like `rel=prefetch` or the Speculation Rules API, and a full-featured JavaScript library wasn't necessary for Terra's needs.
+
+
+The below JavaScript is approximately equivalent to the code used by Terra:
 
 ```js
-function prefetch(nodeLists, minConnectionType = "3g") {
-  if (nodeLists.length === 0) {
-    console.error("prefetchURL: nodeList must contain at least one node to prefetch");
+function prefetch(nodeLists) {
 
+    // Exclude slow ECTs < 3g
+  if (navigator.connection &&
+    (navigator.connection.effectiveType === 'slow-2g'
+      || navigator.connection.effectiveType === '2g')
+  ) {
     return;
   }
 
-  const connDictionary = {
-    'slow-2g': 0,
-    '2g': 1,
-    '3g': 2,
-    '4g': 3
-  };
-
-  if (navigator.connection && navigator.connection.effectiveType) {
-    if (connDictionary[minConnectionType] === undefined) {
-      console.error('prefetchURL: select a valid type of minConnectionType');
-
-      return;
-    } else if (connDictionary[minConnectionType] > connDictionary[navigator.connection.effectiveType]) {
-      console.error('prefetchURL: network conditions are too poor for the use of prefetch');
-
-      return;
-    }
-
     // Exclude low end device which is device with memory <= 2GB
-    if (navigator.deviceMemory && navigator.deviceMemory <= 2) {
-      console.error("prefetchURL: device memory is insufficient");
-
-      return;
-    }
+  if (navigator.deviceMemory && navigator.deviceMemory <= 2) {
+    return;
   }
 
   const fetchLinkList = {};
@@ -163,7 +148,8 @@ idleCallback(function () {
 - Then it uses an `IntersectionObserver` to monitor when elements become visible in the viewport, and subsequently adds URLs to a list for prefetching.
 - The prefetch process is scheduled with `requestIdleCallback`, aiming to execute the `prefetch` function when the main thread is idle.
 
-Conclusion
-When used with care, prefetching can significantly reduce load times for future navigation requests, thereby reducing friction in the user journey and increasing engagement. Various implementation techniques already exist, however, prefetching results in loading of extra bytes that may not be used, so it should only be used when necessary—ideally in good network conditions, and on capable devices.
+## Conclusion
 
-_Special thanks to Gilberto Cocchi, Harry Theodoulou, Miguel Carlos Martínez Díaz, Barry Pollard, Jeremy Wagner and the Terra's Engineering team for their contribution to this work._
+When used with care, prefetching can significantly reduce load times for future navigation requests, thereby reducing friction in the user journey and increasing engagement. Prefetching results in loading of extra bytes that may not be used, so Terra took extra steps to only prefetch under good network conditions and on capable devices, where this information is available.
+
+_Special thanks to Gilberto Cocchi, Harry Theodoulou, Miguel Carlos Martínez Díaz, Barry Pollard, Jeremy Wagner and Terra's Engineering team for their contribution to this work._
