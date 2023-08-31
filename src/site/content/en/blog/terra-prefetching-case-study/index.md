@@ -4,7 +4,7 @@ title: How prefetching helped Terra increase ads click-through rate by 30% and s
 subhead: |
   Prefetching resources speeds up page load times and improves business metrics.
 description: |
-  Prefetching is a technique used to speed up page loading by downloading resources—or even entire pages—which are likely to be needed in the near future. Research has shown that [faster load times result in higher conversion rates](https://wpostats.com/) and better user experiences.
+  Prefetching is a technique used to speed up page loading by downloading resources—or even entire pages—which are likely to be needed in the near future. Research has shown that faster load times result in higher conversion rates and better user experiences.
 hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/v2HlksdTOBRKk77JtixN.png
 thumbnail: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/SSNjeq1z2euzy4ar5QfN.png
 alt: The Terra logo, set on a white backdrop.
@@ -17,6 +17,8 @@ tags:
   - performance
   - case-study
 ---
+
+Prefetching is a technique used to speed up page loading by downloading resources—or even entire pages—which are likely to be needed in the near future. Research has shown that [faster load times result in higher conversion rates](https://wpostats.com/) and better user experiences.
 
 [Terra](https://www.terra.com/) is one of the largest content portals from Brazil, offering entertainment, news, and sports with more than 63 million unique visitors per month. We’ve collaborated with Terra’s engineering team to improve the loading time of articles by using prefetching techniques on certain sections of their website.
 
