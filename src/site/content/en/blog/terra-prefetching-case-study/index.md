@@ -151,4 +151,4 @@ idleCallback(function () {
 
 When used with care, prefetching can significantly reduce load times for future navigation requests, thereby reducing friction in the user journey and increasing engagement. Prefetching results in loading of extra bytes that may not be used, so Terra took extra steps to only prefetch under good network conditions and on capable devices, where this information is available.
 
-_Special thanks to Gilberto Cocchi, Harry Theodoulou, Miguel Carlos Martínez Díaz, Barry Pollard, Jeremy Wagner and Leonardo Bellini and Lucca Paradeda from Terra's Engineering team for their contribution to this work._
+_Special thanks to Gilberto Cocchi, Harry Theodoulou, Miguel Carlos Martínez Díaz, Barry Pollard, Jeremy Wagner, and Leonardo Bellini and Lucca Paradeda from Terra's Engineering team for their contribution to this work._
