@@ -11,7 +11,7 @@ alt: The Terra logo, set on a white backdrop.
 authors:
   - guilhermems
   - thiernothiam
-date: 2023-08-31
+date: 2023-09-01
 tags:
   - blog
   - performance
@@ -93,8 +93,7 @@ The below JavaScript is approximately equivalent to the code used by Terra:
 
 ```js
 function prefetch(nodeLists) {
-
-    // Exclude slow ECTs < 3g
+  // Exclude slow ECTs < 3g
   if (navigator.connection &&
     (navigator.connection.effectiveType === 'slow-2g'
       || navigator.connection.effectiveType === '2g')
@@ -102,7 +101,7 @@ function prefetch(nodeLists) {
     return;
   }
 
-    // Exclude low end device which is device with memory <= 2GB
+  // Exclude low end device which is device with memory <= 2GB
   if (navigator.deviceMemory && navigator.deviceMemory <= 2) {
     return;
   }
@@ -119,7 +118,7 @@ function prefetch(nodeLists) {
             priority: 'low'
           });
         }
-        
+
         observer.unobserve(entry = entry.target);
       }
     });
@@ -152,4 +151,4 @@ idleCallback(function () {
 
 When used with care, prefetching can significantly reduce load times for future navigation requests, thereby reducing friction in the user journey and increasing engagement. Prefetching results in loading of extra bytes that may not be used, so Terra took extra steps to only prefetch under good network conditions and on capable devices, where this information is available.
 
-_Special thanks to Gilberto Cocchi, Harry Theodoulou, Miguel Carlos Martínez Díaz, Barry Pollard, Jeremy Wagner and Terra's Engineering team for their contribution to this work._
+_Special thanks to Gilberto Cocchi, Harry Theodoulou, Miguel Carlos Martínez Díaz, Barry Pollard, Jeremy Wagner and Leonardo Bellini and Lucca Paradeda from Terra's Engineering team for their contribution to this work._
