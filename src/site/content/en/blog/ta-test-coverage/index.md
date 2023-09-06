@@ -253,7 +253,7 @@ In the code example, there are eight lines of executable code, but there are nin
 {% DetailsSummary %}
 Check your answer
 {% endDetailsSummary %}
-It's the following line: "espresso = 30 * cup; water = 70 * cup;"
+It's the following line: espresso = 30 * cup; water = 70 * cup;
 {% endDetails %}
 
 The tests cover only five of the nine statements, therefore the statement coverage is 55.55%.
@@ -316,7 +316,7 @@ To avoid this scenario:
 
 ## Using code coverage in different types of testing
 
-Let’s take a closer look at how you can use code coverage with the [three common types of test](https://web.dev/ta-what-to-test/#test-specifics-dos-and-donts):
+Let’s take a closer look at how you can use code coverage with the [three common types of test](/ta-what-to-test/#test-specifics-dos-and-donts):
 
 - **Unit tests.** They are the best test type for gathering code coverage because they are designed to cover multiple small scenarios and testing paths.
 - **Integration tests.** They can help collect code coverage for integration tests, but use them with caution. In this case, you calculate the coverage of a larger portion of the source code, and it can be difficult to determine which tests actually cover which parts of the code. Nonetheless, calculating code coverage of integration tests may be useful for legacy systems that don’t have well-isolated units.
