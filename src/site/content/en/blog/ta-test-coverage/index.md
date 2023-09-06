@@ -134,11 +134,11 @@ You can run the code and tests on this [live demo](https://stackblitz.com/edit/v
 /* coffee.js */
 
 export function calcCoffeeIngredient(coffeeName, cup = 1) {
-  ...
+  …
 }
 
 function isValidCoffee(name) {
-  ...
+  …
 }
 ```
 
@@ -184,26 +184,26 @@ Note that line coverage doesn’t take into account declaration statements, such
 
 **Code coverage: 80%**
 
-{% highlight "js 2,7,15 12" %}
+```js 2,7,15 12" %}
 /* coffee.js */
 
 export function calcCoffeeIngredient(coffeeName, cup = 1}) {
-  ...
+  …
 
   if (coffeeName === 'espresso') {
-    ...
+    …
     return { espresso };
   }
 
   if (coffeeName === 'americano') {
-    ...
+    …
     return { espresso, water };
   }
 
   return {};
 }
-...
-{% endhighlight %}
+…
+```
 
 *Branch coverage* measures the percentage of executed branches or decision points in the code, such as if statements or loops. It determines whether tests examine both the true and false branches of conditional statements.
 
@@ -291,7 +291,7 @@ Consider the following test:
 ```js
 /* coffee.test.js */
 
-...
+…
 describe('Warning: Do not do this', () => {
   it('is meaningless', () => { 
     calcCoffeeIngredient('espresso', 2);
