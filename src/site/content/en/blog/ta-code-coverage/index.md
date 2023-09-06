@@ -406,5 +406,5 @@ describe('Coffee', () => {
 ```
 
 {% Aside %}
-This blog post was written by Ramona, co-authored by [Jecelyn Yeen](/authors/jecelynyeen/) ([Twitter](https://twitter.com/jecfish)), with input and review from [Michael Hablich](https://www.linkedin.com/in/michael-hablich-2128646/) ([Twitter](https://twitter.com/MHablich)), [Rachel Andrew](/authors/rachelandrew/), and [Sofia Emelianova](https://www.linkedin.com/in/sofia-yemelianova/).
+This blog post was written by Ramona and [Jecelyn Yeen](/authors/jecelynyeen/) ([Twitter](https://twitter.com/jecfish)), with input and review from [Michael Hablich](https://www.linkedin.com/in/michael-hablich-2128646/) ([Twitter](https://twitter.com/MHablich)), [Rachel Andrew](/authors/rachelandrew/), and [Sofia Emelianova](https://www.linkedin.com/in/sofia-yemelianova/).
 {% endAside %}
