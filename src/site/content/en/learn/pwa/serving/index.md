@@ -90,9 +90,9 @@ caches.match(urlOrRequest).then(response => {
 
 // Cache-specific search
 caches.open("pwa-assets").then(cache => {
-  cache.match(urlOrRequest).then(response) {
+  cache.match(urlOrRequest).then(response => {
     console.log(response ? response : "It's not in the cache");
-  }
+  })
 });
 ```
 
