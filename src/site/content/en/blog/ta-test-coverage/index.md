@@ -9,8 +9,8 @@ description: >
 authors:
   - ramona
   - jecelynyeen
-hero: 
-alt: 
+hero: image/NJdAV9UgKuN8AhoaPBquL7giZQo1/A5IWi1Y1jqjDCqmQQxD6.jpg
+alt: 'A gree fence with a 100% sign.'
 tags:
   - blog
   - test-automation
