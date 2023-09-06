@@ -187,7 +187,7 @@ Note that line coverage doesn’t take into account declaration statements, such
 ```js 2,7,15 12" %}
 /* coffee.js */
 
-export function calcCoffeeIngredient(coffeeName, cup = 1}) {
+export function calcCoffeeIngredient(coffeeName, cup = 1) {
   …
 
   if (coffeeName === 'espresso') {
@@ -253,7 +253,7 @@ In the code example, there are eight lines of executable code, but there are nin
 {% DetailsSummary %}
 Check your answer
 {% endDetailsSummary %}
-It's the following line: espresso = 30 * cup; water = 70 * cup;
+It's the following line: `espresso = 30 * cup; water = 70 * cup;`
 {% endDetails %}
 
 The tests cover only five of the nine statements, therefore the statement coverage is 55.55%.
