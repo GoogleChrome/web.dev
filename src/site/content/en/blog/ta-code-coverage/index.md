@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Four common types of test coverage
+title: Four common types of code coverage
 date: 2023-09-06
 subhead: >
   Learn what code coverage is and discover four common ways to measure it.
@@ -26,40 +26,50 @@ Code coverage is a metric that measures the percentage of source code your tests
 Often, recording these metrics looks like this:
 
 <style type="text/css">
-.tg .tg-zo2y{color:#C00;}
-.tg .tg-bsyc{color:#38761D;}
-.tg .tg-kfug{color:#BF9000;}
+  .tg {
+    border: 1px solid var(--color-stroke);
+  }
+
+  .tg tbody {
+    background-color: var(--color-mid-bg);
+  }
+  .tg-zo2y span {
+    color: var(--color-state-bad-text);
+  }
+  .tg-bsyc span {
+    color: var(--color-state-good-text);
+  }
+  .tg-kfug span {
+    color: var(--color-state-warn-text);
+  }
 </style>
 <table class="tg">
 <thead>
   <tr>
-    <th class="tg-amwm" colspan="6"><span style="color:#000;background-color:transparent;">Code coverage</span></th>
+    <th class="tg-1wig"><span>File</span></th>
+    <th class="tg-1wig"><span>% Statements</span></th>
+    <th class="tg-1wig"><span>% Branch</span></th>
+    <th class="tg-1wig"><span>% Functions</span></th>
+    <th class="tg-1wig"><span>% Lines</span></th>
+    <th class="tg-1wig"><span>Uncovered lines</span></th>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td class="tg-1wig"><span style="color:#000;background-color:transparent">File</span></td>
-    <td class="tg-1wig"><span style="color:#000;background-color:transparent">% Statements</span></td>
-    <td class="tg-1wig"><span style="color:#000;background-color:transparent">% Branch</span></td>
-    <td class="tg-1wig"><span style="color:#000;background-color:transparent">% Functions</span></td>
-    <td class="tg-1wig"><span style="color:#000;background-color:transparent">% Lines</span></td>
-    <td class="tg-1wig"><span style="color:#000;background-color:transparent">Uncovered lines</span></td>
+    <td class="tg-0lax"><span>file.js</span></td>
+    <td class="tg-bsyc"><span>90%</span></td>
+    <td class="tg-bsyc"><span>100%</span></td>
+    <td class="tg-bsyc"><span>90%</span></td>
+    <td class="tg-bsyc"><span>80%</span></td>
+    <td class="tg-zo2y"><span>89,256</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax"><span style="color:#000;background-color:transparent">file.js</span></td>
-    <td class="tg-bsyc"><span style="color:#38761D;background-color:transparent">90%</span></td>
-    <td class="tg-bsyc"><span style="color:#38761D;background-color:transparent">100%</span></td>
-    <td class="tg-bsyc"><span style="color:#38761D;background-color:transparent">90%</span></td>
-    <td class="tg-bsyc"><span style="color:#38761D;background-color:transparent">80%</span></td>
-    <td class="tg-zo2y"><span style="color:#C00;background-color:transparent">89,256</span></td>
-  </tr>
-  <tr>
-    <td class="tg-0lax"><span style="color:#000;background-color:transparent">coffee.js</span></td>
-    <td class="tg-kfug"><span style="color:#BF9000;background-color:transparent">55.55%</span></td>
-    <td class="tg-bsyc"><span style="color:#38761D;background-color:transparent">80%</span></td>
-    <td class="tg-kfug"><span style="color:#BF9000;background-color:transparent">50%</span></td>
-    <td class="tg-kfug"><span style="color:#BF9000;background-color:transparent">62.5%</span></td>
-    <td class="tg-zo2y"><span style="color:#C00;background-color:transparent">10-11, 18</span></td>
+    <td class="tg-0lax"><span>coffee.js</span></td>
+    <td class="tg-kfug"><span>55.55%</span></td>
+    <td class="tg-bsyc"><span>80%</span></td>
+    <td class="tg-kfug"><span>50%</span></td>
+    <td class="tg-kfug"><span>62.5%</span></td>
+    <td class="tg-zo2y"><span>10-11, 18</span></td>
   </tr>
 </tbody>
 </table>
@@ -130,15 +140,15 @@ You can run the code and tests on this [live demo](https://stackblitz.com/edit/v
 
 <style>del {text-decoration: none; !important}</style>
 
-```js/1-4/5-8
+```text/1-4/5-8
 /* coffee.js */
 
 export function calcCoffeeIngredient(coffeeName, cup = 1) {
-  …
+  // ...
 }
 
 function isValidCoffee(name) {
-  …
+  // ...
 }
 ```
 
@@ -150,7 +160,7 @@ In the code example, there are two functions: `calcCoffeeIngredient` and `isVali
 
 **Code coverage: 62.5%**
 
-```js/5-7,10,15/11-12,19
+```text/5-7,10,15/11-12,19
 /* coffee.js */
 
 export function calcCoffeeIngredient(coffeeName, cup = 1) {
@@ -184,19 +194,19 @@ Note that line coverage doesn’t take into account declaration statements, such
 
 **Code coverage: 80%**
 
-```js 2,7,15 12" %}
+```text/1-2,7,15/12
 /* coffee.js */
 
 export function calcCoffeeIngredient(coffeeName, cup = 1) {
-  …
+  // ...
 
   if (coffeeName === 'espresso') {
-    …
+    // ...
     return { espresso };
   }
 
   if (coffeeName === 'americano') {
-    …
+    // ...
     return { espresso, water };
   }
 
@@ -209,11 +219,18 @@ export function calcCoffeeIngredient(coffeeName, cup = 1) {
 
 There are five branches in the code example:
 
-1. Calling `calcCoffeeIngredient` with just `coffeeName` {% Img src="image/NJdAV9UgKuN8AhoaPBquL7giZQo1/CpHz0pF9m750yTrbDveT.svg", alt="Chek mark.", width="20", height="20" %}
-1. Calling `calcCoffeeIngredient` with `coffeeName` and `cup` {% Img src="image/NJdAV9UgKuN8AhoaPBquL7giZQo1/CpHz0pF9m750yTrbDveT.svg", alt="Chek mark.", width="20", height="20" %}
-1. Coffee is Espresso {% Img src="image/NJdAV9UgKuN8AhoaPBquL7giZQo1/CpHz0pF9m750yTrbDveT.svg", alt="Chek mark.", width="20", height="20" %}
-1. Coffee is Americano {% Img src="image/NJdAV9UgKuN8AhoaPBquL7giZQo1/ufOsI388YJ9gqjrXjZuQ.svg", alt="X mark.", width="20", height="20" %}
-1. Other coffee {% Img src="image/NJdAV9UgKuN8AhoaPBquL7giZQo1/CpHz0pF9m750yTrbDveT.svg", alt="Chek mark.", width="20", height="20" %}
+<style type="text/css">
+  li img.custom-icon {
+    margin-top:0 !important;
+    display:inline;
+  }
+</style>
+
+1. Calling `calcCoffeeIngredient` with just `coffeeName` {% Img class="custom-icon", src="image/NJdAV9UgKuN8AhoaPBquL7giZQo1/CpHz0pF9m750yTrbDveT.svg", alt="Chek mark.", width="20", height="20" %}
+1. Calling `calcCoffeeIngredient` with `coffeeName` and `cup` {% Img class="custom-icon", src="image/NJdAV9UgKuN8AhoaPBquL7giZQo1/CpHz0pF9m750yTrbDveT.svg", alt="Chek mark.", width="20", height="20" %}
+1. Coffee is Espresso {% Img class="custom-icon", src="image/NJdAV9UgKuN8AhoaPBquL7giZQo1/CpHz0pF9m750yTrbDveT.svg", alt="Chek mark.", width="20", height="20" %}
+1. Coffee is Americano {% Img class="custom-icon", src="image/NJdAV9UgKuN8AhoaPBquL7giZQo1/ufOsI388YJ9gqjrXjZuQ.svg", alt="X mark.", width="20", height="20" %}
+1. Other coffee {% Img class="custom-icon", src="image/NJdAV9UgKuN8AhoaPBquL7giZQo1/CpHz0pF9m750yTrbDveT.svg", alt="Chek mark.", width="20", height="20" %}
 
 The tests cover all branches except the `Coffee is Americano` condition. So branch coverage is 80%.
 
@@ -221,7 +238,7 @@ The tests cover all branches except the `Coffee is Americano` condition. So bran
 
 **Code coverage: 55.55%**
 
-```js/5-7,10,15/11,12,19
+```text/5-7,10,15/11,12,19
 /* coffee.js */
 
 export function calcCoffeeIngredient(coffeeName, cup = 1) {
@@ -291,7 +308,7 @@ Consider the following test:
 ```js
 /* coffee.test.js */
 
-…
+// ...
 describe('Warning: Do not do this', () => {
   it('is meaningless', () => { 
     calcCoffeeIngredient('espresso', 2);
@@ -389,5 +406,5 @@ describe('Coffee', () => {
 ```
 
 {% Aside %}
-This blog post was written by Ramona, co-authored by [Jecelyn Yeen](/authors/jecelynyeen/) ([Twitter](https://twitter.com/jecfish)), with input and review from [Michael Hablich](https://www.linkedin.com/in/michael-hablich-2128646/) ([Twitter](https://twitter.com/MHablich)), [Rachel Andrew](/authors/rachelandrew/), and [Sofia Emelianova](https://www.linkedin.com/in/sofia-yemelianova/).
+This blog post was written by Ramona and [Jecelyn Yeen](/authors/jecelynyeen/) ([Twitter](https://twitter.com/jecfish)), with input and review from [Michael Hablich](https://www.linkedin.com/in/michael-hablich-2128646/) ([Twitter](https://twitter.com/MHablich)), [Rachel Andrew](/authors/rachelandrew/), and [Sofia Emelianova](https://www.linkedin.com/in/sofia-yemelianova/).
 {% endAside %}
