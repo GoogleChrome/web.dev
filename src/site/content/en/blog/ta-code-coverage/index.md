@@ -81,7 +81,7 @@ As you add new features and tests, increasing code coverage percentages can give
 
 There are four common ways to collect and calculate code coverage: function, line, branch, and statement coverage.
 
-{% Img src="image/NJdAV9UgKuN8AhoaPBquL7giZQo1/cgSv5bcoysXyAkJiJt0V.jpeg", alt="Four types of text coverage.", width="800", height="450" %}
+{% Img src="image/dPDCek3EhZgLQPGtEG3y0fTn4v82/W9iaHL2YtKeBz5vRmWFQ.png", alt="Four types of text coverage.", width="800", height="449" %}
 
 To see how each type of code coverage calculates its percentage, consider the following code example for calculating coffee ingredients:
 
