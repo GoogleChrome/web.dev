@@ -289,7 +289,7 @@ Once you have achieved high statement coverage, you can then move on to branch c
 
 No. Test coverage and code coverage are often confused but they are different:
 
-- **Test coverage**: Aqualitative metric that measures how well the test suite covers the features of the software. It helps determine the level of risk involved.
+- **Test coverage**: A qualitative metric that measures how well the test suite covers the features of the software. It helps determine the level of risk involved.
 - **Code coverage**: A quantitative metric that measures the proportion of code executed during testing. It is about how much code the tests cover.
 
 Here is a simplified analogy: imagine a web application as a house.
