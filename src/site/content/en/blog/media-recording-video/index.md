@@ -184,7 +184,7 @@ progressively save the data from the stream to you preferred destination.
   var handleSuccess = function(stream) {
     const options = {mimeType: 'video/webm'};
     const recordedChunks = [];
-    <strong>const mediaRecorder = new MediaRecorder(stream, options);
+    const mediaRecorder = new MediaRecorder(stream, options);
 
     mediaRecorder.addEventListener('dataavailable', function(e) {
       if (e.data.size > 0) {
@@ -202,7 +202,7 @@ progressively save the data from the stream to you preferred destination.
       downloadLink.download = 'acetest.webm';
     });
 
-    mediaRecorder.start();</strong>
+    mediaRecorder.start();
   };
 
   navigator.mediaDevices.getUserMedia({ audio: true, video: true })
