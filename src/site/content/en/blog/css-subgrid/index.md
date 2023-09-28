@@ -130,7 +130,7 @@ workflow can now be achieved, plus many more.
 Implementing the most common designer grid workflow can provide excellent
 insights into the capabilities, workflows, and potentials of `subgrid`.
 
-Here's a screenshot taken from Chromium Devtools of a mobile page layout macro
+Here's a screenshot taken from Chrome DevTools of a mobile page layout macro
 grid. The lines have names and there are clear areas for component placement.
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/8DcaxQKfWCUTYvM0jX5W.png", alt="A
@@ -253,7 +253,7 @@ true, means that subgrid can be used
 ## Devtools
 
 Chrome, Edge, Firefox and Safari all have great CSS grid DevTools, and Chrome,
-Edge and Firefox have specific tools for helping with subgrid. [Chromium
+Edge and Firefox have specific tools for helping with subgrid. [Chrome
 announced their tools in
 115](https://developer.chrome.com/blog/new-in-devtools-115/#subgrid) while
 Firefox has had them for a year or more.
