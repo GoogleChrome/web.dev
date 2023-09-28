@@ -29,11 +29,9 @@ Both scenarios illustrate the importance of balancing monetization, users and pe
 
 ## Harnessing Core Web Vitals
 
-Passing [the Core Web Vitals thresholds](/defining-core-web-vitals-thresholds/) is essential when it comes to loading ads without negatively impacting page speed. Core Web Vitals, comprising metrics such as [Largest Contentful Paint (LCP)](/lcp/), [First Input Delay (FID)](/fid/) (as well as the upcoming [Interaction to Next Paint (INP) Core Web Vital metric](/inp/) slated to replace FID), and [Cumulative Layout Shift (CLS)](/cls/), are user experience metrics that measure the quality of the user experience of your website.
+Passing [the Core Web Vitals](/web-vitals/) is essential when it comes to loading ads without negatively impacting page speed. Core Web Vitals, comprising metrics such as [Largest Contentful Paint (LCP)](/lcp/), [Cumulative Layout Shift (CLS)](/cls/), and [First Input Delay (FID)](/fid/) (as well as the upcoming [Interaction to Next Paint (INP) Core Web Vital metric](/inp/) slated to replace FID), are user experience metrics that measure the quality of the user experience of your website.
 
 To ensure a positive user experience while serving ads, it is crucial to prioritize the Core Web Vitals so that ads don't become a performance liability that can negatively affect business outcomes.
-
-While [Time to First Byte (TTFB)](/ttfb/) and [First Contentful Paint (FCP)](/fcp/) may not be classified as Core Web Vitals, they remain useful as diagnostic metrics for optimizing the loading experience to ensure both the webpage and accompanying ads load as swiftly as possible.
 
 ### Largest Contentful Paint (LCP)
 
@@ -135,7 +133,7 @@ Current Google Publisher Tag (GPT) best practices:
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/o3fxVz2ih5esYzX5TjyU.png", alt="A visualization of lazy loading versus not lazy loading resources. When resources are lazy loaded, bandwidth is conserved during page load, and resources are deferred to the point at which the user is likeliest to see them.", width="800", height="450" %}
 </figure>
 
-[Lazy loading](/lazy-loading-best-practices/) is a technique that defers loading non-critical resources until they are needed. Applying lazy loading for ads which are not immediately visible (that is, below-the-fold ads) ensures that they are only loaded when they come into view, conserving bandwidth and improving overall page speed.
+[Lazy loading](/lazy-loading-best-practices/) is a technique that defers loading non-critical resources until they are needed. Applying lazy loading for ads which are not immediately visible (that is, below-the-fold ads) ensures that they are only loaded when they come into view, conserving bandwidth and improving overall page speed. Browsers now include [native lazy loading for iframes](https://web.dev/iframe-lazy-loading/) with a simple `loading=lazy` attribute.
 
 By implementing lazy loading, ads are fetched dynamically when they are about to enter the user's viewport, reducing the initial load time and [Total Blocking Time (TBT)](/tbt/) (which is [highly correlated with INP](https://almanac.httparchive.org/en/2022/performance#inp-and-tbt)) on the main thread at that crucial part of the page lifecycle, therefore minimizing negative impacts on the user experience.
 
@@ -158,7 +156,7 @@ Refreshing ad slots is particularly valuable on pages where users tend to stay l
 One of the most impactful strategies to improve page speed while serving ads is [asynchronous loading](https://developers.google.com/publisher-ads-audits/reference/audits/async-ad-tags). Asynchronous loading loads ads independently of the main web page content allows the page to continue rendering and become interactive without waiting for ads to fully load. 
 This significantly reduces perceived loading time, enhancing user satisfaction.
 
-Include the async attribute in the script tag definition. For example:
+Include the `async` attribute in the script tag definition. For example:
 
 **AdSense:**
 
