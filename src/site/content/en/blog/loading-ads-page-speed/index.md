@@ -18,7 +18,7 @@ tags:
 Websites heavily rely on online advertising as a primary source of revenue. However, the presence of ads on websites can sometimes come at the expense of user experience and overall page performance. It's therefore vital to strike a balance between monetization and performance for website owners and advertisers, and the user experience.
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/4ZPEk7N9pWo3E7iuX1U1.gif", alt="An animated image that illustrates the balance that must be struck when it comes to the amount of ads on a page. As the slider goes from 'no ads' to '100% ads', factors such as visitors, ads, and revenue fluctaute, with revenue and visitors suffering the most when there are 100% ads.", width="660", height="330" %}
+  {% Video src="video/jL3OLOhcWUQDnR4XjewLBx4e3PC3/wV8j1X6xN0L6rYVmtOaY.mp4", width="660", height="330", autoplay="true", loop="true", playsinline="true", controls="false" %}
 </figure>
 
 Consider a website that extensively places ads within its content, aiming to generate high revenue. However, the overwhelming number of ads frustrates users, leading to a poor user experience and high bounce rates. Despite the potential for substantial revenue from ads, abandonment severely hampers the website's success.
@@ -74,7 +74,7 @@ By strategically applying the `content-visibility:` property within these conten
 ## Prioritize important ad slots
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/lilcJR3rR6hsQk1Ts66i.gif", alt="An animated image demonstrating the concept of both 'above-the-fold' and 'below-the-fold' ads. As the page scrolls down, 'above-the-fold' ads disappear, and 'below-the-fold' ads appear in the second, third, and fourth viewports.", width="660", height="500" %}
+  {% Video src="video/jL3OLOhcWUQDnR4XjewLBx4e3PC3/RswuozE5OAer8BMfvoUQ.mp4", width="660", height="500", autoplay="true", loop="true", playsinline="true", controls="false" %}
 </figure>
 
 Not all ad slots are equal. For example, above-the-fold ad slots are usually more valuable than those that are below the fold in terms of viewability and monetization. This is because above-the-fold ads are more likely to be seen by users, as they are visible without scrolling in the first viewport. Below-the-fold ads become visible after the user scrolls down the page far enough to see them.
@@ -133,7 +133,7 @@ Current Google Publisher Tag (GPT) best practices:
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/o3fxVz2ih5esYzX5TjyU.png", alt="A visualization of lazy loading versus not lazy loading resources. When resources are lazy loaded, bandwidth is conserved during page load, and resources are deferred to the point at which the user is likeliest to see them.", width="800", height="450" %}
 </figure>
 
-[Lazy loading](/lazy-loading-best-practices/) is a technique that defers loading non-critical resources until they are needed. Applying lazy loading for ads which are not immediately visible (that is, below-the-fold ads) ensures that they are only loaded when they come into view, conserving bandwidth and improving overall page speed. Browsers now include [native lazy loading for iframes](https://web.dev/iframe-lazy-loading/) with a simple `loading=lazy` attribute.
+[Lazy loading](/lazy-loading-best-practices/) is a technique that defers loading non-critical resources until they are needed. Applying lazy loading for ads which are not immediately visible (that is, below-the-fold ads) ensures that they are only loaded when they come into view, conserving bandwidth and improving overall page speed. Browsers now include [native lazy loading for iframes](/iframe-lazy-loading/) with a simple `loading=lazy` attribute.
 
 By implementing lazy loading, ads are fetched dynamically when they are about to enter the user's viewport, reducing the initial load time and [Total Blocking Time (TBT)](/tbt/) (which is [highly correlated with INP](https://almanac.httparchive.org/en/2022/performance#inp-and-tbt)) on the main thread at that crucial part of the page lifecycle, therefore minimizing negative impacts on the user experience.
 
