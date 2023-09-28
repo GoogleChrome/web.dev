@@ -230,7 +230,7 @@ one-liner that says “my layout spans from `fullbleed-start` to `fullbleed-end`
 There you have it, a macro grid like designers use, implemented in CSS. This
 concept can scale and grow with you as needed.
 
-### Checking for support
+## Checking for support
 
 Progressive enhancement with CSS and subgrid is familiar and straightforward.
 Use `@supports` and inside the parenthesis ask the browser if it understands
