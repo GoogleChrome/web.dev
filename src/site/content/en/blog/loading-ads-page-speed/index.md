@@ -31,8 +31,6 @@ Both scenarios illustrate the importance of balancing monetization, users and pe
 
 Passing [the Core Web Vitals](/web-vitals/) is essential when it comes to loading ads without negatively impacting page speed. Core Web Vitals, comprising metrics such as [Largest Contentful Paint (LCP)](/lcp/), [Cumulative Layout Shift (CLS)](/cls/), and [First Input Delay (FID)](/fid/) (as well as the upcoming [Interaction to Next Paint (INP) Core Web Vital metric](/inp/) slated to replace FID), are user experience metrics that measure the quality of the user experience of your website.
 
-To ensure a positive user experience while serving ads, it is crucial to prioritize the Core Web Vitals so that ads don't become a performance liability that can negatively affect business outcomes.
-
 ### Largest Contentful Paint (LCP)
 
 <figure>
@@ -87,7 +85,7 @@ Not all ad slots are equal. For example, above-the-fold ad slots are usually mor
 
 Above the fold ad slots refer to the portion of a webpage that is visible without scrolling, and hold significant value in digital advertising. These prime placements are considered valuable for several reasons:
 
-- Advertisements placed above the fold are immediately visible for users upon loading a webpage. Users are more likely to notice and engage with these ads, resulting in higher click-through rates and better ad performance.
+- Advertisements placed above the fold are immediately visible for users upon loading a webpage. Users are more likely to notice and engage with these ads, resulting in higher click-through rates.
 - Advertisers often consider the top portion of a webpage as the most valuable real estate. It's the first impression users get when they visit a site, making it a crucial area for showcasing high-impact and premium ads.
 - Ads above the fold have the highest viewability rates because they are in the user's direct line of sight. This ensures that the majority of users who visit the page will see these ads without having to scroll down.
 
@@ -130,7 +128,7 @@ Current Google Publisher Tag (GPT) best practices:
 ## Lazy load ads where appropriate
 
 <figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/o3fxVz2ih5esYzX5TjyU.png", alt="A visualization of lazy loading versus not lazy loading resources. When resources are lazy loaded, bandwidth is conserved during page load, and resources are deferred to the point at which the user is likeliest to see them.", width="800", height="450" %}
+  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/mqnHutBAvzdSUQBensax.png", alt="A visualization of lazy loading versus not lazy loading resources. When resources are lazy loaded, bandwidth is conserved during page load, and resources are deferred to the point at which the user is likeliest to see them.", width="800", height="450" %}
 </figure>
 
 [Lazy loading](/lazy-loading-best-practices/) is a technique that defers loading non-critical resources until they are needed. Applying lazy loading for ads which are not immediately visible (that is, below-the-fold ads) ensures that they are only loaded when they come into view, conserving bandwidth and improving overall page speed. Browsers now include [native lazy loading for iframes](/iframe-lazy-loading/) with a simple `loading=lazy` attribute.
