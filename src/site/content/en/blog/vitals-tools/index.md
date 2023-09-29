@@ -27,21 +27,22 @@ A workflow for improving Core Web Vitals for your website will be explored in th
 
 ## Core Web Vitals are best measured in the field
 
-Core Web Vitals are specifically designed to measure how users experience your website—they are [user centric metrics](/user-centric-performance-metrics/). Lab-based tools such as Lighthouse are diagnostic tools to highlight potential performance problems and best practices. Lab-based tools are run under certain, pre-defined conditions and may not reflect the real-life Core Web Vitals measurements your users experience.
+Core Web Vitals are specifically designed to measure how users experience your website—they are [user centric metrics](/user-centric-performance-metrics/). Lab-based tools such as Lighthouse are diagnostic tools to highlight potential performance problems and best practices. Lab-based tools are run under certain, predefined conditions and may not reflect the real-life Core Web Vitals measurements your users experience.
 
 {% Aside 'key-term' %}
 [**Lab data**](/lab-and-field-data-differences/#lab-data) describes how _hypothetical_ users _may_ experience your website. [**Field data**](/lab-and-field-data-differences/#field-data) describes how _real_ users _actually_ experienced your website. Field data is also known as Real User Monitoring (RUM), and is typically collected by monitoring real user experiences using JavaScript on the pages they load, and reporting various metrics to an analytics solution.
 {% endAside %}
 
-For example, Lighthouse is a lab-based tool that runs tests with simulated throttling in a simulated desktop or mobile environment. While such simulations of slower network and device conditions are helpful when trying to diagnose performance problems, [they're just a single slice](/lab-and-field-data-differences/) of the large variety in network conditions and device capabilities and so may not reflect what users on your sites are experiening.
+For example, Lighthouse is a lab-based tool that runs tests with simulated throttling in a simulated desktop or mobile environment. While such simulations of slower network and device conditions are helpful when trying to diagnose performance problems, [they're just a single slice](/lab-and-field-data-differences/) of the large variety in network conditions and device capabilities, and so may not reflect what users on your sites are experiening.
 
 Lab-based tools like Lighthouse also typically do a "cold load" of a webpage as a totally new visitor. This is often the slowest load, but in real life, visitors may have some assets cached if they have visited before, or when they are browsing around the site. New visitors, and tools, also may experience the site differently with cookie banners or other content present to them.
 
 In short, while lab-based tools can give an indication of potential performance problems and help you debug and iterate, they may not represent how many of your visitors actually experience your website. Use field data for measuring real-world performance, and lab-based tools like Lighthouse for diagnostics of how to improve it. See also the [When to use Lighthouse](#when-to-use-lighthouse) section.
 
-Google measures Core Web Vitals through the [Chrome User Experience Report (CrUX)](https://developer.chrome.com/docs/crux/). This is a public dataset collected from real Chrome users. It is the backbone of many of the Google, and third-party, tools which report a site's Core Web Vitals.
+Google measures Core Web Vitals through the [Chrome User Experience Report (CrUX)](https://developer.chrome.com/docs/crux/). This is a public dataset collected from real Chrome users. It is the backbone of many Google and third-party tools which report a site's Core Web Vitals.
 
-CrUX has its limitations, though. It can often tell you _when_ there is a problem, but often has insufficient data to understand _why_.
+
+CrUX has its limitations, though. It can often tell you _when_ there is a problem, but often has insufficient data to tell you _why_.
 
 ### Collect your own field data if possible
 
@@ -69,7 +70,7 @@ As you continue, understand that it's not necessary for you to use _all_ of the 
 
 As mentioned previously, CrUX is a public data set of field data gathered from [a segment of real Google Chrome users](https://developer.chrome.com/docs/crux/methodology/#user-eligibility) from millions of websites. It includes Core Web Vital metrics and other metrics for websites with sufficient traffic.
 
-CrUX is available as a monthly [BigQuery dataset](https://developer.chrome.com/docs/crux/bigquery/) at the origin level, or as daily [an API](https://developer.chrome.com/docs/crux/api/) at the URL or origin-level, provided a URL or origin has enough samples in the CrUX dataset. The BigQuery data is also viewable in an easy to use [CrUX Dashboard](https://developer.chrome.com/docs/crux/dashboard/) allowing sites to review historical trends for their site.
+CrUX is available as a monthly [BigQuery dataset](https://developer.chrome.com/docs/crux/bigquery/) at the origin level, or as a [daily API](https://developer.chrome.com/docs/crux/api/) at the URL or origin-level, provided a URL or origin has enough samples in the CrUX dataset. The BigQuery data is also viewable in an easy to use [CrUX Dashboard](https://developer.chrome.com/docs/crux/dashboard/) allowing sites to review historical trends for their site.
 
 #### When to use CrUX
 
@@ -79,7 +80,7 @@ You can use CrUX directly, or via another tool (including those mentioned below)
 
 #### When _not_ to use CrUX
 
-CrUX only represents Chrome users, and even then [only a subset of Chrome users](https://developer.chrome.com/docs/crux/methodology/#user-eligibility). A full RUM solution can include more experiences across Chrome and other browsers where they support the Web Vital metrics.
+CrUX only represents Chrome users, and even then, [only a subset of Chrome users](https://developer.chrome.com/docs/crux/methodology/#user-eligibility). A full RUM solution can include more experiences across Chrome and other browsers where they support the Web Vital metrics.
 
 Websites that don't receive enough traffic are not represented in the CrUX dataset. If this is the case for you, you'll need to gather your own field data to understand how your website performs in the field, as CrUX won't be an option. Alternatively, you will need to depend on lab data, but with the limitations that it may not be representative above.
 
@@ -95,7 +96,7 @@ Finally, as a public dataset, CrUX is limited to how much information it can mak
 
 PSI is great for assessing CrUX performance at the page level or origin-level, for both mobile and desktop users. It's a good choice for an initial overview of Core Web Vitals for a page or site. It also allows you to easily view Core Web Vitals data for other sites like competitors.
 
-As PSI also provides Lighthouse data, which gives useful recommendations to improve your Core Web Vitals—if the metrics  align. Where these do not align, Lighthouse recommendations may be less relevant.
+PSI also provides Lighthouse data, which gives useful recommendations to improve your Core Web Vitals—if the metrics align. Where these do not align, Lighthouse recommendations may be less relevant.
 
 Since Lighthouse is run from the server, it can form a more consistent baseline than running Lighthouse from DevTools.
 
@@ -107,7 +108,7 @@ CrUX data is only available when sites meet certain [eligibility criteria](https
 
 Similarly, if you only have origin-level CrUX data rather than the specific URL being tested, then this also limits its usefulness of correlating the origin-level field data to the page-level lab diagnostics. Having the origin-level field data is still very useful information to have as a summary of the site's performance and the Lighthouse audits may help, but extra caution should be used in this case.
 
-Finally, when page-level data is available in CrUX but this differs from the Lighthouse lab data, then this indicates that the recommendations may be of limited value. This can happen particularly for [post-load CLS issues](/optimize-cls/#identifying-post-load-cls-issues) and for interactivity Core Web Vitals (FID and INP) where lab-based auditing tooling is less useful.
+Finally, where page-level data is available in CrUX, but differs from the Lighthouse lab data, recommendations from Lighthouse may be of limited value. This can happen particularly for [post-load CLS issues](/optimize-cls/#identifying-post-load-cls-issues), and for interactivity Core Web Vitals (FID and INP) where lab-based audits are less useful.
 
 ### Search Console
 
@@ -123,14 +124,14 @@ Search Console is well-suited for both developers and those in non-developer rol
 
 Search Console may not be a fit for projects that use different third-party tools which group pages by similarity, or if a website isn't represented in the CrUX dataset.
 
-Page grouping can also be somewhat confusing when the example pages in that group have different characteristics of the group. For example, if the group fails particular Core Web Vitals overall, but the example pages all seem to pass the same Core Web Vitals. This can happen when a group contains a long tail or little visited pages that may be slower to load as less likely to be cached. When there are sufficient volumes of these pages in the long tail, they can influence the group's overall pass rate.
+Page grouping can also be somewhat confusing when the example pages in a group have different characteristics than the rest of the group—for example, if the group fails particular Core Web Vitals overall, but the example pages all seem to pass the same Core Web Vitals. This can happen when a group contains a long tail or seldomly visited pages that may be slower to load, as they're less likely to be cached. When there are sufficient volumes of these pages in the long tail, they can influence the group's overall pass rate.
 
 ### Lighthouse
 
 [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) is a lab tool that provides specific opportunities for improving page performance. [Lighthouse user flows](/lighthouse-user-flows/) also allow developers to script interaction flows for performance testing beyond page load.
 
 {% Aside %}
-Because Lighthouse is a lab tool and [First Input Delay (FID)](/fid/) and [Interaction to Next Paint (INP)](/inp/) are field metrics, it reports [Total Blocking Time](/tbt/) instead.
+Because Lighthouse is a lab tool, and [First Input Delay (FID)](/fid/) and [Interaction to Next Paint (INP)](/inp/) are field metrics, it reports [Total Blocking Time](/tbt/) instead.
 {% endAside %}
 
 [Lighthouse-CI](https://github.com/GoogleChrome/lighthouse-ci) is a related tool that runs Lighthouse during project builds and deploys to assist with performance regression testing. It presents a Lighthouse report along with pull requests, and tracks performance metrics over time.
@@ -151,7 +152,7 @@ Lighthouse (or Lighthouse CI) **is _not_ a substitute for field data**. Lighthou
 **Always concentrate on field Core Web Vitals over Lighthouse metrics and scores**. In particular, the Performance Score of Lighthouse is a broad measure of that lab test and [often does not correlate](https://philipwalton.com/articles/my-challenge-to-the-web-performance-community/) with field Core Web Vitals.
 {% endAside %}
 
-While Lighthouse can be used to diagnose production sites through tools like PageSpeed Insights, ideally Lighthouse would be used in development and continuous integration environments to address performance issues before they reach production.
+While Lighthouse can be used to diagnose production sites through tools like PageSpeed Insights, Lighthouse would ideally be used in development and continuous integration environments to address performance issues before they reach production.
 
 ### Web Vitals extension
 
@@ -159,23 +160,23 @@ The [Web Vitals Chrome extension](https://chrome.google.com/webstore/detail/web-
 
 #### When to use the Web Vitals extension
 
-The Web Vitals extension can be used by anyone in any role to assess a page's Core Web Vitals at all points of the page lifecycle. It is useful as a "live" view of performance as you interact with the page to attempt to uncover performance issues—particularly for post-load issues like CLS or INP issues.
+The Web Vitals extension can be used by anyone in any role to assess a page's Core Web Vitals at all points of the page lifecycle. It is useful as a "live" view of performance as you interact with the page to attempt to uncover performance issues—particularly for post-load issues you might see with the CLS and INP metrics.
 
 #### When _not_ to use the Web Vitals extension
 
-The Web Vitals extension isn't a holistic assessment of page performance. In addition, the metrics it reports are highly dependent on your environmental setup and developers often have higher powered machines or better networks.
+The Web Vitals extension isn't a holistic assessment of page performance. In addition, the metrics it reports are highly dependent the environment in which it runs, and developers often have higher powered machines or access to faster networks.
 
 ### The Performance panel in Chrome DevTools
 
-[Chrome DevTools](https://developer.chrome.com/docs/devtools/) is a collection of in-browser development tools, including the [Performance panel](https://developer.chrome.com/docs/devtools/#performance). The Performance panel is a lab tool that profiles all page activity during page load or a recorded time period. It offers deep insight into everything it observes across dimensions such as network, rendering, painting and scripting activity, as well as a page's Core Web Vitals.
+[Chrome DevTools](https://developer.chrome.com/docs/devtools/) is a collection of in-browser development tools, including the [Performance panel](https://developer.chrome.com/docs/devtools/#performance). The Performance panel is a lab tool that profiles all page activity during page load or a recorded time period. It offers deep insight into everything it observes across dimensions such as network, rendering, painting, and scripting activity, as well as a page's Core Web Vitals.
 
 #### When to use the Performance panel
 
-The Performance panel should be used by developers during development to gain deep insight into page performance. This is particularly useful to debug responsiveness issues affecting FID or INP. Once a poorly responding interaction is identified and repeatable, the Performance panel can provide a wealth of data as to what is going on in the browser to help understand the issue, from main thread blocking, to JavaScript call stacks, to painting work.
+The Performance panel should be used by developers during development to gain deep insight into page performance. This is particularly useful to debug responsiveness issues affecting FID or INP. Once a poorly responding interaction is identified and repeatable, the Performance panel can provide a wealth of data as to what is going on in the browser to help understand the issue, from main thread blocking, to JavaScript call stacks, to rendering work.
 
 #### When _not_ to use the Performance panel
 
-The Performance panel is a developer tool that provides lab data only. It's not a substitute for field data. It contains a wealth of debugging information but because of that it may not be easy to use for novice developers or those in non-developer roles.
+The Performance panel is a developer tool that provides lab data only. It's not a substitute for field data. It contains a lot of debugging information, but because of that, it may not be easy to use for novice developers or those in non-developer roles.
 
 ## A three step workflow for ensuring your website's Core Web Vitals stay healthy
 
@@ -195,7 +196,7 @@ It is best to start with field data to evaluate website health.
 
 1. Use [PageSpeed Insights](https://pagespeed.web.dev/) to view overall Core Web Vitals experience metrics on the origin, and specific information on an individual URL.
 2. [Search Console](https://search.google.com/search-console/about) can be useful to identify pages which need improvement where its page grouping feature works well for your site.
-3. If you have RUM data, then it is often the best option to be able to identify particular pages or segments of traffic with issues.
+3. If you have RUM data, then that is often the best option to be able to identify particular pages or traffic segments with issues.
 
 Whether you analyze field data you collect yourself or CrUX data, this first step is vital. If you're not gathering field data, CrUX data may be enough to guide you—again, provided your website is represented in the dataset.
 
@@ -207,17 +208,17 @@ Whether you analyze field data you collect yourself or CrUX data, this first ste
 
 PageSpeed Insights displays the CrUX data covering the last 28 days of user experience data at the 75th percentile. This means that if 75% of user experiences meet the [threshold set for a given metric](/defining-core-web-vitals-thresholds/), then the experience is considered "good".
 
-If you have a specific page in mind to look at the performance of, then use that. For an overall view of a site when you first start optimizing, you may wish to start with the home page as it is typically one of the most popular pages on most sites.
+If you have a specific page in mind to look at the performance of, then use that. For an overall view of a site when you first start optimizing, you may wish to start with the home page, as it is typically one of the most popular pages on many sites.
 
-Concentrate on the **what your real users are experiencing** section of PSI initially. You will see up to four views of the data: mobile and desktop for the URL entered and the whole origin. Compare these and see how they differ. Mobile is typically less performant than desktop since it is a more constrained device with a less stable network condition. If the URL and origin data are significantly different then try to understand why: home pages are often the first pages visited (so called landing page) so can be slower than the origin users take the full brunt of an uncached page. Subsequent pages will likely load faster as any shared assets will be cached, bringing down the aggregate origin-level data.
+Concentrate on the **what your real users are experiencing** section of PSI initially. You will see up to four views of the data: mobile and desktop for the URL entered and the whole origin. Compare these and see how they differ. Mobile is typically less performant than desktop since it is a more resource-constrained device operating under potentially less stable network conditions. If the URL and origin data are significantly different, then try to understand why: home pages are often the first pages visited (that is, a landing page) so can be slower than the origin users take the full brunt of an unprimed browser cache. Subsequent pages will likely load faster, as any shared assets will be cached, bringing down the aggregate origin-level data.
 
 PSI also shows all three Core Web Vitals (LCP, CLS, and FID) and the pending INP metric, plus the diagnostic TTFB and FCP metrics. Are any of the Core Web Vitals failing, and by how much? This will indicate where to concentrate your efforts.
 
 Understand the relationships between these numbers—particularly for LCP. If LCP is slow, as it is in this example, then look at TTFB and FCP which are both milestones to that metric. In this example we have a 1.8 second TTFB, which is going to make it very tough to meet the 2.5 second recommended threshold for good LCP. This suggests either a slow backend (server issues or a lack of CDN), slower networks, or redirects delaying the first HTML bytes. Look at the [Optimize TTFB guide](/optimize-ttfb/) for more information. FCP takes another second on top of that, which again may be indicative of slower networks. LCP is not long after FCP in this example suggesting the LCP resource is well optimized once the page itself loads.
 
-For CLS look at the CrUX CLS and the Lighthouse CLS scores to see if this is a load CLS issue (which Lighthouse will catch and advise on), or a post-load CLS issue that Lighthouse has not caught. More for information [see the Optimize CLS guide](/optimize-cls/#understanding-where-your-shifts-are-coming-from).
+For CLS, look at the CrUX CLS and the Lighthouse CLS scores to see if this is a load CLS issue (which Lighthouse will catch and advise on), or a post-load CLS issue that Lighthouse won't catch. More for information [see the Optimize CLS guide](/optimize-cls/#understanding-where-your-shifts-are-coming-from).
 
-For responsiveness look at the FID and INP scores. Look at the TBT audits in Lighthouse to see if a lot of JavaScript processing is happening, which is likely to impact INP. INP can be a tricky metric to improve but see the [Optimize INP guide](/optimize-inp/) for more information.
+For responsiveness, look at the FID and INP scores. Look at the TBT audits in Lighthouse to see if a lot of JavaScript processing is happening during the initial page load, which is likely to impact INP. INP can be a tricky metric to improve, so consult the [Optimize INP guide](/optimize-inp/) for more information.
 
 #### Identify poorly performing pages in Search Console
 
@@ -229,7 +230,7 @@ While PSI is useful when you have a specific URL you want to test or the site as
 
 The [Core Web Vitals report in Search Console](https://support.google.com/webmasters/answer/9205520) shows the big picture of your website's performance, but you can still drill down into specific pages that need attention. With Search Console, you can also:
 
-- Identify individual page groups that need improvement and those that currently provide a good user experience.
+- Identify individual page groups that need improvement, and those that currently provide a good user experience.
 - Get granular data on performance by URL grouped by status, metric, and groups of similar web pages (such as product detail pages on an e-commerce website).
 - Get detailed reports that bucket URLs in each user experience quality category for both mobile and desktop.
 
@@ -248,6 +249,7 @@ In step 1, you should have identified pages which require performance improvemen
 3. Use the [Performance panel](#the-performance-panel-in-chrome-devtools) in Chrome DevTools to debug performance issues and test code changes.
 
 For more detailed guidance, see these guides:
+
 - [Optimizing LCP](/optimize-lcp/)
 - [Optimizing CLS](/optimize-cls/)
 - [Optimizing FID](/optimize-fid/)
@@ -255,7 +257,7 @@ For more detailed guidance, see these guides:
 
 #### Uncover opportunities with Lighthouse
 
-PageSpeed Insights runs Lighthouse for you, but for local development it is also possible to run Lighthouse from Chrome DevTools which is useful to validate fixes locally.
+PageSpeed Insights runs Lighthouse for you, but for local development it is also possible to run Lighthouse from Chrome DevTools, which is useful to validate fixes locally.
 
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/k6HffrY6tUbreyzi2mVk.png", alt="A screenshot of a Lighthouse report within Chrome DevTools. The report breaks down scores across five categories, with the report focused on the 'Performance' category, with results at the bottom of the report window.", width="800", height="526" %}
@@ -264,12 +266,12 @@ PageSpeed Insights runs Lighthouse for you, but for local development it is also
 A key point is to validate that the Lighthouse audit replicates the issues you are trying to solve (for example, slow LCP, or CLS issues). Out of the box, Lighthouse only assesses the user experience during page load. Since it's a lab tool, it also excludes FID and INP in favor of TBT.
 
 {% Aside 'caution' %}
-By default, Lighthouse runs simulating a mid-tier mobile device on a throttled slow 4G connection. This may find issues that wouldn't ordinarily appear on high-speed devices or fast internet connections. This simulated throttling may not be representative of the variety of user experiences among your website's user base at the 75th percentile. However, these metrics are an indicator of where performance problems exist, and may translate into better performance overall in the field if the problems Lighthouse finds are addressed.
+By default, Lighthouse simulates a mid-tier mobile device on a throttled slow 4G connection. This may find issues that wouldn't ordinarily appear on high-speed devices and fast internet connections. This simulated throttling may not be representative of the variety of user experiences among your website's user base at the 75th percentile. However, these metrics are an indicator of where performance problems exist, and may translate into better performance overall in the field if the problems Lighthouse finds are addressed.
 {% endAside %}
 
 When the Lighthouse metrics suggest a similar problem as the one you are trying to solve, the wealth of information in its audits can help identify issues and suggest solutions.
 
-You can filter the audits to the Core Web Vitals you are interested in to focus just on those audits:
+You can filter the audits to just the Core Web Vitals you are interested in to focus on fixes for issues related to a specific metric:
 
 <figure>
   {% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/wae09J8FYUe0PvFBkH4b.png", alt="Lighthouse filter options for key metrics", width="700", height="100" %}
@@ -295,7 +297,7 @@ The Performance panel in Chrome DevTools profiles all page behavior during a rec
   {% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/JmVcoLckgeukluuJONDe.png", alt="ALT_TEXT_HERE", width="800", height="466" %}
 </figure>
 
-Key timings, such as LCP, are shown in the Timings track. Click on these for more details—such as the LCP element.
+Key timings—such as LCP, for example—are shown in the Timings track. Click on these for more details.
 
 The **Layout Shifts** track highlights layout shifts and clicking on these provides more details about the elements that shifted for debugging CLS.
 
