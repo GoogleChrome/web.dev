@@ -5,7 +5,7 @@ authors:
   - markusbordihn
 hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/27qouRjnUSxESxCIzQp4.jpg
 thumbnail: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/A52ucuDoKR97sMmqxLQQ.jpg
-date: 2023-09-28
+date: 2023-09-29
 alt: A photograph of a work area with paints and a rubber glove, with a cogwheel painted in red on a wooden surface.
 description: |
   Learn how to effectively load ads without impacting your page speed, ensuring a seamless user experience, and maximizing revenue opportunities for website owners.
@@ -33,33 +33,15 @@ Passing [the Core Web Vitals](/web-vitals/) is essential when it comes to loadin
 
 ### Largest Contentful Paint (LCP)
 
-<figure>
-  <picture>
-    <source media="(min-width: 640px)" height="200" srcset="https://web-dev.imgix.net/image/tcFciHGuF3MxnTr1y5ue01OGLBn2/elqsdYqQEefWJbUM2qMO.svg" width="800">
-    <img alt="Good LCP values are 2.5 seconds or less, poor values are greater than 4.0 seconds, and anything in between needs improvement" decoding="async" height="480" loading="lazy" src="https://web-dev.imgix.net/image/eqprBhZUGfb8WYnumQ9ljAxRrA72/8ZW8LQsagLih1ZZoOmMR.svg" width="640">
-  </picture>
-</figure>
-
 Focusing on optimizing LCP is vital, as this metric measures the time it takes for the largest contentful element to become visible within the viewport. By minimizing the loading time of ad content and by prioritizing asynchronous loading techniques, website owners can reduce LCP and decrease rendering time of the most prominent contentful elements on a page.
 
 ### First Input Delay (FID) and Interaction to Next Paint (INP)
-
-<figure>
-  {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/BVwToSd1oEJ5mzdI86tl.png", alt="The INP and FID thresholds, side by side.", width="768", height="273" %}
-</figure>
 
 Secondly, [improving INP](/how-to-optimize-inp/) (and by extension, [optimizing FID](/optimize-fid/)) is crucial for interactivity. FID measures the time it takes for the browser to respond to the first user interaction, such as a click or tap. The INP metric, slated to replace FID in March of 2024, goes much further by measuring a page's overall ability to process all click, keyboard, and tap interactions throughout the page lifecycle.
 
 Ads that delay user interactions negatively impact INP and FID. This may frustrate users by creating experiences that feel sluggish, or even altogether broken in extreme cases. Implementing lazy loading for ads and deferring non-critical JavaScript execution can help reduce page INP and FID, and therefore improve overall page responsiveness.
 
 ### Cumulative Layout Shift (CLS)
-
-<figure>
-  <picture>
-    <source media="(min-width: 640px)" height="200" srcset="https://web-dev.imgix.net/image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9mWVASbWDLzdBUpVcjE1.svg" width="800">
-    <img alt="Good CLS values are 0.1 or less, poor values are greater than 0.25, and anything in between needs improvement" decoding="async" height="480" loading="lazy" src="https://web-dev.imgix.net/image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg" width="640">
-  </picture>
-</figure>
 
 Lastly, CLS measures a page's visual stability by measuring the amount of unexpected layout shifts that occur during page load. Ads that dynamically load or resize can result in layout instability, leading to a poor user experiences where users either lose track of where they are on a page, or even unintentionally tap on the wrong elements due to unexpected layout shifts. To mitigate this, website owners should [optimize CLS](/optimize-cls/) to ensure that ads have reserved space to prevent layout shifts, and ad sizes should be optimized to avoid sudden content reflows.
 
