@@ -24,9 +24,12 @@
         "lcp",
         "cls",
         "fid",
+        "inp",
         "optimize-lcp",
         "optimize-cls",
-        "optimize-fid"
+        "optimize-fid",
+        "optimize-inp",
+        "vitals-tools"
       ]
     },
     {
@@ -69,7 +72,6 @@
       "title": "i18n.paths.fast.topics.optimize_your_javascript",
       "pathItems": [
         "optimize-long-tasks",
-        "optimize-inp",
         "apply-instant-loading-with-prpl",
         "reduce-javascript-payloads-with-code-splitting",
         "remove-unused-code",

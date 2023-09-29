@@ -16,8 +16,9 @@
             "title": "i18n.paths.learn_core_web_vitals.topics.core_web_vitals_metrics",
             "pathItems": [
                 "lcp",
-                "fid",
                 "cls",
+                "fid",
+                "inp",
                 "defining-core-web-vitals-thresholds"
             ]
         },
@@ -42,8 +43,9 @@
             "title": "i18n.paths.learn_core_web_vitals.topics.improve_core_web_vitals",
             "pathItems": [
                 "optimize-lcp",
+                "optimize-cls",
                 "optimize-fid",
-                "optimize-cls"
+                "optimize-inp"
             ]
         },
         {
