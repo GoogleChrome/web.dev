@@ -9,7 +9,8 @@
             "title": "i18n.paths.learn_core_web_vitals.topics.overview",
             "pathItems": [
                 "vitals",
-                "vitals-business-impact"
+                "vitals-business-impact",
+                "vitals-business-decision-makers"
             ]
         },
         {

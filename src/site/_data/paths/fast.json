@@ -19,6 +19,7 @@
       "title": "i18n.paths.fast.topics.core_web_vitals",
       "pathItems": [
         "vitals",
+        "vitals-business-decision-makers",
         "user-centric-performance-metrics",
         "defining-core-web-vitals-thresholds",
         "lcp",
