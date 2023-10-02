@@ -90,12 +90,12 @@ Pages are grouped into [URL Groups](https://support.google.com/webmasters/answer
 
 ## Largest Contentful Paint
 
-LCP aims to measure _loading speed_ of web pages by measuring the time from when a link is clicked, until the largest piece of content (typically a banner image, a H1 headline) is shown to the user.
+LCP aims to measure _loading speed_ of web pages by measuring the time from when a link is clicked, until the largest piece of content (typically a banner image or a headline) is shown to the user.
 
 <figure>
-  {% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/nOU9Z9DHRz7oE3P2QUgm.png", alt="A screenshot of this site's home page with the LCP image highlighted", width="300", height="575" %}
+  {% Img src="image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/nOU9Z9DHRz7oE3P2QUgm.png", alt="A screenshot of this site's home page with the LCP image highlighted in green", width="300", height="575" %}
   <figcaption>
-    The LCP element is the largest element when the page is loaded
+    The LCP element is the largest element when the page is loaded—highlighted in green in this example.
   </figcaption>
 </figure>
 
