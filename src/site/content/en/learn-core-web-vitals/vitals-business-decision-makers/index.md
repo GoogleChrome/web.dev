@@ -22,9 +22,9 @@ tags:
 
 Website user experience has been shown to have [a direct impact on business performance](/vitals-business-impact/). Delivering a better experience, where websites load and respond to users faster often results in increased engagement and conversions. [Core Web Vitals](/vitals/) is an initiative to quantify the experience of websites to identify areas for improvements.
 
-However, a lot of Core Web Vitals documentation is aimed at web developers, with deep technical understanding and full control over their code. Web developers are not the only ones responsible for web performance. Many websites are created by non-developers using a “site-builder” platform such as WordPress, Shopify, Wix, or a number of other similar products.
+However, a lot of Core Web Vitals documentation is aimed at web developers, with deep technical understanding and full control over their code. Many websites are created by non-developers using a “site-builder” platform such as WordPress, Shopify, Wix, or a number of other similar products often without a web development team.
 
-Business decision makers have a huge influence over website performance, from deciding content and designs, to deciding on advertisement strategies on the web page and for securing traffic to the site. These decisions can make achieving a performant website easier or harder.
+Even where there is a dedicated team or web developers, they are not the only ones responsible for web performance. Business decision makers have a huge influence over website performance, from deciding content and designs, to deciding on advertisement strategies on the web page and for securing traffic to the site. These decisions can make achieving a performant website easier or harder.
 
 This guide aims to provide some relevant information for business owners on how they can understand—and improve—their user experience as much as possible, without having to be deeply technical web developers.
 
@@ -40,17 +40,19 @@ The Core Web Vitals are a set of three metrics, or measurements, of a page exper
 
 Each metric measures a different facet of user experience. Google also provides recommended thresholds for each metric, below which the user experience is considered _good_, and above which it is considered _poor_. Between these, a page is considered to be in the _needs improvement_ range.
 
-## How Core Web Vitals are measured
+## How are the Core Web Vitals measured?
 
 Core Web Vitals are measured by real users of your website and different users will have different Core Web Vitals results. Some users will be on faster devices, and faster networks. Some will be on slower devices or slower networks. Some users will visit simpler, faster pages on your site, others more complex, slower pages. The results of all these user experiences are then aggregated to give an overall measure of your site.
 
-Google makes the data from Chrome users available in the [Chrome User Experience Report (CrUX)](https://developer.chrome.com/docs/crux/), which feeds into many Google tools such as [PageSpeed Insights](https://pagespeed.web.dev/) and [Google Search Console](https://support.google.com/webmasters/answer/9205520?hl=en). It aggregates Core Web Vitals over 28 days and gives the values that 75% of your users experience for each of the metrics. Aggregating over that 28-day time period, and looking at the value that most of your users experience gives a high-level summary of how your site is performing from a user perspective. CrUX is available on millions of popular websites, but all websites are in CrUX and even when a site is available in CrUX, not all pages on a site will have separate entries in CrUX so you may only be able to view the summary Core Web Vitals at a site, or origin, level.
+Google makes the data from Chrome users available in the [Chrome User Experience Report (CrUX)](https://developer.chrome.com/docs/crux/), which feeds into many Google tools such as [PageSpeed Insights](https://pagespeed.web.dev/) and [Google Search Console](https://support.google.com/webmasters/answer/9205520?hl=en). It aggregates Core Web Vitals over 28 days and gives the values that 75% of your users experience for each of the metrics. Aggregating over that 28-day time period, and looking at the value that most of your users experience gives a high-level summary of how your site is performing from a user perspective.
+
+CrUX is available on millions of popular websites, but not all websites are in CrUX. Even when a site is available in CrUX, not all pages on a site will have separate entries in CrUX so you may only be able to view the summary Core Web Vitals at a site level (also known as the origin level).
 
 Other Real User Monitoring (RUM) tools can also collect these metrics for your site. This allows you to see the values from more browsers than just Chrome, and also allows you to drill into this data more for more detailed analysis than a public dataset like CrUX makes possible. Many site site platforms provide RUM data as part of their service which can be invaluable to help understand your Core Web Vitals better. Check if your platform does this.
 
 Finally, some tools can quickly scan your site and run a number of tests and give estimated values for some of the Core Web Vitals metrics. These are known as lab-based tools and [Lighthouse](https://developer.chrome.com/docs/lighthouse/) is one such well-known tool. As these tools only do a quick scan of your site under pre-defined simulated conditions, rather than measure actual user experiences, they are known as lab-based tools. They are very useful to identify potential problems and suggest recommendations to improve performance, but they may not mirror how your users experience your website depending on their environments, whether they are new to your site and loading it afresh or have parts of your website cached in their browser, and also how they interact with the website.
 
-## Finding out your sites Core Web Vitals
+## How can I find my site's Core Web Vitals?
 
 There are many tools that show Core Web Vital metrics provided by Google and by 3rd parties. We will introduce two here to allow you to quickly view the Core Web Vitals for most popular sites. For a deeper look at the other Google tools including a workflow for using them to address Core Web Vitals, see the [Core Web Vitals workflows with Google tools](/vitals-tools/) post.
 
@@ -103,22 +105,6 @@ For a _good_ page experience, a web page should aim to show this content within 
 
 Some of the common issues affecting LCP that business decisions makers can influence include:
 
-### A/B tests
-
-Many businesses perform A/B tests to experiment with changes to their website. How these are implemented can have a major impact on LCP.
-
-Many A/B testing solutions hold back the displaying of our website until the changes in any tests have been applied. This avoids showing the original version of the website, but at the cost of delaying the website to the user. Other solutions are applied server-side to avoid this delay.
-
-A/B testing can provide invaluable feedback before launching new changes, but the cost to page performance must be weighed up against any potential benefits they bring.
-
-The following guidelines can help reduce the performance impact of any A/B testing:
-
-- Understand how your A/B testing is performed and if it is subject to these delays.
-- Consider server-side A/B testing solutions instead.
-- Limit A/B testing tools to only those pages that are part of the test rather than delaying all pages, when most pages may not be running an A/B test at any particular time.
-- Limit A/B testing to a subset of users to avoid impacting the majority of users.
-- Limit A/B tests to the minimum amount of time necessary to provide conclusive results. The longer A/D tests are running, the longer users may be seeing delays in page performance.
-
 ### Time to First Byte issues
 
 [Time to First Byte (TTFB)](/ttfb/) is the time it takes for the first part of your web page to download. If [PageSpeed Insights](#pagespeed-insights) is showing a large TTFB diagnostic metric, then this will have a direct impact on LCP as the largest content cannot begin to download until you have the web page itself. It is impossible to have an LCP under the 2.5 seconds good threshold if you have a TTFB that takes up a large chunk of that time.
@@ -143,9 +129,25 @@ Then there is the size of media assets. Many images on the web are served at too
 
 Give extra consideration when using videos. Videos are some of the most expensive content for a website to display so try not to overuse them. Avoid using them at the top of web pages and save them for further down the page. This can then allow less expensive content to load quickly to give a better loading experience to users and ensure your LCP is not impacted.
 
+### A/B tests
+
+Many businesses perform A/B tests to experiment with changes to their website. How these are implemented can have a major impact on LCP.
+
+Many A/B testing solutions hold back the displaying of our website until the changes in any tests have been applied. This avoids showing the original version of the website, but at the cost of delaying the website to the user. Other solutions are applied server-side to avoid this delay.
+
+A/B testing can provide invaluable feedback before launching new changes, but the cost to page performance must be weighed up against any potential benefits they bring.
+
+The following guidelines can help reduce the performance impact of any A/B testing:
+
+- Understand how your A/B testing is performed and if it is subject to these delays.
+- Consider server-side A/B testing solutions instead.
+- Limit A/B testing tools to only those pages that are part of the test rather than delaying all pages, when most pages may not be running an A/B test at any particular time.
+- Limit A/B testing to a subset of users to avoid impacting the majority of users.
+- Limit A/B tests to the minimum amount of time necessary to provide conclusive results. The longer A/D tests are running, the longer users may be seeing delays in page performance.
+
 ## Cumulative Layout Shift
 
-CLS measures the _visual stability_ of a page—how much the page’s content shifts around as content is loaded. This can be distracting if a user has started reading a web page and then loses their place as more content, or ads, slot into place. It can also result in users clicking on the wrong content if buttons move above. Be very careful with dynamic content that loads later and can move some of the initial content.
+CLS measures the _visual stability_ of a page—how much the page's content shifts around as content is loaded. This can be distracting if a user has started reading a web page and then loses their place as more content, or ads, slot into place. It can also result in users clicking on the wrong content if buttons move above. Be very careful with dynamic content that loads later and can move some of the initial content.
 
 <figure>
   <video autoplay controls loop muted
@@ -210,13 +212,13 @@ Some of the common issues affecting FID and INP that business decisions makers c
 
 ### Have a spring clean!
 
-Review plugins and widgets added to the site but no longer used and remove them if you can. It’s often easy to add plugins to try something out, but if you don’t end up using them make sure you remove them again or you’re unnecessarily slowing down your page.
+Review plugins and widgets added to the site but no longer used and remove them if you can. It's often easy to add plugins to try something out, but if you don't end up using them make sure you remove them again or you're unnecessarily slowing down your page.
 
-Similarly, if using a Tag Manager for marketing campaigns then make sure old campaigns are removed. Even if they don’t fire anymore, they still need to be downloaded on each page, compiled and then ignored.
+Similarly, if using a Tag Manager for marketing campaigns then make sure old campaigns are removed. Even if they don't fire anymore, they still need to be downloaded on each page, compiled and then ignored.
 
 ### Avoid expensive widgets and plugins
 
-They may look nice, but is the user experience improved with them, or actually made worse? The Diagnose Performance Issues/Lighthouse report in PageSpeed Insights can help identify JavaScript that is having a noticeable impact on your website’s performance.
+They may look nice, but is the user experience improved with them, or actually made worse? The Diagnose Performance Issues/Lighthouse report in PageSpeed Insights can help identify JavaScript that is having a noticeable impact on your website's performance.
 
 Ideally limit widgets to the page it is needed on—if only using Google Map embed on contact us page, then no need to load it on every page.
 
@@ -237,7 +239,7 @@ Weigh up [the balance between monetization and performance](/loading-ads-page-sp
 
 Large, complex pages take more effort to display. If you have a product gallery with 1000 different products then it is going to take a while to display. Consider when to paginate pages to reduce this time.
 
-## Getting more help
+## How can I get more help?
 
 In this post, we have shown some of the general considerations business owners can take which may affect performance. Beyond this you may need to avail of web performance expertise.
 
@@ -255,7 +257,7 @@ A web developer with expertise in web performance will likely be able to address
 
 Turn to developers if the above suggestions are not providing enough to address the performance issue, but hopefully above examples also show that it is important to work with the developers to balance business priorities with development decisions to reach the right solution for your website.
 
-Be aware that web performance is rarely a one-off piece of work, and often requires regular monitoring and maintenance to ensure your website does not regress after improving it’s performance.
+Be aware that web performance is rarely a one-off piece of work, and often requires regular monitoring and maintenance to ensure your website does not regress after improving it's performance.
 
 ## Conclusion
 
