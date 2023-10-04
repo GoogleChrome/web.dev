@@ -114,7 +114,7 @@
     "truncate-utf8-bytes": "^1.0.2",
     "unistore": "^3.4.1",
     "web-vitals": "^3.5.0",
-    "webdev-infra": "1.0.54",
+    "webdev-infra": "1.0.57",
     "yaml-front-matter": "^4.0.0"
   },
   "devDependencies": {
