@@ -203,5 +203,6 @@ $gorko-config: (
     'md': '(min-width: 50em)',
     'lg': '(min-width: 80em)',
     'xl': '(min-width: 106em)',
+    'md-max': '(max-width: 591px)', /* For temporary compatibility with DCC */
   ),
 );
