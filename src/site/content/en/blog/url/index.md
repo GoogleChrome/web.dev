@@ -29,7 +29,7 @@ Names for URL parts are specified in a standard, which also defines a JavaScript
     defines methods to provide access to parts of a URL string, such as the
     [scheme](#scheme) or [origin](#heading=h.17kwt3yobyfm).
 
-This article explains a range of terms used with HTTP or HTTPS URLs, but does not cover other types
+This article explains a range of terms used with HTTP or HTTPS URLs. It does not cover other types
 of URL such as file or data URLs. For terms such as `host` and `origin`, accurate definitions are
 inherently complex, so this article provides examples and links to the URL Standard, rather than
 attempting full explanations.
@@ -159,22 +159,22 @@ the port.
   <thead>
     <tr>
       <th><strong>URL</strong></th>
-      <th><pre>URL.host</pre></th>
+      <th><code>URL.host</code></th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>https://www.example.com:443/cat</td>
-      <td><pre>www.example.com
-// 443 is the default port for the scheme</pre></td>
+      <td><code>www.example.com
+// 443 is the default port for the scheme</code></td>
     </tr>
     <tr>
       <td>https://www.example.com:1234/cat</td>
-      <td><pre>www.example.com:1234</pre></td>
+      <td><code>www.example.com:1234</code></td>
     </tr>
     <tr>
       <td>https://cat.example.github.io</td>
-      <td><pre>cat.example.github.io</pre></td>
+      <td><code>cat.example.github.io</code></td>
     </tr>
   </tbody>
 </table>
@@ -194,21 +194,21 @@ Hostname is defined by the JavaScript `URL` API, but not elsewhere by the URL St
   <thead>
     <tr>
       <th><strong>URL</strong></th>
-      <th><pre>URL.hostname</pre></th>
+      <th><code>URL.hostname</code></th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>https://www.example.com:443/cat</td>
-      <td><pre>www.example.com</pre></td>
+      <td><code>www.example.com</code></td>
     </tr>
     <tr>
       <td>https://www.example.com:1234/cat</td>
-      <td><pre>www.example.com</pre></td>
+      <td><code>www.example.com</code></td>
     </tr>
     <tr>
       <td>https://cat.example.github.io</td>
-      <td><pre>cat.example.github.io</pre></td>
+      <td><code>cat.example.github.io</code></td>
     </tr>
   </tbody>
 </table>
@@ -229,21 +229,21 @@ for the scheme).
   <thead>
     <tr>
       <th><strong>URL</strong></th>
-      <th><pre>URL.origin</pre></th>
+      <th><code>URL.origin</code></th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>https://www.example.com:443/cat</td>
-      <td><pre>https://www.example.com</pre></td>
+      <td><code>https://www.example.com</code></td>
     </tr>
     <tr>
       <td>https://www.example.com:1234/cat</td>
-      <td><pre>https://www.example.com:1234</pre></td>
+      <td><code>https://www.example.com:1234</code></td>
     </tr>
     <tr>
       <td>https://cat.example.github.io</td>
-      <td><pre>https://cat.example.github.io</pre></td>
+      <td><code>https://cat.example.github.io</code></td>
     </tr>
   </tbody>
 </table>
@@ -270,25 +270,25 @@ defined) but not including the [search string](#search) or [hash](#hash).
   <thead>
     <tr>
       <th><strong>URL</strong></th>
-      <th><pre>URL.pathname</pre></th>
+      <th><code>URL.pathname</code></th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>https://example.com</td>
-      <td><pre>[empty string]</pre></td>
+      <td><code>[empty string]</code></td>
     </tr>
     <tr>
       <td>https://example.com:8000/search?q=tabby</td>
-      <td><pre>/search</pre></td>
+      <td><code>/search</code></td>
     </tr>
     <tr>
       <td>https://example.github.io/cat/pattern#tabby</td>
-      <td><pre>/cat/pattern</pre></td>
+      <td><code>/cat/pattern</code></td>
     </tr>
     <tr>
       <td>https://example.github.io/README.md</td>
-      <td><pre>/README.md</pre></td>
+      <td><code>/README.md</code></td>
     </tr>
   </tbody>
 </table>
@@ -316,21 +316,21 @@ The API returns an empty string if the port is the default for the scheme.
   <thead>
     <tr>
       <th><strong>URL</strong></th>
-      <th><pre>URL.port</pre></th>
+      <th><code>URL.port</code></th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>https://example.com</td>
-      <td><pre>// empty string</pre></td>
+      <td><code>// empty string</code></td>
     </tr>
     <tr>
       <td>https://example.com:443/foo</td>
-      <td><pre>// empty string: port is default for scheme</pre></td>
+      <td><code>// empty string: port is default for scheme</code></td>
     </tr>
     <tr>
       <td>https://www.example.com:1234/foo</td>
-      <td><pre>1234</pre></td>
+      <td><code>1234</code></td>
     </tr>
   </tbody>
 </table>
@@ -361,8 +361,7 @@ The part of the URL (before `://`) that defines the [network
 protocol](https://developer.mozilla.org/docs/Glossary/Protocol) (or action to be taken by the user
 agent) when a request is made to a URL. For example, a request to a URL with an `https` scheme
 should be made using the [HTTPS protocol](https://en.wikipedia.org/wiki/HTTPS). For a request to a
-URL with a scheme such as `file`, `mailto` or `git` that doesn't correspond to a network protocol,
-the behaviour depends on the user agent. For example, when a user clicks on a `mailto` link, most
+URL with a scheme such as `file`, `mailto` or `git` that doesn't correspond to a network protocol, behavior depends on the user agent. For example, when a user clicks on a `mailto` link, most
 browsers open their default email application, using the values in the link's `href` URL.
 
 -  [Spec](https://url.spec.whatwg.org/#dom-url-protocol)
@@ -370,24 +369,24 @@ browsers open their default email application, using the values in the link's `h
 
 ## Search (or "query string")
 
-A series of key/value pairs that represent [parameters](#parameter), at the end of a URL after a
-question mark.
+A series of key/value pairs that represent [parameters](#parameter) and their values, at the end of
+a URL after a question mark.
 
 <table>
   <thead>
     <tr>
       <th><strong>URL</strong></th>
-      <th><strong>Search</strong></th>
+      <th><strong><code>URL.search</code></strong></th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>https://example.com/cats?pattern=tabby&mood=bonkers</td>
-      <td>pattern=tabby&mood=bonkers</td>
+      <td><code>?pattern=tabby&mood=bonkers</code></td>
     </tr>
     <tr>
       <td>https://example.com/cats:443?pattern=tabby</td>
-      <td>pattern=tabby</td>
+      <td><code>?pattern=tabby</code></td>
     </tr>
   </tbody>
 </table>
@@ -414,7 +413,7 @@ and the third-level domain is `example`. In this example, `com.au` is a subdomai
 [Site](https://html.spec.whatwg.org/multipage/browsers.html#sites) is defined by the HTML standard,
 along with [same-site](https://html.spec.whatwg.org/multipage/browsers.html#same-site), which
 [includes scheme](https://github.com/whatwg/url/issues/448), and
-[schemeless same-site](https://html.spec.whatwg.org/multipage/browsers.html#schemelessly-same-site). |
+[schemeless same-site](https://html.spec.whatwg.org/multipage/browsers.html#schemelessly-same-site).
 Site is not defined in the URL standard or the URL JavaScript API.
 
 In this context:
@@ -452,10 +451,12 @@ In this context:
 Unlike [origin](#origin), site does not include [port](#port).
 
 {% Aside %}
-The concept of "site" is important in terms of "same-site", as certain security restrictions
-apply to subdomains that are considered "same-site" even if they are not "same-origin":
+The concept of "site" is important in terms of "same-site", because certain security restrictions
+apply to subdomains that are considered "same-site" even if they are not "same-origin".
 [Understanding "same-site" and "same-origin"](https://deploy-preview-9613--web-dev-staging.netlify.app/same-site-same-origin/) provides further information.
 {% endAside %}
+
+-  [Spec](https://html.spec.whatwg.org/multipage/browsers.html#sites)
 
 ## Subdomain
 
@@ -477,7 +478,7 @@ parts of the domain name before that.
 ## Top-level domain (TLD)
 
 A domain name listed in the [Root Zone Database](https://www.iana.org/domains/root/db) such as
-`com`, `io` or `org`. Some top-level domains are [country code top-level domains](#cctld),
+[`com`](https://www.iana.org/domains/root/db/com.html) or [`org`](https://www.iana.org/domains/root/db/org.html). Some top-level domains are [country code top-level domains](#cctld),
 such as [`uk`](https://www.iana.org/domains/root/db/uk.html) and
 [`tv`](https://www.iana.org/domains/root/db/tv.html).
 
