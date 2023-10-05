@@ -105,7 +105,7 @@ An [eTLD](#etld) plus the subdomain that precedes it.
 
 A string following a # character at the end of a URL that provides a
 [fragment identifier](https://developer.mozilla.org/docs/Learn/Common_questions/What_is_a_URL#anchor).
-(In [some contexts](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/What_is_a_URL#anchor)
+(In [some contexts](https://developer.mozilla.org/docs/Learn/Common_questions/Web_mechanics/What_is_a_URL#anchor)
 this is referred to as an "anchor".)
 
 -  For example: the URL `https://example.com/cats#tabby` has a fragment identifier (hash) value
@@ -150,9 +150,9 @@ As defined in the [URL Standard](https://url.spec.whatwg.org/#host-representatio
 [domain name](#domain-name), IP v4 address, IPv6 address, opaque host, or empty host.
 
 -  The URL Standard definition of `host` does not include the [port](#port).
--  [`URL.host`](https://developer.mozilla.org/en-US/docs/Web/API/URL/host) includes the port, unless
+-  [`URL.host`](https://developer.mozilla.org/docs/Web/API/URL/host) includes the port, unless
 the port is the default for the scheme.
--  [`URL.hostname`](https://developer.mozilla.org/en-US/docs/Web/API/URL/hostname) does not include
+-  [`URL.hostname`](https://developer.mozilla.org/docs/Web/API/URL/hostname) does not include
 the port.
 
 <table>
@@ -187,7 +187,7 @@ the port.
 Hostname is defined by the JavaScript `URL` API, but not elsewhere by the URL Standard. See
 [host representation](https://url.spec.whatwg.org/#concept-domain) for more detail.
 
-[`URL.hostname`](https://developer.mozilla.org/en-US/docs/Web/API/URL/hostname) returns the
+[`URL.hostname`](https://developer.mozilla.org/docs/Web/API/URL/hostname) returns the
 [host](#host) without the [port](#port).
 
 <table>
