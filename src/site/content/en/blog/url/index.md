@@ -34,6 +34,14 @@ of URL such as file or data URLs. For terms such as `host` and `origin`, accurat
 inherently complex, so this article provides examples and links to the URL standard, rather than
 attempting full explanations.
 
+You can use JavaScript to get the names of the parts of a URL that are defined by the URL API. For example:
+
+```javascript
+let url = new URL('https://foo.com.au:1234/bar/foo.html#bar');
+console.log(url);
+```
+
+
 Edit the URL in the Glitch below to see how parts of the URL string are named. You can also open
 this in a separate tab at [url-parts.glitch.me](https://url-parts.glitch.me/).
 
@@ -80,7 +88,7 @@ An entry in the [Public Suffix List](https://publicsuffix.org/list/), including 
 -  For example: `com`, `com.au`, `github.io`, `sa.edu.au`, `schools.nsw.edu.au`.
 
 {% Aside %}
-As well as one-part and two-part eTLDs such as com, `com.au` or `github.io`, the Public
+As well as one-part and two-part eTLDs such as `com`, `com.au` or `github.io`, the Public
 Suffix List also includes three-part, four-part and even five-part eTLDs.
 {% endAside %}
 
@@ -106,6 +114,8 @@ this is referred to as an "anchor".)
 {% Aside "important" %}
 The fragment (hash) value is not passed when an HTTP request is made to a server.
 {% endAside %}
+
+You can also link to and highlight a [text fragment](https://web.dev/text-fragments) within a document. For example, to link to the first occurrence of the text "fragment" in this article, use the URL `https://web.dev/url#:~:text=fragment`.
 
 -  [Spec](https://url.spec.whatwg.org/#dom-url-hash)
 -  [API](https://developer.mozilla.org/docs/Web/API/URL/hash)
@@ -135,6 +145,10 @@ A complete address for a website or a server, that maps to an
 </table>
 
 The FQDN for a URL does not include the [port](#port), even if a non-default port is used.
+
+## Hash
+
+(See [fragment](#fragment).)
 
 ## Host
 
