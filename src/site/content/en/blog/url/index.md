@@ -98,7 +98,7 @@ Suffix List also includes three-part, four-part and even five-part eTLDs.
 
 The list also includes suffixes such as `github.io` and `glitch.me`. Names under these, such as
 `example.github.io` and `example.glitch.me`, can be used for site hosting but cannot be "registered"
-by a developer with a commercial domain registrar. GitHub and Glitch act as registrars in these examples.
+by a developer. GitHub and Glitch act as registrars in these examples.
 {% endAside %}
 
 ## eTLD+1 {: #etld1}
