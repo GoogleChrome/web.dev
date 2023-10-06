@@ -27,14 +27,14 @@ Names for URL parts are specified in a standard, which also defines a JavaScript
     engineers to build interoperable web browsers.
 -  The [URL API](https://developer.mozilla.org/docs/Web/API/URL_API) component of the standard
     defines methods to provide access to parts of a URL string, such as the
-    [scheme](#scheme) or [origin](#heading=h.17kwt3yobyfm).
+    [scheme](#scheme) or [origin](#origin).
 
 This article explains a range of terms used with HTTP or HTTPS URLs. It does not cover other types
 of URL such as file or data URLs. For terms such as `host` and `origin`, accurate definitions are
 inherently complex, so this article provides examples and links to the URL standard, rather than
 attempting full explanations.
 
-You can use JavaScript to get the names of the parts of a URL that are defined by the URL API. For example:
+You can use JavaScript to get the names of URL components that are defined by the URL API. For example:
 
 ```javascript
 let url = new URL('https://foo.com.au:1234/bar/foo.html#bar');
@@ -46,7 +46,7 @@ this in a separate tab at [url-parts.glitch.me](https://url-parts.glitch.me/).
 
 {% Glitch 'url-parts' %}
 
-## Country-code top-level domain (ccTLD)
+## Country-code top-level domain (ccTLD)  {: #cctld}
 
 A [top-level domain](#tld) defined in
 the [ISO 3166-1 Country Codes list](https://en.wikipedia.org/wiki/ISO_3166-1#Current_codes).
@@ -54,7 +54,7 @@ the [ISO 3166-1 Country Codes list](https://en.wikipedia.org/wiki/ISO_3166-1#Cur
 -  For `https://example.com.au`, the ccTLD is [`au`](https://en.wikipedia.org/wiki/.au).
 -  For `https://example.io`, the ccTLD is [`io`](https://en.wikipedia.org/wiki/.io).
 
-## Domain name
+## Domain name {: #domain-name}
 
 The parts of an HTTP or HTTPS URL separated by dots: everything after the [scheme](#scheme), but
 before the [path](#pathname) or [port](#port) (if specified). Each part of the domain name is known
@@ -79,7 +79,7 @@ as a [label](https://www.icann.org/en/icann-acronyms-and-terms/label-en).
   </tbody>
 </table>
 
-## Effective top-level domain (eTLD)
+## Effective top-level domain (eTLD) {: #etld}
 
 An entry in the [Public Suffix List](https://publicsuffix.org/list/), including a [TLD](#tld) and
 (for eTLDs with multiple parts) additional domains below that: second-level, third-level, and so on.
@@ -89,18 +89,22 @@ An entry in the [Public Suffix List](https://publicsuffix.org/list/), including 
 {% Aside %}
 As well as one-part and two-part eTLDs such as `com`, `com.au` or `github.io`, the Public
 Suffix List also includes three-part, four-part and even five-part eTLDs.
+
+Browser including [Chromium](https://chromium.googlesource.com/chromium/src/+/master/net/base/registry_controlled_domains/effective_tld_names.dat)
+and [Firefox](https://github.com/mozilla/gecko-dev/blob/master/netwerk/dns/effective_tld_names.dat)
+use the list in their builds.
 {% endAside %}
 
-## eTLD+1
+## eTLD+1 {: #etld1}
 
-See [registrable domain](#heading=h.71qyk9517te5).
+See [registrable domain](#registrable-domain).
 
 An [eTLD](#etld) plus the subdomain that precedes it.
 
 -  For example: `example.com`, `example.com.au`, `example.github.io`, `example.sa.edu.au`,
     `example.schools.nsw.edu.au`.
 
-## Fragment (or hash)
+## Fragment (or hash)  {: #fragment}
 
 A string following a # character at the end of a URL that provides a
 [fragment identifier](https://developer.mozilla.org/docs/Learn/Common_questions/What_is_a_URL#anchor).
@@ -119,7 +123,7 @@ You can also link to and highlight a [text fragment](https://web.dev/text-fragme
 -  [Spec](https://url.spec.whatwg.org/#dom-url-hash)
 -  [API](https://developer.mozilla.org/docs/Web/API/URL/hash)
 
-## Fully-qualified domain name (FQDN)
+## Fully-qualified domain name (FQDN) {: #fqdn}
 
 A complete address for a website or a server, that maps to an
 [IP address](https://en.wikipedia.org/wiki/IP_address).
@@ -149,7 +153,7 @@ The FQDN for a URL does not include the [port](#port), even if a non-default por
 
 (See [fragment](#fragment).)
 
-## Host
+## Host {: #host}
 
 As defined in the [URL standard](https://url.spec.whatwg.org/#host-representation), a host can be a
 [domain name](#domain-name), IP v4 address, IPv6 address, opaque host, or empty host.
@@ -187,7 +191,7 @@ the port.
 -  [Spec](https://url.spec.whatwg.org/#dom-url-host)
 -  [API](https://developer.mozilla.org/docs/Web/API/URL/host)
 
-## Hostname
+## Hostname {: #hostname}
 
 Hostname is defined by the JavaScript `URL` API, but not elsewhere by the URL standard. See
 [host representation](https://url.spec.whatwg.org/#concept-domain) for more detail.
@@ -221,10 +225,10 @@ Hostname is defined by the JavaScript `URL` API, but not elsewhere by the URL st
 -  [Spec](https://url.spec.whatwg.org/#dom-url-hostname)
 -  [API](https://developer.mozilla.org/docs/Web/API/URL/hostname)
 
-## Origin
+## Origin {: #origin}
 
-The URL standard [defines `origin`](https://url.spec.whatwg.org/#origin), and links to the [HTML
-standard](https://html.spec.whatwg.org/multipage/browsers.html#concept-origin) for background.
+The URL standard [defines `origin`](https://url.spec.whatwg.org/#origin), and links to the
+[HTML standard](https://html.spec.whatwg.org/multipage/browsers.html#concept-origin) for background.
 
 For HTTP or HTTPS URLs, [`URL.origin`](https://developer.mozilla.org/docs/Web/API/URL/origin)
 returns the [scheme](#scheme), the [host](#host), and [port](#port) (unless the port is the default
@@ -256,7 +260,7 @@ for the scheme).
 -  [Spec](https://url.spec.whatwg.org/#dom-url-origin)
 -  [API](https://developer.mozilla.org/docs/Web/API/URL/origin)
 
-## Parameter
+## Parameter {: #parameter}
 
 Not defined in the URL standard, and not part of the URL API, but commonly used to refer to an item
 of data passed in a [search string](#search) (also known as a "query string").
@@ -266,7 +270,7 @@ two parameters: `pattern=tabby` and `mood=bonkers`.
 
 See also [URL.searchParams](https://developer.mozilla.org/docs/Web/API/URL/searchParams).
 
-## Pathname
+## Pathname {: #pathname}
 
 For an HTTP or HTTPS URL, the part after the domain and port (if defined), including a filename (if
 defined) but not including the [search string](#search) or [hash](#hash).
@@ -304,7 +308,7 @@ defined) but not including the [search string](#search) or [hash](#hash).
 -  [Spec](https://url.spec.whatwg.org/#dom-url-pathname)
 -  [API](https://developer.mozilla.org/docs/Web/API/URL/pathname)
 
-## Port
+## Port {: #port}
 
 The number after a `:` in a URL that identifies a network port. For example: for the URL
 `https://example.com:1234/tabby` the port number is 1234.
@@ -343,10 +347,10 @@ The API returns an empty string if the port is the default for the scheme.
 -  [Spec](https://url.spec.whatwg.org/#dom-url-port)
 -  [API](https://developer.mozilla.org/docs/Web/API/URL/port)
 
-## Registrable domain
+## Registrable domain {: #registrable-domain}
 
 -  For a URL with a single-part [eTLD](#etld) such as `com` or `org` (i.e. an
-    eTLD that corresponds to a [TLD](#heading=h.gpxwuj9dkj1o)), the domain and the
+    eTLD that corresponds to a [TLD](#tld)), the domain and the
     [second-level domain](#sld) before it: for example, `example.com` or `example.org`.
 -  For a URL with a two-part eTLD where only third-level registration is allowed (i.e. entries
     in the [Public Suffix List](https://publicsuffix.org/list/) such as `com.au` and, `github.io`)
@@ -355,24 +359,25 @@ The API returns an empty string if the port is the default for the scheme.
 -  For eTLDs with three or more parts, the eTLD and the domain before that.
 
 {% Aside %}
-Confusingly, perhaps, domains such as `example.github.io` or `example.glitch.me` are [defined
-as "registrable domains"](https://url.spec.whatwg.org/#host-registrable-domain) though they
+Confusingly, perhaps, domains such as `example.github.io` or `example.glitch.me` are
+[defined as "registrable domains"](https://url.spec.whatwg.org/#host-registrable-domain) though they
 cannot be "registered" by a developer. GitHub and Glitch act as registrars for these examples.
 {% endAside %}
 
-## Scheme
+## Scheme {: #scheme}
 
-The part of the URL (before `://`) that defines the [network
-protocol](https://developer.mozilla.org/docs/Glossary/Protocol) (or action to be taken by the user
-agent) when a request is made to a URL. For example, a request to a URL with an `https` scheme
-should be made using the [HTTPS protocol](https://en.wikipedia.org/wiki/HTTPS). For a request to a
-URL with a scheme such as `file`, `mailto` or `git` that doesn't correspond to a network protocol, behavior depends on the user agent. For example, when a user clicks on a `mailto` link, most
-browsers open their default email application, using the values in the link's `href` URL.
+The part of the URL (before `://`) that defines the
+[network protocol](https://developer.mozilla.org/docs/Glossary/Protocol) (or action to be taken by
+the user agent) when a request is made to a URL. For example, a request to a URL with an `https`
+scheme should be made using the [HTTPS protocol](https://en.wikipedia.org/wiki/HTTPS). For a request
+to a URL with a scheme such as `file`, `mailto` or `git` that doesn't correspond to a network
+protocol, behavior depends on the user agent. For example, when a user clicks on a `mailto` link,
+most browsers open their default email application, using the values in the link's `href` URL.
 
 -  [Spec](https://url.spec.whatwg.org/#dom-url-protocol)
 -  [API](https://developer.mozilla.org/docs/Web/API/URL/protocol)
 
-## Search (or "query string")
+## Search (or "query string") {: #search}
 
 A series of key/value pairs that represent [parameters](#parameter) and their values, at the end of
 a URL after a question mark.
@@ -401,10 +406,9 @@ See also [URL.searchParams](https://developer.mozilla.org/docs/Web/API/URL/searc
 -  [Spec](https://url.spec.whatwg.org/#dom-url-search)
 -  [API](https://developer.mozilla.org/docs/Web/API/URL/search)
 
-## Second-level domain
+## Second-level domain {: #sld}
 
-The domain before a [top-level
-domain](#tld).
+The domain before a [top-level domain](#tld).
 
 -  For the URL `https://www.example.com`, the second-level domain is `example.com`, a
 [subdomain](#subdomain) of the top-level domain `com`.
@@ -413,7 +417,7 @@ domain](#tld).
 and the third-level domain is `example`. In this example, `com.au` is a subdomain of `au` and
 `example.com.au` is a subdomain of `com.au`.
 
-## Site
+## Site {: #site}
 
 [Site](https://html.spec.whatwg.org/multipage/browsers.html#sites) is defined by the HTML standard,
 along with [same-site](https://html.spec.whatwg.org/multipage/browsers.html#same-site), which
@@ -427,7 +431,7 @@ In this context:
     `https://example.com`, the site consists of the `scheme`, the eTLD and the
     [label](https://www.icann.org/en/icann-acronyms-and-terms/label-en) before that. For example:
     for the URL `https://www.example.com/cat`, the site is `https://example.com`. (For this URL,
-    the eTLD is the same as the [top-level domain](#heading=h.gpxwuj9dkj1o).)
+    the eTLD is the same as the [top-level domain](#tld).)
 -  For multipart [eTLD](#tld)s such as `co.uk`, `github.io` or `sa.edu.au`, the "site" consists of
     the `scheme`, the [eTLD](#tld) and the
     [label](https://www.icann.org/en/icann-acronyms-and-terms/label-en) before that. For example:
@@ -463,7 +467,7 @@ apply to subdomains that are considered "same-site" even if they are not "same-o
 
 -  [Spec](https://html.spec.whatwg.org/multipage/browsers.html#sites)
 
-## Subdomain
+## Subdomain {: #subdomain}
 
 A domain within a higher-level domain.
 
@@ -474,13 +478,13 @@ domain, each of which is separated by a dot.
 -  `support.api.example.org` is a subdomain of `api.example.org`, which is a subdomain of
     `example.org`.
 
-For two-part eTLDs where only third-level registrations are allowed (i.e. entries in the [Public
-Suffix List](https://publicsuffix.org/list/) such as `co.uk` and `github.io`) the subdomains are the
-parts of the domain name before that.
+For two-part eTLDs where only third-level registrations are allowed (i.e. entries in the
+[Public Suffix List](https://publicsuffix.org/list/) such as `co.uk` and `github.io`) the subdomains
+are the parts of the domain name before that.
 
 -  For example: `cat.example.co.uk` is a subdomain of `example.co.uk`.
 
-## Top-level domain (TLD)
+## Top-level domain (TLD) {: #tld}
 
 A domain name listed in the [Root Zone Database](https://www.iana.org/domains/root/db) such as
 [`com`](https://www.iana.org/domains/root/db/com.html) or [`org`](https://www.iana.org/domains/root/db/org.html). Some top-level domains are [country code top-level domains](#cctld),
@@ -502,7 +506,7 @@ one, two or more parts, so a TLD can also be an eTLD. For example:
 
 ---
 
-## Find out more
+## Find out more {: #more}
 
 -  [WHATWG: URL Living Standard](https://url.spec.whatwg.org/)
 -  [WHATWG: HTML Living Standard](https://html.spec.whatwg.org/)
