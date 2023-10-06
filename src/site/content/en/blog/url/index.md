@@ -90,7 +90,7 @@ An entry in the [Public Suffix List](https://publicsuffix.org/list/), including 
 As well as one-part and two-part eTLDs such as `com`, `com.au` or `github.io`, the Public
 Suffix List also includes three-part, four-part and even five-part eTLDs.
 
-Browser including [Chromium](https://chromium.googlesource.com/chromium/src/+/master/net/base/registry_controlled_domains/effective_tld_names.dat)
+Browsers including [Chromium](https://chromium.googlesource.com/chromium/src/+/master/net/base/registry_controlled_domains/effective_tld_names.dat)
 and [Firefox](https://github.com/mozilla/gecko-dev/blob/master/netwerk/dns/effective_tld_names.dat)
 use the list in their builds.
 {% endAside %}
