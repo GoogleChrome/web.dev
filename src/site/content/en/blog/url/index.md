@@ -1,6 +1,6 @@
 ---  
 title: What are the parts of a URL?  
-subhead: "What's the difference between a hostname, site and origin? What's an eTLD? This article explains."
+subhead: "What's the difference between a host, site and origin? What's an eTLD? This article explains."
 authors:
   - samdutton
 date: 2023-10-05
@@ -13,7 +13,7 @@ tags:
     - privacy
 ---
 
-What's the difference between host, site and origin? What is an eTLD+1? This article explains.
+What's the difference between a host, site and origin? What is an eTLD+1? This article explains.
 
 Most of the time it's fine to say things like "I bought a domain" or "Our images are hosted on a
 different site", even if that's not strictly true. However, in some contexts it's necessary to be
@@ -23,7 +23,7 @@ more precise. For example, when dealing with cookies, you need to understand the
 
 Names for URL parts are specified in a standard, which also defines a JavaScript API:
 
--  The [URL Standard](https://url.spec.whatwg.org/) defines URLs and related concepts to enable
+-  The [URL standard](https://url.spec.whatwg.org/) defines URLs and related concepts to enable
     engineers to build interoperable web browsers.
 -  The [URL API](https://developer.mozilla.org/docs/Web/API/URL_API) component of the standard
     defines methods to provide access to parts of a URL string, such as the
@@ -31,7 +31,7 @@ Names for URL parts are specified in a standard, which also defines a JavaScript
 
 This article explains a range of terms used with HTTP or HTTPS URLs. It does not cover other types
 of URL such as file or data URLs. For terms such as `host` and `origin`, accurate definitions are
-inherently complex, so this article provides examples and links to the URL Standard, rather than
+inherently complex, so this article provides examples and links to the URL standard, rather than
 attempting full explanations.
 
 Edit the URL in the Glitch below to see how parts of the URL string are named. You can also open
@@ -146,10 +146,10 @@ The FQDN for a URL does not include the [port](#port), even if a non-default por
 
 ## Host
 
-As defined in the [URL Standard](https://url.spec.whatwg.org/#host-representation), a host can be a
+As defined in the [URL standard](https://url.spec.whatwg.org/#host-representation), a host can be a
 [domain name](#domain-name), IP v4 address, IPv6 address, opaque host, or empty host.
 
--  The URL Standard definition of `host` does not include the [port](#port).
+-  The URL standard's definition of `host` does not include the [port](#port).
 -  [`URL.host`](https://developer.mozilla.org/docs/Web/API/URL/host) includes the port, unless
 the port is the default for the scheme.
 -  [`URL.hostname`](https://developer.mozilla.org/docs/Web/API/URL/hostname) does not include
@@ -184,7 +184,7 @@ the port.
 
 ## Hostname
 
-Hostname is defined by the JavaScript `URL` API, but not elsewhere by the URL Standard. See
+Hostname is defined by the JavaScript `URL` API, but not elsewhere by the URL standard. See
 [host representation](https://url.spec.whatwg.org/#concept-domain) for more detail.
 
 [`URL.hostname`](https://developer.mozilla.org/docs/Web/API/URL/hostname) returns the
@@ -218,7 +218,7 @@ Hostname is defined by the JavaScript `URL` API, but not elsewhere by the URL St
 
 ## Origin
 
-The URL Standard [defines `origin`](https://url.spec.whatwg.org/#origin), and links to the [HTML
+The URL standard [defines `origin`](https://url.spec.whatwg.org/#origin), and links to the [HTML
 standard](https://html.spec.whatwg.org/multipage/browsers.html#concept-origin) for background.
 
 For HTTP or HTTPS URLs, [`URL.origin`](https://developer.mozilla.org/docs/Web/API/URL/origin)
@@ -253,7 +253,7 @@ for the scheme).
 
 ## Parameter
 
-Not defined in the URL Standard, and not part of the URL API, but commonly used to refer to an item
+Not defined in the URL standard, and not part of the URL API, but commonly used to refer to an item
 of data passed in a [search string](#search) (also known as a "query string").
 
 -  For example: for `https://example.com/cats?pattern=tabby&mood=bonkers`, the search string has
