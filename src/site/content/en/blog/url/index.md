@@ -41,7 +41,6 @@ let url = new URL('https://foo.com.au:1234/bar/foo.html#bar');
 console.log(url);
 ```
 
-
 Edit the URL in the Glitch below to see how parts of the URL string are named. You can also open
 this in a separate tab at [url-parts.glitch.me](https://url-parts.glitch.me/).
 
