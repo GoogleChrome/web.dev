@@ -118,7 +118,7 @@ this is referred to as an "anchor".)
 The fragment (hash) value is not passed when an HTTP request is made to a server.
 {% endAside %}
 
-You can also link to and highlight a [text fragment](https://web.dev/text-fragments) within a document. For example, to link to the first occurrence of the text "fragment" in this article, use the URL `https://web.dev/url#:~:text=fragment`.
+You can also link to and highlight a [text fragment](/text-fragments) within a document. For example, to link to the first occurrence of the text "fragment" in this article, use the URL `https://web.dev/url#:~:text=fragment`.
 
 -  [Spec](https://url.spec.whatwg.org/#dom-url-hash)
 -  [API](https://developer.mozilla.org/docs/Web/API/URL/hash)
