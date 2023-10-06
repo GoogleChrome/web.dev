@@ -179,8 +179,8 @@ the port.
   </thead>
   <tbody>
     <tr>
-      <td>https://www.example.com:443/cat</td>
-      <td><code>www.example.com
+      <td style="text-align: top;">https://www.example.com:443/cat</td>
+      <td style="text-align: top;"><code>www.example.com<br>
 // 443 is the default port for the scheme</code></td>
     </tr>
     <tr>
