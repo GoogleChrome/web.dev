@@ -179,8 +179,8 @@ the port.
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: top;">https://www.example.com:443/cat</td>
-      <td style="text-align: top;"><code>www.example.com<br>
+      <td style="vertical-align: ;-align: top;">https://www.example.com:443/cat</td>
+      <td style="vertical-align: ;-align: top;"><code>www.example.com<br>
 // 443 is the default port for the scheme</code></td>
     </tr>
     <tr>
@@ -502,7 +502,7 @@ dot.
 
 -  For `https://example.com`, the URL's top-level domain is `com`.
 -  For `https://example.com.au`, the URL's top-level domain is `au`, and `com` is a
-[second-level domain](#sld) (even though `com` is also a top-level domain). `com.au `is a two-part
+[second-level domain](#sld) (even though `com` is also a top-level domain). `com.au` is a two-part
 [eTLD](#etld).
 
 The [Public Suffix List](https://publicsuffix.org/list/) of [eTLD](#etld)s includes domains with
