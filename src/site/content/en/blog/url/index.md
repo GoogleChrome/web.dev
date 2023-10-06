@@ -44,6 +44,8 @@ this in a separate tab at [url-parts.glitch.me](https://url-parts.glitch.me/).
 
 {% Glitch 'url-parts' %}
 
+Names used for URL parts are listed alphabetically below.
+
 ## Country-code top-level domain (ccTLD)  {: #cctld}
 
 A [top-level domain](#tld) defined in
