@@ -508,7 +508,7 @@ dot.
 The [Public Suffix List](https://publicsuffix.org/list/) of [eTLD](#etld)s includes domains with
 one, two or more parts, so a TLD can also be an eTLD. For example:
 
--  For `https://example.com`, the URL's eTLD is `com`, which is also a TLD`.`
+-  For `https://example.com`, the URL's eTLD is `com`, which is also a TLD.
 
 ---
 
