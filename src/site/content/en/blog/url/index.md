@@ -39,14 +39,6 @@ this in a separate tab at [url-parts.glitch.me](https://url-parts.glitch.me/).
 
 {% Glitch 'url-parts' %}
 
-{% Aside %}
-The [FQDN](#fqdn),
-[eTLD+1](#etld1),
-[hostname](#hostname) and
-[registrable domain](#registrable-domain)
-may be the same for some URLs, but each term has a different meaning.
-{% endAside %}
-
 ## Country-code top-level domain (ccTLD)
 
 A [top-level domain](#tld) defined in
