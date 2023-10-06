@@ -27,7 +27,7 @@ Names for URL parts are specified in a standard, which also defines a JavaScript
     defines methods to provide access to parts of a URL string, such as the
     [scheme](#scheme) or [origin](#origin).
 
-This article explains a range of terms used with HTTP or HTTPS URLs. It does not cover other types
+This article explains a range of terms used with HTTP or HTTPS URL strings. It does not cover other types
 of URL such as file or data URLs. For terms such as `host` and `origin`, accurate definitions are
 inherently complex, so this article provides examples and links to the URL standard, rather than
 attempting full explanations.
