@@ -13,8 +13,6 @@ tags:
     - privacy
 ---
 
-What's the difference between a host, site and origin? What is an eTLD+1? This article explains.
-
 Most of the time it's fine to say things like "I bought a domain" or "Our images are hosted on a
 different site", even if that's not strictly true. However, in some contexts it's necessary to be
 more precise. For example, when dealing with cookies, you need to understand the difference between
@@ -86,13 +84,17 @@ An entry in the [Public Suffix List](https://publicsuffix.org/list/), including 
 
 -  For example: `com`, `com.au`, `github.io`, `sa.edu.au`, `schools.nsw.edu.au`.
 
+A "public suffix", such as these examples,  is a name under which domains can be registered. The Public Suffix List is a list of all known public suffixes, and is frequently updated. Browsers including [Chromium](https://chromium.googlesource.com/chromium/src/+/master/net/base/registry_controlled_domains/effective_tld_names.dat)
+and [Firefox](https://github.com/mozilla/gecko-dev/blob/master/netwerk/dns/effective_tld_names.dat)
+use the list in their builds.
+
 {% Aside %}
 As well as one-part and two-part eTLDs such as `com`, `com.au` or `github.io`, the Public
 Suffix List also includes three-part, four-part and even five-part eTLDs.
 
-Browsers including [Chromium](https://chromium.googlesource.com/chromium/src/+/master/net/base/registry_controlled_domains/effective_tld_names.dat)
-and [Firefox](https://github.com/mozilla/gecko-dev/blob/master/netwerk/dns/effective_tld_names.dat)
-use the list in their builds.
+The list also includes suffixes such as `github.io` and `glitch.me`. Names under these, such as
+`example.github.io` and `example.glitch.me`, can be used for site hosting but cannot be "registered"
+by a developer with a commercial domain registrar. GitHub and Glitch act as registrars in these examples.
 {% endAside %}
 
 ## eTLD+1 {: #etld1}
@@ -151,7 +153,7 @@ The FQDN for a URL does not include the [port](#port), even if a non-default por
 
 ## Hash
 
-(See [fragment](#fragment).)
+See [fragment](#fragment).
 
 ## Host {: #host}
 
