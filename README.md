@@ -1,23 +1,14 @@
-# web.dev
+# web.dev [Archived]
+
+**Note:** This site got migrated to a new platform and this repository is available in a read-only mode. **We will not be merging new pull requests**. Please raise content issues in the new [issue tracker](https://issuetracker.google.com/issues/new?component=1400680&pli=1&template=1857359).
 
 web.dev is the ultimate resource for developers of all backgrounds to learn,
 create, and solve on the web. It's meant to not only educate developers, but
 help them apply what they've learned to any site they work on, be it personal or
 business.
 
-## Found a bug? 👷‍♀️
-
-Thanks for letting us know! Please [file an issue](https://issuetracker.google.com/issues/new?component=1400680&pli=1&template=1857359) and a team member should reply shortly.
-
-**Note:** Due to an upcoming migration of this site to a new platform, **we will not be merging new pull requests**. Please raise content issues in the new [issue tracker](https://issuetracker.google.com/issues/new?component=1400680&pli=1&template=1857359).
-
-## Authoring content ✍️
-
-Before you start writing take a moment to look over the [web.dev
-handbook](https://web.dev/handbook) and familiarize yourself with the process.
-When you're ready, follow the steps in the
-[Quickstart](https://web.dev/handbook/quick-start/) to create your content
-proposal.
+-----
+# [Archived README]
 
 ## Building the site 🏗
 
