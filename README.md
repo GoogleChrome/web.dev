@@ -1,6 +1,6 @@
 # web.dev [Archived]
 
-**Note:** This site got migrated to a new platform and this repository is available in a read-only mode. **We will not be merging new pull requests**. Please raise content issues in the new [issue tracker](https://issuetracker.google.com/issues/new?component=1400680&pli=1&template=1857359).
+**Note:** This site is migrated to a new platform and this repository is available in a read-only mode. **We will not be merging new pull requests**. Please raise content issues in the new [issue tracker](https://issuetracker.google.com/issues/new?component=1400680&pli=1&template=1857359).
 
 web.dev is the ultimate resource for developers of all backgrounds to learn,
 create, and solve on the web. It's meant to not only educate developers, but
