@@ -98,7 +98,7 @@ However, it still has some limitations that may catch you off-guard:
  
 - **Prototypes**: If you use `structuredClone()` with a class instance, you’ll get a plain object as the return
 value, as structured cloning discards the object’s prototype chain. 
-- **Functions**: If your object contains functions, they will be _quietly_ discarded.
+- **Functions**: If your object contains functions, `structuredClone()` will throw a `DataCloneError` exception.
 - **Non-cloneables**: Some values are not structured cloneable, most notably `Error` and DOM nodes. It
 will cause `structuredClone()` to throw.
  
