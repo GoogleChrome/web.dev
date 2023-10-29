@@ -116,7 +116,7 @@ Safari on iOS and iPadOS doesn't support Minimal UI mode for PWAs. Instead, a br
 When you design a Progressive Web App to work on a desktop,
 you need to think about the endless possibilities for window size as compared to being in the browser's tab or as an app in a mobile operating system.
 
-In [Chapter 3](/learn/pwa/foundations/), we mentioned mini-mode: a desktop app can be as small as 200 by 100 pixels. This window will use the `<title>` element's content in your HTML as the title of the window. That content is also rendered when you **alt-tab**"** between apps and in other places.
+In [Chapter 3](/learn/pwa/foundations/), we mentioned mini-mode: a desktop app can be as small as 200 by 100 pixels. This window will use the `<title>` element's content in your HTML as the title of the window. That content is also rendered when you **alt-tab** between apps and in other places.
 
 Pay attention to your HTML's `<title>` element and rethink how you use it. The `<title>` isn't just for SEO or to render just the first characters in a browser's tab; it will be part of the user experience of your standalone desktop window.
 
