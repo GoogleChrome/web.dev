@@ -112,7 +112,7 @@ When updating your service worker, do so without renaming it. Do not even add fi
 {% endAside %}
 
 After a successful installation, the new service worker will wait to activate until the existing (old) service worker no longer controls any clients. This state is called "waiting", and it's how the browser ensures that only one version of your service worker is running at a time.
-Refreshing a page or reopening the PWA won't make the new service worker take control. The user needs to close or navigate away from all tabs and windows using the current service worker and then navigate back. Only then will the new service worker to take control.
+Refreshing a page or reopening the PWA won't make the new service worker take control. The user needs to close or navigate away from all tabs and windows using the current service worker and then navigate back. Only then will the new service worker take control.
 Visit this [service worker lifecycle article](/service-worker-lifecycle/) for more information.
 
 ## Service worker lifespan
