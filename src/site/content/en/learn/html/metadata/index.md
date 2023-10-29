@@ -60,7 +60,7 @@ Search engine optimization snake-oil salespeople abused the keywords meta tag by
 
 #### Description
 
-The `description` value, however, is super important for SEO; in addition to helping sites rank based on the content, the description content value is often what search engines display under the page's title in search results.  Several browsers, like Firefox and Opera, use this as the default description of bookmarked pages. The description should be a short and accurate summary of the page's content.
+The `description` value, however, is useful for SEO: the description content value is often what search engines display under the page's title in search results.  Several browsers, like Firefox and Opera, use this as the default description of bookmarked pages. The description should be a short and accurate summary of the page's content.
 
 ```html
 <meta name="description"
