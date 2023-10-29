@@ -86,7 +86,7 @@ html {
 } %}
 </figure>
 
-The `color` property is inheritable by other elements.
+The `color` property is inherited by default by other elements.
 The `html` element has `color: lightslategray`,
 therefore all elements that can inherit color will now have a color of `lightslategray`.
 
@@ -129,11 +129,11 @@ Inheritance only flows downwards, not back up to parent elements.
 } %}
 </figure>
 
-## Which properties are inheritable?
+## Which properties are inherited by default?
 
-Not all CSS properties are inheritable,
+Not all CSS properties are inherited by default,
 but there are a lot that are.
-For reference, here is the entire list of inheritable properties,
+For reference, here is the entire list of properties that are inherited by default,
 taken from the W3 reference of all CSS properties:
 
 - [azimuth](https://developer.mozilla.org/docs/Web/SVG/Attribute/azimuth)
@@ -263,14 +263,14 @@ make them normal weight, which is the initial value.
 
 ### The `unset` keyword
 
-The `unset` property behaves differently if a property is inheritable or not.
-If a property is inheritable,
+The `unset` property behaves differently if a property is inherited by default or not.
+If a property is inherited by default,
 the `unset` keyword will be the same as `inherit`.
-If the property is not inheritable, the `unset` keyword is equal to `initial`.
+If the property is not inherited by default, the `unset` keyword is equal to `initial`.
 
-Remembering which CSS properties are inheritable can be hard,
+Remembering which CSS properties are inherited by default can be hard,
 `unset` can be helpful in that context.
-For example, `color` is inheritable,
+For example, `color` is inherited by default,
 but `margin` isn't, so you can write this:
 
 ```css
