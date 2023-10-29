@@ -25,7 +25,7 @@ The opening `<video>` and `<audio>` tags can contain several other attributes in
 
 ```html
 <video src="videos/machines.webm" poster="images/machine.jpg" controls>
-  <p>Watch <a href="https://youtube.com/link">video on Youtube</a>
+  <p>Watch <a href="https://youtube.com/link">video on Youtube</a></p>
 </video>
 ```
 
@@ -46,7 +46,7 @@ and English and French subtitles between the opening and closing tags.
   <source src="videos/machines.ogv" type="video/ogg">
   <track label="English" kind="subtitles" srclang="en" src="vtt/subtitles-en.vtt" default />
   <track label="Francais" kind="subtitles" srclang="fr" src="vtt/subtitles-fr.vtt" />
-  <p>Watch <a href="https://youtube.com/link">video on Youtube</a>
+  <p>Watch <a href="https://youtube.com/link">video on Youtube</a></p>
 </video>
 ```
 
