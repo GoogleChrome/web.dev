@@ -159,7 +159,7 @@ include the `headers` attribute with a space-separated list of the associated he
 the scope of the headers with the `scope` attribute. To be even clearer, we added the `headers` attribute to each cell.
 
 The `headers` attributes were possibly not necessary in such a simple use case, but they are important to have in your toolbelt
-your tables grow in complexity. Tables with complex structures, such as tables where headers or cells are merged or with more
+as your tables grow in complexity. Tables with complex structures, such as tables where headers or cells are merged or with more
 than two levels of column or row headers, require explicit identification of associated header cells. In such complex tables, explicitly
 associate each data cell with each corresponding header cell with a list of space-separated `id` values of all the associated headers
 as the value of the `headers` attribute.

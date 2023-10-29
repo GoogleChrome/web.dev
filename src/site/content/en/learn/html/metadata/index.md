@@ -213,7 +213,7 @@ Your HTML now looks something like this:
 </html>
 ```
 
-It's pretty long, but it's done. It would have been much longer, but you've summed up all the icons, short name, etc. in a [manifest file](/add-manifest/), enabling you to omit many `<meta>` and `<link>` tags,
+It's pretty long, but it's done.
 
 Now that your `<head>` is mostly complete, you can dive into some [semantic HTML](/learn/html/semantic-html/).
 
