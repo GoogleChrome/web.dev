@@ -49,7 +49,7 @@ Also included is the `linear()` easing function, which you can learn more about 
 
 ### CSS Color Level 4 features
 
-Firefox 113 includes the `color()`, `lab()`, `lch()`, `oklab()`, `oklch()`, and `color-mix()` functional notations, along with the forced-color-adjust property. This means that the new color spaces and functions are now supported across all three major engines. You can learn more about these color spaces and functions in the [High definition CSS color guide](/articles/high-definition-css-color-guide/).
+Firefox 113 includes the `color()`, `lab()`, `lch()`, `oklab()`, `oklch()`, and `color-mix()` functional notations, along with the forced-color-adjust property. This means that the new color spaces and functions are now supported across all three major engines. You can learn more about these color spaces and functions in the [High definition CSS color guide](https://developer.chrome.com/articles/high-definition-css-color-guide/).
 
 {% BrowserCompat 'css.types.color.color-mix' %}
 
