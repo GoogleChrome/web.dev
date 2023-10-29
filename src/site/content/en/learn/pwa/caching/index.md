@@ -123,15 +123,15 @@ self.addEventListener("install", event => {
 
 The [`waitUntil()` method](https://developer.mozilla.org/docs/Web/API/ExtendableEvent/waitUntil) receives a promise and asks the browser to wait for the task in the promise to resolve (fulfilled or failed) before terminating the service worker process. You may need to chain promises and return the `add()` or `addAll()` calls so that a single result gets to the `waitUntil()` method.
 
-You can also handle promises using the async/await syntax. In that case, `waitUntil()` needs a promise-based function as an argument, so you need to create a function that returns the promise to make it work, as in the following example:
+You can also handle promises using the async/await syntax. In that case, you need to create an asynchronous function that can call `await` and that returns a promise to `waitUntil()` after it's called, as in the following example:
 
 ```js/3
 const urlsToCache = ["/", "app.js", "styles.css", "logo.svg"];
 self.addEventListener("install", (event) => {
-   event.waitUntil(async () => {
+   event.waitUntil((async () => {
       const cache = await caches.open("pwa-assets");
       return cache.addAll(urlsToCache);
-   });
+   })());
 });
 ```
 
