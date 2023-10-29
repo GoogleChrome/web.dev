@@ -101,5 +101,5 @@ So now you know a little about how antialiasing works, and why you might see tex
 - [Subpixel Rendering on Wikipedia](http://en.wikipedia.org/wiki/Subpixel_rendering)
 - [Darel Rex Finley on Subpixel Text Rendering](http://alienryderflex.com/sub_pixel/)
 - [How Subpixel rendering works](http://www.grc.com/ctwhat.htm)
-- [CSS properties that affect type rendering](http://blog.typekit.com/category/type-rendering/)
+- [CSS properties that affect type rendering](https://blog.typekit.com/2011/01/26/css-properties-that-affect-type-rendering/)
 
