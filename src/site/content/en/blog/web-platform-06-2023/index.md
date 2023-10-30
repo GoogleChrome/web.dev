@@ -45,7 +45,7 @@ Also reaching interoperability with Firefox 115 are a set of methods for `Array`
 
 There is a whole stack of new features and fixes in the Safari 17 beta. Safari 17 adds [Web Apps](https://blog.tomayac.com/2023/06/07/web-apps-on-macos-sonoma-14-beta/) to macOS Sonoma. This means you can add a website to the Dock from the File menu or Share Sheet, and it will open in its own window.
 
-Safari 17 also brings some features to interoperable status—[`contain-intrinsic-size`](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-size), [`@counter-style`](https://developer.mozilla.org/docs/Web/CSS/@counter-style), [@font-face size-adjust](https://developer.mozilla.org/docs/Web/CSS/@font-face/size-adjust), and the [`overflow-block`](https://developer.mozilla.org/docs/Web/CSS/@media/overflow-block) and [`overflow-inline`](https://developer.mozilla.org/docs/Web/CSS/@media/overflow-inline) media features will be available in all major engines when Safari 17 ships.
+Safari 17 also brings some features to interoperable status—[`contain-intrinsic-size`](https://developer.mozilla.org/docs/Web/CSS/contain-intrinsic-size), [`@counter-style`](https://developer.mozilla.org/docs/Web/CSS/@counter-style), [`@font-face size-adjust`](https://developer.mozilla.org/docs/Web/CSS/@font-face/size-adjust), and the [`overflow-block`](https://developer.mozilla.org/docs/Web/CSS/@media/overflow-block) and [`overflow-inline`](https://developer.mozilla.org/docs/Web/CSS/@media/overflow-inline) media features will be available in all major engines when Safari 17 ships.
 
 
 _Photo by [Rodrigo Abreu](https://unsplash.com/@rodrigospabreu)._
