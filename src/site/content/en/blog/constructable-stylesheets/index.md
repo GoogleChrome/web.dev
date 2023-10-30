@@ -5,7 +5,7 @@ subhead: Seamless reusable styles.
 authors:
   - developit
 date: 2019-02-08
-updated: 2022-12-14
+updated: 2023-09-23
 description: Constructable Stylesheets provide a seamless way to create and distribute styles to documents or shadow roots without worrying about FOUC.
 tags:
   - blog
@@ -119,28 +119,21 @@ const sheet = new CSSStyleSheet();
 sheet.replaceSync('a { color: red; }');
 
 // Apply the stylesheet to a document:
-document.adoptedStyleSheets = [sheet];
+document.adoptedStyleSheets.push(sheet);
 
 // Apply the stylesheet to a Shadow Root:
 const node = document.createElement('div');
 const shadow = node.attachShadow({ mode: 'open' });
-shadow.adoptedStyleSheets = [sheet];
+shadow.adoptedStyleSheets.push(sheet);
 ```
 
-Notice that we're overriding the value of `adoptedStyleSheets` instead of
-changing the array in place. This is required because the array is frozen;
-in-place mutations like `push()` throw an exception, so we have to assign a new
-array. To preserve any existing StyleSheets added via `adoptedStyleSheets`, we
-can use concat to create a new array that includes the existing sheets as well
-as additional ones to add:
-
-```js
-const sheet = new CSSStyleSheet();
-sheet.replaceSync('a { color: red; }');
-
-// Combine existing sheets with our new one:
-document.adoptedStyleSheets = [...document.adoptedStyleSheets, sheet];
-```
+{% Aside 'gotchas' %}
+In earlier versions of the specification, `adoptedStyleSheets` was implemented
+as a frozen array, meaning in-place mutations like `push()` threw an exception.
+Adding a new stylesheet required redefiningthe array: `document.adoptedStyleSheets = [...document.adoptedStyleSheets, newSheet]`
+This is no longer the case as the [spec](https://www.w3.org/TR/cssom-1/#extensions-to-the-document-or-shadow-root-interface)
+has been updated to allow for array mutations.
+{% endAside %}
 
 ## Putting it all together
 
