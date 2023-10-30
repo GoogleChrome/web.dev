@@ -34,7 +34,7 @@ for the name `<input>` to ensure everybody can fill in their name.
 
 Also use a single `<input>` for the street address–not every address has a street number.
 
-{% Aside %}  
+{% Aside %}
 According to [research](https://baymard.com/blog/address-line-2), 
 **Address line 2** can be confusing for users. 
 Consider using a `<textarea>` for the whole address, 
@@ -47,7 +47,7 @@ Use `<label for="zip">ZIP or postal code (optional)</label>`
 to make sure users know what data to enter. 
 Make the postal code field optional–not every address has a postal code.
 
-{% Aside %}  
+{% Aside %}
 You can use services like 
 [Place Autocomplete](https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-addressform) or 
 [Loqate](https://www.loqate.com/en-us/) to help users look up addresses. 
@@ -63,7 +63,7 @@ The `autocomplete` attribute can help users re-enter their address:
 * `autocomplete="postal-code"`
 * `autocomplete="country"`
 
-{% Aside %}  
+{% Aside %}
 There are two possible `autocomplete` values for the country: 
 * `country`: country or territory code
 * `country-name`: country or territory name 

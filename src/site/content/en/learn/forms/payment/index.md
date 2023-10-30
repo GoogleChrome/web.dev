@@ -7,7 +7,7 @@ authors:
 date: 2021-11-03
 ---
 
-{% Aside %}  
+{% Aside %}
 This module is about payment forms and doesn't explain how to implement transactions on your site. 
 You can add payment functionality by implementing [Web Payments](/payments/), 
 or using a third-party payment platform.  
@@ -27,7 +27,7 @@ To maximize conversions, ensure your payment form is user-friendly and secure.
 Keep your payment form as simple as possible, 
 showing only required fields.
 
-{% Aside %}  
+{% Aside %}
 You don't need to add a selector for the card type—that's worked out automatically by the payment processor from the card number. 
 However, you may want to enhance your card number field by indicating the card type based on the entered number. 
 You can use a [regex](https://gist.github.com/michaelkeevildown/9096cd3aac9029c4e6e05588448a8841) to test the card type, 
@@ -45,7 +45,7 @@ Use self-explanatory wordings for your `<label>` elements.
 For example, use 'Security code', 
 instead of an acronym like 'CVV' that's only used by some brands.
 
-{% Aside %}  
+{% Aside %}
 Use a single `<input>` for each of the name and card number fields. Keep the user in typing mode, 
 and don't waste their time by forcing them to jump between multiple name or card number fields.  
 {% endAside %}
@@ -68,7 +68,7 @@ Add appropriate `autocomplete` values for your payment form controls to ensure b
 Use `autocomplete="cc-name"` for the name, 
 `autocomplete="cc-number"` for the card number, and `autocomplete="cc-exp"` for the expiry date.
 
-{% Aside %}  
+{% Aside %}
 You can help users fill in the correct format for expiry date by using an 
 [input mask](https://css-tricks.com/input-masking/). 
 Test with real users, using only your keyboard, 
@@ -87,7 +87,7 @@ Ensure users only enter numbers for the card number and security code.
 Use `pattern="[0-9 ]+"` to allow users to include spaces when entering a card number, 
 since this is how the numbers are displayed on the physical cards. 
 
-{% Aside %}  
+{% Aside %}
 Payment card brands use different formats, 
 for example, for card numbers and security codes. 
 Always test your payment form with every card type you support. 

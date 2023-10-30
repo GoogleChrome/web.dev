@@ -23,7 +23,7 @@ Learn more about
 The sign-up form is often the first interaction with a form on your website. 
 Good sign-up form design is critical, and a secure form is essential. 
 
-{% Aside %}  
+{% Aside %}
 Only require sign-up if you really need to. 
 If you only want to store information between navigations, 
 consider [using client-side storage](/storage-for-the-web/). 

@@ -94,7 +94,7 @@ This can be a bit of a shock the first time it happens.
 A document covered in suggestions doesn't mean that you did a bad job. 
 The majority of these changes will be copy-edits to follow the style guide and you can approve those and move on.
 
-{% Aside %}  
+{% Aside %}
 You will generally be assigned a tech writer familiar with your subject matter, 
 and they may well spot places where the post could be more clear, however you are the expert. 
 Always query any change that you feel is incorrect, or unhelpful. 
