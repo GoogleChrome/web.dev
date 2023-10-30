@@ -129,7 +129,7 @@ support.
   </tr>
   <tr>
     <td>Orca</td>
-    <td>Linus</td>
+    <td>Linux</td>
     <td>Firefox</td>
     <td>Free (built into Gnome-based distributions)</td>
   </tr>
