@@ -113,7 +113,7 @@ La variable de la `api` en el hilo principal se comporta de la misma manera que 
 
 Los trabajadores web no tienen acceso al DOM y a muchas API como [WebUSB](https://developer.mozilla.org/docs/Web/API/USB), [WebRTC](https://developer.mozilla.org/docs/Web/API/WebRTC_API) o [Web Audio](https://developer.mozilla.org/docs/Web/API/Web_Audio_API), por lo que no puede colocar partes de su aplicación que dependan de dicho acceso en un trabajador. Aún así, cada pequeño fragmento de código que se traslada a un trabajador genera más espacio en el hilo principal para las cosas que *tienen* que estar allí, como actualizar la interfaz de usuario.
 
-{% Aside %} Restringir el acceso de la IU al hilo principal, en realidad, es típico en otros idiomas. De hecho, tanto iOS como Android llaman al hilo principal el hilo de la *interfaz de usuario*. {% endAside %}
+{% Aside %} Restringir el acceso de la IU al hilo principal, en realidad, es típico en otros lenguajes. De hecho, tanto iOS como Android llaman al hilo principal el hilo de la *interfaz de usuario*. {% endAside %}
 
 Un problema para los desarrolladores web es que la mayoría de las aplicaciones web se basan en un marco de interfaz de usuario, como Vue o React, para organizar todo en la aplicación; todo es un componente del marco y, por lo tanto, está inherentemente vinculado al DOM. Eso parecería dificultar la migración a una arquitectura OMT.
 
