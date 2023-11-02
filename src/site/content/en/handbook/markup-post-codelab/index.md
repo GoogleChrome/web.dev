@@ -28,6 +28,10 @@ This post is about how to set up a new post or codelab so it works correctly on 
 
 See [YAML front matter](/handbook/yaml-front-matter).
 
+## Add related cards
+
+See [Related card component](/handbook/web-dev-components/#relatedCard).
+
 ## Authoring tips
 Use relative URLs to link to other posts and codelabs on web.dev.
 

@@ -44,6 +44,7 @@ const {Video} = require('./src/site/_includes/components/Video');
 const {YouTube} = require('webdev-infra/shortcodes/YouTube');
 const CodePattern = require('./src/site/_includes/components/CodePattern');
 const Widget = require('./src/site/_includes/components/Widget');
+const {RelatedCard} = require('./src/site/_includes/components/RelatedCard');
 
 // Other shortcodes
 const Assessment = require('./src/site/_includes/components/Assessment');
@@ -216,6 +217,7 @@ module.exports = function (config) {
   config.addShortcode('Widget', Widget);
   config.addShortcode('Video', Video);
   config.addShortcode('YouTube', YouTube);
+  config.addShortcode('RelatedCard', RelatedCard);
   config.addShortcode('YouTubePlaylist', YouTubePlaylist);
   config.addShortcode('includeRaw', includeRaw);
 

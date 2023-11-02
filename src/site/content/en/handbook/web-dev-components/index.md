@@ -39,6 +39,7 @@ provides guidance about how to use them effectively.
 1. [Tabs](#tabs)
 1. [Tooltips](#tooltips)
 1. [Video](#video)
+1. [Related Card](#relatedCard)
 
 
 ## Asides
@@ -1368,3 +1369,105 @@ that are too small to have a label
 ## Video / YouTube {: #video }
 
 See the [Images and video](/handbook/markup-media) post.
+
+
+## Related Card  {: #relatedCard }
+
+Use related card components in the post content to display relevant posts to cross-link to other useful stuff, for example, to signpost people to Learn PWA from each individual PWA article.
+
+The relatedCard shortcode properties available:
+
+- `title` - the title of the card, like a show's name or a post's title.
+- `description` - a description or short summary.
+- `thumbnail` - the thumbnail of the card.
+- `eyebrow` - the keyword to introduce the type of card.
+- `url` - the url for the page the card is previewing.
+- `image` - an relevant image to be displayed in the card.
+- `alt` - an alt text for image. If no thumbnail is provided, this can be null.
+- `theme` - the theme colours of the card. Theme colours available - tertiary, quaternary, pink, dark, and blue.
+
+### Eyebrows
+
+<table>
+  <tr>
+    <th>Keyword</th>
+    <th>Use for</th>
+  </tr>
+  <tr>
+    <td>mortarboard</td>
+    <td>Learn courses or individual modules.</td>
+  </tr>
+  <tr>
+    <td>blog</td>
+    <td>Blog posts.</td>
+  </tr>
+  <tr>
+    <td>podcast</td>
+    <td>Podcasts or episodes.</td>
+  </tr>
+  <tr>
+    <td>pattern</td>
+    <td>Pattern collections or individual patterns.</td>
+  </tr>
+  <tr>
+    <td>news</td>
+    <td>News items, newly interoperable posts.</td>
+  </tr>
+  <tr>
+    <td>featured</td>
+    <td>A star, anything you want to highlight.</td>
+  </tr>
+</table>
+
+### Themes
+
+<table>
+  <tr>
+    <th>Theme name</th>
+    <th>Color</th>
+  </tr>
+  <tr>
+    <td>Tertiary</td>
+    <td class="theme-preview"><div class="theme-preview__box bg-tertiary"></div></td>
+  </tr>
+  <tr>
+    <td>Quaternary</td>
+    <td class="theme-preview"><div class="theme-preview__box bg-quaternary"></div></td>
+  </tr>
+  <tr>
+    <td>Pink</td>
+    <td class="theme-preview"><div class="theme-preview__box bg-pink"></div></td>
+  </tr>
+  <tr>
+    <td>Dark</td>
+    <td class="theme-preview"><div class="theme-preview__box bg-dark"></div></td>
+  </tr>
+  <tr>
+    <td>Blue</td>
+    <td class="theme-preview"><div class="theme-preview__box bg-blue"></div></td>
+  </tr>
+</table>
+
+{% raw %}
+```md
+{% RelatedCard
+  title="Lorem Ipsum",
+  summary="Praesent accumsan eros orci quis congue metus porta a sed dapibus magna.",
+  eyebrow="learn",
+  image="image/foR0vJZKULb5AGJExlazy1xYDgI2/N5mplhgLlq9qzABgyYKQ.png",
+  alt="learn CSS text with abstract background",
+  url="/learn/css/",
+  theme="quaternary"
+%}
+```
+{% endraw %}
+
+{% RelatedCard
+  title="Lorem Ipsum",
+  summary="Praesent accumsan eros orci quis congue metus porta a sed dapibus magna.",
+  eyebrow="learn",
+  image="image/foR0vJZKULb5AGJExlazy1xYDgI2/N5mplhgLlq9qzABgyYKQ.png",
+  alt="learn CSS text with abstract background",
+  url="/learn/css/",
+  theme="quaternary"
+%}

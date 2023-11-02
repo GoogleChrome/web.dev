@@ -74,6 +74,16 @@ scelerisque efficitur ante ut facilisis. Aenean et risus fringilla, hendrerit
 sapien et, tincidunt orci. Aenean sed tellus aliquam, consectetur metus in,
 tempus enim.
 
+{% RelatedCard
+  title="Lorem Ipsum",
+  summary="Praesent accumsan eros orci quis congue metus porta a sed dapibus magna.",
+  eyebrow="learn",
+  image="image/foR0vJZKULb5AGJExlazy1xYDgI2/N5mplhgLlq9qzABgyYKQ.png",
+  alt="learn CSS text with abstract background",
+  url="/learn/css/",
+  theme="quaternary"
+%}
+
 {% Aside 'codelab' %}
   [Using Imagemin with Grunt](#)
 {% endAside %}

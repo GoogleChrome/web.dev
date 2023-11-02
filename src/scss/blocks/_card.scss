@@ -141,3 +141,176 @@
     min-width: 16rem;
   }
 }
+
+.prose .related-card {
+  margin: 40px auto;
+
+  @include media-query('md') {
+    margin: 80px auto;
+  }
+}
+
+.related-card {
+  display: grid;
+  grid-template-columns: auto;
+
+  svg {
+    fill: var(--color-mid-text);
+    height: 20px;
+    margin-right: 10px;
+  }
+
+  span {
+    margin-top: 0;
+    font-size: 0.875rem;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+
+    @include media-query('md') {
+      font-size: 1.5rem;
+    }
+
+    @include media-query('lg') {
+      font-size: 1.75rem;
+    }      
+  }
+
+  .card  {
+    flex-flow: column-reverse;
+    max-width: 100%;
+
+    &__content {
+      margin: 20px 0 0;
+    }
+
+    &__eyebrow {
+      align-items: center;
+      display: flex;
+      margin: 25px 0;
+  
+      > p {
+        margin: 0;
+        line-height: 0;
+      }
+    }
+
+    img {
+      width: 100%;
+      border-radius: 5px;
+    }
+
+    .content {
+      width: 100%;
+      padding-right: 0;
+    }
+
+    @include media-query('md') {
+      align-items: center;
+      display: flex;
+      flex-flow: row;
+      gap: 30px;
+      margin-top: 0;
+  
+      &__eyebrow {
+        margin-top: 0;
+      }
+
+      &__content {
+        margin: 25px 0;
+      }  
+
+      .content {
+        width: 50%;
+      }
+
+      img {
+        height: 220px;
+        width: 50%;
+      }
+    }
+
+    @include media-query('lg') {
+      .content {
+        padding-right: 25px;
+      }
+    }
+  }
+}
+
+.theme-preview,
+.related-card {
+  &__box {
+    width: 200px;
+    height: 40px;
+  }
+
+  .bg-tertiary,
+  .bg-quaternary,
+  .bg-pink,
+  .bg-dark,
+  .bg-blue  {
+    svg {
+      fill: get-color('shades-light-bright');
+    }
+  
+    p, span, h4 {
+      color: get-color('shades-light-bright');
+    }
+  }
+  
+  .bg-quaternary {
+    $CORE_QUATERNARY: get-color('core-quaternary');
+    background-color: $CORE_QUATERNARY;
+  
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: rgba($CORE_QUATERNARY, .9);
+    }
+  }
+
+  .bg-dark {
+    background-color: #26373D;
+  
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: rgba(#26373D, .9);
+    }
+  }
+  
+  .bg-tertiary {
+    $CORE_TERTIARY: get-color('core-tertiary');
+    background-color: $CORE_TERTIARY;
+  
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: rgba($CORE_TERTIARY, .9);
+    }
+  }
+
+  .bg-pink {
+    $CORE_SECONDARY_SHADE: get-color('core-secondary-shade');
+    background-color: $CORE_SECONDARY_SHADE;
+  
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: rgba($CORE_SECONDARY_SHADE, .9);
+    }
+  }
+  
+  .bg-blue {
+    $CORE_PRIMARY: get-color('core-primary');
+    background-color: $CORE_PRIMARY;
+  
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: rgba($CORE_PRIMARY, .9);
+    }
+  }
+}
