@@ -342,9 +342,9 @@ So, to enable as many patterns as we can, the whole update cycle is observable:
 
 ```js
 navigator.serviceWorker.register('/sw.js').then(reg => {
-  reg.installing; // the installing worker, or undefined
-  reg.waiting; // the waiting worker, or undefined
-  reg.active; // the active worker, or undefined
+  reg.installing; // the installing worker, or null
+  reg.waiting; // the waiting worker, or null
+  reg.active; // the active worker, or null
 
   reg.addEventListener('updatefound', () => {
     // A wild service worker has appeared in reg.installing!
