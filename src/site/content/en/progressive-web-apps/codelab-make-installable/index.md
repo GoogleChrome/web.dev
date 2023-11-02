@@ -48,17 +48,20 @@ window.addEventListener('beforeinstallprompt', (event) => {
 });
 ```
 
+{% Aside 'gotcha' %}
+The `beforeinstallevent` event won't fire, and the "Install" button won't
+appear, until you click in the page and wait 30 seconds, in order to meet
+[the PWA installability criteria](/install-criteria/).
+
+You'll also need to open the app in its own browser tab, and not in an
+iframe. (The lab itself will warn you if it's running in an iframe.)
+{% endAside %}
+
 ## Handle the install button click
 
 To show the install prompt, call `prompt()` on the saved `beforeinstallprompt`
 event. Calling `prompt()` is done in the install button click handler because
 `prompt()` must be called from a user gesture.
-
-{% Aside 'gotcha' %}
-You need to open your app in its own browser tab. The side-by-side preview pane
-in Glitch doesn't work for this codelab, since it will be run in an iframe.
-Choose Glitch's "Preview in a new window" mode instead.
-{% endAside %}
 
 1. Add a click event handler for the install button.
 1. Call `prompt()` on the saved `beforeinstallprompt` event.
