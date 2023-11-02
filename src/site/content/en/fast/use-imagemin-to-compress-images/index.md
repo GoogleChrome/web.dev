@@ -176,17 +176,20 @@ This code uses the "imagemin-mozjpeg" plugin to compress JPEG files to a quality
 of 50 ('0' being the worst; '100' being the best):
 
 ```js
-const imagemin = require('imagemin');
-const imageminMozjpeg = require('imagemin-mozjpeg');
-
-(async() => {
-  const files = await imagemin(
-      ['source_dir/*.jpg', 'another_dir/*.jpg'],
-      {
-        destination: 'destination_dir',
-        plugins: [imageminMozjpeg({quality: 50})]
-      }
-  );
-  console.log(files);
+import imageminMozjpeg from 'imagemin-mozjpeg';
+import imagemin from 'imagemin';
+(async () => {
+    try {
+        const files = await imagemin(
+            ['source_dir/*.jpg', 'another_dir/*.jpg'],
+            {
+                destination: 'destination_dir',
+                plugins: [imageminMozjpeg({ quality: 50 })]
+            }
+        );
+        console.log(files);
+    } catch (error) {
+        console.log({ error })
+    }
 })();
 ```
