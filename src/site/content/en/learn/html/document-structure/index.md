@@ -193,7 +193,7 @@ The preceding code says "use the `mlwicon.png` as the icon for scenarios where a
 
 There are two special non-standard kind of icons for Safari browser: `apple-touch-icon` for iOS devices and `mask-icon` for pinned tabs on macOS. `apple-touch-icon` is applied only when the user adds a site to home screen: you can specify multiple icons with different `sizes` for different devices. `mask-icon` will only be used if the user pins the tab in desktop Safari: the icon itself should be a monochrome SVG, and the `color` attribute fills the icon with needed color.
 
-While you can use `<link>` to define a completely different image on each page or even each page load, don't. For consistency and a good user experience, use a single image! Twitter uses the blue bird: when you see the blue bird in your browser tab, you know that tab is open to a Twitter page without clicking on the tab. Google uses different favicons for each of its different applications: there's a mail icon, a calendar icon, for example. But all the Google icons use the same color scheme. Again, you know exactly what the content of an open tab is simply from the icon.
+While you can use `<link>` to define a completely different image on each page or even each page load, don't. For consistency and a good user experience, use a single image! GitHub uses a black and white cat, when you see the cat in your browser tab, you know that tab is open to a GitHub page. Google uses different favicons for each of its different applications, Mail, Calendar, etc. But the Google icons use the same colors.
 
 #### Alternate versions of the site
 
